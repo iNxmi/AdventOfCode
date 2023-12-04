@@ -36,12 +36,12 @@ public class PartOne {
         System.out.println(sum);
     }
 
+
+    @SuppressWarnings("InstantiationOfUtilityClass")
     public static void main(String[] args) {
         try {
             new PartOne();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (URISyntaxException e) {
+        } catch (IOException | URISyntaxException e) {
             throw new RuntimeException(e);
         }
     }

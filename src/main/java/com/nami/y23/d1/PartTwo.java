@@ -66,12 +66,11 @@ public class PartTwo {
         System.out.println(sum);
     }
 
+    @SuppressWarnings("InstantiationOfUtilityClass")
     public static void main(String[] args) {
         try {
             new PartTwo();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (URISyntaxException e) {
+        } catch (IOException | URISyntaxException e) {
             throw new RuntimeException(e);
         }
     }
