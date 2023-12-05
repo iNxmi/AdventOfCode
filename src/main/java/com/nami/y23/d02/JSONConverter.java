@@ -1,4 +1,4 @@
-package com.nami.y23.d2;
+package com.nami.y23.d02;
 
 import org.json.JSONObject;
 

@@ -1,12 +1,11 @@
-package com.nami.y23.d1;
+package com.nami.y23.d01;
 
-import com.nami.Input;
+import com.nami.frame.Part;
+import com.nami.tools.Utils;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.*;
 
-public class PartTwo {
+public class D01P2 implements Part {
 
     private static final List<String> DIGITS = Arrays.asList(
             "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
@@ -15,7 +14,10 @@ public class PartTwo {
 
     private static final HashMap<String, Integer> MAPPING = new HashMap<>();
 
-    public PartTwo() throws IOException, URISyntaxException {
+    @Override
+    public long solve(String input) {
+        MAPPING.clear();
+
         MAPPING.put(0 + "", 0);
         MAPPING.put(1 + "", 1);
         MAPPING.put(2 + "", 2);
@@ -38,7 +40,7 @@ public class PartTwo {
         MAPPING.put("eight", 8);
         MAPPING.put("nine", 9);
 
-        List<String> lines = Input.load(23, 1);
+        List<String> lines = List.of(input.split("\n"));
 
         List<Integer> numbers = new ArrayList<>();
         for (String line : lines) {
@@ -62,17 +64,7 @@ public class PartTwo {
             }
         }
 
-        int sum = numbers.stream().mapToInt(a -> a).sum();
-        System.out.println(sum);
-    }
-
-    @SuppressWarnings("InstantiationOfUtilityClass")
-    public static void main(String[] args) {
-        try {
-            new PartTwo();
-        } catch (IOException | URISyntaxException e) {
-            throw new RuntimeException(e);
-        }
+        return Utils.sum(numbers);
     }
 
 }
