@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         Year y23 = new Y23();
-        System.out.println(y23.solve(1));
+        System.out.println(y23.solve(3));
     }
 
 }
