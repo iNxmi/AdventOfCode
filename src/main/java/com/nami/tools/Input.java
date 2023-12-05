@@ -1,4 +1,4 @@
-package com.nami;
+package com.nami.tools;
 
 import java.io.IOException;
 import java.net.URI;
@@ -10,10 +10,14 @@ import java.util.Objects;
 
 public class Input {
 
-    public static List<String> load(int year, int day) throws IOException, URISyntaxException {
+    public static List<String> loadAsStringArray(int year, int day) throws IOException, URISyntaxException {
+        return List.of(loadAsString(year, day).split("\n"));
+    }
+
+    public static String loadAsString(int year, int day) throws IOException, URISyntaxException {
         String path = String.format("/%s/%s.txt", year, day);
         URI uri = Objects.requireNonNull(Input.class.getResource(path)).toURI();
-        return Files.readAllLines(Path.of(uri));
+        return Files.readString(Path.of(uri));
     }
 
 }
