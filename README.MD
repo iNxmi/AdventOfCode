@@ -6,7 +6,7 @@ This is my Java repository for the [Advent Of Code](https://adventofcode.com) ch
 |------|-----|--------------------------------------------|----------------|----------------|-------------|-------------|
 | 2023 | 1   | [1.txt](src/main/resources/23/1.txt)       | 55208          | 54578          | 2€          | 3€          |
 | 2023 | 2   | [2.txt](src/main/resources/23/2.txt)       | 2237           | 66681          | 2€          | 3€          |
-| 2023 | 3   | [3.txt](src/main/resources/23/3.txt)       | 525119         |                | 2€          |             |
+| 2023 | 3   | [3.txt](src/main/resources/23/3.txt)       | 525119         | 76504829       | 2€          | 3€          |
 | 2023 | 4   | [4.txt](src/main/resources/23/4.txt)       | 25231          |                | 2€          |             |
 | 2023 | 5   | ~~[5.txt](src/main/resources/23/5.txt)~~   |                |                |             |             |
 | 2023 | 6   | ~~[6.txt](src/main/resources/23/6.txt)~~   |                |                |             |             |
