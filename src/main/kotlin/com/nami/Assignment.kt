@@ -1,24 +1,14 @@
 package com.nami
 
-abstract class Assignment {
+abstract class Assignment(
+    private val year: Int,
+    private val day: Int
+) {
 
-    abstract fun year(): Int
-    abstract fun day(): Int
+    protected abstract fun solve(input: String): Int
 
-    private fun input(): String {
-        return Input.get(year(), day())
+    fun solve(): Int {
+        return solve(Input.fetch(year, day))
     }
-
-    fun solveA(): Int {
-        return solveA(input())
-    }
-
-    fun solveB(): Int {
-        return solveB(input())
-    }
-
-    protected abstract fun solveA(input: String): Int
-    protected abstract fun solveB(input: String): Int
-
 
 }

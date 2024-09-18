@@ -1,0 +1,1 @@
+in .env the SESSION has to be read from the websites cookie

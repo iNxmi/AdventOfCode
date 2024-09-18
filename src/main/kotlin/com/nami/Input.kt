@@ -1,41 +1,53 @@
 package com.nami
 
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.net.HttpURLConnection
-import java.net.URI
 import io.github.cdimascio.dotenv.dotenv
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
+import java.nio.file.Files
+import java.nio.file.Paths
+import kotlin.io.path.exists
 
 class Input {
 
     companion object {
         private val dotenv = dotenv()
+        private var key = dotenv.get("SESSION")
 
-        fun get(year: Int, day: Int): String {
-            val url = URI("https://adventofcode.com/$year/day/$day/input").toURL()
+        private val cachePath = Paths.get("cache.json")
+        private var sessions = mutableMapOf<String, MutableMap<Int, String>>()
 
-            val connection = url.openConnection() as HttpURLConnection
-            connection.requestMethod = "GET"
-            connection.setRequestProperty("Cookie", "session=${dotenv["SESSION"]}")
-
-            if(connection.responseCode != 200)
-                throw IllegalStateException("Error: ($url) -> ${connection.responseCode} : ${connection.responseMessage}")
-
-            val reader = BufferedReader(InputStreamReader(connection.inputStream))
-            return reader.readText()
+        init {
+            if (cachePath.exists()) {
+                var jsonString = Files.readString(cachePath)
+                sessions = Json.decodeFromString<MutableMap<String, MutableMap<Int, String>>>(jsonString)
+            }
         }
 
-        fun verify(year: Int, day: Int, level : Int, answer: Int): String {
-            val url = URI("https://adventofcode.com/$year/day/$day/answer").toURL()
+        fun fetch(year: Int, day: Int): String {
+            val id = year * 100 + day
 
-            val connection = url.openConnection() as HttpURLConnection
-            connection.requestMethod = "POST"
-            connection.setRequestProperty("Cookie", "session=${dotenv["SESSION"]}")
-            connection.setRequestProperty("level", level.toString())
-            connection.setRequestProperty("answer", answer.toString())
+            if (sessions.containsKey(key)) {
+                val inputs = sessions[key]
+                if (inputs!!.containsKey(id)) {
+                    return inputs[id]!!
+                }
+            }
 
-            val reader = BufferedReader(InputStreamReader(connection.inputStream))
-            return reader.readText()
+            val url = "https://adventofcode.com/$year/day/$day/input"
+
+            val doc: Document = Jsoup.connect(url).cookie("session", key).get()
+            val string = doc.connection().execute().body().trim()
+
+            if (!sessions.containsKey(key))
+                sessions[key] = mutableMapOf()
+
+            sessions[key]!![id] = string
+            val jsonString = Json { prettyPrint = true }.encodeToString(sessions)
+            Files.writeString(cachePath, jsonString)
+
+            return string
         }
 
     }
