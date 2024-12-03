@@ -1,14 +1,17 @@
 package com.nami
 
-abstract class Assignment(
-    private val year: Int,
-    private val day: Int
-) {
+interface Assignment<T> {
 
-    protected abstract fun solve(input: String): Int
+    fun year(): Int
+    fun day(): Int
 
-    fun solve(): Int {
-        return solve(Input.fetch(year, day))
+    fun getInput(): String {
+        return Input.get(year(), day())
     }
+
+    fun getProcessedInput(): T
+
+    fun solveA(): Int
+    fun solveB(): Int
 
 }
