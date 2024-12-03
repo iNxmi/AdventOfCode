@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/Y23D1.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/Y24D1.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/Y24D2.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="solution 2024 02">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Assignment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Assignment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Input.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Input.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/y2023/d01/A2301.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/y2023/d01/B2301.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/y2023/d02/A2302.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/y2023/d02/B2302.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +25,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "iNxmi"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/iNxmi/AdventOfCodeKotlin.git",
+    "accountId": "ab6de0d6-1946-4522-80ed-e27a039cd846"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -170,12 +171,61 @@
       <workItem from="1726789352401" duration="14000" />
       <workItem from="1733187219243" duration="6377000" />
       <workItem from="1733225305803" duration="4060000" />
-      <workItem from="1733234154644" duration="1821000" />
+      <workItem from="1733234154644" duration="2285000" />
     </task>
+    <task id="LOCAL-00001" summary="cleanup">
+      <option name="closed" value="true" />
+      <created>1733236132599</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1733236132599</updated>
+    </task>
+    <task id="LOCAL-00002" summary="redesign of template">
+      <option name="closed" value="true" />
+      <created>1733236148690</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733236148690</updated>
+    </task>
+    <task id="LOCAL-00003" summary="refactor of year 2023 day 1">
+      <option name="closed" value="true" />
+      <created>1733236160272</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733236160272</updated>
+    </task>
+    <task id="LOCAL-00004" summary="solution 2024 01">
+      <option name="closed" value="true" />
+      <created>1733236169044</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733236169044</updated>
+    </task>
+    <task id="LOCAL-00005" summary="solution 2024 02">
+      <option name="closed" value="true" />
+      <created>1733236173552</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733236173552</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="cleanup" />
+    <MESSAGE value="redesign of template" />
+    <MESSAGE value="refactor of year 2023 day 1" />
+    <MESSAGE value="solution 2024 01" />
+    <MESSAGE value="solution 2024 02" />
+    <option name="LAST_COMMIT_MESSAGE" value="solution 2024 02" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
