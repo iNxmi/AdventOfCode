@@ -11,6 +11,9 @@ import kotlin.io.path.exists
 class Input {
 
     companion object {
+        private const val START_YEAR = 2015
+        private const val LAST_YEAR = 2024
+
         private val TOKEN = dotenv().get("SESSION")
         private val CACHE_PATH = Paths.get("cache.json")
 
@@ -24,15 +27,15 @@ class Input {
         }
 
         fun get(year: Int, day: Int): String {
-            //Check if year is between 2015 and 2023
-            if (!(2015..2024).contains(year))
-                throw IllegalArgumentException("Year $year is not in range (2015 .. 2024)")
+            //Check if year is between START_YEAR and LAST_YEAR
+            if (!(START_YEAR..LAST_YEAR).contains(year))
+                throw IllegalArgumentException("Year $year is not in range ($START_YEAR .. $LAST_YEAR)")
 
             //Check if day is between 1 and 25
             if (!(1..25).contains(day))
                 throw IllegalArgumentException("Day $day is not in range (1 .. 25)")
 
-            val id = year * 100 + day
+            val id = Utils.getID(year, day)
 
             if (!cache.containsKey(TOKEN))
                 cache[TOKEN] = mutableMapOf()

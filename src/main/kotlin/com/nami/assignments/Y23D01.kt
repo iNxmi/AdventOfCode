@@ -3,18 +3,10 @@ package com.nami.assignments
 import com.nami.Assignment
 import java.util.*
 
-class Y23D1 : Assignment<List<String>> {
+class Y23D01 : Assignment<List<String>>(2023, 1) {
 
-    override fun year(): Int {
-        return 2023
-    }
-
-    override fun day(): Int {
-        return 1
-    }
-
-    override fun getProcessedInput(): List<String> {
-        return getInput().lines()
+    override fun getProcessedInput(raw: String): List<String> {
+        return raw.lines()
     }
 
     private fun digitToWord(digit: Int): String {
@@ -22,8 +14,7 @@ class Y23D1 : Assignment<List<String>> {
         return array[digit]
     }
 
-    override fun solveA(): Int {
-        val input = getProcessedInput()
+    override fun solveA(input: List<String>): Int {
         val numbers = mutableListOf<Int>()
 
         for (line in input) {
@@ -40,9 +31,7 @@ class Y23D1 : Assignment<List<String>> {
         return numbers.sum()
     }
 
-    override fun solveB(): Int {
-        val input = getProcessedInput()
-
+    override fun solveB(input: List<String>): Int {
         val digits = mutableMapOf<String, Int>()
         for (i in 0..9) {
             digits[i.toString()] = i
@@ -71,9 +60,4 @@ class Y23D1 : Assignment<List<String>> {
         return numbers.sum()
     }
 
-}
-
-fun main() {
-    println(Y23D1().solveA())
-    println(Y23D1().solveB())
 }

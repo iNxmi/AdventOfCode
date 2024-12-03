@@ -3,26 +3,16 @@ package com.nami.assignments
 import com.nami.Assignment
 import kotlin.math.abs
 
-class Y24D2 : Assignment<List<String>>{
+class Y24D02 : Assignment<List<String>>(2024, 2) {
 
-    override fun year(): Int {
-        return 2024
+    override fun getProcessedInput(raw: String): List<String> {
+        return raw.lines()
     }
 
-    override fun day(): Int {
-       return 2
-    }
-
-    override fun getProcessedInput(): List<String> {
-        return getInput().lines()
-    }
-
-    override fun solveA(): Int {
-        val lines = getProcessedInput()
-
+    override fun solveA(input: List<String>): Int {
         val valid = mutableSetOf<List<Int>>()
         val invalid = mutableSetOf<List<Int>>()
-        for (line in lines) {
+        for (line in input) {
             val split = line.split(" ").map { it.toInt() }
             if (isAscending(split.toMutableList(), 0) || isDescending(split.toMutableList(), 0))
                 valid.add(split)
@@ -33,12 +23,10 @@ class Y24D2 : Assignment<List<String>>{
         return valid.size
     }
 
-    override fun solveB(): Int {
-        val lines = getProcessedInput()
-
+    override fun solveB(input: List<String>): Int {
         val valid = mutableSetOf<List<Int>>()
         val invalid = mutableSetOf<List<Int>>()
-        for (line in lines) {
+        for (line in input) {
             val split = line.split(" ").map { it.toInt() }.toMutableList()
             if (isAscending(split.toMutableList(), 1) || isDescending(split.toMutableList(), 1))
                 valid.add(split)
@@ -111,9 +99,4 @@ class Y24D2 : Assignment<List<String>>{
         return true
     }
 
-}
-
-fun main() {
-    println(Y24D2().solveA())
-    println(Y24D2().solveB())
 }

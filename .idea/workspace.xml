@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="solution 2024 02">
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="updated README.MD">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Compress.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Main.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Utils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/Y24D03.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Assignment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Assignment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Input.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Input.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/Y23D1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/Y23D01.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/Y24D1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/Y24D01.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/Y24D2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/Y24D02.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +26,7 @@
       <list>
         <option value="Kotlin Interface" />
         <option value="Class" />
+        <option value="Kotlin Enum" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -64,6 +73,7 @@
     "Kotlin.B2401Kt.executor": "Run",
     "Kotlin.D01Kt.executor": "Run",
     "Kotlin.D02Kt.executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
     "Kotlin.PartAKt.executor": "Run",
     "Kotlin.Y23D1Kt.executor": "Run",
     "Kotlin.Y24D1Kt.executor": "Run",
@@ -95,14 +105,7 @@
       <recent name="C:\Users\Memphis\Desktop\AdventOfCode\src\main\kotlin\com\nami" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Y24D2Kt">
-    <configuration name="B2302Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.y2023.d02.B2302Kt" />
-      <module name="AdventOfCode" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Kotlin.MainKt">
     <configuration name="B2401Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nami.y2024.d01.B2401Kt" />
       <module name="AdventOfCode" />
@@ -110,41 +113,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Y23D1Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.assignments.Y23D1Kt" />
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.MainKt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Y24D1Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.assignments.Y24D1Kt" />
+    <configuration name="Y23D01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.assignments.Y23D01Kt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Y24D2Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.assignments.Y24D2Kt" />
+    <configuration name="Y24D01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.assignments.Y24D01Kt" />
+      <module name="AdventOfCode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Y24D02Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.assignments.Y24D02Kt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Kotlin.Y23D1Kt" />
+      <item itemvalue="Kotlin.MainKt" />
+      <item itemvalue="Kotlin.Y23D01Kt" />
       <item itemvalue="Kotlin.B2401Kt" />
-      <item itemvalue="Kotlin.Y24D1Kt" />
-      <item itemvalue="Kotlin.Y24D2Kt" />
-      <item itemvalue="Kotlin.B2302Kt" />
+      <item itemvalue="Kotlin.Y24D01Kt" />
+      <item itemvalue="Kotlin.Y24D02Kt" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.Y24D2Kt" />
-        <item itemvalue="Kotlin.Y24D1Kt" />
-        <item itemvalue="Kotlin.Y23D1Kt" />
+        <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Kotlin.Y24D01Kt" />
+        <item itemvalue="Kotlin.Y23D01Kt" />
+        <item itemvalue="Kotlin.Y24D02Kt" />
         <item itemvalue="Kotlin.B2401Kt" />
-        <item itemvalue="Kotlin.B2302Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +181,7 @@
       <workItem from="1726789352401" duration="14000" />
       <workItem from="1733187219243" duration="6377000" />
       <workItem from="1733225305803" duration="4060000" />
-      <workItem from="1733234154644" duration="2285000" />
+      <workItem from="1733234154644" duration="8130000" />
     </task>
     <task id="LOCAL-00001" summary="cleanup">
       <option name="closed" value="true" />
@@ -213,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733236173552</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="updated README.MD">
+      <option name="closed" value="true" />
+      <created>1733236717694</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733236717694</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +243,8 @@
     <MESSAGE value="refactor of year 2023 day 1" />
     <MESSAGE value="solution 2024 01" />
     <MESSAGE value="solution 2024 02" />
-    <option name="LAST_COMMIT_MESSAGE" value="solution 2024 02" />
+    <MESSAGE value="updated README.MD" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated README.MD" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
