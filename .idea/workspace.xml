@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="solved 2024 06 a">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/Y24D07.kt" afterDir="false" />
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="solved 2024 07">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +231,7 @@
       <workItem from="1733432802367" duration="8000" />
       <workItem from="1733435441233" duration="5505000" />
       <workItem from="1733502868519" duration="3995000" />
-      <workItem from="1733576090680" duration="3254000" />
+      <workItem from="1733576090680" duration="3544000" />
     </task>
     <task id="LOCAL-00001" summary="cleanup">
       <option name="closed" value="true" />
@@ -355,7 +353,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733576138434</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="solved 2024 07">
+      <option name="closed" value="true" />
+      <created>1733579382940</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1733579382940</updated>
+    </task>
+    <task id="LOCAL-00017" summary="solved 2024 07">
+      <option name="closed" value="true" />
+      <created>1733579387203</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1733579387203</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,7 +391,8 @@
     <MESSAGE value="misc" />
     <MESSAGE value="solved 2024 05 a" />
     <MESSAGE value="solved 2024 06 a" />
-    <option name="LAST_COMMIT_MESSAGE" value="solved 2024 06 a" />
+    <MESSAGE value="solved 2024 07" />
+    <option name="LAST_COMMIT_MESSAGE" value="solved 2024 07" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
