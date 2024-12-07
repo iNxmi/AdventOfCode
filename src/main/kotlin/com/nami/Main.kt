@@ -13,8 +13,9 @@ val assignments = listOf(
 //    Y24D02(),
 //    Y24D03()
 //    Y24D04()
-//to do    Y24D05()
-    Y24D06()
+    Y24D05(),
+    Y24D06(),
+    Y24D07()
 )
 
 val solutions = Assignment.getSolutions(assignments)
