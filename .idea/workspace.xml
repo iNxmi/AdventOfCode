@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="solved 2015 04">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/Y15D05.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/Y24D04.kt" afterDir="false" />
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="started solving 2015 5">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/Y24D05.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/Y24D06.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template.env" beforeDir="false" afterPath="$PROJECT_DIR$/example.env" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +42,9 @@
     &quot;accountId&quot;: &quot;ab6de0d6-1946-4522-80ed-e27a039cd846&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/joml/joml/1.10.8/joml-1.10.8.jar!/org/joml/Vector2i.class" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -55,44 +59,47 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Kotlin.A2301Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.A2302Kt (1).executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.A2302Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.A2401Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.A2402Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.B2301Kt (1).executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.B2301Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.B2302Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.B2401Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.D01Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.D02Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.PartAKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y23D1Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y24D1Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y24D2Kt.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/My Drive/.projects/kotlin/AdventOfCodeKotlin&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Kotlin.A2301Kt.executor": "Run",
+    "Kotlin.A2302Kt (1).executor": "Run",
+    "Kotlin.A2302Kt.executor": "Run",
+    "Kotlin.A2401Kt.executor": "Run",
+    "Kotlin.A2402Kt.executor": "Run",
+    "Kotlin.B2301Kt (1).executor": "Run",
+    "Kotlin.B2301Kt.executor": "Run",
+    "Kotlin.B2302Kt.executor": "Run",
+    "Kotlin.B2401Kt.executor": "Run",
+    "Kotlin.D01Kt.executor": "Run",
+    "Kotlin.D02Kt.executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "Kotlin.PartAKt.executor": "Run",
+    "Kotlin.Y23D1Kt.executor": "Run",
+    "Kotlin.Y24D1Kt.executor": "Run",
+    "Kotlin.Y24D2Kt.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "G:/My Drive/.projects/kotlin/AdventOfCodeKotlin/src/main/kotlin/com/nami/assignments",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\My Drive\.projects\kotlin\AdventOfCodeKotlin\src\main\kotlin\com\nami\assignments" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\My Drive\.projects\kotlin\AdventOfCodeKotlin\src\main\kotlin\com\nami\assignments" />
       <recent name="G:\My Drive\.projects\kotlin\AdventOfCodeKotlin\src\main\kotlin\com\nami\y2023\d02" />
@@ -106,6 +113,20 @@
   <component name="RunManager" selected="Kotlin.MainKt">
     <configuration name="B2401Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nami.y2024.d01.B2401Kt" />
+      <module name="AdventOfCode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="B2401Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.y2024.d01.B2401Kt" />
+      <module name="AdventOfCode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.MainKt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -125,6 +146,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Y23D01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.assignments.Y23D01Kt" />
+      <module name="AdventOfCode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Y24D01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.assignments.Y24D01Kt" />
+      <module name="AdventOfCode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Y24D01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nami.assignments.Y24D01Kt" />
       <module name="AdventOfCode" />
@@ -139,10 +174,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Y24D02Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.assignments.Y24D02Kt" />
+      <module name="AdventOfCode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Kotlin.B2401Kt" />
       <item itemvalue="Kotlin.MainKt" />
       <item itemvalue="Kotlin.Y23D01Kt" />
-      <item itemvalue="Kotlin.B2401Kt" />
       <item itemvalue="Kotlin.Y24D01Kt" />
       <item itemvalue="Kotlin.Y24D02Kt" />
     </list>
@@ -183,7 +225,16 @@
       <workItem from="1733264852408" duration="2242000" />
       <workItem from="1733268559690" duration="1873000" />
       <workItem from="1733273460396" duration="2125000" />
-      <workItem from="1733330221282" duration="5723000" />
+      <workItem from="1733330221282" duration="5940000" />
+      <workItem from="1733353216203" duration="25000" />
+      <workItem from="1733391461941" duration="589000" />
+      <workItem from="1733396491005" duration="5427000" />
+      <workItem from="1733403083149" duration="18000" />
+      <workItem from="1733418098112" duration="3524000" />
+      <workItem from="1733422257523" duration="3000" />
+      <workItem from="1733432802367" duration="8000" />
+      <workItem from="1733435441233" duration="5505000" />
+      <workItem from="1733502868519" duration="3995000" />
     </task>
     <task id="LOCAL-00001" summary="cleanup">
       <option name="closed" value="true" />
@@ -265,7 +316,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733269942875</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="solved 2024 04">
+      <option name="closed" value="true" />
+      <created>1733336030440</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1733336030441</updated>
+    </task>
+    <task id="LOCAL-00012" summary="started solving 2015 5">
+      <option name="closed" value="true" />
+      <created>1733336046878</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1733336046878</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +349,9 @@
     <MESSAGE value="solved 2015 01 and 2015 02" />
     <MESSAGE value="solved 2015 03" />
     <MESSAGE value="solved 2015 04" />
-    <option name="LAST_COMMIT_MESSAGE" value="solved 2015 04" />
+    <MESSAGE value="solved 2024 04" />
+    <MESSAGE value="started solving 2015 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="started solving 2015 5" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
