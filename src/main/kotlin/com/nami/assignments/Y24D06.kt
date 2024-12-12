@@ -1,6 +1,8 @@
 package com.nami.assignments
 
 import com.nami.Assignment
+import com.nami.test.TestInput
+import com.nami.test.TestInputSimplex
 
 class Y24D06 : Assignment<Y24D06.ProcessedInput>(2024, 6) {
 
@@ -9,6 +11,23 @@ class Y24D06 : Assignment<Y24D06.ProcessedInput>(2024, 6) {
         val obstacles: Set<Pair<Int, Int>>,
         val worldSize: Pair<Int, Int>
     )
+
+    override fun getRawTestInput(): TestInput {
+        return TestInputSimplex(
+            """
+            ....#.....
+            .........#
+            ..........
+            ..#.......
+            .......#..
+            ..........
+            .#..^.....
+            ........#.
+            #.........
+            ......#...
+        """.trimIndent()
+        )
+    }
 
     override fun getProcessedInput(raw: String): ProcessedInput {
         var position = Pair(0, 0)

@@ -1,10 +1,25 @@
 package com.nami.assignments
 
 import com.nami.Assignment
+import com.nami.test.TestInput
+import com.nami.test.TestInputSimplex
 import kotlin.math.abs
 import kotlin.streams.toList
 
 class Y24D01 : Assignment<Pair<List<Int>, List<Int>>>(2024, 1) {
+
+    override fun getRawTestInput(): TestInput {
+        return TestInputSimplex(
+            """
+            3   4
+            4   3
+            2   5
+            1   3
+            3   9
+            3   3
+        """.trimIndent()
+        )
+    }
 
     override fun getProcessedInput(raw: String): Pair<List<Int>, List<Int>> {
         val lines = raw.replace(" ", "").lines()

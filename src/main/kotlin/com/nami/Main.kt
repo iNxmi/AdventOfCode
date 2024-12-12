@@ -13,13 +13,15 @@ val assignments = listOf(
 //    Y24D02(),
 //    Y24D03()
 //    Y24D04()
-    Y24D05(),
-    Y24D06(),
-    Y24D07()
+//    Y24D05(),
+//    Y24D06(),
+//    Y24D07()
+//    Y24D08()
+    Y24D11()
 )
 
 val solutions = Assignment.getSolutions(assignments)
 
 fun main() {
-    solutions.forEach { println(it) }
+    solutions.forEach { println("${it.key} -> A[${it.value.a} | ${it.value.aTest}] B[${it.value.b} | ${it.value.bTest}]") }
 }

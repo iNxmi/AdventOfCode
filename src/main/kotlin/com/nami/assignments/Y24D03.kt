@@ -1,8 +1,14 @@
 package com.nami.assignments
 
 import com.nami.Assignment
+import com.nami.test.TestInput
+import com.nami.test.TestInputSimplex
 
 class Y24D03 : Assignment<String>(2024, 3) {
+
+    override fun getRawTestInput(): TestInput {
+        return TestInputSimplex("xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))")
+    }
 
     override fun getProcessedInput(raw: String): String {
         return raw
@@ -37,7 +43,7 @@ class Y24D03 : Assignment<String>(2024, 3) {
                 continue
             }
 
-            if(!apply)
+            if (!apply)
                 continue
 
             val clean = match.replace("m", "").replace("u", "").replace("l", "").replace("(", "").replace(")", "")

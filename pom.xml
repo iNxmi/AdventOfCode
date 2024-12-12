@@ -76,6 +76,7 @@
     </build>
 
     <dependencies>
+
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-test-junit5</artifactId>
@@ -117,6 +118,7 @@
             <artifactId>jsoup</artifactId>
             <version>1.17.2</version>
         </dependency>
+
     </dependencies>
 
 </project>

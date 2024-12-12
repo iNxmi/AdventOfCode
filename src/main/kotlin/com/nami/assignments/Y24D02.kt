@@ -1,9 +1,24 @@
 package com.nami.assignments
 
 import com.nami.Assignment
+import com.nami.test.TestInput
+import com.nami.test.TestInputSimplex
 import kotlin.math.abs
 
 class Y24D02 : Assignment<List<String>>(2024, 2) {
+
+    override fun getRawTestInput(): TestInput {
+        return TestInputSimplex(
+            """
+            7 6 4 2 1
+            1 2 7 8 9
+            9 7 6 2 1
+            1 3 2 4 5
+            8 6 4 4 1
+            1 3 6 7 9
+        """.trimIndent()
+        )
+    }
 
     override fun getProcessedInput(raw: String): List<String> {
         return raw.lines()

@@ -1,8 +1,14 @@
 package com.nami.assignments
 
 import com.nami.Assignment
+import com.nami.test.TestInput
+import com.nami.test.TestInputSimplex
 
 class Y15D03 : Assignment<String>(2015, 3) {
+
+    override fun getRawTestInput(): TestInput {
+        return TestInputSimplex("^v^v^v^v^v")
+    }
 
     override fun getProcessedInput(raw: String): String {
         return raw

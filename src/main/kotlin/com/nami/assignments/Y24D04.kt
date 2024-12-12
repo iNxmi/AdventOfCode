@@ -1,8 +1,27 @@
 package com.nami.assignments
 
 import com.nami.Assignment
+import com.nami.test.TestInput
+import com.nami.test.TestInputSimplex
 
 class Y24D04 : Assignment<List<CharArray>>(2024, 4) {
+
+    override fun getRawTestInput(): TestInput {
+        return TestInputSimplex(
+            """
+            MMMSXXMASM
+            MSAMXMSMSA
+            AMXSXMAAMM
+            MSAMASMSMX
+            XMASAMXAMM
+            XXAMMXXAMA
+            SMSMSASXSS
+            SAXAMASAAA
+            MAMMMXMMMM
+            MXMXAXMASX
+        """.trimIndent()
+        )
+    }
 
     override fun getProcessedInput(raw: String): List<CharArray> {
         return raw.lines().map { it.toCharArray() }.toList()

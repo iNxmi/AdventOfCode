@@ -1,9 +1,15 @@
 package com.nami.assignments
 
 import com.nami.Assignment
+import com.nami.test.TestInput
+import com.nami.test.TestInputSimplex
 import kotlin.math.min
 
 class Y15D02 : Assignment<List<Triple<Int, Int, Int>>>(2015, 2) {
+
+    override fun getRawTestInput(): TestInput {
+        return TestInputSimplex("1x1x10")
+    }
 
     override fun getProcessedInput(raw: String): List<Triple<Int, Int, Int>> {
         val lines = raw.lines()

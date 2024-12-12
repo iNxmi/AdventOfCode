@@ -1,9 +1,24 @@
 package com.nami.assignments
 
 import com.nami.Assignment
+import com.nami.test.TestInput
+import com.nami.test.TestInputDuplex
+import com.nami.test.TestInputSimplex
 import java.security.MessageDigest
 
 class Y15D05 : Assignment<List<String>>(2015, 5) {
+
+    override fun getRawTestInput(): TestInput {
+        return TestInputSimplex(
+            """
+            ugknbfddgicrmopn
+            aaa
+            jchzalrnumimnmhp
+            haegwjzuvuyypxyu
+            dvszwmarrgswjxmb
+            """.trimIndent()
+        )
+    }
 
     override fun getProcessedInput(raw: String): List<String> {
         return raw.lines()
@@ -32,10 +47,8 @@ class Y15D05 : Assignment<List<String>>(2015, 5) {
             }
             if (!containsDouble) continue
 
-            val naughtySequence = line.contains("ab") ||
-                    line.contains("cd") ||
-                    line.contains("pq") ||
-                    line.contains("xy")
+            val naughtySequence =
+                line.contains("ab") || line.contains("cd") || line.contains("pq") || line.contains("xy")
             if (naughtySequence) continue
 
             println(line)

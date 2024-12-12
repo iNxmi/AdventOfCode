@@ -1,9 +1,30 @@
 package com.nami.assignments
 
 import com.nami.Assignment
+import com.nami.test.TestInput
+import com.nami.test.TestInputDuplex
 import java.util.*
 
 class Y23D01 : Assignment<List<String>>(2023, 1) {
+
+    override fun getRawTestInput(): TestInput {
+        return TestInputDuplex(
+            """
+            1abc2
+            pqr3stu8vwx
+            a1b2c3d4e5f
+            treb7uchet
+        """.trimIndent(), """
+            two1nine
+            eightwothree
+            abcone2threexyz
+            xtwone3four
+            4nineeightseven2
+            zoneight234
+            7pqrstsixteen
+        """.trimIndent()
+        )
+    }
 
     override fun getProcessedInput(raw: String): List<String> {
         return raw.lines()

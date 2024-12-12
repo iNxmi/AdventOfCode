@@ -1,9 +1,16 @@
 package com.nami.assignments
 
 import com.nami.Assignment
+import com.nami.test.TestInput
+import com.nami.test.TestInputDuplex
+import com.nami.test.TestInputSimplex
 import java.util.*
 
 class Y15D01 : Assignment<String>(2015, 1) {
+
+    override fun getRawTestInput(): TestInput {
+        return TestInputDuplex("))(((((", "()())")
+    }
 
     override fun getProcessedInput(raw: String): String {
         return raw
@@ -34,7 +41,7 @@ class Y15D01 : Assignment<String>(2015, 1) {
             if (c == ')')
                 sum--
 
-            if(sum < 0)
+            if (sum < 0)
                 break
         }
 

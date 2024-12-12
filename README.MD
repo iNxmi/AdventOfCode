@@ -1,21 +1,25 @@
 # .env
-In the .env file, the SESSION has to be set to the websites cookie in order to fetch the inpot of the given date
+
+In the .env file, the SESSION has to be set to the websites cookie in order to fetch the input of the given date
 
 # Solutions 2015
-| Day | A             | B               |
-|-----|---------------|-----------------|
-| 1   | 138           | 1771            |
-| 2   | 1586300       | 3737498         |
-| 3   | 2081          | 2341            |
-| 4   | 117946        | 3938038         |
-| 5   |               |                 |
+
+| Day | A       | B       |
+|-----|---------|---------|
+| 1   | 138     | 1771    |
+| 2   | 1586300 | 3737498 |
+| 3   | 2081    | 2341    |
+| 4   | 117946  | 3938038 |
+| 5   |         |         |
 
 # Solutions 2023
-| Day | A             | B               |
-|-----|---------------|-----------------|
-| 1   | 55208         | 54578           |
+
+| Day | A     | B     |
+|-----|-------|-------|
+| 1   | 55208 | 54578 |
 
 # Solutions 2024
+
 | Day | A             | B               |
 |-----|---------------|-----------------|
 | 1   | 1506483       | 23126924        |
@@ -25,3 +29,8 @@ In the .env file, the SESSION has to be set to the websites cookie in order to f
 | 5   | 4689          |                 |
 | 6   | 4939          |                 |
 | 7   | 5512534574980 | 328790210468594 |
+| 8   | 351           |                 |
+| 9   |               |                 |
+| 10  |               |                 |
+| 11  | 216996        | 257335372288947 |
+| 12  |               |                 |
