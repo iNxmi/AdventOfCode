@@ -1,6 +1,8 @@
 package com.nami.assignments.y15
 
 import com.nami.Assignment
+import com.nami.shl
+import com.nami.shr
 import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
@@ -43,87 +45,61 @@ class Y15D07 : Assignment<Map<String, String>>(2015, 7) {
     }
 
     private fun evaluate(
-        cache: MutableMap<String, Int>,
+        states: MutableMap<String, UShort>,
         wires: Map<String, String>,
         id: String
-    ): Int {
-        if (cache.containsKey(id))
-            return cache[id]!!
-
+    ): UShort {
+        if (states.containsKey(id))
+            return states[id]!!
 
         val value = wires[id] ?: throw IllegalStateException("No value for '$id'")
-        if (value.toIntOrNull() != null) {
-            val result = value.toInt()
-            cache[id] = result
-        } else if (value.contains('!')) {
-            val a = value.replace("!", "")
+        val operator = extract(value, setOf('!', '&', '|', '<', '>'))
 
-            val result = getOrEvaluate(cache, wires, a).inv()
-            cache[id] = result
-        } else if (value.contains('&')) {
-            val split = value.split('&')
-            val a = split[0]
-            val b = split[1]
+        val split = value.split(operator)
+        val a = if (split[0].isEmpty()) 0u else getOrEvaluate(
+            states,
+            wires,
+            split[0]
+        ) // NOT operator has no variable in position 0 so this is a workaround
+        val b = getOrEvaluate(states, wires, split[1])
 
-            val result = getOrEvaluate(cache, wires, a) and getOrEvaluate(cache, wires, b)
-            cache[id] = result
-        } else if (value.contains('|')) {
-            val split = value.split('|')
-            val a = split[0]
-            val b = split[1]
-
-            val result = getOrEvaluate(cache, wires, a) or getOrEvaluate(cache, wires, b)
-            cache[id] = result
-        } else if (value.contains('<')) {
-            val split = value.split('<')
-            val a = split[0]
-            val b = split[1]
-
-            val result = getOrEvaluate(cache, wires, a) shl getOrEvaluate(cache, wires, b)
-            cache[id] = result
-        } else if (value.contains('>')) {
-            val split = value.split('>')
-            val a = split[0]
-            val b = split[1]
-
-            val result = getOrEvaluate(cache, wires, a) ushr getOrEvaluate(cache, wires, b)
-            cache[id] = result
-        } else {
-            val result = evaluate(cache, wires, value)
-            cache[id] = result
+        states[id] = when (operator) {
+            "!" -> b.inv()
+            "&" -> a and b
+            "|" -> a or b
+            "<" -> a.shl(b.toInt())
+            ">" -> a.shr(b.toInt())
+            else -> getOrEvaluate(states, wires, value)
         }
-
-//        val operator = extract(value, setOf("!", "&", "|", "<", ">"))
-//        val result = when (operator) {
-//            "!" -> {}
-//            "&" -> {}
-//            "|" -> {}
-//            "<" -> {}
-//            ">" -> {}
-//            else -> evaluate(cache, wires, value)
-//        }
-
-        return cache[id]!!
+        return states[id]!!
     }
 
-    private fun getOrEvaluate(cache: MutableMap<String, Int>, wires: Map<String, String>, str: String): Int {
-        return str.toIntOrNull() ?: evaluate(cache, wires, str)
+    private fun getOrEvaluate(cache: MutableMap<String, UShort>, wires: Map<String, String>, str: String): UShort {
+        return str.toUShortOrNull() ?: evaluate(cache, wires, str)
     }
 
-    private fun extract(str: String, chars: Set<String>): String {
+    private fun extract(str: String, chars: Set<Char>): String {
         chars.forEach { char ->
             if (str.contains(char))
-                return char
+                return char.toString()
         }
 
         return ""
     }
 
     override fun solveA(input: Map<String, String>): Number {
-        return evaluate(mutableMapOf(), input, "a")
+        return evaluate(mutableMapOf(), input, "a").toInt()
     }
 
     override fun solveATest(input: Map<String, String>): Number {
+//        val set = ("xydefghi").toCharArray().toSet()
+//
+//        val states = mutableMapOf<String, UShort>()
+//        set.forEach { char ->
+//            evaluate(states, input, char.toString())
+//        }
+//        println(states)
+
         return -1
     }
 
@@ -131,7 +107,7 @@ class Y15D07 : Assignment<Map<String, String>>(2015, 7) {
         val rewired = input.toMutableMap()
         rewired["b"] = evaluate(mutableMapOf(), input, "a").toString()
 
-        return evaluate(mutableMapOf(), rewired, "a")
+        return evaluate(mutableMapOf(), rewired, "a").toInt()
     }
 
     override fun solveBTest(input: Map<String, String>): Number {
