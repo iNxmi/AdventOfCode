@@ -189,3 +189,7 @@ class Y24D05 : Assignment<Y24D05.ProcessedInput>(2024, 5) {
     }
 
 }
+
+fun main() {
+    println(Y24D05().solve())
+}

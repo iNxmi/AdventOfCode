@@ -1,8 +1,8 @@
 package com.nami.assignments.y15
 
 import com.nami.Assignment
-import com.nami.shl
-import com.nami.shr
+import com.nami.misc.shl
+import com.nami.misc.shr
 import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
@@ -114,4 +114,8 @@ class Y15D07 : Assignment<Map<String, String>>(2015, 7) {
         return -1
     }
 
+}
+
+fun main() {
+    println(Y15D07().solve())
 }

@@ -90,3 +90,7 @@ class Y24D06 : Assignment<Y24D06.ProcessedInput>(2024, 6) {
     }
 
 }
+
+fun main() {
+    println(Y24D06().solve())
+}

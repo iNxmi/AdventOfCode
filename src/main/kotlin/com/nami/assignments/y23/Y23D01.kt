@@ -1,6 +1,7 @@
 package com.nami.assignments.y23
 
 import com.nami.Assignment
+import com.nami.assignments.y15.Y15D02
 import com.nami.test.TestInput
 import com.nami.test.TestInputDuplex
 import java.util.*
@@ -81,4 +82,8 @@ class Y23D01 : Assignment<List<String>>(2023, 1) {
         return numbers.sum()
     }
 
+}
+
+fun main() {
+    println(Y23D01().solve())
 }

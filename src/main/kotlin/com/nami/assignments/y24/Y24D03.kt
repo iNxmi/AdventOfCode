@@ -55,3 +55,7 @@ class Y24D03 : Assignment<String>(2024, 3) {
     }
 
 }
+
+fun main() {
+    println(Y24D03().solve())
+}

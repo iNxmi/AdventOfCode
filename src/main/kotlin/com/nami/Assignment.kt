@@ -25,9 +25,9 @@ abstract class Assignment<T>(private val year: Int, private val day: Int) {
         val day: Int,
 
         val a: Number,
-        val aTest: Number,
-
         val b: Number,
+
+        val aTest: Number,
         val bTest: Number
     )
 
@@ -42,9 +42,9 @@ abstract class Assignment<T>(private val year: Int, private val day: Int) {
             day,
 
             solveA(input),
-            solveATest(testInputA),
-
             solveB(input),
+
+            solveATest(testInputA),
             solveBTest(testInputB),
         )
     }

@@ -135,3 +135,7 @@ class Y24D07 : Assignment<List<Y24D07.Equation>>(2024, 7) {
     }
 
 }
+
+fun main() {
+    println(Y24D07().solve())
+}

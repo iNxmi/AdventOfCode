@@ -92,3 +92,7 @@ class Y24D04 : Assignment<List<CharArray>>(2024, 4) {
     }
 
 }
+
+fun main() {
+    println(Y24D04().solve())
+}

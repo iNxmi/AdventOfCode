@@ -62,3 +62,7 @@ class Y15D02 : Assignment<List<Triple<Int, Int, Int>>>(2015, 2) {
     }
 
 }
+
+fun main() {
+    println(Y15D02().solve())
+}

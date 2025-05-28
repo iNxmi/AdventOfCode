@@ -50,3 +50,7 @@ class Y24D01 : Assignment<Pair<List<Int>, List<Int>>>(2024, 1) {
     }
 
 }
+
+fun main() {
+    println(Y24D01().solve())
+}

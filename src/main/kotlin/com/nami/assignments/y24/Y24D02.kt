@@ -115,3 +115,7 @@ class Y24D02 : Assignment<List<String>>(2024, 2) {
     }
 
 }
+
+fun main() {
+    println(Y24D02().solve())
+}

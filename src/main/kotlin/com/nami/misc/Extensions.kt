@@ -1,4 +1,4 @@
-package com.nami
+package com.nami.misc
 
 //Y15D07
 fun UShort.shl(bits: Int): UShort {

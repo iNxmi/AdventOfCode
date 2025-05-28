@@ -122,3 +122,7 @@ class Y24D08 : Assignment<Y24D08.ProcessedInput>(2024, 8) {
     }
 
 }
+
+fun main() {
+    println(Y24D08().solve())
+}

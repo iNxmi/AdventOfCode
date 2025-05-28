@@ -72,3 +72,7 @@ class Y24D11 : Assignment<Map<Long, Long>>(2024, 11) {
     }
 
 }
+
+fun main() {
+    println(Y24D11().solve())
+}

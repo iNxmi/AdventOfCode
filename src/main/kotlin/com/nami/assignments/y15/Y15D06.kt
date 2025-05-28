@@ -95,3 +95,7 @@ class Y15D06 : Assignment<List<Y15D06.Operation>>(2015, 6) {
     }
 
 }
+
+fun main() {
+    println(Y15D06().solve())
+}

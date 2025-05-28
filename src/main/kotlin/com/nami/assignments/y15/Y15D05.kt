@@ -98,3 +98,7 @@ class Y15D05 : Assignment<List<String>>(2015, 5) {
     }
 
 }
+
+fun main() {
+    println(Y15D05().solve())
+}

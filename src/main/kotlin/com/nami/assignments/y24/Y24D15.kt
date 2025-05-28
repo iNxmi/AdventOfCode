@@ -103,3 +103,7 @@ class Y24D15 : Assignment<Y24D15.ProcessedInput>(2024, 15) {
     }
 
 }
+
+fun main() {
+    println(Y24D15().solve())
+}

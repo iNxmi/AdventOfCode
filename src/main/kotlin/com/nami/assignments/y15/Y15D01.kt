@@ -47,3 +47,7 @@ class Y15D01 : Assignment<String>(2015, 1) {
     }
 
 }
+
+fun main() {
+    println(Y15D01().solve())
+}

@@ -73,3 +73,7 @@ class Y15D03 : Assignment<String>(2015, 3) {
     }
 
 }
+
+fun main() {
+    println(Y15D03().solve())
+}
