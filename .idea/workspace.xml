@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Fixed Y24D01&#10;Exported solutions to solutions.md">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D07.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Assignment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Assignment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D09.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D15.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D15.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D07.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D07.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +25,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -60,43 +57,43 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Kotlin.A2301Kt.executor": "Run",
-    "Kotlin.A2302Kt (1).executor": "Run",
-    "Kotlin.A2302Kt.executor": "Run",
-    "Kotlin.A2401Kt.executor": "Run",
-    "Kotlin.A2402Kt.executor": "Run",
-    "Kotlin.B2301Kt (1).executor": "Run",
-    "Kotlin.B2301Kt.executor": "Run",
-    "Kotlin.B2302Kt.executor": "Run",
-    "Kotlin.B2401Kt.executor": "Run",
-    "Kotlin.D01Kt.executor": "Run",
-    "Kotlin.D02Kt.executor": "Run",
-    "Kotlin.MainKt.executor": "Run",
-    "Kotlin.PartAKt.executor": "Run",
-    "Kotlin.Y23D1Kt.executor": "Run",
-    "Kotlin.Y24D1Kt.executor": "Run",
-    "Kotlin.Y24D2Kt.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "G:/My Drive/.projects/kotlin/AdventOfCode",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.50413984",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Kotlin.A2301Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.A2302Kt (1).executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.A2302Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.A2401Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.A2402Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.B2301Kt (1).executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.B2301Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.B2302Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.B2401Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.D01Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.D02Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.PartAKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y23D1Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y24D1Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y24D2Kt.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/My Drive/.projects/kotlin/AdventOfCode&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.50413984&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\My Drive\.projects\kotlin\AdventOfCodeKotlin\src\main\kotlin\com\nami\assignments" />
@@ -378,6 +375,17 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="cleanup" />

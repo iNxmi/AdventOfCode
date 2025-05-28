@@ -42,97 +42,85 @@ class Y15D07 : Assignment<Map<String, String>>(2015, 7) {
         return wires
     }
 
-    private fun evaluate(cache: MutableMap<String, Int>, wires: Map<String, String>, depth: Int, id: String): Int {
-        println("-".repeat(depth) + id)
-
+    private fun evaluate(
+        cache: MutableMap<String, Int>,
+        wires: Map<String, String>,
+        id: String
+    ): Int {
         if (cache.containsKey(id))
             return cache[id]!!
 
-        val value = wires[id] ?: throw IllegalStateException("no value for $id")
+
+        val value = wires[id] ?: throw IllegalStateException("No value for '$id'")
         if (value.toIntOrNull() != null) {
-            val result = wires[id]!!.toInt()
+            val result = value.toInt()
             cache[id] = result
-            return result
-        }
+        } else if (value.contains('!')) {
+            val a = value.replace("!", "")
 
-        if (value.contains('!')) {
-            val index = value.indexOf('!')
-            val a = value.subSequence(index + 1..<value.length).toString()
-
-            val result = (if (a.toIntOrNull() == null) evaluate(cache, wires, depth + 1, a) else a.toInt()).inv()
-
+            val result = getOrEvaluate(cache, wires, a).inv()
             cache[id] = result
-            return result
         } else if (value.contains('&')) {
-            val index = value.indexOf('&')
-            val a = value.subSequence(0..<index).toString()
-            val b = value.subSequence(index + 1..<value.length).toString()
+            val split = value.split('&')
+            val a = split[0]
+            val b = split[1]
 
-            val result =
-                (if (a.toIntOrNull() == null) evaluate(
-                    cache,
-                    wires, depth + 1,
-                    a
-                ) else a.toInt()) and (if (b.toIntOrNull() == null) evaluate(cache, wires, depth + 1, b) else b.toInt())
-
+            val result = getOrEvaluate(cache, wires, a) and getOrEvaluate(cache, wires, b)
             cache[id] = result
-            return result
         } else if (value.contains('|')) {
-            val index = value.indexOf('|')
-            val a = value.subSequence(0..<index).toString()
-            val b = value.subSequence(index + 1..<value.length).toString()
+            val split = value.split('|')
+            val a = split[0]
+            val b = split[1]
 
-            val result =
-                (if (a.toIntOrNull() == null) evaluate(
-                    cache,
-                    wires, depth + 1,
-                    a
-                ) else a.toInt()) or (if (b.toIntOrNull() == null) evaluate(cache, wires, depth + 1, b) else b.toInt())
-
+            val result = getOrEvaluate(cache, wires, a) or getOrEvaluate(cache, wires, b)
             cache[id] = result
-            return result
         } else if (value.contains('<')) {
-            val index = value.indexOf('<')
-            val a = value.subSequence(0..<index).toString()
-            val b = value.subSequence(index + 1..<value.length).toString()
+            val split = value.split('<')
+            val a = split[0]
+            val b = split[1]
 
-            val result =
-                (if (a.toIntOrNull() == null) evaluate(
-                    cache,
-                    wires, depth + 1,
-                    a
-                ) else a.toInt()) shl (if (b.toIntOrNull() == null) evaluate(cache, wires, depth + 1, b) else b.toInt())
-
+            val result = getOrEvaluate(cache, wires, a) shl getOrEvaluate(cache, wires, b)
             cache[id] = result
-            return result
         } else if (value.contains('>')) {
-            val index = value.indexOf('>')
-            val a = value.subSequence(0..<index).toString()
-            val b = value.subSequence(index + 1..<value.length).toString()
+            val split = value.split('>')
+            val a = split[0]
+            val b = split[1]
 
-            val result =
-                (if (a.toIntOrNull() == null) evaluate(
-                    cache,
-                    wires, depth + 1,
-                    a
-                ) else a.toInt()) ushr (if (b.toIntOrNull() == null) evaluate(
-                    cache,
-                    wires,
-                    depth + 1,
-                    b
-                ) else b.toInt())
-
+            val result = getOrEvaluate(cache, wires, a) ushr getOrEvaluate(cache, wires, b)
             cache[id] = result
-            return result
+        } else {
+            val result = evaluate(cache, wires, value)
+            cache[id] = result
         }
 
-        val result = evaluate(cache, wires, depth + 1, value)
-        cache[id] = result
-        return result
+//        val operator = extract(value, setOf("!", "&", "|", "<", ">"))
+//        val result = when (operator) {
+//            "!" -> {}
+//            "&" -> {}
+//            "|" -> {}
+//            "<" -> {}
+//            ">" -> {}
+//            else -> evaluate(cache, wires, value)
+//        }
+
+        return cache[id]!!
+    }
+
+    private fun getOrEvaluate(cache: MutableMap<String, Int>, wires: Map<String, String>, str: String): Int {
+        return str.toIntOrNull() ?: evaluate(cache, wires, str)
+    }
+
+    private fun extract(str: String, chars: Set<String>): String {
+        chars.forEach { char ->
+            if (str.contains(char))
+                return char
+        }
+
+        return ""
     }
 
     override fun solveA(input: Map<String, String>): Number {
-        return evaluate(mutableMapOf(), input, 0, "a")
+        return evaluate(mutableMapOf(), input, "a")
     }
 
     override fun solveATest(input: Map<String, String>): Number {
@@ -141,9 +129,9 @@ class Y15D07 : Assignment<Map<String, String>>(2015, 7) {
 
     override fun solveB(input: Map<String, String>): Number {
         val rewired = input.toMutableMap()
-        rewired["b"] = evaluate(mutableMapOf(), input, 0, "a").toString()
+        rewired["b"] = evaluate(mutableMapOf(), input, "a").toString()
 
-        return evaluate(mutableMapOf(), rewired, 0, "a")
+        return evaluate(mutableMapOf(), rewired, "a")
     }
 
     override fun solveBTest(input: Map<String, String>): Number {
