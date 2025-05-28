@@ -11,7 +11,9 @@ abstract class Assignment<T>(private val year: Int, private val day: Int) {
     abstract fun getRawTestInput(): TestInput
     abstract fun getProcessedInput(raw: String): T
     abstract fun solveA(input: T): Number
+    open fun solveATest(input: T): Number = solveA(input)
     abstract fun solveB(input: T): Number
+    open fun solveBTest(input: T): Number = solveB(input)
 
     fun id(): Int {
         return Utils.getID(year, day)
@@ -40,10 +42,10 @@ abstract class Assignment<T>(private val year: Int, private val day: Int) {
             day,
 
             solveA(input),
-            solveA(testInputA),
+            solveATest(testInputA),
 
             solveB(input),
-            solveB(testInputB),
+            solveBTest(testInputB),
         )
     }
 

@@ -95,8 +95,6 @@ class Y24D15 : Assignment<Y24D15.ProcessedInput>(2024, 15) {
     }
 
     override fun solveA(input: ProcessedInput): Long {
-
-
         return -1
     }
 

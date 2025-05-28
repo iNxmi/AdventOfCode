@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Solved 2015 05 a,b&#10;Solved 2015 06 a,b">
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Fixed Y24D01&#10;Exported solutions to solutions.md">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D07.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Assignment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Assignment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D01.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D05.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D05.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D09.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D15.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D15.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +43,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.9.22/kotlin-stdlib-1.9.22.jar!/kotlin/experimental/BitwiseOperationsKt.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.9.22/kotlin-stdlib-1.9.22.jar!/kotlin/text/StringsKt.class" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -247,7 +248,7 @@
       <workItem from="1734280886009" duration="6249000" />
       <workItem from="1734572955779" duration="22000" />
       <workItem from="1748396761890" duration="4669000" />
-      <workItem from="1748401526171" duration="1465000" />
+      <workItem from="1748401526171" duration="8488000" />
     </task>
     <task id="LOCAL-00001" summary="cleanup">
       <option name="closed" value="true" />
@@ -361,7 +362,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748401364532</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Fixed Y24D01&#10;Exported solutions to solutions.md">
+      <option name="closed" value="true" />
+      <created>1748403055071</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1748403055071</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,7 +394,8 @@
     <MESSAGE value="started solving 2015 5" />
     <MESSAGE value="Updated Framework&#10;Solved 2024 11" />
     <MESSAGE value="Solved 2015 05 a,b&#10;Solved 2015 06 a,b" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solved 2015 05 a,b&#10;Solved 2015 06 a,b" />
+    <MESSAGE value="Fixed Y24D01&#10;Exported solutions to solutions.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Y24D01&#10;Exported solutions to solutions.md" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

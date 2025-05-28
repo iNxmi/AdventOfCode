@@ -40,11 +40,7 @@ fun export() {
     Files.writeString(Path.of("solutions.md"), markdown)
 }
 
+val assignment = Y15D07()
 fun main() {
-//    val solutions =
-//        assignments.forEach { assignment ->
-//            val solution = assignment.solve()
-//            println("${assignment.id()} -> a=${solution.a} b=${solution.b} aTest=${solution.aTest} bTest=${solution.bTest}")
-//        }
-    export()
+    println(assignment.solve())
 }
