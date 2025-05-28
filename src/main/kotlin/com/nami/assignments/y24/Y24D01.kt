@@ -24,8 +24,8 @@ class Y24D01 : Assignment<Pair<List<Int>, List<Int>>>(2024, 1) {
     override fun getProcessedInput(raw: String): Pair<List<Int>, List<Int>> {
         val lines = raw.replace(" ", "").lines()
 
-        val listLeft = lines.stream().mapToInt { it.substring(0, 5).toInt() }.sorted().toList()
-        val listRight = lines.stream().mapToInt { it.substring(5, 10).toInt() }.sorted().toList()
+        val listLeft = lines.stream().mapToInt { it.substring(0, it.length / 2).toInt() }.sorted().toList()
+        val listRight = lines.stream().mapToInt { it.substring(it.length / 2, it.length).toInt() }.sorted().toList()
 
         return Pair(listLeft, listRight)
     }

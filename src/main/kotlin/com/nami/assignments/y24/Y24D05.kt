@@ -62,7 +62,7 @@ class Y24D05 : Assignment<Y24D05.ProcessedInput>(2024, 5) {
         val updates = mutableListOf<List<Int>>()
         for (update in updatesRaw.lines()) updates.add(update.split(",").map { it.toInt() }.toList())
 
-        println(rules)
+//        println(rules)
 
         return ProcessedInput(rules, updates)
     }

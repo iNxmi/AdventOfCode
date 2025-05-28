@@ -4,16 +4,6 @@ import com.nami.test.TestInput
 
 abstract class Assignment<T>(private val year: Int, private val day: Int) {
 
-    companion object {
-        fun getSolutions(assignments: List<Assignment<*>>): Map<Int, Solution> {
-            val map = mutableMapOf<Int, Solution>()
-            for (assignment in assignments)
-                map[assignment.id()] = assignment.solve()
-
-            return map
-        }
-    }
-
     private fun getRawInput(): String {
         return Input.get(year, day)
     }
@@ -27,7 +17,17 @@ abstract class Assignment<T>(private val year: Int, private val day: Int) {
         return Utils.getID(year, day)
     }
 
-    data class Solution(val a: Number, val aTest: Number, val b: Number, val bTest: Number)
+    data class Solution(
+        val id: Int,
+        val year: Int,
+        val day: Int,
+
+        val a: Number,
+        val aTest: Number,
+
+        val b: Number,
+        val bTest: Number
+    )
 
     fun solve(): Solution {
         val input = getProcessedInput(getRawInput())
@@ -35,8 +35,13 @@ abstract class Assignment<T>(private val year: Int, private val day: Int) {
         val testInputB = getProcessedInput(getRawTestInput().getRawTestInputB())
 
         return Solution(
+            id(),
+            year,
+            day,
+
             solveA(input),
             solveA(testInputA),
+
             solveB(input),
             solveB(testInputB),
         )
