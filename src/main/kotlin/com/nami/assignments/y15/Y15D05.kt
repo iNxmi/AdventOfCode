@@ -24,9 +24,8 @@ class Y15D05 : Assignment<List<String>>(2015, 5) {
         )
     }
 
-    override fun getProcessedInput(raw: String): List<String> {
-        return raw.lines()
-    }
+    override fun getProcessedInput(raw: String): List<String> = raw.lines()
+
 
     private val vowels = setOf('a', 'e', 'i', 'o', 'u')
     private fun containsThreeVowels(str: String): Boolean {

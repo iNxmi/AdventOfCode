@@ -4,31 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Optimized Y15D07">
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Small Cleanup">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D08.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions.md" beforeDir="false" afterPath="$PROJECT_DIR$/solutions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Assignment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Assignment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Extensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/misc/Extensions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Export.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Utils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D01.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D02.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D02.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D03.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D03.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D04.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D04.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D05.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D05.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D06.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D06.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D07.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D07.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y23/Y23D01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y23/Y23D01.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D01.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D02.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D02.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D03.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D03.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D04.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D04.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D05.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D05.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D06.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D06.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D07.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D07.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D08.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D08.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D11.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D11.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D15.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y24/Y24D15.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/test/TestInputDuplex.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/test/TestInputDuplex.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/test/TestInputSimplex.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/test/TestInputSimplex.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +77,8 @@
     "Kotlin.MainKt.executor": "Run",
     "Kotlin.PartAKt.executor": "Run",
     "Kotlin.Y15D01Kt.executor": "Run",
+    "Kotlin.Y15D07Kt.executor": "Run",
+    "Kotlin.Y15D08Kt.executor": "Run",
     "Kotlin.Y23D1Kt.executor": "Run",
     "Kotlin.Y24D1Kt.executor": "Run",
     "Kotlin.Y24D2Kt.executor": "Run",
@@ -104,7 +88,8 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "G:/My Drive/.projects/kotlin/AdventOfCode",
+    "last.edited.regexp": "\\x27",
+    "last_opened_file_path": "G:/My Drive/.projects/kotlin/AdventOfCode/src/main/kotlin/com/nami/assignments/y15",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -113,11 +98,15 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.50413984",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\kotlin\com\nami\assignments\y15" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\kotlin\com\nami\misc" />
       <recent name="G:\My Drive\.projects\kotlin\AdventOfCodeKotlin\src\main\kotlin\com\nami\assignments" />
@@ -134,16 +123,16 @@
       <recent name="com.nami.assignments" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="B2401Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.y2024.d01.B2401Kt" />
+  <component name="RunManager" selected="Kotlin.Y15D08Kt">
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.MainKt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.MainKt" />
+    <configuration name="Y15D08Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.assignments.y15.Y15D08Kt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -170,6 +159,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.Y15D08Kt" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -219,6 +213,7 @@
       <workItem from="1734572955779" duration="22000" />
       <workItem from="1748396761890" duration="4669000" />
       <workItem from="1748401526171" duration="8488000" />
+      <workItem from="1748421549602" duration="3443000" />
     </task>
     <task id="LOCAL-00001" summary="cleanup">
       <option name="closed" value="true" />
@@ -356,7 +351,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748415085560</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Small Cleanup">
+      <option name="closed" value="true" />
+      <created>1748416540098</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1748416540098</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,7 +397,8 @@
     <MESSAGE value="Fixed Y24D01&#10;Exported solutions to solutions.md" />
     <MESSAGE value="Updated Y15D07 a,b" />
     <MESSAGE value="Optimized Y15D07" />
-    <option name="LAST_COMMIT_MESSAGE" value="Optimized Y15D07" />
+    <MESSAGE value="Small Cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small Cleanup" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
