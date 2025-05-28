@@ -1,10 +1,8 @@
-package com.nami.assignments
+package com.nami.assignments.y24
 
 import com.nami.Assignment
 import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
-import org.joml.Vector2i
-import kotlin.math.pow
 
 class Y24D09 : Assignment<String>(2024, 9) {
 
@@ -19,7 +17,6 @@ class Y24D09 : Assignment<String>(2024, 9) {
     override fun solveA(input: String): Int {
         return -1
     }
-
 
     override fun solveB(input: String): Int {
         return -1

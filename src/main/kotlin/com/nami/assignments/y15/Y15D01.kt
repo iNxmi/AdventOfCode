@@ -1,10 +1,8 @@
-package com.nami.assignments
+package com.nami.assignments.y15
 
 import com.nami.Assignment
 import com.nami.test.TestInput
 import com.nami.test.TestInputDuplex
-import com.nami.test.TestInputSimplex
-import java.util.*
 
 class Y15D01 : Assignment<String>(2015, 1) {
 

@@ -1,6 +1,9 @@
 package com.nami.test
 
-class TestInputDuplex(val a: String, val b:String) : TestInput {
+class TestInputDuplex(
+    private val a: String,
+    private val b: String
+) : TestInput {
 
     override fun getRawTestInputA(): String {
         return a

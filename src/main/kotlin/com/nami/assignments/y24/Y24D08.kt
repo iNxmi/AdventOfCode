@@ -1,11 +1,9 @@
-package com.nami.assignments
+package com.nami.assignments.y24
 
 import com.nami.Assignment
 import com.nami.test.TestInput
-import com.nami.test.TestInputDuplex
 import com.nami.test.TestInputSimplex
 import org.joml.Vector2i
-import kotlin.math.pow
 
 class Y24D08 : Assignment<Y24D08.ProcessedInput>(2024, 8) {
 

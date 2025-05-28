@@ -1,4 +1,4 @@
-package com.nami.assignments
+package com.nami.assignments.y15
 
 import com.nami.Assignment
 import com.nami.test.TestInput
