@@ -91,27 +91,11 @@ class Y15D07 : Assignment<Map<String, String>>(2015, 7) {
         return evaluate(mutableMapOf(), input, "a").toInt()
     }
 
-    override fun solveATest(input: Map<String, String>): Number {
-//        val set = ("xydefghi").toCharArray().toSet()
-//
-//        val states = mutableMapOf<String, UShort>()
-//        set.forEach { char ->
-//            evaluate(states, input, char.toString())
-//        }
-//        println(states)
-
-        return -1
-    }
-
     override fun solveB(input: Map<String, String>): Number {
         val rewired = input.toMutableMap()
         rewired["b"] = evaluate(mutableMapOf(), input, "a").toString()
 
         return evaluate(mutableMapOf(), rewired, "a").toInt()
-    }
-
-    override fun solveBTest(input: Map<String, String>): Number {
-        return -1
     }
 
 }

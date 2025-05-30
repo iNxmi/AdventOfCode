@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Small Cleanup">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D08.kt" afterDir="false" />
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Solved Y15D08 a,b">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D09.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D10.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D11.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D05.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D05.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y23/Y23D01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y23/Y23D01.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/test/TestInputDuplex.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/test/TestInputDuplex.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/test/TestInputSimplex.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/test/TestInputSimplex.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions.md" beforeDir="false" afterPath="$PROJECT_DIR$/solutions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Assignment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Assignment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Export.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Export.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Input.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Input.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D07.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D07.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,11 +77,14 @@
     "Kotlin.B2401Kt.executor": "Run",
     "Kotlin.D01Kt.executor": "Run",
     "Kotlin.D02Kt.executor": "Run",
+    "Kotlin.ExportKt.executor": "Run",
     "Kotlin.MainKt.executor": "Run",
     "Kotlin.PartAKt.executor": "Run",
     "Kotlin.Y15D01Kt.executor": "Run",
     "Kotlin.Y15D07Kt.executor": "Run",
     "Kotlin.Y15D08Kt.executor": "Run",
+    "Kotlin.Y15D09Kt.executor": "Run",
+    "Kotlin.Y15D10Kt.executor": "Run",
     "Kotlin.Y23D1Kt.executor": "Run",
     "Kotlin.Y24D1Kt.executor": "Run",
     "Kotlin.Y24D2Kt.executor": "Run",
@@ -123,9 +129,16 @@
       <recent name="com.nami.assignments" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Y15D08Kt">
-    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.MainKt" />
+  <component name="RunManager" selected="Kotlin.Y15D10Kt">
+    <configuration name="ExportKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.ExportKt" />
+      <module name="AdventOfCode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Y15D07Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.assignments.y15.Y15D07Kt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -138,22 +151,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Y23D01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.assignments.Y23D01Kt" />
+    <configuration name="Y15D09Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.assignments.y15.Y15D09Kt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Y24D01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.assignments.Y24D01Kt" />
-      <module name="AdventOfCode" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Y24D02Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.assignments.Y24D02Kt" />
+    <configuration name="Y15D10Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.assignments.y15.Y15D10Kt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -161,6 +167,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.Y15D10Kt" />
+        <item itemvalue="Kotlin.ExportKt" />
+        <item itemvalue="Kotlin.Y15D09Kt" />
+        <item itemvalue="Kotlin.Y15D07Kt" />
         <item itemvalue="Kotlin.Y15D08Kt" />
       </list>
     </recent_temporary>
@@ -213,7 +223,12 @@
       <workItem from="1734572955779" duration="22000" />
       <workItem from="1748396761890" duration="4669000" />
       <workItem from="1748401526171" duration="8488000" />
-      <workItem from="1748421549602" duration="3443000" />
+      <workItem from="1748421549602" duration="4183000" />
+      <workItem from="1748429465107" duration="134000" />
+      <workItem from="1748429658836" duration="6000" />
+      <workItem from="1748434048955" duration="160000" />
+      <workItem from="1748470408596" duration="5898000" />
+      <workItem from="1748533388211" duration="11926000" />
     </task>
     <task id="LOCAL-00001" summary="cleanup">
       <option name="closed" value="true" />
@@ -359,7 +374,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748416540098</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Solved Y15D08 a,b">
+      <option name="closed" value="true" />
+      <created>1748425056720</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1748425056720</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,7 +421,8 @@
     <MESSAGE value="Updated Y15D07 a,b" />
     <MESSAGE value="Optimized Y15D07" />
     <MESSAGE value="Small Cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small Cleanup" />
+    <MESSAGE value="Solved Y15D08 a,b" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solved Y15D08 a,b" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -15,6 +15,7 @@ fun main() {
         Y15D05(),
         Y15D06(),
         Y15D07(),
+        Y15D08(),
 
         Y23D01(),
 
@@ -40,9 +41,8 @@ fun main() {
         val day = solution.day
         val a = solution.a
         val b = solution.b
-        val aTest = solution.aTest
         val bTest = solution.bTest
-        builder.appendLine("|$year|$day|${if(a != -1) a else ""}|${if(b != -1) b else ""}|${if(aTest != -1) aTest else ""}|${if(bTest != -1) bTest else ""}")
+        builder.appendLine("|$year|$day|$a|$b|${solution.aTest ?: ""}|${bTest ?: ""}")
     }
 
     val markdown = builder.toString()
