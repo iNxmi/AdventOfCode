@@ -1,5 +1,6 @@
 package com.nami
 
+import com.nami.input.Input
 import com.nami.test.TestInput
 
 abstract class Assignment<InputClass : Any, SolutionClass : Any>(val year: Int, val day: Int) {

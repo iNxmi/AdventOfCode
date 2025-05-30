@@ -1,10 +1,9 @@
-package com.nami
+package com.nami.input
 
+import com.nami.Utils
 import io.github.cdimascio.dotenv.dotenv
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonObject
-import kotlinx.serialization.json.buildJsonObject
 import org.jsoup.Jsoup
 import java.nio.file.Files
 import java.nio.file.Paths
