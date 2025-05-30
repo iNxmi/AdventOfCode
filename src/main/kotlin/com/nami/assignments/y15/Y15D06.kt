@@ -5,7 +5,7 @@ import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 import org.joml.Vector2i
 
-class Y15D06 : Assignment<List<Y15D06.Operation>>(2015, 6) {
+class Y15D06 : Assignment<List<Y15D06.Operation>, Int>(2015, 6) {
 
     override fun getRawTestInput(): TestInput {
         return TestInputSimplex(
@@ -57,7 +57,7 @@ class Y15D06 : Assignment<List<Y15D06.Operation>>(2015, 6) {
 
     private val size = 1000
 
-    override fun solveA(input: List<Operation>): Number {
+    override fun solveA(input: List<Operation>): Int {
         val lights = BooleanArray(size * size) { false }
         input.forEach { operation ->
             for (y in operation.start.y..operation.end.y)
@@ -74,7 +74,7 @@ class Y15D06 : Assignment<List<Y15D06.Operation>>(2015, 6) {
         return lights.count { it }
     }
 
-    override fun solveB(input: List<Operation>): Number {
+    override fun solveB(input: List<Operation>): Int {
         val lights = IntArray(size * size) { 0 }
         input.forEach { operation ->
             for (y in operation.start.y..operation.end.y)
@@ -96,6 +96,4 @@ class Y15D06 : Assignment<List<Y15D06.Operation>>(2015, 6) {
 
 }
 
-fun main() {
-    println(Y15D06().solve())
-}
+fun main() = println(Y15D06().solve())

@@ -3,9 +3,17 @@ package com.nami.assignments.y15
 import com.nami.Assignment
 import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
-import java.lang.Math.pow
 
-class Y15D11 : Assignment<String>(2015, 11) {
+class Y15D11 : Assignment<String, String>(2015, 11) {
+
+    private val segments = mutableSetOf<String>()
+
+    init {
+        val alphabet = "abcdefghijklmnopqrstuvwxyz"
+        val length = 3
+        for (i in 0..<alphabet.length - length + 1)
+            segments.add(alphabet.substring(i, i + length))
+    }
 
     override fun getRawTestInput(): TestInput {
         return TestInputSimplex(
@@ -15,35 +23,7 @@ class Y15D11 : Assignment<String>(2015, 11) {
 
     override fun getProcessedInput(raw: String): String = raw
 
-    private fun convert(number: String, fromAlphabet: String, toAlphabet: String): String {
-        val fromBase = fromAlphabet.length
-        val toBase = toAlphabet.length
-
-        // Step 1: Convert input number (string) to decimal (assuming fromAlphabet is base-X digits)
-        var decimal = 0L
-        for (char in number) {
-            val digit = fromAlphabet.indexOf(char)
-            require(digit >= 0) { "Invalid character '$char' in input" }
-            decimal = decimal * fromBase + digit
-        }
-
-        // Excel-style 1-based base conversion must start from 1
-        decimal += 1
-
-        // Step 2: Convert decimal to Excel-style base (1-based logic)
-        val result = StringBuilder()
-        var n = decimal
-        while (n > 0) {
-            n-- // shift to 0-based
-            val digit = (n % toBase).toInt()
-            result.append(toAlphabet[digit])
-            n /= toBase
-        }
-
-        return result.reverse().toString()
-    }
-
-    fun numberToAlphabetString(number: Long): String {
+    private fun numberToAlphabetString(number: Long): String {
         require(number >= 0) { "Number must be non-negative" }
         val alphabet = "abcdefghijklmnopqrstuvwxyz"
         val base = alphabet.length
@@ -60,7 +40,7 @@ class Y15D11 : Assignment<String>(2015, 11) {
         return result.reverse().toString()
     }
 
-    fun alphabetStringToNumber(s: String): Long {
+    private fun alphabetStringToNumber(s: String): Long {
         val alphabet = "abcdefghijklmnopqrstuvwxyz"
         val base = alphabet.length
         var result = 0L
@@ -73,29 +53,45 @@ class Y15D11 : Assignment<String>(2015, 11) {
         return result - 1
     }
 
-    private val alphabetBase26 = "abcdefghijklmnopqrstuvwxyz"
-    private val alphabetBase10 = "0123456789"
-    override fun solveA(input: String): Number {
-        for (i in 0..20000) {
-            val text = numberToAlphabetString(i.toLong())
-            val number = alphabetStringToNumber(text)
-            println("$i $number $text")
+    private fun containsStraightABC(value: String): Boolean = segments.any { value.contains(it) }
+    private fun containsIOL(value: String): Boolean = value.contains(("i|o|l").toRegex())
+    private fun contains2NonOverlapPairs(value: String): Boolean {
+        var count = 0
+        var i = 0
+        while (i in 0..<value.length - 1) {
+            val a = value[i]
+            val b = value[i + 1]
+            if (a == b) {
+                count++
+                i++
+
+                if (count >= 2)
+                    return true
+            }
+            i++
         }
 
-        println(input)
-        println(alphabetStringToNumber(input))
-        println(alphabetStringToNumber("z".repeat(8)))
-        return -1
+        return false
     }
 
-    override fun solveB(input: String): Number {
-        return -1
+    fun find(password: String): String {
+        val max = alphabetStringToNumber("z".repeat(8))
+        val start = alphabetStringToNumber(password) + 1
+        for (i in start..max) {
+            val value = numberToAlphabetString(i)
+            if (containsStraightABC(value) && !containsIOL(value) && contains2NonOverlapPairs(value))
+                return value
+        }
+
+        throw IllegalStateException("No password found")
     }
 
-    override fun solveBTest(input: String): Number = -1
+    override fun solveA(input: String): String = find(input)
+
+    override fun solveATest(input: String): String = find(input)
+
+    override fun solveB(input: String): String = find(find(input))
 
 }
 
-fun main() {
-    println(Y15D11().solve())
-}
+fun main() = println(Y15D11().solve())

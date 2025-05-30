@@ -5,7 +5,7 @@ import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 import kotlin.math.abs
 
-class Y24D02 : Assignment<List<String>>(2024, 2) {
+class Y24D02 : Assignment<List<String>, Int>(2024, 2) {
 
     override fun getRawTestInput(): TestInput {
         return TestInputSimplex(
@@ -116,6 +116,4 @@ class Y24D02 : Assignment<List<String>>(2024, 2) {
 
 }
 
-fun main() {
-    println(Y24D02().solve())
-}
+fun main() = println(Y24D02().solve())

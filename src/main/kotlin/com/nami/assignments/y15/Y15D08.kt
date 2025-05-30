@@ -4,7 +4,7 @@ import com.nami.Assignment
 import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
-class Y15D08 : Assignment<List<String>>(2015, 8) {
+class Y15D08 : Assignment<List<String>, Int>(2015, 8) {
 
     override fun getRawTestInput(): TestInput {
         return TestInputSimplex(
@@ -36,7 +36,7 @@ class Y15D08 : Assignment<List<String>>(2015, 8) {
         return result
     }
 
-    override fun solveA(input: List<String>): Number {
+    override fun solveA(input: List<String>): Int {
         val code = input.sumOf { it.length }
         val memory = input.map { escape(it) }.sumOf { it.length }
         return code - memory
@@ -52,7 +52,7 @@ class Y15D08 : Assignment<List<String>>(2015, 8) {
         return result
     }
 
-    override fun solveB(input: List<String>): Number {
+    override fun solveB(input: List<String>): Int {
         val newlyEncoded = input.map { unescape(it) }.sumOf { it.length }
         val original = input.sumOf { it.length }
         return newlyEncoded - original
@@ -60,6 +60,4 @@ class Y15D08 : Assignment<List<String>>(2015, 8) {
 
 }
 
-fun main() {
-    println(Y15D08().solve())
-}
+fun main() = println(Y15D08().solve())

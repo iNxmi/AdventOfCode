@@ -4,7 +4,7 @@ import com.nami.Assignment
 import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
-class Y15D09 : Assignment<Y15D09.Map>(2015, 9) {
+class Y15D09 : Assignment<Y15D09.Map, Int>(2015, 9) {
 
     override fun getRawTestInput(): TestInput {
         return TestInputSimplex(
@@ -49,17 +49,15 @@ class Y15D09 : Assignment<Y15D09.Map>(2015, 9) {
         return Map(nodes, connections)
     }
 
-    override fun solveA(input: Map): Number {
+    override fun solveA(input: Map): Int {
         input.connections.forEach { connection -> println(connection) }
         return -1
     }
 
-    override fun solveB(input: Map): Number {
+    override fun solveB(input: Map): Int {
         return -1
     }
 
 }
 
-fun main() {
-    println(Y15D09().solve())
-}
+fun main() = println(Y15D09().solve())

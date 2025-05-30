@@ -4,7 +4,7 @@ import com.nami.Assignment
 import com.nami.test.TestInput
 import com.nami.test.TestInputDuplex
 
-class Y15D05 : Assignment<List<String>>(2015, 5) {
+class Y15D05 : Assignment<List<String>, Int>(2015, 5) {
 
     override fun getRawTestInput(): TestInput {
         return TestInputDuplex(
@@ -98,6 +98,4 @@ class Y15D05 : Assignment<List<String>>(2015, 5) {
 
 }
 
-fun main() {
-    println(Y15D05().solve())
-}
+fun main() = println(Y15D05().solve())

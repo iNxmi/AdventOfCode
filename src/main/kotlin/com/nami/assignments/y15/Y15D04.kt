@@ -5,7 +5,7 @@ import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 import java.security.MessageDigest
 
-class Y15D04 : Assignment<String>(2015, 4) {
+class Y15D04 : Assignment<String, Int>(2015, 4) {
 
     override fun getRawTestInput(): TestInput {
         return TestInputSimplex("pqrstuv")
@@ -46,6 +46,4 @@ class Y15D04 : Assignment<String>(2015, 4) {
 
 }
 
-fun main() {
-    println(Y15D04().solve())
-}
+fun main() = println(Y15D04().solve())

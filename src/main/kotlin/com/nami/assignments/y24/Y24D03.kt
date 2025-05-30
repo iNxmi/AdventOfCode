@@ -4,7 +4,7 @@ import com.nami.Assignment
 import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
-class Y24D03 : Assignment<String>(2024, 3) {
+class Y24D03 : Assignment<String, Int>(2024, 3) {
 
     override fun getRawTestInput(): TestInput {
         return TestInputSimplex("xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))")
@@ -56,6 +56,4 @@ class Y24D03 : Assignment<String>(2024, 3) {
 
 }
 
-fun main() {
-    println(Y24D03().solve())
-}
+fun main() = println(Y24D03().solve())

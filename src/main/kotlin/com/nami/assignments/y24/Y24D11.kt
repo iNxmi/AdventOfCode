@@ -4,7 +4,7 @@ import com.nami.Assignment
 import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
-class Y24D11 : Assignment<Map<Long, Long>>(2024, 11) {
+class Y24D11 : Assignment<Map<Long, Long>, Long>(2024, 11) {
 
     override fun getRawTestInput(): TestInput {
         return TestInputSimplex("125 17")
@@ -73,6 +73,4 @@ class Y24D11 : Assignment<Map<Long, Long>>(2024, 11) {
 
 }
 
-fun main() {
-    println(Y24D11().solve())
-}
+fun main() = println(Y24D11().solve())

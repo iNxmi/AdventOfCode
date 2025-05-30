@@ -4,7 +4,7 @@ import com.nami.Assignment
 import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
-class Y24D04 : Assignment<List<CharArray>>(2024, 4) {
+class Y24D04 : Assignment<List<CharArray>, Int>(2024, 4) {
 
     override fun getRawTestInput(): TestInput {
         return TestInputSimplex(
@@ -93,6 +93,4 @@ class Y24D04 : Assignment<List<CharArray>>(2024, 4) {
 
 }
 
-fun main() {
-    println(Y24D04().solve())
-}
+fun main() = println(Y24D04().solve())

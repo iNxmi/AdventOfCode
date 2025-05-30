@@ -6,7 +6,7 @@ import com.nami.misc.shr
 import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
-class Y15D07 : Assignment<Map<String, String>>(2015, 7) {
+class Y15D07 : Assignment<Map<String, String>, Int>(2015, 7) {
 
     override fun getRawTestInput(): TestInput {
         return TestInputSimplex(
@@ -87,11 +87,11 @@ class Y15D07 : Assignment<Map<String, String>>(2015, 7) {
         return ""
     }
 
-    override fun solveA(input: Map<String, String>): Number {
+    override fun solveA(input: Map<String, String>): Int {
         return evaluate(mutableMapOf(), input, "a").toInt()
     }
 
-    override fun solveB(input: Map<String, String>): Number {
+    override fun solveB(input: Map<String, String>): Int {
         val rewired = input.toMutableMap()
         rewired["b"] = evaluate(mutableMapOf(), input, "a").toString()
 
@@ -100,6 +100,4 @@ class Y15D07 : Assignment<Map<String, String>>(2015, 7) {
 
 }
 
-fun main() {
-    println(Y15D07().solve())
-}
+fun main() =  println(Y15D07().solve())

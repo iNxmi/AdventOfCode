@@ -5,7 +5,7 @@ import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 import kotlin.math.pow
 
-class Y24D07 : Assignment<List<Y24D07.Equation>>(2024, 7) {
+class Y24D07 : Assignment<List<Y24D07.Equation>, Long>(2024, 7) {
 
     data class Equation(
         val solution: Long,
@@ -136,6 +136,4 @@ class Y24D07 : Assignment<List<Y24D07.Equation>>(2024, 7) {
 
 }
 
-fun main() {
-    println(Y24D07().solve())
-}
+fun main() = println(Y24D07().solve())

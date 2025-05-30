@@ -4,9 +4,9 @@ import com.nami.Assignment
 import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
-class Y24D05 : Assignment<Y24D05.ProcessedInput>(2024, 5) {
+class Y24D05 : Assignment<Y24D05.Input, Int>(2024, 5) {
 
-    data class ProcessedInput(val rules: Map<Int, Set<Int>>, val updates: List<List<Int>>)
+    data class Input(val rules: Map<Int, Set<Int>>, val updates: List<List<Int>>)
 
     override fun getRawTestInput(): TestInput {
         return TestInputSimplex(
@@ -43,7 +43,7 @@ class Y24D05 : Assignment<Y24D05.ProcessedInput>(2024, 5) {
         )
     }
 
-    override fun getProcessedInput(raw: String): ProcessedInput {
+    override fun getProcessedInput(raw: String): Input {
         val split = raw.split(("(?m)^\\s*\$").toRegex())
 
         val rulesRaw = split[0].trim()
@@ -64,7 +64,7 @@ class Y24D05 : Assignment<Y24D05.ProcessedInput>(2024, 5) {
 
 //        println(rules)
 
-        return ProcessedInput(rules, updates)
+        return Input(rules, updates)
     }
 
     private fun isUpdateValidOld(update: List<Int>, rules: Map<Int, Set<Int>>): Int {
@@ -113,7 +113,7 @@ class Y24D05 : Assignment<Y24D05.ProcessedInput>(2024, 5) {
         return -1
     }
 
-    private fun getValidUpdates(input: ProcessedInput): Set<List<Int>> {
+    private fun getValidUpdates(input: Input): Set<List<Int>> {
         val validUpdates = mutableSetOf<List<Int>>()
         for (update in input.updates)
             if (isUpdateValid(update.toList(), input.rules) == -1)
@@ -122,7 +122,7 @@ class Y24D05 : Assignment<Y24D05.ProcessedInput>(2024, 5) {
         return validUpdates
     }
 
-    private fun getValidUpdatesOld(input: ProcessedInput): Set<List<Int>> {
+    private fun getValidUpdatesOld(input: Input): Set<List<Int>> {
         val validUpdates = mutableSetOf<List<Int>>()
         for (update in input.updates)
             if (isUpdateValidOld(update.toList(), input.rules) == -1)
@@ -131,7 +131,7 @@ class Y24D05 : Assignment<Y24D05.ProcessedInput>(2024, 5) {
         return validUpdates
     }
 
-    private fun getInvalidUpdates(input: ProcessedInput): Set<List<Int>> {
+    private fun getInvalidUpdates(input: Input): Set<List<Int>> {
         val validUpdates = mutableSetOf<List<Int>>()
         for (update in input.updates)
             if (isUpdateValid(update.toList(), input.rules) != -1)
@@ -144,12 +144,12 @@ class Y24D05 : Assignment<Y24D05.ProcessedInput>(2024, 5) {
         return updates.sumOf { it[(it.size - 1) / 2] }
     }
 
-    override fun solveA(input: ProcessedInput): Int {
+    override fun solveA(input: Input): Int {
         val validUpdates = getValidUpdatesOld(input)
         return getSolution(validUpdates)
     }
 
-    override fun solveB(input: ProcessedInput): Int {
+    override fun solveB(input: Input): Int {
 //        val invalidUpdates = getInvalidUpdates(input)
 //
 //        val reverseRules = mutableMapOf<Int, MutableSet<Int>>()
@@ -190,6 +190,4 @@ class Y24D05 : Assignment<Y24D05.ProcessedInput>(2024, 5) {
 
 }
 
-fun main() {
-    println(Y24D05().solve())
-}
+fun main() =println(Y24D05().solve())

@@ -7,9 +7,9 @@ import com.nami.test.TestInputSimplex
 import org.joml.Vector2i
 import javax.naming.directory.InvalidAttributesException
 
-class Y24D15 : Assignment<Y24D15.ProcessedInput>(2024, 15) {
+class Y24D15 : Assignment<Y24D15.Input, Long>(2024, 15) {
 
-    data class ProcessedInput(val world: World, val instructions: List<Direction>)
+    data class Input(val world: World, val instructions: List<Direction>)
 
     data class World(
         val size: Vector2i = Vector2i(),
@@ -56,7 +56,7 @@ class Y24D15 : Assignment<Y24D15.ProcessedInput>(2024, 15) {
         )
     }
 
-    override fun getProcessedInput(raw: String): ProcessedInput {
+    override fun getProcessedInput(raw: String): Input {
         val world = World()
         val rawWorld = raw.split("\n\n")[0].trim()
 
@@ -91,19 +91,17 @@ class Y24D15 : Assignment<Y24D15.ProcessedInput>(2024, 15) {
             instructions.add(direction)
         }
 
-        return ProcessedInput(world, instructions)
+        return Input(world, instructions)
     }
 
-    override fun solveA(input: ProcessedInput): Long {
+    override fun solveA(input: Input): Long {
         return -1
     }
 
-    override fun solveB(input: ProcessedInput): Long {
+    override fun solveB(input: Input): Long {
         return -1
     }
 
 }
 
-fun main() {
-    println(Y24D15().solve())
-}
+fun main() = println(Y24D15().solve())

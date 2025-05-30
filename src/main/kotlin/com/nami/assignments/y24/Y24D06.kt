@@ -4,9 +4,9 @@ import com.nami.Assignment
 import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
-class Y24D06 : Assignment<Y24D06.ProcessedInput>(2024, 6) {
+class Y24D06 : Assignment<Y24D06.Input, Int>(2024, 6) {
 
-    data class ProcessedInput(
+    data class Input(
         val position: Pair<Int, Int>,
         val obstacles: Set<Pair<Int, Int>>,
         val worldSize: Pair<Int, Int>
@@ -29,7 +29,7 @@ class Y24D06 : Assignment<Y24D06.ProcessedInput>(2024, 6) {
         )
     }
 
-    override fun getProcessedInput(raw: String): ProcessedInput {
+    override fun getProcessedInput(raw: String): Input {
         var position = Pair(0, 0)
         val obstacles = mutableSetOf<Pair<Int, Int>>()
 
@@ -45,10 +45,10 @@ class Y24D06 : Assignment<Y24D06.ProcessedInput>(2024, 6) {
 
         val worldSize = Pair(lines[0].toCharArray().size, lines.size)
 
-        return ProcessedInput(position, obstacles, worldSize)
+        return Input(position, obstacles, worldSize)
     }
 
-    override fun solveA(input: ProcessedInput): Int {
+    override fun solveA(input: Input): Int {
         var direction = Pair(0, -1)
         var positionX = input.position.first
         var positionY = input.position.second
@@ -85,12 +85,10 @@ class Y24D06 : Assignment<Y24D06.ProcessedInput>(2024, 6) {
         return positionsVisited.size
     }
 
-    override fun solveB(input: ProcessedInput): Int {
+    override fun solveB(input: Input): Int {
         return -1
     }
 
 }
 
-fun main() {
-    println(Y24D06().solve())
-}
+fun main() = println(Y24D06().solve())

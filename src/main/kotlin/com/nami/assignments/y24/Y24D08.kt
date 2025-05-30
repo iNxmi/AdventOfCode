@@ -5,9 +5,9 @@ import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 import org.joml.Vector2i
 
-class Y24D08 : Assignment<Y24D08.ProcessedInput>(2024, 8) {
+class Y24D08 : Assignment<Y24D08.Input, Int>(2024, 8) {
 
-    data class ProcessedInput(val nodes: Map<Char, Set<Vector2i>>, val size: Vector2i)
+    data class Input(val nodes: Map<Char, Set<Vector2i>>, val size: Vector2i)
 
     override fun getRawTestInput(): TestInput {
         return TestInputSimplex(
@@ -28,7 +28,7 @@ class Y24D08 : Assignment<Y24D08.ProcessedInput>(2024, 8) {
         )
     }
 
-    override fun getProcessedInput(raw: String): ProcessedInput {
+    override fun getProcessedInput(raw: String): Input {
         var width = 0
 
         val map = mutableMapOf<Char, MutableSet<Vector2i>>()
@@ -46,10 +46,10 @@ class Y24D08 : Assignment<Y24D08.ProcessedInput>(2024, 8) {
             }
         }
 
-        return ProcessedInput(map, Vector2i(width, height))
+        return Input(map, Vector2i(width, height))
     }
 
-    override fun solveA(input: ProcessedInput): Int {
+    override fun solveA(input: Input): Int {
         val antinodes = mutableSetOf<Vector2i>()
         for (key in input.nodes.keys) {
             for (p1 in input.nodes[key]!!)
@@ -109,7 +109,7 @@ class Y24D08 : Assignment<Y24D08.ProcessedInput>(2024, 8) {
         return antinodes
     }
 
-    override fun solveB(input: ProcessedInput): Int {
+    override fun solveB(input: Input): Int {
         val antinodes = mutableSetOf<Vector2i>()
 
         for (key in input.nodes.keys)
@@ -123,6 +123,4 @@ class Y24D08 : Assignment<Y24D08.ProcessedInput>(2024, 8) {
 
 }
 
-fun main() {
-    println(Y24D08().solve())
-}
+fun main() = println(Y24D08().solve())

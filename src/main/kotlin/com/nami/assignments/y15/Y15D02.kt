@@ -5,7 +5,7 @@ import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 import kotlin.math.min
 
-class Y15D02 : Assignment<List<Triple<Int, Int, Int>>>(2015, 2) {
+class Y15D02 : Assignment<List<Triple<Int, Int, Int>>, Int>(2015, 2) {
 
     override fun getRawTestInput(): TestInput {
         return TestInputSimplex("1x1x10")
@@ -63,6 +63,4 @@ class Y15D02 : Assignment<List<Triple<Int, Int, Int>>>(2015, 2) {
 
 }
 
-fun main() {
-    println(Y15D02().solve())
-}
+fun main() = println(Y15D02().solve())

@@ -6,7 +6,7 @@ import com.nami.test.TestInputSimplex
 import kotlin.math.abs
 import kotlin.streams.toList
 
-class Y24D01 : Assignment<Pair<List<Int>, List<Int>>>(2024, 1) {
+class Y24D01 : Assignment<Pair<List<Int>, List<Int>>, Int>(2024, 1) {
 
     override fun getRawTestInput(): TestInput {
         return TestInputSimplex(
@@ -51,6 +51,4 @@ class Y24D01 : Assignment<Pair<List<Int>, List<Int>>>(2024, 1) {
 
 }
 
-fun main() {
-    println(Y24D01().solve())
-}
+fun main() = println(Y24D01().solve())
