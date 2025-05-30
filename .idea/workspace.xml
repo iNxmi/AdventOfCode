@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Solved Y15D12 a">
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Solved Y15D12 b">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D12.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D12.kt" afterDir="false" />
     </list>
@@ -232,7 +232,7 @@
       <workItem from="1748565575710" duration="598000" />
       <workItem from="1748566254822" duration="3582000" />
       <workItem from="1748600975771" duration="5128000" />
-      <workItem from="1748618277563" duration="3548000" />
+      <workItem from="1748618277563" duration="4009000" />
     </task>
     <task id="LOCAL-00001" summary="cleanup">
       <option name="closed" value="true" />
@@ -426,7 +426,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748603138646</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Solved Y15D12 b">
+      <option name="closed" value="true" />
+      <created>1748622004320</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1748622004320</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,7 +479,8 @@
     <MESSAGE value="Improved Exporter&#10;Exported Solutions" />
     <MESSAGE value="Backup" />
     <MESSAGE value="Solved Y15D12 a" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solved Y15D12 a" />
+    <MESSAGE value="Solved Y15D12 b" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solved Y15D12 b" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

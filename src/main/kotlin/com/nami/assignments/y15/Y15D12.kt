@@ -33,72 +33,32 @@ class Y15D12 : Assignment<Y15D12.Input, Int>(2015, 12) {
 
     override fun solveATest(input: Input): Int = solveA(input)
 
-    private fun filterArray(json: JsonArray, predicate: String): JsonArray? {
-        println("arr; $json")
-
-        val result = buildJsonArray {
-            for (value in json) {
-                if (value is JsonObject) {
-                    val filtered = filterObject(value, predicate)
-                    if (filtered != null) {
-                        add(filtered)
-                        println("arr,obj; $value")
-                    }
-                }
-
-                if (value is JsonArray) {
-                    val filtered = filterArray(value, predicate)
-                    if (filtered != null) {
-                        add(filtered)
-                        println("arr,arr; $value")
-                    }
-                }
-
-                if (value is JsonPrimitive) {
-                    add(value)
-                    println("arr,pri; $value")
-                }
+    private fun filterArray(json: JsonArray, predicate: String): JsonArray = buildJsonArray {
+        json.forEach { value ->
+            val filtered = when (value) {
+                is JsonObject -> filterObject(value, predicate)
+                is JsonArray -> filterArray(value, predicate)
+                is JsonPrimitive -> value
             }
+            add(filtered)
         }
-
-        return result
     }
 
     private fun isJsonObjectValid(json: JsonObject, predicate: String): Boolean =
         !(json.values.any { (it is JsonPrimitive) && it.isString && (it.content == predicate) })
 
-    private fun filterObject(json: JsonObject, predicate: String): JsonObject? {
-        println("obj; $json")
-
+    private fun filterObject(json: JsonObject, predicate: String): JsonObject = buildJsonObject {
         if (!isJsonObjectValid(json, predicate))
-            return null
+            return@buildJsonObject
 
-        val result = buildJsonObject {
-            for ((key, value) in json) {
-                if (value is JsonObject) {
-                    val filtered = filterObject(value, predicate)
-                    if (filtered != null) {
-                        put(key, filtered)
-                        println("obj,obj; $key=$value")
-                    }
-                }
-
-                if (value is JsonArray) {
-                    val filtered = filterArray(value, predicate)
-                    if (filtered != null) {
-                        put(key, filtered)
-                        println("obj,arr; $key=$value")
-                    }
-                }
-
-                if (value is JsonPrimitive) {
-                    put(key, value)
-                    println("obj,pri; $key=$value")
-                }
+        json.forEach { (key, value) ->
+            val filtered = when (value) {
+                is JsonObject -> filterObject(value, predicate)
+                is JsonArray -> filterArray(value, predicate)
+                is JsonPrimitive -> value
             }
+            put(key, filtered)
         }
-
-        return result
     }
 
     override fun solveB(input: Input): Int {
