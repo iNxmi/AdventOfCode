@@ -50,7 +50,7 @@ class Y15D09 : Assignment<Y15D09.Map, Int>(2015, 9) {
     }
 
     override fun solveA(input: Map): Int {
-        input.connections.forEach { connection -> println(connection) }
+//        input.connections.forEach { connection -> println(connection) }
         return -1
     }
 

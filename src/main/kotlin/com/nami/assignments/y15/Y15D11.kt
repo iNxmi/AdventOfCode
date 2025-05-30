@@ -74,7 +74,7 @@ class Y15D11 : Assignment<String, String>(2015, 11) {
         return false
     }
 
-    fun find(password: String): String {
+    private fun find(password: String): String {
         val max = alphabetStringToNumber("z".repeat(8))
         val start = alphabetStringToNumber(password) + 1
         for (i in start..max) {
@@ -90,7 +90,7 @@ class Y15D11 : Assignment<String, String>(2015, 11) {
 
     override fun solveATest(input: String): String = find(input)
 
-    override fun solveB(input: String): String = find(find(input))
+    override fun solveB(input: String): String = find(solveA(input))
 
 }
 

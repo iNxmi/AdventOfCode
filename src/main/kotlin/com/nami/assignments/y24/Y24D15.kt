@@ -7,7 +7,7 @@ import com.nami.test.TestInputSimplex
 import org.joml.Vector2i
 import javax.naming.directory.InvalidAttributesException
 
-class Y24D15 : Assignment<Y24D15.Input, Long>(2024, 15) {
+class Y24D15 : Assignment<Y24D15.Input, Int>(2024, 15) {
 
     data class Input(val world: World, val instructions: List<Direction>)
 
@@ -94,11 +94,11 @@ class Y24D15 : Assignment<Y24D15.Input, Long>(2024, 15) {
         return Input(world, instructions)
     }
 
-    override fun solveA(input: Input): Long {
+    override fun solveA(input: Input): Int {
         return -1
     }
 
-    override fun solveB(input: Input): Long {
+    override fun solveB(input: Input): Int {
         return -1
     }
 

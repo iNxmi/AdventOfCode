@@ -5,6 +5,7 @@ import com.nami.assignments.y23.Y23D01
 import com.nami.assignments.y24.*
 import java.nio.file.Files
 import java.nio.file.Path
+import kotlin.math.round
 
 fun main() {
     val assignments = listOf(
@@ -16,6 +17,9 @@ fun main() {
         Y15D06(),
         Y15D07(),
         Y15D08(),
+        Y15D09(),
+        Y15D10(),
+        Y15D11(),
 
         Y23D01(),
 
@@ -31,18 +35,19 @@ fun main() {
         Y24D15()
     )
 
-    val solutions = assignments.map { it.solve() }
-
     val builder = StringBuilder()
-    builder.appendLine("|Year|Day|A|B|A Test|B Test|")
-    builder.appendLine("|----|---|-|-|------|------|")
-    solutions.forEach { solution ->
+    builder.appendLine("|Year|Day|A|B|")
+    builder.appendLine("|----|---|-|-|")
+    assignments.withIndex().forEach { (index, assignment) ->
+        println("${assignment.year}_${assignment.day} - (${index + 1}/${assignments.size}) - ${round(index.toDouble() / assignments.size.toDouble() * 10000.0) / 100.0}%")
+
+        val solution = assignment.solve()
+
         val year = solution.year
         val day = solution.day
-        val a = solution.a
-        val b = solution.b
-        val bTest = solution.bTest
-        builder.appendLine("|$year|$day|$a|$b|${solution.aTest ?: ""}|${bTest ?: ""}")
+        val a = if (solution.a == -1) "" else solution.a
+        val b = if (solution.b == -1) "" else solution.b
+        builder.appendLine("|$year|$day|$a|$b|")
     }
 
     val markdown = builder.toString()

@@ -2,7 +2,7 @@ package com.nami
 
 import com.nami.test.TestInput
 
-abstract class Assignment<InputClass : Any, SolutionClass : Any>(private val year: Int, private val day: Int) {
+abstract class Assignment<InputClass : Any, SolutionClass : Any>(val year: Int, val day: Int) {
 
     private fun getRawInput(): String {
         return Input.get(year, day)

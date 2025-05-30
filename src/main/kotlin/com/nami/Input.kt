@@ -55,6 +55,7 @@ class Input {
 
         private fun fetch(year: Int, day: Int): String {
             val url = "https://adventofcode.com/$year/day/$day/input"
+            println("Fetching ${year}_${day} -> $url")
 
             val doc = Jsoup.connect(url).cookie("session", SESSION).get()
             val string = doc.connection().execute().body().trim()

@@ -93,7 +93,7 @@ class Y15D07 : Assignment<Map<String, String>, Int>(2015, 7) {
 
     override fun solveB(input: Map<String, String>): Int {
         val rewired = input.toMutableMap()
-        rewired["b"] = evaluate(mutableMapOf(), input, "a").toString()
+        rewired["b"] = solveA(input).toString()
 
         return evaluate(mutableMapOf(), rewired, "a").toInt()
     }
