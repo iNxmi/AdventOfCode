@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Backup">
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Solved Y15D12 a">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Assignment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Assignment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Input.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/input/Input.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D12.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D12.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -233,7 +231,8 @@
       <workItem from="1748565482400" duration="87000" />
       <workItem from="1748565575710" duration="598000" />
       <workItem from="1748566254822" duration="3582000" />
-      <workItem from="1748600975771" duration="2079000" />
+      <workItem from="1748600975771" duration="5128000" />
+      <workItem from="1748618277563" duration="3548000" />
     </task>
     <task id="LOCAL-00001" summary="cleanup">
       <option name="closed" value="true" />
@@ -419,7 +418,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748569772377</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Solved Y15D12 a">
+      <option name="closed" value="true" />
+      <created>1748603138646</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1748603138646</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,7 +470,8 @@
     <MESSAGE value="Made som compatability adjustments in Assignment&#10;Solved Y15D11 a,b" />
     <MESSAGE value="Improved Exporter&#10;Exported Solutions" />
     <MESSAGE value="Backup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Backup" />
+    <MESSAGE value="Solved Y15D12 a" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solved Y15D12 a" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
