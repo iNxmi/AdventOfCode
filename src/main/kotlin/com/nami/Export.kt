@@ -7,7 +7,7 @@ import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.math.round
 
-fun main() {
+fun export() {
     val assignments = listOf(
         Y15D01(),
         Y15D02(),
@@ -20,6 +20,7 @@ fun main() {
         Y15D09(),
         Y15D10(),
         Y15D11(),
+        Y15D12(),
 
         Y23D01(),
 
@@ -53,3 +54,5 @@ fun main() {
     val markdown = builder.toString()
     Files.writeString(Path.of("solutions.md"), markdown)
 }
+
+fun main() = export()
