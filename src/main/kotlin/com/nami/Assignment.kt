@@ -1,12 +1,11 @@
 package com.nami
 
-import com.nami.input.Input
 import com.nami.test.TestInput
 
 abstract class Assignment<InputClass : Any, SolutionClass : Any>(val year: Int, val day: Int) {
 
     private fun getRawInput(): String {
-        return Input.get(year, day)
+        return Remote.getInput(year, day)
     }
 
     abstract fun getRawTestInput(): TestInput
@@ -16,9 +15,7 @@ abstract class Assignment<InputClass : Any, SolutionClass : Any>(val year: Int, 
     abstract fun solveB(input: InputClass): SolutionClass
     open fun solveBTest(input: InputClass): SolutionClass? = null
 
-    fun id(): Int {
-        return Utils.getID(year, day)
-    }
+    fun id(): Int = Utils.getID(year, day)
 
     data class Solution(
         val id: Int,

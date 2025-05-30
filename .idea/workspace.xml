@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Optimized Y15D12 b">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/assignments/y15/Y15D14.kt" afterDir="false" />
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Solved Y15D14 a,b">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Remote.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Test.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Verify.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions.md" beforeDir="false" afterPath="$PROJECT_DIR$/solutions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Assignment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Assignment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Export.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Export.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/input/Input.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +79,8 @@
     "Kotlin.ExportKt.executor": "Run",
     "Kotlin.MainKt.executor": "Run",
     "Kotlin.PartAKt.executor": "Run",
+    "Kotlin.TestKt.executor": "Run",
+    "Kotlin.VerifyKt.executor": "Run",
     "Kotlin.Y15D01Kt.executor": "Run",
     "Kotlin.Y15D06Kt.executor": "Run",
     "Kotlin.Y15D07Kt.executor": "Run",
@@ -121,6 +127,7 @@
       <recent name="C:\Users\Memphis\Desktop\AdventOfCode\src\main\kotlin\com\nami" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.nami" />
       <recent name="com.nami.input" />
       <recent name="com.nami.assignments.y24" />
       <recent name="com.nami.assignments.y23" />
@@ -130,7 +137,7 @@
       <recent name="com.nami.assignments" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Y15D14Kt">
+  <component name="RunManager" selected="Kotlin.VerifyKt">
     <configuration name="ExportKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nami.ExportKt" />
       <module name="AdventOfCode" />
@@ -138,15 +145,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Y15D06Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.assignments.y15.Y15D06Kt" />
+    <configuration name="TestKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.TestKt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Y15D11Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.assignments.y15.Y15D11Kt" />
+    <configuration name="VerifyKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.VerifyKt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.Y15D14Kt" />
+        <item itemvalue="Kotlin.VerifyKt" />
+        <item itemvalue="Kotlin.TestKt" />
         <item itemvalue="Kotlin.ExportKt" />
+        <item itemvalue="Kotlin.Y15D14Kt" />
         <item itemvalue="Kotlin.Y15D12Kt" />
-        <item itemvalue="Kotlin.Y15D11Kt" />
-        <item itemvalue="Kotlin.Y15D06Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +243,9 @@
       <workItem from="1748565575710" duration="598000" />
       <workItem from="1748566254822" duration="3582000" />
       <workItem from="1748600975771" duration="5128000" />
-      <workItem from="1748618277563" duration="9892000" />
+      <workItem from="1748618277563" duration="12340000" />
+      <workItem from="1748636038332" duration="47000" />
+      <workItem from="1748636748970" duration="7761000" />
     </task>
     <task id="LOCAL-00001" summary="cleanup">
       <option name="closed" value="true" />
@@ -446,7 +455,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748622348224</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Solved Y15D14 a,b">
+      <option name="closed" value="true" />
+      <created>1748629076653</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1748629076653</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +484,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="redesign of template" />
     <MESSAGE value="refactor of year 2023 day 1" />
     <MESSAGE value="solution 2024 01" />
     <MESSAGE value="solution 2024 02" />
@@ -492,7 +508,8 @@
     <MESSAGE value="Solved Y15D12 a" />
     <MESSAGE value="Solved Y15D12 b" />
     <MESSAGE value="Optimized Y15D12 b" />
-    <option name="LAST_COMMIT_MESSAGE" value="Optimized Y15D12 b" />
+    <MESSAGE value="Solved Y15D14 a,b" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solved Y15D14 a,b" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
