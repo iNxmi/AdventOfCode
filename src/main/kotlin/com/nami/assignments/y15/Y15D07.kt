@@ -1,8 +1,6 @@
 package com.nami.assignments.y15
 
 import com.nami.Assignment
-import com.nami.misc.shl
-import com.nami.misc.shr
 import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
@@ -42,6 +40,14 @@ class Y15D07 : Assignment<Map<String, String>, Int>(2015, 7) {
         }
 
         return wires
+    }
+
+    private fun UShort.shl(bits: Int): UShort {
+        return this.toInt().shl(bits).toUShort()
+    }
+
+    private fun UShort.shr(bits: Int): UShort {
+        return this.toInt().shr(bits).toUShort()
     }
 
     private fun evaluate(

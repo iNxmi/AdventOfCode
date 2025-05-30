@@ -7,6 +7,7 @@ import com.nami.test.TestInputSimplex
 class Y15D11 : Assignment<String, String>(2015, 11) {
 
     private val segments = mutableSetOf<String>()
+    private val alphabet = "abcdefghijklmnopqrstuvwxyz"
 
     init {
         val alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -15,17 +16,11 @@ class Y15D11 : Assignment<String, String>(2015, 11) {
             segments.add(alphabet.substring(i, i + length))
     }
 
-    override fun getRawTestInput(): TestInput {
-        return TestInputSimplex(
-            "ghijklmn"
-        )
-    }
+    override fun getRawTestInput(): TestInput = TestInputSimplex("ghijklmn")
 
     override fun getProcessedInput(raw: String): String = raw
 
     private fun numberToAlphabetString(number: Long): String {
-        require(number >= 0) { "Number must be non-negative" }
-        val alphabet = "abcdefghijklmnopqrstuvwxyz"
         val base = alphabet.length
 
         var n = number
@@ -34,14 +29,13 @@ class Y15D11 : Assignment<String, String>(2015, 11) {
         do {
             val remainder = (n % base).toInt()
             result.append(alphabet[remainder])
-            n = n / base - 1  // subtract 1 to shift counting like Excel columns
+            n = n / base - 1
         } while (n >= 0)
 
         return result.reverse().toString()
     }
 
     private fun alphabetStringToNumber(s: String): Long {
-        val alphabet = "abcdefghijklmnopqrstuvwxyz"
         val base = alphabet.length
         var result = 0L
 
@@ -50,6 +44,7 @@ class Y15D11 : Assignment<String, String>(2015, 11) {
             require(digit >= 0) { "Invalid character '$char' in input" }
             result = result * base + (digit + 1)
         }
+
         return result - 1
     }
 
@@ -75,7 +70,7 @@ class Y15D11 : Assignment<String, String>(2015, 11) {
     }
 
     private fun find(password: String): String {
-        val max = alphabetStringToNumber("z".repeat(8))
+        val max = alphabetStringToNumber(("z").repeat(8))
         val start = alphabetStringToNumber(password) + 1
         for (i in start..max) {
             val value = numberToAlphabetString(i)
@@ -87,8 +82,6 @@ class Y15D11 : Assignment<String, String>(2015, 11) {
     }
 
     override fun solveA(input: String): String = find(input)
-
-    override fun solveATest(input: String): String = find(input)
 
     override fun solveB(input: String): String = find(solveA(input))
 
