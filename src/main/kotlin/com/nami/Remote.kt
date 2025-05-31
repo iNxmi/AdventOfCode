@@ -5,16 +5,13 @@ import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import org.jsoup.Jsoup
 import java.nio.file.Files
-import java.nio.file.Path
 import java.nio.file.Paths
 import java.security.MessageDigest
 import kotlin.io.path.exists
 
 //TODO THIS CLASS NEEDS CLEANUP ASAP
 
-data class Remote(
-    val path: Path = Path.of("cache.json")
-) {
+class Remote {
 
     enum class Type {
         INPUT,
