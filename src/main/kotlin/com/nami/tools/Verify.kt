@@ -1,57 +1,74 @@
 package com.nami.tools
 
 import com.nami.task.Remote
-import com.nami.task.solutions.y15.*
-import com.nami.task.solutions.y23.Y23D01
-import com.nami.task.solutions.y24.*
+import com.nami.task.Task
+import java.nio.file.Files
+import java.nio.file.Paths
+
+enum class Part { A, B }
+
+data class Entry(
+    val id: Int, val year: Int, val day: Int,
+    val part: Part,
+    val task: String?,
+    val remote: String?,
+) {
+    fun failed(): Boolean = task != null && remote != null && task != remote
+    fun unsolved(): Boolean = task == null || remote == null
+    fun success(): Boolean = task != null && remote != null && task == remote
+}
 
 fun verify() {
-    val assignments = listOf(
-        Y15D01(),
-        Y15D02(),
-        Y15D03(),
-        Y15D04(),
-        Y15D05(),
-        Y15D06(),
-        Y15D07(),
-        Y15D08(),
-        Y15D09(),
-        Y15D10(),
-        Y15D11(),
-        Y15D12(),
-        Y15D14(),
-        Y15D15(),
-        Y15D16(),
+    val tasks = Task.getAll()
+    val entries = tasks.flatMap { task ->
+        val result = task.solve()
 
-        Y23D01(),
+        val resultATask = result.a.toString()
+        val resultARemote = Remote.getSolutionA(task.year, task.day)
+        val a = Entry(task.id, task.year, task.day, Part.A, resultATask, resultARemote)
 
-        Y24D01(),
-        Y24D02(),
-        Y24D03(),
-        Y24D04(),
-        Y24D05(),
-        Y24D06(),
-        Y24D07(),
-        Y24D08(),
-        Y24D11(),
-        Y24D15()
-    )
+        val resultBTask = result.b.toString()
+        val resultBRemote = Remote.getSolutionB(task.year, task.day)
+        val b = Entry(task.id, task.year, task.day, Part.B, resultBTask, resultBRemote)
 
-    assignments.forEach { assignment ->
-        val solution = assignment.solve()
-
-        val solutionA = Remote.getSolutionA(assignment.year, assignment.day)
-        if (solutionA == solution.a.toString())
-            println("id=${assignment.id} a=${solution.a} solution_a=${solutionA}")
-        else
-            System.err.println("id=${assignment.id} a=${solution.a} solution_a=${solutionA}")
-
-        val solutionB = Remote.getSolutionB(assignment.year, assignment.day)
-        if (solutionB == solution.b.toString())
-            println("id=${assignment.id} b=${solution.b} solution_b=${solutionB}")
-        else
-            System.err.println("id=${assignment.id} b=${solution.b} solution_b=${solutionB}")
+        setOf(a, b)
     }
+
+    val failed = entries.filter { it.failed() }
+    val unsolved = entries.filter { it.unsolved() }
+    val success = entries.filter { it.success() }
+
+    val builder = StringBuilder()
+
+    builder.appendLine("# Failed (${failed.size})")
+    builder.appendLine("|Year|Day|Part|Task|Remote|")
+    builder.appendLine("|----|---|----|----|------|")
+    failed.sortedBy { it.id }
+        .map { it }
+        .forEach { e ->
+            builder.appendLine("|${e.year}|${e.day}|${e.part}|${e.task}|${e.remote}|")
+        }
+
+    builder.appendLine("# Unsolved (${unsolved.size})")
+    builder.appendLine("|Year|Day|Part|Task|Remote|")
+    builder.appendLine("|----|---|----|----|------|")
+    unsolved.sortedBy { it.id }
+        .map { it }
+        .forEach { e ->
+            builder.appendLine("|${e.year}|${e.day}|${e.part}|${e.task}|${e.remote}|")
+        }
+
+    builder.appendLine("# Success (${success.size})")
+    builder.appendLine("|Year|Day|Part|Task|Remote|")
+    builder.appendLine("|----|---|----|----|------|")
+    success.sortedBy { it.id }
+        .map { it }
+        .forEach { e ->
+            builder.appendLine("|${e.year}|${e.day}|${e.part}|${e.task}|${e.remote}|")
+        }
+
+    val markdown = builder.toString()
+    Files.writeString(Paths.get("verification.md"), markdown)
 }
 
 fun main() = verify()

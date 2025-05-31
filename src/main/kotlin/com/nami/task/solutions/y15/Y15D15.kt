@@ -54,8 +54,8 @@ class Y15D15 : Task<Set<Y15D15.Ingredient>>(2015, 15) {
 
     }
 
-    override fun solveA(input: Set<Ingredient>): Any = -1
-    override fun solveB(input: Set<Ingredient>): Any = -1
+    override fun solveA(input: Set<Ingredient>): Any? = null
+    override fun solveB(input: Set<Ingredient>): Any? = null
 
 }
 
