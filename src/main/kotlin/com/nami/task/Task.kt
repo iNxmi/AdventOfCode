@@ -1,8 +1,8 @@
-package com.nami
+package com.nami.task
 
-import com.nami.test.TestInput
+import com.nami.task.test.TestInput
 
-abstract class Assignment<InputClass : Any>(
+abstract class Task<InputClass : Any>(
     val year: Int,
     val day: Int,
     val id: Int = getID(year, day)
@@ -23,22 +23,10 @@ abstract class Assignment<InputClass : Any>(
     open fun solveB(input: InputClass): Any? = null
     open fun solveBTest(input: InputClass): Any? = solveB(input)
 
-    data class Solution(
-        val id: Int,
-        val year: Int,
-        val day: Int,
-
-        val a: Any?,
-        val b: Any?,
-
-        val aTest: Any?,
-        val bTest: Any?
-    )
-
-    fun solve(): Solution {
+    fun solve(): Result {
         val input = getProcessedInput(getRawInput())
 
-        return Solution(
+        val result = Result(
             id,
             year,
             day,
@@ -49,6 +37,8 @@ abstract class Assignment<InputClass : Any>(
             if (getRawTestInput() != null) solveATest(getProcessedInput(getRawTestInput()!!.getRawTestInputA())) else null,
             if (getRawTestInput() != null) solveBTest(getProcessedInput(getRawTestInput()!!.getRawTestInputB())) else null
         )
+
+        return result
     }
 
 }
