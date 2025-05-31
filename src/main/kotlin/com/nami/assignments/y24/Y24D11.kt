@@ -1,14 +1,11 @@
 package com.nami.assignments.y24
 
 import com.nami.Assignment
-import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
-class Y24D11 : Assignment<Map<Long, Long>, Long>(2024, 11) {
+class Y24D11 : Assignment<Map<Long, Long>>(2024, 11) {
 
-    override fun getRawTestInput(): TestInput {
-        return TestInputSimplex("125 17")
-    }
+    override fun getRawTestInput() = TestInputSimplex("125 17")
 
     override fun getProcessedInput(raw: String): Map<Long, Long> {
         val map = mutableMapOf<Long, Long>()
@@ -63,11 +60,11 @@ class Y24D11 : Assignment<Map<Long, Long>, Long>(2024, 11) {
         return map.values.sum()
     }
 
-    override fun solveA(input: Map<Long, Long>): Long {
+    override fun solveA(input: Map<Long, Long>): Any {
         return solve(input, 25)
     }
 
-    override fun solveB(input: Map<Long, Long>): Long {
+    override fun solveB(input: Map<Long, Long>): Any {
         return solve(input, 75)
     }
 

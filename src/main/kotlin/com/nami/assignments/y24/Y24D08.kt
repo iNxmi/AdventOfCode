@@ -1,32 +1,32 @@
 package com.nami.assignments.y24
 
 import com.nami.Assignment
-import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 import org.joml.Vector2i
 
-class Y24D08 : Assignment<Y24D08.Input, Int>(2024, 8) {
+class Y24D08 : Assignment<Y24D08.Input>(2024, 8) {
 
-    data class Input(val nodes: Map<Char, Set<Vector2i>>, val size: Vector2i)
+    override fun getRawTestInput() = TestInputSimplex(
+        """
+        ............
+        ........0...
+        .....0......
+        .......0....
+        ....0.......
+        ......A.....
+        ............
+        ............
+        ........A...
+        .........A..
+        ............
+        ............
+        """.trimIndent()
+    )
 
-    override fun getRawTestInput(): TestInput {
-        return TestInputSimplex(
-            """
-            ............
-            ........0...
-            .....0......
-            .......0....
-            ....0.......
-            ......A.....
-            ............
-            ............
-            ........A...
-            .........A..
-            ............
-            ............
-            """.trimIndent()
-        )
-    }
+    data class Input(
+        val size: Vector2i,
+        val nodes: Map<Char, Set<Vector2i>>
+    )
 
     override fun getProcessedInput(raw: String): Input {
         var width = 0
@@ -46,10 +46,11 @@ class Y24D08 : Assignment<Y24D08.Input, Int>(2024, 8) {
             }
         }
 
-        return Input(map, Vector2i(width, height))
+        val size = Vector2i(width, height)
+        return Input(size, map)
     }
 
-    override fun solveA(input: Input): Int {
+    override fun solveA(input: Input): Any {
         val antinodes = mutableSetOf<Vector2i>()
         for (key in input.nodes.keys) {
             for (p1 in input.nodes[key]!!)
@@ -72,7 +73,7 @@ class Y24D08 : Assignment<Y24D08.Input, Int>(2024, 8) {
         return antinodes.size
     }
 
-    fun getAntinodes(positionA: Vector2i, positionB: Vector2i, worldSize: Vector2i): Set<Vector2i> {
+    private fun getAntinodes(positionA: Vector2i, positionB: Vector2i, worldSize: Vector2i): Set<Vector2i> {
         val direction = Vector2i(positionB).sub(positionA)
 
         val antinodes = mutableSetOf<Vector2i>()
@@ -109,7 +110,7 @@ class Y24D08 : Assignment<Y24D08.Input, Int>(2024, 8) {
         return antinodes
     }
 
-    override fun solveB(input: Input): Int {
+    override fun solveB(input: Input): Any {
         val antinodes = mutableSetOf<Vector2i>()
 
         for (key in input.nodes.keys)

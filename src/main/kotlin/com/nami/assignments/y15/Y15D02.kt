@@ -3,33 +3,32 @@ package com.nami.assignments.y15
 import com.nami.Assignment
 import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
+import org.joml.Vector3i
 import kotlin.math.min
 
-class Y15D02 : Assignment<List<Triple<Int, Int, Int>>, Int>(2015, 2) {
+class Y15D02 : Assignment<List<Vector3i>>(2015, 2) {
 
-    override fun getRawTestInput(): TestInput {
-        return TestInputSimplex("1x1x10")
-    }
+    override fun getRawTestInput() = TestInputSimplex("1x1x10")
 
-    override fun getProcessedInput(raw: String): List<Triple<Int, Int, Int>> {
+    override fun getProcessedInput(raw: String): List<Vector3i> {
         val lines = raw.lines()
 
-        val result = mutableListOf<Triple<Int, Int, Int>>()
+        val result = mutableListOf<Vector3i>()
         lines.forEach { line ->
             val dimensions = line.split("x").map { it.toInt() }
-            result.add(Triple(dimensions[0], dimensions[1], dimensions[2]))
+            result.add(Vector3i(dimensions[0], dimensions[1], dimensions[2]))
         }
 
         return result
     }
 
-    override fun solveA(input: List<Triple<Int, Int, Int>>): Int {
+    override fun solveA(input: List<Vector3i>): Any {
         var sum = 0
 
         for (dimension in input) {
-            val l = dimension.first
-            val w = dimension.second
-            val h = dimension.third
+            val l = dimension.x
+            val w = dimension.y
+            val h = dimension.z
 
             val x = l * w
             val y = w * h
@@ -42,13 +41,13 @@ class Y15D02 : Assignment<List<Triple<Int, Int, Int>>, Int>(2015, 2) {
         return sum
     }
 
-    override fun solveB(input: List<Triple<Int, Int, Int>>): Int {
+    override fun solveB(input: List<Vector3i>): Any {
         var sum = 0
 
         for (dimension in input) {
-            val l = dimension.first
-            val w = dimension.second
-            val h = dimension.third
+            val l = dimension.x
+            val w = dimension.y
+            val h = dimension.z
 
             val sortedList = mutableListOf(l, w, h).sorted()
             val a = sortedList[0]

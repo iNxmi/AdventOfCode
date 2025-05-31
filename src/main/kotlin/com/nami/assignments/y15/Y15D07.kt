@@ -1,25 +1,22 @@
 package com.nami.assignments.y15
 
 import com.nami.Assignment
-import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
-class Y15D07 : Assignment<Map<String, String>, Int>(2015, 7) {
+class Y15D07 : Assignment<Map<String, String>>(2015, 7) {
 
-    override fun getRawTestInput(): TestInput {
-        return TestInputSimplex(
-            """
-            123 -> x
-            456 -> y
-            x AND y -> d
-            x OR y -> e
-            x LSHIFT 2 -> f
-            y RSHIFT 2 -> g
-            NOT x -> h
-            NOT y -> i
-            """.trimIndent()
-        )
-    }
+    override fun getRawTestInput() = TestInputSimplex(
+        """
+        123 -> x
+        456 -> y
+        x AND y -> d
+        x OR y -> e
+        x LSHIFT 2 -> f
+        y RSHIFT 2 -> g
+        NOT x -> h
+        NOT y -> i
+        """.trimIndent()
+    )
 
     override fun getProcessedInput(raw: String): Map<String, String> {
         val str = raw
@@ -80,9 +77,8 @@ class Y15D07 : Assignment<Map<String, String>, Int>(2015, 7) {
         return states[id]!!
     }
 
-    private fun getOrEvaluate(cache: MutableMap<String, UShort>, wires: Map<String, String>, str: String): UShort {
-        return str.toUShortOrNull() ?: evaluate(cache, wires, str)
-    }
+    private fun getOrEvaluate(cache: MutableMap<String, UShort>, wires: Map<String, String>, str: String): UShort =
+        str.toUShortOrNull() ?: evaluate(cache, wires, str)
 
     private fun extract(str: String, chars: Set<Char>): String {
         chars.forEach { char ->
@@ -93,11 +89,9 @@ class Y15D07 : Assignment<Map<String, String>, Int>(2015, 7) {
         return ""
     }
 
-    override fun solveA(input: Map<String, String>): Int {
-        return evaluate(mutableMapOf(), input, "a").toInt()
-    }
+    override fun solveA(input: Map<String, String>): Any = evaluate(mutableMapOf(), input, "a").toInt()
 
-    override fun solveB(input: Map<String, String>): Int {
+    override fun solveB(input: Map<String, String>): Any {
         val rewired = input.toMutableMap()
         rewired["b"] = solveA(input).toString()
 
@@ -106,4 +100,4 @@ class Y15D07 : Assignment<Map<String, String>, Int>(2015, 7) {
 
 }
 
-fun main() =  println(Y15D07().solve())
+fun main() = println(Y15D07().solve())

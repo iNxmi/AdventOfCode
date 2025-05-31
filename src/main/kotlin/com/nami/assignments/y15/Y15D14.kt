@@ -4,7 +4,7 @@ import com.nami.Assignment
 import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
-class Y15D14 : Assignment<Set<Y15D14.Racer>, Int>(2015, 14) {
+class Y15D14 : Assignment<Set<Y15D14.Racer>>(2015, 14) {
 
     override fun getRawTestInput(): TestInput = TestInputSimplex(
         """
@@ -73,11 +73,11 @@ class Y15D14 : Assignment<Set<Y15D14.Racer>, Int>(2015, 14) {
         return result
     }
 
-    override fun solveA(input: Set<Racer>): Int = race(input, 2503).maxOf { it.value.distance }
-    override fun solveATest(input: Set<Racer>): Int = race(input, 1000).maxOf { it.value.distance }
+    override fun solveA(input: Set<Racer>): Any = race(input, 2503).maxOf { it.value.distance }
+    override fun solveATest(input: Set<Racer>): Any = race(input, 1000).maxOf { it.value.distance }
 
-    override fun solveB(input: Set<Racer>): Int = race(input, 2503).maxOf { it.value.points }
-    override fun solveBTest(input: Set<Racer>): Int = race(input, 1000).maxOf { it.value.points }
+    override fun solveB(input: Set<Racer>): Any = race(input, 2503).maxOf { it.value.points }
+    override fun solveBTest(input: Set<Racer>): Any = race(input, 1000).maxOf { it.value.points }
 
 }
 

@@ -1,28 +1,20 @@
 package com.nami.assignments.y15
 
 import com.nami.Assignment
-import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 import org.joml.Vector2i
 
-class Y15D06 : Assignment<List<Y15D06.Operation>, Int>(2015, 6) {
+class Y15D06 : Assignment<List<Y15D06.Operation>>(2015, 6) {
 
-    override fun getRawTestInput(): TestInput {
-        return TestInputSimplex(
-            """
-            turn on 0,0 through 999,999
-            toggle 0,0 through 999,0
-            turn off 499,499 through 500,500
-            """.trimIndent()
-        )
-    }
+    override fun getRawTestInput() = TestInputSimplex(
+        """
+        turn on 0,0 through 999,999
+        toggle 0,0 through 999,0
+        turn off 499,499 through 500,500
+        """.trimIndent()
+    )
 
-    enum class Task {
-        ON,
-        TOGGLE,
-        OFF
-    }
-
+    enum class Task { ON, TOGGLE, OFF }
     data class Operation(val task: Task, val start: Vector2i, val end: Vector2i)
 
     override fun getProcessedInput(raw: String): List<Operation> {
@@ -33,13 +25,12 @@ class Y15D06 : Assignment<List<Y15D06.Operation>, Int>(2015, 6) {
 
         val operations = mutableListOf<Operation>()
         str.lines().forEach { line ->
-            val task: Task
-            if (line.contains("on"))
-                task = Task.ON
+            val task = if (line.contains("on"))
+                Task.ON
             else if (line.contains("toggle"))
-                task = Task.TOGGLE
+                Task.TOGGLE
             else if (line.contains("off"))
-                task = Task.OFF
+                Task.OFF
             else throw IllegalStateException("Unexpected line $line")
 
             val split = line.split(" ")
@@ -57,7 +48,7 @@ class Y15D06 : Assignment<List<Y15D06.Operation>, Int>(2015, 6) {
 
     private val size = 1000
 
-    override fun solveA(input: List<Operation>): Int {
+    override fun solveA(input: List<Operation>): Any {
         val lights = BooleanArray(size * size) { false }
         input.forEach { operation ->
             for (y in operation.start.y..operation.end.y)
@@ -74,7 +65,7 @@ class Y15D06 : Assignment<List<Y15D06.Operation>, Int>(2015, 6) {
         return lights.count { it }
     }
 
-    override fun solveB(input: List<Operation>): Int {
+    override fun solveB(input: List<Operation>): Any {
         val lights = IntArray(size * size) { 0 }
         input.forEach { operation ->
             for (y in operation.start.y..operation.end.y)

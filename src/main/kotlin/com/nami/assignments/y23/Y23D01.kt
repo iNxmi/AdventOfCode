@@ -1,41 +1,36 @@
 package com.nami.assignments.y23
 
 import com.nami.Assignment
-import com.nami.test.TestInput
 import com.nami.test.TestInputDuplex
 import java.util.*
 
-class Y23D01 : Assignment<List<String>, Int>(2023, 1) {
+class Y23D01 : Assignment<List<String>>(2023, 1) {
 
-    override fun getRawTestInput(): TestInput {
-        return TestInputDuplex(
-            """
-            1abc2
-            pqr3stu8vwx
-            a1b2c3d4e5f
-            treb7uchet
+    override fun getRawTestInput() = TestInputDuplex(
+        """
+        1abc2
+        pqr3stu8vwx
+        a1b2c3d4e5f
+        treb7uchet
         """.trimIndent(), """
-            two1nine
-            eightwothree
-            abcone2threexyz
-            xtwone3four
-            4nineeightseven2
-            zoneight234
-            7pqrstsixteen
+        two1nine
+        eightwothree
+        abcone2threexyz
+        xtwone3four
+        4nineeightseven2
+        zoneight234
+        7pqrstsixteen
         """.trimIndent()
-        )
-    }
+    )
 
-    override fun getProcessedInput(raw: String): List<String> {
-        return raw.lines()
-    }
+    override fun getProcessedInput(raw: String) = raw.lines()
 
     private fun digitToWord(digit: Int): String {
         val array = arrayOf("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine")
         return array[digit]
     }
 
-    override fun solveA(input: List<String>): Int {
+    override fun solveA(input: List<String>): Any {
         val numbers = mutableListOf<Int>()
 
         for (line in input) {
@@ -52,7 +47,7 @@ class Y23D01 : Assignment<List<String>, Int>(2023, 1) {
         return numbers.sum()
     }
 
-    override fun solveB(input: List<String>): Int {
+    override fun solveB(input: List<String>): Any {
         val digits = mutableMapOf<String, Int>()
         for (i in 0..9) {
             digits[i.toString()] = i

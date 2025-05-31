@@ -4,7 +4,7 @@ import com.nami.Assignment
 import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
-class Y15D11 : Assignment<String, String>(2015, 11) {
+class Y15D11 : Assignment<String>(2015, 11) {
 
     private val segments = mutableSetOf<String>()
     private val alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -83,7 +83,7 @@ class Y15D11 : Assignment<String, String>(2015, 11) {
 
     override fun solveA(input: String): String = find(input)
 
-    override fun solveB(input: String): String = find(solveA(input))
+    override fun solveB(input: String): Any = find(solveA(input))
 
 }
 

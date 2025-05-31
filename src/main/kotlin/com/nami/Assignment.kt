@@ -2,18 +2,26 @@ package com.nami
 
 import com.nami.test.TestInput
 
-abstract class Assignment<InputClass : Any, SolutionClass : Any>(val year: Int, val day: Int) {
+abstract class Assignment<InputClass : Any>(
+    val year: Int,
+    val day: Int,
+    val id: Int = getID(year, day)
+) {
+
+    companion object {
+        fun getID(year: Int, day: Int): Int = year * 100 + day
+    }
 
     private fun getRawInput(): String = Remote.getInput(year, day)
-
     abstract fun getRawTestInput(): TestInput?
-    abstract fun getProcessedInput(raw: String): InputClass
-    abstract fun solveA(input: InputClass): SolutionClass
-    open fun solveATest(input: InputClass): SolutionClass? = null
-    abstract fun solveB(input: InputClass): SolutionClass
-    open fun solveBTest(input: InputClass): SolutionClass? = null
 
-    fun id(): Int = Utils.getID(year, day)
+    abstract fun getProcessedInput(raw: String): InputClass
+
+    abstract fun solveA(input: InputClass): Any
+    open fun solveATest(input: InputClass): Any? = null
+
+    abstract fun solveB(input: InputClass): Any
+    open fun solveBTest(input: InputClass): Any? = null
 
     data class Solution(
         val id: Int,
@@ -31,7 +39,7 @@ abstract class Assignment<InputClass : Any, SolutionClass : Any>(val year: Int, 
         val input = getProcessedInput(getRawInput())
 
         return Solution(
-            id(),
+            id,
             year,
             day,
 

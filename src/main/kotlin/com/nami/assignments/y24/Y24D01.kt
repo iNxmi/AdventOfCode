@@ -1,48 +1,49 @@
 package com.nami.assignments.y24
 
 import com.nami.Assignment
-import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 import kotlin.math.abs
-import kotlin.streams.toList
 
-class Y24D01 : Assignment<Pair<List<Int>, List<Int>>, Int>(2024, 1) {
+class Y24D01 : Assignment<Y24D01.Input>(2024, 1) {
 
-    override fun getRawTestInput(): TestInput {
-        return TestInputSimplex(
-            """
-            3   4
-            4   3
-            2   5
-            1   3
-            3   9
-            3   3
+    override fun getRawTestInput() = TestInputSimplex(
+        """
+        3   4
+        4   3
+        2   5
+        1   3
+        3   9
+        3   3
         """.trimIndent()
-        )
-    }
+    )
 
-    override fun getProcessedInput(raw: String): Pair<List<Int>, List<Int>> {
+    data class Input(
+        val left: List<Int>,
+        val right: List<Int>
+    )
+
+    override fun getProcessedInput(raw: String): Input {
         val lines = raw.replace(" ", "").lines()
 
-        val listLeft = lines.stream().mapToInt { it.substring(0, it.length / 2).toInt() }.sorted().toList()
-        val listRight = lines.stream().mapToInt { it.substring(it.length / 2, it.length).toInt() }.sorted().toList()
+        val left = lines.map { it.substring(0, it.length / 2).toInt() }.sorted().toList()
+        val right = lines.map { it.substring(it.length / 2, it.length).toInt() }.sorted().toList()
 
-        return Pair(listLeft, listRight)
+        return Input(left, right)
     }
 
-    override fun solveA(input: Pair<List<Int>, List<Int>>): Int {
+    override fun solveA(input: Input): Any {
         val distances = mutableListOf<Int>()
 
-        for (i in input.first.indices)
-            distances.add(abs(input.first[i] - input.second[i]))
+        for (i in input.left.indices)
+            distances.add(abs(input.left[i] - input.right[i]))
 
         return distances.sum()
     }
 
-    override fun solveB(input: Pair<List<Int>, List<Int>>): Int {
+    override fun solveB(input: Input): Any {
         var value = 0
-        for (number in input.first) {
-            val count = input.second.count { it == number }
+        for (number in input.left) {
+            val count = input.right.count { it == number }
             value += number * count
         }
 

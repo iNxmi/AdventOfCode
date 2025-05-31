@@ -1,30 +1,25 @@
 package com.nami.assignments.y24
 
 import com.nami.Assignment
-import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 import kotlin.math.abs
 
-class Y24D02 : Assignment<List<String>, Int>(2024, 2) {
+class Y24D02 : Assignment<List<String>>(2024, 2) {
 
-    override fun getRawTestInput(): TestInput {
-        return TestInputSimplex(
-            """
-            7 6 4 2 1
-            1 2 7 8 9
-            9 7 6 2 1
-            1 3 2 4 5
-            8 6 4 4 1
-            1 3 6 7 9
+    override fun getRawTestInput() = TestInputSimplex(
+        """
+        7 6 4 2 1
+        1 2 7 8 9
+        9 7 6 2 1
+        1 3 2 4 5
+        8 6 4 4 1
+        1 3 6 7 9
         """.trimIndent()
-        )
-    }
+    )
 
-    override fun getProcessedInput(raw: String): List<String> {
-        return raw.lines()
-    }
+    override fun getProcessedInput(raw: String) = raw.lines()
 
-    override fun solveA(input: List<String>): Int {
+    override fun solveA(input: List<String>): Any {
         val valid = mutableSetOf<List<Int>>()
         val invalid = mutableSetOf<List<Int>>()
         for (line in input) {
@@ -38,7 +33,7 @@ class Y24D02 : Assignment<List<String>, Int>(2024, 2) {
         return valid.size
     }
 
-    override fun solveB(input: List<String>): Int {
+    override fun solveB(input: List<String>): Any {
         val valid = mutableSetOf<List<Int>>()
         val invalid = mutableSetOf<List<Int>>()
         for (line in input) {

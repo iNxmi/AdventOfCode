@@ -1,15 +1,53 @@
 package com.nami.assignments.y24
 
 import com.nami.Assignment
-import com.nami.misc.Direction
-import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 import org.joml.Vector2i
 import javax.naming.directory.InvalidAttributesException
 
-class Y24D15 : Assignment<Y24D15.Input, Int>(2024, 15) {
+class Y24D15 : Assignment<Y24D15.Input>(2024, 15) {
+
+    override fun getRawTestInput() = TestInputSimplex(
+        """
+        ##########
+        #..O..O.O#
+        #......O.#
+        #.OO..O.O#
+        #..O@..O.#
+        #O#..O...#
+        #O..O..O.#
+        #.OO.O.OO#
+        #....O...#
+        ##########
+
+        <vv>^<v^>v>^vv^v>v<>v^v<v<^vv<<<^><<><>>v<vvv<>^v^>^<<<><<v<<<v^vv^v>^
+        vvv<<^>^v^^><<>>><>^<<><^vv^^<>vvv<>><^^v>^>vv<>v<<<<v<^v>^<^^>>>^<v<v
+        ><>vv>v^v^<>><>>>><^^>vv>v<^^^>>v^v^<^^>v^^>v^<^v>v<>>v^v^<v>v^^<^^vv<
+        <<v<^>>^^^^>>>v^<>vvv^><v<<<>^^^vv^<vvv>^>v<^^^^v<>^>vvvv><>>v^<<^^^^^
+        ^><^><>>><>^^<<^^v>>><^<v>^<vv>>v>>>^v><>^v><<<<v>>v<v<v>vvv>^<><<>^><
+        ^>><>^v<><^vvv<^^<><v<<<<<><^v<<<><<<^^<v<^^^><^>>^<v^><<<^>>^v<v^v<v^
+        >^>>^v>vv>^<<^v<>><<><<v<<v><>v<^vv<<<>^^v^>^^>>><<^v>>v^v><^^>>^<>vv^
+        <><^^>^^^<><vvvvv^v<v<<>^v<v>v<<^><<><<><<<^^<<<^<<>><<><^^^>^^<>^>v<>
+        ^^>vv<^v^v<vv>^<><v<^v>^^^>>>^^vvv^>vvv<>>>^<^>>>>>^<<^v>^vvv<>^<><<v>
+        v^^>>><<^^<>>^v^<v^vv<>v^<<>^<^v^v><^<<<><<^<v><v<>vv>>v><v^<vv<>v^<<^
+        """.trimIndent()
+    )
+
 
     data class Input(val world: World, val instructions: List<Direction>)
+    enum class Direction(val vector: Vector2i) {
+        NORTH_WEST(Vector2i(-1, 1)),
+        NORTH(Vector2i(0, 1)),
+        NORTH_EAST(Vector2i(1, 1)),
+
+        EAST(Vector2i(1, 0)),
+
+        SOUTH_EAST(Vector2i(1, -1)),
+        SOUTH(Vector2i(0, -1)),
+        SOUTH_WEST(Vector2i(-1, -1)),
+
+        WEST(Vector2i(-1, 0))
+    }
 
     data class World(
         val size: Vector2i = Vector2i(),
@@ -26,34 +64,6 @@ class Y24D15 : Assignment<Y24D15.Input, Int>(2024, 15) {
             return count - 1
         }
 
-    }
-
-    override fun getRawTestInput(): TestInput {
-        return TestInputSimplex(
-            """
-            ##########
-            #..O..O.O#
-            #......O.#
-            #.OO..O.O#
-            #..O@..O.#
-            #O#..O...#
-            #O..O..O.#
-            #.OO.O.OO#
-            #....O...#
-            ##########
-
-            <vv>^<v^>v>^vv^v>v<>v^v<v<^vv<<<^><<><>>v<vvv<>^v^>^<<<><<v<<<v^vv^v>^
-            vvv<<^>^v^^><<>>><>^<<><^vv^^<>vvv<>><^^v>^>vv<>v<<<<v<^v>^<^^>>>^<v<v
-            ><>vv>v^v^<>><>>>><^^>vv>v<^^^>>v^v^<^^>v^^>v^<^v>v<>>v^v^<v>v^^<^^vv<
-            <<v<^>>^^^^>>>v^<>vvv^><v<<<>^^^vv^<vvv>^>v<^^^^v<>^>vvvv><>>v^<<^^^^^
-            ^><^><>>><>^^<<^^v>>><^<v>^<vv>>v>>>^v><>^v><<<<v>>v<v<v>vvv>^<><<>^><
-            ^>><>^v<><^vvv<^^<><v<<<<<><^v<<<><<<^^<v<^^^><^>>^<v^><<<^>>^v<v^v<v^
-            >^>>^v>vv>^<<^v<>><<><<v<<v><>v<^vv<<<>^^v^>^^>>><<^v>>v^v><^^>>^<>vv^
-            <><^^>^^^<><vvvvv^v<v<<>^v<v>v<<^><<><<><<<^^<<<^<<>><<><^^^>^^<>^>v<>
-            ^^>vv<^v^v<vv>^<><v<^v>^^^>>>^^vvv^>vvv<>>>^<^>>>>>^<<^v>^vvv<>^<><<v>
-            v^^>>><<^^<>>^v^<v^vv<>v^<<>^<^v^v><^<<<><<^<v><v<>vv>>v><v^<vv<>v^<<^
-        """.trimIndent()
-        )
     }
 
     override fun getProcessedInput(raw: String): Input {
@@ -94,11 +104,11 @@ class Y24D15 : Assignment<Y24D15.Input, Int>(2024, 15) {
         return Input(world, instructions)
     }
 
-    override fun solveA(input: Input): Int {
+    override fun solveA(input: Input): Any {
         return -1
     }
 
-    override fun solveB(input: Input): Int {
+    override fun solveB(input: Input): Any {
         return -1
     }
 

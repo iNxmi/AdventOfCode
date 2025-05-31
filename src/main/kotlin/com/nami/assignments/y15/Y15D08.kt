@@ -1,21 +1,18 @@
 package com.nami.assignments.y15
 
 import com.nami.Assignment
-import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
-class Y15D08 : Assignment<List<String>, Int>(2015, 8) {
+class Y15D08 : Assignment<List<String>>(2015, 8) {
 
-    override fun getRawTestInput(): TestInput {
-        return TestInputSimplex(
-            """
-            ""
-            "abc"
-            "aaa\"aaa"
-            "\x27"
-            """.trimIndent()
-        )
-    }
+    override fun getRawTestInput() = TestInputSimplex(
+        """
+        ""
+        "abc"
+        "aaa\"aaa"
+        "\x27"
+        """.trimIndent()
+    )
 
     override fun getProcessedInput(raw: String): List<String> = raw.lines()
 
@@ -36,7 +33,7 @@ class Y15D08 : Assignment<List<String>, Int>(2015, 8) {
         return result
     }
 
-    override fun solveA(input: List<String>): Int {
+    override fun solveA(input: List<String>): Any {
         val code = input.sumOf { it.length }
         val memory = input.map { escape(it) }.sumOf { it.length }
         return code - memory
@@ -44,15 +41,15 @@ class Y15D08 : Assignment<List<String>, Int>(2015, 8) {
 
     private fun unescape(str: String): String {
         var result = str
-            .replace("\\","\\\\")
-            .replace("\"","\\\"")
+            .replace("\\", "\\\\")
+            .replace("\"", "\\\"")
 
         result = "\"$result\""
 
         return result
     }
 
-    override fun solveB(input: List<String>): Int {
+    override fun solveB(input: List<String>): Any {
         val newlyEncoded = input.map { unescape(it) }.sumOf { it.length }
         val original = input.sumOf { it.length }
         return newlyEncoded - original

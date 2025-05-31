@@ -1,20 +1,17 @@
 package com.nami.assignments.y15
 
 import com.nami.Assignment
-import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
-class Y15D09 : Assignment<Y15D09.Map, Int>(2015, 9) {
+class Y15D09 : Assignment<Y15D09.Map>(2015, 9) {
 
-    override fun getRawTestInput(): TestInput {
-        return TestInputSimplex(
-            """
-            London to Dublin = 464
-            London to Belfast = 518
-            Dublin to Belfast = 141
-            """.trimIndent()
-        )
-    }
+    override fun getRawTestInput() = TestInputSimplex(
+        """
+        London to Dublin = 464
+        London to Belfast = 518
+        Dublin to Belfast = 141
+        """.trimIndent()
+    )
 
     data class Node(val name: String)
     data class Connection(val nodeA: Node, val nodeB: Node, val distance: Int)
@@ -49,12 +46,12 @@ class Y15D09 : Assignment<Y15D09.Map, Int>(2015, 9) {
         return Map(nodes, connections)
     }
 
-    override fun solveA(input: Map): Int {
+    override fun solveA(input: Map): Any {
 //        input.connections.forEach { connection -> println(connection) }
         return -1
     }
 
-    override fun solveB(input: Map): Int {
+    override fun solveB(input: Map): Any {
         return -1
     }
 

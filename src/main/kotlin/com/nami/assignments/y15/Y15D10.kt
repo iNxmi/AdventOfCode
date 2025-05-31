@@ -4,7 +4,7 @@ import com.nami.Assignment
 import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
-class Y15D10 : Assignment<String, Int>(2015, 10) {
+class Y15D10 : Assignment<String>(2015, 10) {
 
     override fun getRawTestInput(): TestInput = TestInputSimplex("1")
 
@@ -39,13 +39,13 @@ class Y15D10 : Assignment<String, Int>(2015, 10) {
         return result
     }
 
-    override fun solveA(input: String): Int = iterate(input, 40).length
+    override fun solveA(input: String): Any = iterate(input, 40).length
 
-    override fun solveATest(input: String): Int = iterate(input, 5).length
+    override fun solveATest(input: String): Any = iterate(input, 5).length
 
-    override fun solveB(input: String): Int = iterate(input, 50).length
+    override fun solveB(input: String): Any = iterate(input, 50).length
 
-    override fun solveBTest(input: String): Int = -1
+    override fun solveBTest(input: String): Any? = null
 
 }
 

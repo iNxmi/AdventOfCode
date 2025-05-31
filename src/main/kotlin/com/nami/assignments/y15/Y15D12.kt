@@ -5,7 +5,7 @@ import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 import kotlinx.serialization.json.*
 
-class Y15D12 : Assignment<Y15D12.Input, Int>(2015, 12) {
+class Y15D12 : Assignment<Y15D12.Input>(2015, 12) {
 
     override fun getRawTestInput(): TestInput = TestInputSimplex(
         """
@@ -29,9 +29,9 @@ class Y15D12 : Assignment<Y15D12.Input, Int>(2015, 12) {
     private val regex = ("(-*(\\d+))").toRegex()
     private fun sum(string: String): Int = regex.findAll(string).sumOf { it.value.toInt() }
 
-    override fun solveA(input: Input): Int = sum(input.raw)
+    override fun solveA(input: Input): Any = sum(input.raw)
 
-    override fun solveATest(input: Input): Int = solveA(input)
+    override fun solveATest(input: Input): Any = solveA(input)
 
     private fun filterArray(json: JsonArray, predicate: String): JsonArray = buildJsonArray {
         json.forEach { value ->
@@ -61,12 +61,12 @@ class Y15D12 : Assignment<Y15D12.Input, Int>(2015, 12) {
         }
     }
 
-    override fun solveB(input: Input): Int {
+    override fun solveB(input: Input): Any {
         val filtered = filterObject(input.json, "red")
         return sum(filtered.toString())
     }
 
-    override fun solveBTest(input: Input): Int = solveB(input)
+    override fun solveBTest(input: Input): Any = solveB(input)
 
 }
 

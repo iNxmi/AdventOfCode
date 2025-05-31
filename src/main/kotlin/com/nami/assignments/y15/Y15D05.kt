@@ -1,31 +1,27 @@
 package com.nami.assignments.y15
 
 import com.nami.Assignment
-import com.nami.test.TestInput
 import com.nami.test.TestInputDuplex
 
-class Y15D05 : Assignment<List<String>, Int>(2015, 5) {
+class Y15D05 : Assignment<List<String>>(2015, 5) {
 
-    override fun getRawTestInput(): TestInput {
-        return TestInputDuplex(
-            """
-            ugknbfddgicrmopn
-            aaa
-            jchzalrnumimnmhp
-            haegwjzuvuyypxyu
-            dvszwmarrgswjxmb
-            """.trimIndent(),
-            """
-            qjhvhtzxzqqjkmpb
-            xxyxx
-            uurcxstgmygtbstg
-            ieodomkazucvgmuy
-            """.trimIndent(),
-        )
-    }
+    override fun getRawTestInput() = TestInputDuplex(
+        """
+        ugknbfddgicrmopn
+        aaa
+        jchzalrnumimnmhp
+        haegwjzuvuyypxyu
+        dvszwmarrgswjxmb
+        """.trimIndent(),
+        """
+        qjhvhtzxzqqjkmpb
+        xxyxx
+        uurcxstgmygtbstg
+        ieodomkazucvgmuy
+        """.trimIndent(),
+    )
 
-    override fun getProcessedInput(raw: String): List<String> = raw.lines()
-
+    override fun getProcessedInput(raw: String) = raw.lines()
 
     private val vowels = setOf('a', 'e', 'i', 'o', 'u')
     private fun containsThreeVowels(str: String): Boolean {
@@ -58,9 +54,8 @@ class Y15D05 : Assignment<List<String>, Int>(2015, 5) {
         return false
     }
 
-    override fun solveA(input: List<String>): Int {
-        return input.count { containsThreeVowels(it) && containsOneLetterTwice(it) && !containsSpecifics(it) }
-    }
+    override fun solveA(input: List<String>) =
+        input.count { containsThreeVowels(it) && containsOneLetterTwice(it) && !containsSpecifics(it) }
 
     private fun containsTwoLetterPair(str: String): Boolean {
         for (x in 1..<str.length) {
@@ -92,9 +87,8 @@ class Y15D05 : Assignment<List<String>, Int>(2015, 5) {
         return false
     }
 
-    override fun solveB(input: List<String>): Int {
-        return input.count { containsTwoLetterPair(it) && containsLetterTwiceWithSpace(it) }
-    }
+    override fun solveB(input: List<String>) =
+        input.count { containsTwoLetterPair(it) && containsLetterTwiceWithSpace(it) }
 
 }
 

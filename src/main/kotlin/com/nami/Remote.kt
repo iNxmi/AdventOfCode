@@ -47,7 +47,7 @@ class Remote {
         fun getInput(year: Int, day: Int): String {
             require(YEAR_RANGE.contains(year)) { "Year must be in '$YEAR_RANGE'" }
             require(DAY_RANGE.contains(day)) { "Day must be in '$DAY_RANGE'" }
-            val id = Utils.getID(year, day)
+            val id = Assignment.getID(year, day)
 
             if (!MAP.containsKey(TOKEN_STRING))
                 MAP[TOKEN_STRING] = mutableMapOf()
@@ -68,7 +68,7 @@ class Remote {
         fun getSolutionA(year: Int, day: Int): String? {
             require(YEAR_RANGE.contains(year)) { "Year must be in '$YEAR_RANGE'" }
             require(DAY_RANGE.contains(day)) { "Day must be in '$DAY_RANGE'" }
-            val id = Utils.getID(year, day)
+            val id = Assignment.getID(year, day)
 
             if (!MAP.containsKey(TOKEN_STRING))
                 MAP[TOKEN_STRING] = mutableMapOf()
@@ -93,7 +93,7 @@ class Remote {
         fun getSolutionB(year: Int, day: Int): String? {
             require(YEAR_RANGE.contains(year)) { "Year must be in '$YEAR_RANGE'" }
             require(DAY_RANGE.contains(day)) { "Day must be in '$DAY_RANGE'" }
-            val id = Utils.getID(year, day)
+            val id = Assignment.getID(year, day)
 
             if (!MAP.containsKey(TOKEN_STRING))
                 MAP[TOKEN_STRING] = mutableMapOf()

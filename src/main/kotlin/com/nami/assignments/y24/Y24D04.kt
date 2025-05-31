@@ -1,33 +1,29 @@
 package com.nami.assignments.y24
 
 import com.nami.Assignment
-import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
+import org.joml.Vector2i
 
-class Y24D04 : Assignment<List<CharArray>, Int>(2024, 4) {
+class Y24D04 : Assignment<List<CharArray>>(2024, 4) {
 
-    override fun getRawTestInput(): TestInput {
-        return TestInputSimplex(
-            """
-            MMMSXXMASM
-            MSAMXMSMSA
-            AMXSXMAAMM
-            MSAMASMSMX
-            XMASAMXAMM
-            XXAMMXXAMA
-            SMSMSASXSS
-            SAXAMASAAA
-            MAMMMXMMMM
-            MXMXAXMASX
+    override fun getRawTestInput() = TestInputSimplex(
+        """
+        MMMSXXMASM
+        MSAMXMSMSA
+        AMXSXMAAMM
+        MSAMASMSMX
+        XMASAMXAMM
+        XXAMMXXAMA
+        SMSMSASXSS
+        SAXAMASAAA
+        MAMMMXMMMM
+        MXMXAXMASX
         """.trimIndent()
-        )
-    }
+    )
 
-    override fun getProcessedInput(raw: String): List<CharArray> {
-        return raw.lines().map { it.toCharArray() }.toList()
-    }
+    override fun getProcessedInput(raw: String) = raw.lines().map { it.toCharArray() }.toList()
 
-    fun findString(
+    private fun findString(
         string: String,
         position: Pair<Int, Int>,
         direction: Pair<Int, Int>,
@@ -51,7 +47,7 @@ class Y24D04 : Assignment<List<CharArray>, Int>(2024, 4) {
         return true
     }
 
-    fun findStringX(string: String, position: Pair<Int, Int>, list: List<CharArray>): Boolean {
+    private fun findStringX(string: String, position: Vector2i, list: List<CharArray>): Boolean {
         var count = 0
 
         for (y in -1..1)
@@ -59,14 +55,14 @@ class Y24D04 : Assignment<List<CharArray>, Int>(2024, 4) {
                 if (x == 0 || y == 0)
                     continue
 
-                if (findString(string, Pair(position.first + x, position.second + y), Pair(-x, -y), list))
+                if (findString(string, Pair(position.x + x, position.y + y), Pair(-x, -y), list))
                     count++
             }
 
         return count >= 2
     }
 
-    override fun solveA(input: List<CharArray>): Int {
+    override fun solveA(input: List<CharArray>): Any {
         var count = 0
         for (y in input.indices)
             for (x in input[y].indices)
@@ -82,11 +78,12 @@ class Y24D04 : Assignment<List<CharArray>, Int>(2024, 4) {
         return count
     }
 
-    override fun solveB(input: List<CharArray>): Int {
+    override fun solveB(input: List<CharArray>): Any {
         var count = 0
         for (y in input.indices)
             for (x in input[y].indices)
-                if (findStringX("MAS", Pair(x, y), input)) count++
+                if (findStringX("MAS", Vector2i(x, y), input))
+                    count++
 
         return count
     }

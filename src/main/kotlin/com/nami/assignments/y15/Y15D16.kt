@@ -2,7 +2,7 @@ package com.nami.assignments.y15
 
 import com.nami.Assignment
 
-class Y15D16 : Assignment<Set<Y15D16.Aunt>, Int>(2015, 16) {
+class Y15D16 : Assignment<Set<Y15D16.Aunt>>(2015, 16) {
 
     override fun getRawTestInput() = null
 
@@ -66,7 +66,7 @@ class Y15D16 : Assignment<Set<Y15D16.Aunt>, Int>(2015, 16) {
         return set
     }
 
-    override fun solveA(input: Set<Aunt>): Int {
+    override fun solveA(input: Set<Aunt>): Any {
         val aunts = input
             .filter { it.children == null || it.children == 3 }
             .filter { it.cats == null || it.cats == 7 }
@@ -85,7 +85,7 @@ class Y15D16 : Assignment<Set<Y15D16.Aunt>, Int>(2015, 16) {
         return aunts.first().id
     }
 
-    override fun solveB(input: Set<Aunt>): Int {
+    override fun solveB(input: Set<Aunt>): Any {
         val aunts = input
             .filter { it.children == null || it.children == 3 }
             .filter { it.cats == null || it.cats > 7 }

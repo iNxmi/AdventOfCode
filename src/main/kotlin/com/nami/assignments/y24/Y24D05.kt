@@ -1,47 +1,44 @@
 package com.nami.assignments.y24
 
 import com.nami.Assignment
-import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
-class Y24D05 : Assignment<Y24D05.Input, Int>(2024, 5) {
+class Y24D05 : Assignment<Y24D05.Input>(2024, 5) {
+
+    override fun getRawTestInput() = TestInputSimplex(
+        """
+        47|53
+        97|13
+        97|61
+        97|47
+        75|29
+        61|13
+        75|53
+        29|13
+        97|29
+        53|29
+        61|53
+        97|53
+        61|29
+        47|13
+        75|47
+        97|75
+        47|61
+        75|61
+        47|29
+        75|13
+        53|13
+
+        75,47,61,53,29
+        97,61,53,29,13
+        75,29,13
+        75,97,47,61,53
+        61,13,29
+        97,13,75,29,47
+        """.trimIndent()
+    )
 
     data class Input(val rules: Map<Int, Set<Int>>, val updates: List<List<Int>>)
-
-    override fun getRawTestInput(): TestInput {
-        return TestInputSimplex(
-            """
-            47|53
-            97|13
-            97|61
-            97|47
-            75|29
-            61|13
-            75|53
-            29|13
-            97|29
-            53|29
-            61|53
-            97|53
-            61|29
-            47|13
-            75|47
-            97|75
-            47|61
-            75|61
-            47|29
-            75|13
-            53|13
-
-            75,47,61,53,29
-            97,61,53,29,13
-            75,29,13
-            75,97,47,61,53
-            61,13,29
-            97,13,75,29,47
-        """.trimIndent()
-        )
-    }
 
     override fun getProcessedInput(raw: String): Input {
         val split = raw.split(("(?m)^\\s*\$").toRegex())
@@ -60,9 +57,8 @@ class Y24D05 : Assignment<Y24D05.Input, Int>(2024, 5) {
 
         val updatesRaw = split[1].trim()
         val updates = mutableListOf<List<Int>>()
-        for (update in updatesRaw.lines()) updates.add(update.split(",").map { it.toInt() }.toList())
-
-//        println(rules)
+        for (update in updatesRaw.lines())
+            updates.add(update.split(",").map { it.toInt() }.toList())
 
         return Input(rules, updates)
     }
@@ -144,12 +140,12 @@ class Y24D05 : Assignment<Y24D05.Input, Int>(2024, 5) {
         return updates.sumOf { it[(it.size - 1) / 2] }
     }
 
-    override fun solveA(input: Input): Int {
+    override fun solveA(input: Input): Any {
         val validUpdates = getValidUpdatesOld(input)
         return getSolution(validUpdates)
     }
 
-    override fun solveB(input: Input): Int {
+    override fun solveB(input: Input): Any {
 //        val invalidUpdates = getInvalidUpdates(input)
 //
 //        val reverseRules = mutableMapOf<Int, MutableSet<Int>>()
@@ -190,4 +186,4 @@ class Y24D05 : Assignment<Y24D05.Input, Int>(2024, 5) {
 
 }
 
-fun main() =println(Y24D05().solve())
+fun main() = println(Y24D05().solve())

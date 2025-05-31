@@ -1,32 +1,29 @@
 package com.nami.assignments.y24
 
 import com.nami.Assignment
-import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 import kotlin.math.pow
 
-class Y24D07 : Assignment<List<Y24D07.Equation>, Long>(2024, 7) {
+class Y24D07 : Assignment<List<Y24D07.Equation>>(2024, 7) {
+
+    override fun getRawTestInput() = TestInputSimplex(
+        """
+        190: 10 19
+        3267: 81 40 27
+        83: 17 5
+        156: 15 6
+        7290: 6 8 6 15
+        161011: 16 10 13
+        192: 17 8 14
+        21037: 9 7 18 13
+        292: 11 6 16 20
+        """.trimIndent()
+    )
 
     data class Equation(
         val solution: Long,
         val numbers: List<Int>
     )
-
-    override fun getRawTestInput(): TestInput {
-        return TestInputSimplex(
-            """
-            190: 10 19
-            3267: 81 40 27
-            83: 17 5
-            156: 15 6
-            7290: 6 8 6 15
-            161011: 16 10 13
-            192: 17 8 14
-            21037: 9 7 18 13
-            292: 11 6 16 20
-        """.trimIndent()
-        )
-    }
 
     override fun getProcessedInput(raw: String): List<Equation> {
         val equations = mutableListOf<Equation>()
@@ -41,7 +38,7 @@ class Y24D07 : Assignment<List<Y24D07.Equation>, Long>(2024, 7) {
         return equations
     }
 
-    override fun solveA(input: List<Equation>): Long {
+    override fun solveA(input: List<Equation>): Any {
         //0 = +
         //1 = *
 
@@ -92,7 +89,7 @@ class Y24D07 : Assignment<List<Y24D07.Equation>, Long>(2024, 7) {
         return builder.reverse().toString()
     }
 
-    override fun solveB(input: List<Equation>): Long {
+    override fun solveB(input: List<Equation>): Any {
 
         //0 = +
         //1 = *

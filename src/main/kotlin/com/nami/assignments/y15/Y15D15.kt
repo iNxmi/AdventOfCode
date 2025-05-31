@@ -4,7 +4,7 @@ import com.nami.Assignment
 import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
-class Y15D15 : Assignment<Set<Y15D15.Ingredient>, Int>(2015, 15) {
+class Y15D15 : Assignment<Set<Y15D15.Ingredient>>(2015, 15) {
 
     override fun getRawTestInput(): TestInput = TestInputSimplex(
         """
@@ -54,8 +54,8 @@ class Y15D15 : Assignment<Set<Y15D15.Ingredient>, Int>(2015, 15) {
 
     }
 
-    override fun solveA(input: Set<Ingredient>): Int = -1
-    override fun solveB(input: Set<Ingredient>): Int = -1
+    override fun solveA(input: Set<Ingredient>): Any = -1
+    override fun solveB(input: Set<Ingredient>): Any = -1
 
 }
 

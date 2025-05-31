@@ -4,7 +4,7 @@ import com.nami.Assignment
 import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
-class Y15D03 : Assignment<String, Int>(2015, 3) {
+class Y15D03 : Assignment<String>(2015, 3) {
 
     override fun getRawTestInput(): TestInput {
         return TestInputSimplex("^v^v^v^v^v")
@@ -14,7 +14,7 @@ class Y15D03 : Assignment<String, Int>(2015, 3) {
         return raw
     }
 
-    override fun solveA(input: String): Int {
+    override fun solveA(input: String): Any {
         var x = 0
         var y = 0
 
@@ -35,7 +35,7 @@ class Y15D03 : Assignment<String, Int>(2015, 3) {
         return houses.size
     }
 
-    override fun solveB(input: String): Int {
+    override fun solveB(input: String): Any {
         var xSanta = 0
         var ySanta = 0
 

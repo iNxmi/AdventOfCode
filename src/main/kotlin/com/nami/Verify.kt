@@ -19,6 +19,8 @@ fun verify() {
         Y15D11(),
         Y15D12(),
         Y15D14(),
+        Y15D15(),
+        Y15D16(),
 
         Y23D01(),
 
@@ -38,15 +40,17 @@ fun verify() {
         val solution = assignment.solve()
 
         val solutionA = Remote.getSolutionA(assignment.year, assignment.day)
-        if(solutionA != solution.a.toString())
-            println("Error: id=${assignment.id()} a=${solution.a} solution_a=${solutionA}")
+        if (solutionA == solution.a.toString())
+            println("id=${assignment.id} a=${solution.a} solution_a=${solutionA}")
+        else
+            System.err.println("id=${assignment.id} a=${solution.a} solution_a=${solutionA}")
 
         val solutionB = Remote.getSolutionB(assignment.year, assignment.day)
-        if(solutionB != solution.b.toString())
-            println("Error: id=${assignment.id()} b=${solution.b} solution_b=${solutionB}")
+        if (solutionB == solution.b.toString())
+            println("id=${assignment.id} b=${solution.b} solution_b=${solutionB}")
+        else
+            System.err.println("id=${assignment.id} b=${solution.b} solution_b=${solutionB}")
     }
-
-    println("Verification Successful")
 }
 
 fun main() = verify()

@@ -1,23 +1,25 @@
 package com.nami.assignments.y24
 
 import com.nami.Assignment
-import com.nami.test.TestInput
 import com.nami.test.TestInputSimplex
 
-class Y24D03 : Assignment<String, Int>(2024, 3) {
+class Y24D03 : Assignment<String>(2024, 3) {
 
-    override fun getRawTestInput(): TestInput {
-        return TestInputSimplex("xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))")
-    }
+    override fun getRawTestInput() =
+        TestInputSimplex("xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))")
 
-    override fun getProcessedInput(raw: String): String {
-        return raw
-    }
+    override fun getProcessedInput(raw: String) = raw
 
-    override fun solveA(input: String): Int {
+    //TODO cleanup
+    override fun solveA(input: String): Any {
         val regex = ("mul\\(\\d+,\\d+\\)").toRegex()
         val matches = regex.findAll(input).map {
-            it.value.replace("m", "").replace("u", "").replace("l", "").replace("(", "").replace(")", "")
+            it.value
+                .replace("m", "")
+                .replace("u", "")
+                .replace("l", "")
+                .replace("(", "")
+                .replace(")", "")
         }.toList().map {
             Pair(it.split(",")[0].toInt(), it.split(",")[1].toInt())
         }
@@ -25,7 +27,7 @@ class Y24D03 : Assignment<String, Int>(2024, 3) {
         return matches.sumOf { it.first * it.second }
     }
 
-    override fun solveB(input: String): Int {
+    override fun solveB(input: String): Any {
         val regex = ("mul\\(\\d+,\\d+\\)|do\\(\\)|don't\\(\\)").toRegex()
         val matches = regex.findAll(input).map { it.value }.toList()
 
