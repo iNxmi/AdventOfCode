@@ -35,25 +35,27 @@ fun export() {
         Y24D08(),
         Y24D11(),
         Y24D15()
-    )
+    ).groupBy { it.year }
 
     val builder = StringBuilder()
-    builder.appendLine("|Year|Day|A|B|")
-    builder.appendLine("|----|---|-|-|")
-    assignments.withIndex().forEach { (index, assignment) ->
-        println("${assignment.year}_${assignment.day} - (${index + 1}/${assignments.size}) - ${round(index.toDouble() / assignments.size.toDouble() * 10000.0) / 100.0}%")
+    assignments.forEach { (year, list) ->
+        builder.appendLine("# Results $year")
+        builder.appendLine("|Day|A|B|")
+        builder.appendLine("|---|-|-|")
+        list.withIndex().forEach { (index, assignment) ->
+            println("${assignment.year}_${assignment.day} - (${index + 1}/${list.size}) - ${round((index + 1).toDouble() / list.size.toDouble() * 10000.0) / 100.0}%")
 
-        val solution = assignment.solve()
+            val result = assignment.solve()
 
-        val year = solution.year
-        val day = solution.day
-        val a = if (solution.a == -1) "" else solution.a
-        val b = if (solution.b == -1) "" else solution.b
-        builder.appendLine("|$year|$day|$a|$b|")
+            val day = result.day
+            val a = result.a ?: ""
+            val b = result.b ?: ""
+            builder.appendLine("|$day|$a|$b|")
+        }
     }
 
     val markdown = builder.toString()
-    Files.writeString(Path.of("solutions.md"), markdown)
+    Files.writeString(Path.of("results.md"), markdown)
 }
 
 fun main() = export()

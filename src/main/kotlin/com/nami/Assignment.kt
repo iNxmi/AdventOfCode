@@ -17,19 +17,19 @@ abstract class Assignment<InputClass : Any>(
 
     abstract fun getProcessedInput(raw: String): InputClass
 
-    abstract fun solveA(input: InputClass): Any
-    open fun solveATest(input: InputClass): Any? = null
+    open fun solveA(input: InputClass): Any? = null
+    open fun solveATest(input: InputClass): Any? = solveA(input)
 
-    abstract fun solveB(input: InputClass): Any
-    open fun solveBTest(input: InputClass): Any? = null
+    open fun solveB(input: InputClass): Any? = null
+    open fun solveBTest(input: InputClass): Any? = solveB(input)
 
     data class Solution(
         val id: Int,
         val year: Int,
         val day: Int,
 
-        val a: Any,
-        val b: Any,
+        val a: Any?,
+        val b: Any?,
 
         val aTest: Any?,
         val bTest: Any?

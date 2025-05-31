@@ -145,7 +145,7 @@ class Y24D05 : Assignment<Y24D05.Input>(2024, 5) {
         return getSolution(validUpdates)
     }
 
-    override fun solveB(input: Input): Any {
+    override fun solveB(input: Input): Any? {
 //        val invalidUpdates = getInvalidUpdates(input)
 //
 //        val reverseRules = mutableMapOf<Int, MutableSet<Int>>()
@@ -181,7 +181,7 @@ class Y24D05 : Assignment<Y24D05.Input>(2024, 5) {
 //        }
 //
 //        return getSolution(updates.map { it.toIntArray() })
-        return -1
+        return null
     }
 
 }

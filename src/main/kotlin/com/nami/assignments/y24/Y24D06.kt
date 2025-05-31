@@ -83,9 +83,7 @@ class Y24D06 : Assignment<Y24D06.Input>(2024, 6) {
         return positionsVisited.size
     }
 
-    override fun solveB(input: Input): Any {
-        return -1
-    }
+    override fun solveB(input: Input): Any? = null
 
 }
 

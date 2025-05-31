@@ -90,6 +90,7 @@ class Y15D07 : Assignment<Map<String, String>>(2015, 7) {
     }
 
     override fun solveA(input: Map<String, String>): Any = evaluate(mutableMapOf(), input, "a").toInt()
+    override fun solveATest(input: Map<String, String>): Any? = null
 
     override fun solveB(input: Map<String, String>): Any {
         val rewired = input.toMutableMap()
@@ -97,6 +98,7 @@ class Y15D07 : Assignment<Map<String, String>>(2015, 7) {
 
         return evaluate(mutableMapOf(), rewired, "a").toInt()
     }
+    override fun solveBTest(input: Map<String, String>): Any? = null
 
 }
 

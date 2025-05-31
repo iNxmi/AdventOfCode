@@ -46,14 +46,9 @@ class Y15D09 : Assignment<Y15D09.Map>(2015, 9) {
         return Map(nodes, connections)
     }
 
-    override fun solveA(input: Map): Any {
-//        input.connections.forEach { connection -> println(connection) }
-        return -1
-    }
+    override fun solveA(input: Map): Any? = null
 
-    override fun solveB(input: Map): Any {
-        return -1
-    }
+    override fun solveB(input: Map): Any? = null
 
 }
 

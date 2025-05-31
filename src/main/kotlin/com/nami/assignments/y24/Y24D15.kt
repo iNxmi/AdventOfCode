@@ -104,13 +104,9 @@ class Y24D15 : Assignment<Y24D15.Input>(2024, 15) {
         return Input(world, instructions)
     }
 
-    override fun solveA(input: Input): Any {
-        return -1
-    }
+    override fun solveA(input: Input): Any? = null
 
-    override fun solveB(input: Input): Any {
-        return -1
-    }
+    override fun solveB(input: Input): Any? = null
 
 }
 
