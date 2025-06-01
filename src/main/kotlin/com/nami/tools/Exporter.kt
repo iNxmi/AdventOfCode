@@ -1,5 +1,6 @@
 package com.nami.tools
 
+import com.nami.round
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
@@ -40,10 +41,11 @@ class Exporter {
             val builder = StringBuilder()
 
             builder.appendLine("# $title (${content.size})")
-            builder.appendLine("|Year|Day|Part|Task|Remote|")
-            builder.appendLine("|----|---|----|----|------|")
+            builder.appendLine("|Year|Day|Part|Task|Remote|Time (s)|")
+            builder.appendLine("|----|---|----|----|------|--------|")
             content.sortedBy { it.id }.forEach { e ->
-                builder.appendLine("|${e.year}|${e.day}|${e.part}|${e.task}|${e.remote}|")
+                val timeString = ("%.4f").format( e.timeS.toFloat()).replace(",", ".")
+                builder.appendLine("|${e.year}|${e.day}|${e.part}|${e.task}|${e.remote}|${timeString}s|")
             }
 
             return builder.toString()

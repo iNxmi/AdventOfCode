@@ -10,6 +10,7 @@ data class Entry(
     val part: Part,
     val task: String?,
     val remote: String?,
+    val timeS: Double
 ) {
     fun failed(): Boolean = task != null && remote != null && task != remote
     fun unsolved(): Boolean = task == null || remote == null
@@ -32,11 +33,11 @@ class Verifier {
 
                 val resultATask = result.a.toString()
                 val resultARemote = Remote.getSolutionA(task.year, task.day)
-                val a = Entry(task.id, task.year, task.day, Part.A, resultATask, resultARemote)
+                val a = Entry(task.id, task.year, task.day, Part.A, resultATask, resultARemote, result.aTimeS)
 
                 val resultBTask = result.b.toString()
                 val resultBRemote = Remote.getSolutionB(task.year, task.day)
-                val b = Entry(task.id, task.year, task.day, Part.B, resultBTask, resultBRemote)
+                val b = Entry(task.id, task.year, task.day, Part.B, resultBTask, resultBRemote, result.bTimeS)
 
                 setOf(a, b)
             }.toSet()
