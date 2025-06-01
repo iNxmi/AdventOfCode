@@ -1,5 +1,6 @@
 package com.nami.task.solutions.y15
 
+import com.nami.println
 import com.nami.task.Task
 import com.nami.task.test.TestInputDuplex
 
@@ -92,4 +93,4 @@ class Y15D05 : Task<List<String>>(2015, 5) {
 
 }
 
-fun main() = println(Y15D05().solve())
+fun main() = Y15D05().solve().println()

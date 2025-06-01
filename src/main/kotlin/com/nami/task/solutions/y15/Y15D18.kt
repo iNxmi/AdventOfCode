@@ -1,5 +1,6 @@
 package com.nami.task.solutions.y15
 
+import com.nami.println
 import com.nami.task.Task
 import com.nami.task.test.TestInputDuplex
 import org.joml.Vector2i
@@ -118,4 +119,4 @@ class Y15D18 : Task<Y15D18.World>(2015, 18) {
 
 }
 
-fun main() = println(Y15D18().solve())
+fun main() = Y15D18().solve().println()

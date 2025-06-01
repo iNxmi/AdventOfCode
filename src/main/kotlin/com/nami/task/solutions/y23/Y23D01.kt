@@ -1,5 +1,6 @@
 package com.nami.task.solutions.y23
 
+import com.nami.println
 import com.nami.task.Task
 import com.nami.task.test.TestInputDuplex
 import java.util.*
@@ -78,4 +79,4 @@ class Y23D01 : Task<List<String>>(2023, 1) {
 
 }
 
-fun main() = println(Y23D01().solve())
+fun main() = Y23D01().solve().println()

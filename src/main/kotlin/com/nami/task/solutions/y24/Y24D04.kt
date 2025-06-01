@@ -1,5 +1,6 @@
 package com.nami.task.solutions.y24
 
+import com.nami.println
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 import org.joml.Vector2i
@@ -90,4 +91,4 @@ class Y24D04 : Task<List<CharArray>>(2024, 4) {
 
 }
 
-fun main() = println(Y24D04().solve())
+fun main() = Y24D04().solve().println()

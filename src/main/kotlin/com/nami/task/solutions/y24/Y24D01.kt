@@ -1,5 +1,6 @@
 package com.nami.task.solutions.y24
 
+import com.nami.println
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 import kotlin.math.abs
@@ -52,4 +53,4 @@ class Y24D01 : Task<Y24D01.Input>(2024, 1) {
 
 }
 
-fun main() = println(Y24D01().solve())
+fun main() = Y24D01().solve().println()

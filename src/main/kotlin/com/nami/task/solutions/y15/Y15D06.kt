@@ -1,5 +1,6 @@
 package com.nami.task.solutions.y15
 
+import com.nami.println
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 import org.joml.Vector2i
@@ -87,4 +88,4 @@ class Y15D06 : Task<List<Y15D06.Operation>>(2015, 6) {
 
 }
 
-fun main() = println(Y15D06().solve())
+fun main() = Y15D06().solve().println()

@@ -1,5 +1,6 @@
 package com.nami.task.solutions.y15
 
+import com.nami.println
 import com.nami.task.Task
 import com.nami.task.test.TestInput
 import com.nami.task.test.TestInputSimplex
@@ -81,4 +82,4 @@ class Y15D14 : Task<Set<Y15D14.Racer>>(2015, 14) {
 
 }
 
-fun main() = println(Y15D14().solve())
+fun main() = Y15D14().solve().println()

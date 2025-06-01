@@ -1,5 +1,6 @@
 package com.nami.task.solutions.y24
 
+import com.nami.println
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 
@@ -70,4 +71,4 @@ class Y24D11 : Task<Map<Long, Long>>(2024, 11) {
 
 }
 
-fun main() = println(Y24D11().solve())
+fun main() = Y24D11().solve().println()
