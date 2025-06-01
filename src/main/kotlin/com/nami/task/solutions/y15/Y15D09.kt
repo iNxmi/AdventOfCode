@@ -16,28 +16,9 @@ class Y15D09 : Task<Y15D09.Input>(2015, 9) {
     data class Node(val name: String)
     data class Input(val nodes: Set<Node>, val connections: Map<Pair<Node, Node>, Int>)
 
-    private fun permutation(nodes: List<Node>, level: Int): Set<List<Node>> {
-        if (nodes.size - level <= 1)
-            return setOf(nodes)
-
-        val result = mutableSetOf<List<Node>>()
-        for (i in level..<nodes.size) {
-            for (j in i..<nodes.size) {
-                val swapped = nodes.toMutableList()
-                swapped[i] = nodes[j]
-                swapped[j] = nodes[i]
-
-                val permutations = permutation(swapped, level + 1)
-                result.addAll(permutations)
-            }
-        }
-
-        return result
-    }
-
     override fun getProcessedInput(raw: String): Input {
         val nodes = mutableSetOf<Node>()
-        val connections = mutableMapOf<Pair<Node, Node>, Int>()
+        val edges = mutableMapOf<Pair<Node, Node>, Int>()
 
         val str = raw.lowercase().replace("to", ":").replace(" ", "")
         str.lines().forEach { line ->
@@ -50,58 +31,66 @@ class Y15D09 : Task<Y15D09.Input>(2015, 9) {
 
             nodes.add(nodeA)
             val connectionA = Pair(nodeA, nodeB)
-            connections[connectionA] = distance
+            edges[connectionA] = distance
 
             nodes.add(nodeB)
             val connectionB = Pair(nodeB, nodeA)
-            connections[connectionB] = distance
+            edges[connectionB] = distance
         }
 
-        return Input(nodes, connections)
+        return Input(nodes, edges)
+    }
+
+    private fun permutations(nodes: List<Node>, level: Int = 0): Set<List<Node>> {
+        if (nodes.size - level <= 1)
+            return setOf(nodes)
+
+        val result = mutableSetOf<List<Node>>()
+        for (i in level..<nodes.size) {
+            for (j in i..<nodes.size) {
+                val swapped = nodes.toMutableList()
+                swapped[i] = nodes[j]
+                swapped[j] = nodes[i]
+
+                val permutations = permutations(swapped, level + 1)
+                result.addAll(permutations)
+            }
+        }
+
+        return result
+    }
+
+    private fun distances(input: Input, permutations: Set<List<Node>>): Map<Int, List<Node>> {
+        val result = mutableMapOf<Int, List<Node>>()
+        permutations.forEach { list ->
+            var sum = 0
+            for (i in 0..<list.size - 1) {
+                val start = list[i]
+                val stop = list[i + 1]
+                val connection = Pair(start, stop)
+                sum += input.connections[connection]!!
+            }
+
+            result[sum] = list
+        }
+
+        return result
     }
 
     override fun solveA(input: Input): Any {
-        val possibilities = permutation(input.nodes.toList(), 0)
+        val permutations = permutations(input.nodes.toList())
+        val distances = distances(input, permutations)
 
-        val map = mutableMapOf<Int, List<Node>>()
-        possibilities.forEach { list ->
-            var sum = 0
-            for (i in 0..<list.size - 1) {
-                val start = list[i]
-                val stop = list[i + 1]
-                val connection = Pair(start, stop)
-                sum += input.connections[connection]!!
-            }
-
-            map[sum] = list
-        }
-
-        val shortest = map.toSortedMap().firstEntry()
-        println(shortest)
-
-        return shortest.key
+        val result = distances.toSortedMap().firstEntry()
+        return result.key
     }
 
     override fun solveB(input: Input): Any {
-        val possibilities = permutation(input.nodes.toList(), 0)
+        val permutations = permutations(input.nodes.toList())
+        val distances = distances(input, permutations)
 
-        val map = mutableMapOf<Int, List<Node>>()
-        possibilities.forEach { list ->
-            var sum = 0
-            for (i in 0..<list.size - 1) {
-                val start = list[i]
-                val stop = list[i + 1]
-                val connection = Pair(start, stop)
-                sum += input.connections[connection]!!
-            }
-
-            map[sum] = list
-        }
-
-        val longest = map.toSortedMap().reversed().firstEntry()
-        println(longest)
-
-        return longest.key
+        val result = distances.toSortedMap().reversed().firstEntry()
+        return result.key
     }
 
 }
