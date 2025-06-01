@@ -32,8 +32,6 @@ class Y15D12 : Task<Y15D12.Input>(2015, 12) {
 
     override fun solveA(input: Input): Any = sum(input.raw)
 
-    override fun solveATest(input: Input): Any = solveA(input)
-
     private fun filterArray(json: JsonArray, predicate: String): JsonArray = buildJsonArray {
         json.forEach { value ->
             val filtered = when (value) {
@@ -66,8 +64,6 @@ class Y15D12 : Task<Y15D12.Input>(2015, 12) {
         val filtered = filterObject(input.json, "red")
         return sum(filtered.toString())
     }
-
-    override fun solveBTest(input: Input): Any = solveB(input)
 
 }
 

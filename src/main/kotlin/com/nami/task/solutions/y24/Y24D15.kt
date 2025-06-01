@@ -97,7 +97,7 @@ class Y24D15 : Task<Y24D15.Input>(2024, 15) {
                 '>' -> Direction.EAST
                 'v' -> Direction.SOUTH
                 '<' -> Direction.WEST
-                else -> throw InvalidAttributesException()
+                else -> throw InvalidAttributesException(c.toString())
             }
             instructions.add(direction)
         }
