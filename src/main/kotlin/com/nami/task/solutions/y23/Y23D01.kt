@@ -54,7 +54,7 @@ class Y23D01 : Task<List<String>>(2023, 1) {
             digits[digitToWord(i)] = i
         }
 
-        val numbers: MutableList<Int> = ArrayList()
+        val numbers: MutableList<Int> = mutableListOf()
 
         for (line in input) {
             val map = TreeMap<Int, Int>()

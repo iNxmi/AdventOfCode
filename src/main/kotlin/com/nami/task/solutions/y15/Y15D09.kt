@@ -3,7 +3,7 @@ package com.nami.task.solutions.y15
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 
-class Y15D09 : Task<Y15D09.Map>(2015, 9) {
+class Y15D09 : Task<Y15D09.Input>(2015, 9) {
 
     override fun getRawTestInput() = TestInputSimplex(
         """
@@ -14,19 +14,30 @@ class Y15D09 : Task<Y15D09.Map>(2015, 9) {
     )
 
     data class Node(val name: String)
-    data class Connection(val nodeA: Node, val nodeB: Node, val distance: Int)
-    data class Route(val connections: Set<Connection>)
-    data class Map(val nodes: Set<Node>, val connections: Set<Connection>) {
+    data class Input(val nodes: Set<Node>, val connections: Map<Pair<Node, Node>, Int>)
 
-        fun getPossibleRoutes(): Set<Route> {
-            TODO()
+    private fun permutation(nodes: List<Node>, level: Int): Set<List<Node>> {
+        if (nodes.size - level <= 1)
+            return setOf(nodes)
+
+        val result = mutableSetOf<List<Node>>()
+        for (i in level..<nodes.size) {
+            for (j in i..<nodes.size) {
+                val swapped = nodes.toMutableList()
+                swapped[i] = nodes[j]
+                swapped[j] = nodes[i]
+
+                val permutations = permutation(swapped, level + 1)
+                result.addAll(permutations)
+            }
         }
 
+        return result
     }
 
-    override fun getProcessedInput(raw: String): Map {
+    override fun getProcessedInput(raw: String): Input {
         val nodes = mutableSetOf<Node>()
-        val connections = mutableSetOf<Connection>()
+        val connections = mutableMapOf<Pair<Node, Node>, Int>()
 
         val str = raw.lowercase().replace("to", ":").replace(" ", "")
         str.lines().forEach { line ->
@@ -38,17 +49,60 @@ class Y15D09 : Task<Y15D09.Map>(2015, 9) {
             val nodeB = Node(splitLocations[1])
 
             nodes.add(nodeA)
-            nodes.add(nodeB)
+            val connectionA = Pair(nodeA, nodeB)
+            connections[connectionA] = distance
 
-            connections.add(Connection(nodeA, nodeB, distance))
+            nodes.add(nodeB)
+            val connectionB = Pair(nodeB, nodeA)
+            connections[connectionB] = distance
         }
 
-        return Map(nodes, connections)
+        return Input(nodes, connections)
     }
 
-    override fun solveA(input: Map): Any? = null
+    override fun solveA(input: Input): Any {
+        val possibilities = permutation(input.nodes.toList(), 0)
 
-    override fun solveB(input: Map): Any? = null
+        val map = mutableMapOf<Int, List<Node>>()
+        possibilities.forEach { list ->
+            var sum = 0
+            for (i in 0..<list.size - 1) {
+                val start = list[i]
+                val stop = list[i + 1]
+                val connection = Pair(start, stop)
+                sum += input.connections[connection]!!
+            }
+
+            map[sum] = list
+        }
+
+        val shortest = map.toSortedMap().firstEntry()
+        println(shortest)
+
+        return shortest.key
+    }
+
+    override fun solveB(input: Input): Any {
+        val possibilities = permutation(input.nodes.toList(), 0)
+
+        val map = mutableMapOf<Int, List<Node>>()
+        possibilities.forEach { list ->
+            var sum = 0
+            for (i in 0..<list.size - 1) {
+                val start = list[i]
+                val stop = list[i + 1]
+                val connection = Pair(start, stop)
+                sum += input.connections[connection]!!
+            }
+
+            map[sum] = list
+        }
+
+        val longest = map.toSortedMap().reversed().firstEntry()
+        println(longest)
+
+        return longest.key
+    }
 
 }
 

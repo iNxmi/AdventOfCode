@@ -4,17 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Updated Structure">
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Implemented Verification">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D18.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Verifier.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/Result.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/Result.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results.md" beforeDir="false" afterPath="$PROJECT_DIR$/results.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/Task.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/Task.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D15.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D15.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Export.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Export.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Verify.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Verify.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/template.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D09.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D09.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y23/Y23D01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y23/Y23D01.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Export.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Exporter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Verify.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/verification.md" beforeDir="false" afterPath="$PROJECT_DIR$/verification.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,10 +80,11 @@
     &quot;Kotlin.D01Kt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.D02Kt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.ExportKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.ExporterKt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.PartAKt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.TestKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.VerifyKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.VerifyKt.executor&quot;: &quot;Debug&quot;,
     &quot;Kotlin.Y15D01Kt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.Y15D06Kt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.Y15D07Kt.executor&quot;: &quot;Run&quot;,
@@ -95,6 +97,7 @@
     &quot;Kotlin.Y15D14Kt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.Y15D15Kt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.Y15D16Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y15D18Kt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.Y23D1Kt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.Y24D1Kt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.Y24D2Kt.executor&quot;: &quot;Run&quot;,
@@ -105,7 +108,7 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last.edited.regexp&quot;: &quot;\\x27&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/My Drive/.projects/kotlin/AdventOfCode/src/main/kotlin/com/nami/assignments/y15&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/My Drive/.projects/kotlin/AdventOfCode/src/main/kotlin/com/nami/task/solutions/y15&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -121,6 +124,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\kotlin\com\nami\task\solutions\y15" />
       <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\kotlin\com\nami\assignments\y15" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -141,9 +145,9 @@
       <recent name="com.nami.assignments" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.VerifyKt">
-    <configuration name="ExportKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.tools.ExportKt" />
+  <component name="RunManager" selected="Kotlin.ExporterKt">
+    <configuration name="ExporterKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.tools.ExporterKt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -163,15 +167,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Y15D15Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.task.solutions.y15.Y15D15Kt" />
+    <configuration name="Y15D09Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.task.solutions.y15.Y15D09Kt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Y15D16Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.task.solutions.y15.Y15D16Kt" />
+    <configuration name="Y15D18Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.task.solutions.y15.Y15D18Kt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -179,11 +183,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ExporterKt" />
+        <item itemvalue="Kotlin.Y15D09Kt" />
+        <item itemvalue="Kotlin.Y15D18Kt" />
         <item itemvalue="Kotlin.VerifyKt" />
-        <item itemvalue="Kotlin.ExportKt" />
         <item itemvalue="Kotlin.Y15D01Kt" />
-        <item itemvalue="Kotlin.Y15D16Kt" />
-        <item itemvalue="Kotlin.Y15D15Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -255,7 +259,10 @@
       <workItem from="1748682880492" duration="50000" />
       <workItem from="1748682937046" duration="71000" />
       <workItem from="1748683086427" duration="1149000" />
-      <workItem from="1748697658039" duration="2019000" />
+      <workItem from="1748697658039" duration="6023000" />
+      <workItem from="1748708942931" duration="4779000" />
+      <workItem from="1748763757283" duration="1558000" />
+      <workItem from="1748808776420" duration="5438000" />
     </task>
     <task id="LOCAL-00001" summary="cleanup">
       <option name="closed" value="true" />
@@ -521,7 +528,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748680234779</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Implemented Verification">
+      <option name="closed" value="true" />
+      <created>1748699731456</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1748699731456</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,7 +557,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="solved 2015 01 and 2015 02" />
     <MESSAGE value="solved 2015 03" />
     <MESSAGE value="solved 2015 04" />
     <MESSAGE value="solved 2024 04" />
@@ -567,7 +581,8 @@
     <MESSAGE value="Updated Exporter" />
     <MESSAGE value="Exported Results" />
     <MESSAGE value="Updated Structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Structure" />
+    <MESSAGE value="Implemented Verification" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented Verification" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
