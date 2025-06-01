@@ -1,5 +1,6 @@
 package com.nami.task.solutions.y15
 
+import com.nami.permutations
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 
@@ -41,27 +42,9 @@ class Y15D09 : Task<Y15D09.Input>(2015, 9) {
         return Input(nodes, edges)
     }
 
-    private fun permutations(nodes: List<Node>, level: Int = 0): Set<List<Node>> {
-        if (nodes.size - level <= 1)
-            return setOf(nodes)
-
-        val result = mutableSetOf<List<Node>>()
-        for (i in level..<nodes.size) {
-            for (j in i..<nodes.size) {
-                val swapped = nodes.toMutableList()
-                swapped[i] = nodes[j]
-                swapped[j] = nodes[i]
-
-                val permutations = permutations(swapped, level + 1)
-                result.addAll(permutations)
-            }
-        }
-
-        return result
-    }
-
-    private fun distances(input: Input, permutations: Set<List<Node>>): Map<Int, List<Node>> {
+    private fun distances(input: Input): Map<Int, List<Node>> {
         val result = mutableMapOf<Int, List<Node>>()
+        val permutations = input.nodes.toList().permutations()
         permutations.forEach { list ->
             var sum = 0
             for (i in 0..<list.size - 1) {
@@ -78,17 +61,13 @@ class Y15D09 : Task<Y15D09.Input>(2015, 9) {
     }
 
     override fun solveA(input: Input): Any {
-        val permutations = permutations(input.nodes.toList())
-        val distances = distances(input, permutations)
-
+        val distances = distances(input)
         val result = distances.toSortedMap().firstEntry()
         return result.key
     }
 
     override fun solveB(input: Input): Any {
-        val permutations = permutations(input.nodes.toList())
-        val distances = distances(input, permutations)
-
+        val distances = distances(input)
         val result = distances.toSortedMap().reversed().firstEntry()
         return result.key
     }

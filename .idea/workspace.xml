@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Solved Y2015D9 A,B">
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Optimized Y2015D9 A,B">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Extensions.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D09.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D09.kt" afterDir="false" />
     </list>
@@ -136,7 +137,7 @@
       <recent name="com.nami.assignments" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.ExporterKt">
+  <component name="RunManager" selected="Kotlin.Y15D09Kt">
     <configuration name="ExporterKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nami.tools.ExporterKt" />
       <module name="AdventOfCode" />
@@ -174,8 +175,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.ExporterKt" />
         <item itemvalue="Kotlin.Y15D09Kt" />
+        <item itemvalue="Kotlin.ExporterKt" />
         <item itemvalue="Kotlin.Y15D18Kt" />
         <item itemvalue="Kotlin.VerifyKt" />
         <item itemvalue="Kotlin.Y15D01Kt" />
@@ -253,7 +254,7 @@
       <workItem from="1748697658039" duration="6023000" />
       <workItem from="1748708942931" duration="4779000" />
       <workItem from="1748763757283" duration="1558000" />
-      <workItem from="1748808776420" duration="6893000" />
+      <workItem from="1748808776420" duration="7469000" />
     </task>
     <task id="LOCAL-00001" summary="cleanup">
       <option name="closed" value="true" />
@@ -535,7 +536,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748814837708</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Optimized Y2015D9 A,B">
+      <option name="closed" value="true" />
+      <created>1748816019211</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1748816019211</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,7 +565,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="solved 2015 04" />
     <MESSAGE value="solved 2024 04" />
     <MESSAGE value="started solving 2015 5" />
     <MESSAGE value="Updated Framework&#10;Solved 2024 11" />
@@ -581,7 +589,8 @@
     <MESSAGE value="Updated Structure" />
     <MESSAGE value="Implemented Verification" />
     <MESSAGE value="Solved Y2015D9 A,B" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solved Y2015D9 A,B" />
+    <MESSAGE value="Optimized Y2015D9 A,B" />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimized Y2015D9 A,B" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
