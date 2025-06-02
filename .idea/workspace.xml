@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Solved Y15D13 A,B">
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Implemented Time Measurement">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results.md" beforeDir="false" afterPath="$PROJECT_DIR$/results.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Extensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Extensions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/Result.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/Result.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/Task.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/Task.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Exporter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Exporter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Verifier.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Verifier.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/verification.md" beforeDir="false" afterPath="$PROJECT_DIR$/verification.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -259,7 +253,7 @@
       <workItem from="1748697658039" duration="6023000" />
       <workItem from="1748708942931" duration="4779000" />
       <workItem from="1748763757283" duration="1558000" />
-      <workItem from="1748808776420" duration="13111000" />
+      <workItem from="1748808776420" duration="13797000" />
     </task>
     <task id="LOCAL-00001" summary="cleanup">
       <option name="closed" value="true" />
@@ -573,7 +567,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748820457033</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Implemented Time Measurement">
+      <option name="closed" value="true" />
+      <created>1748822387881</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1748822387881</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +596,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="started solving 2015 5" />
     <MESSAGE value="Updated Framework&#10;Solved 2024 11" />
     <MESSAGE value="Solved 2015 05 a,b&#10;Solved 2015 06 a,b" />
     <MESSAGE value="Fixed Y24D01&#10;Exported solutions to solutions.md" />
@@ -619,7 +620,8 @@
     <MESSAGE value="Optimized Y2015D9 A,B" />
     <MESSAGE value="Backup" />
     <MESSAGE value="Solved Y15D13 A,B" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solved Y15D13 A,B" />
+    <MESSAGE value="Implemented Time Measurement" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented Time Measurement" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
