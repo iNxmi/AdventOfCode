@@ -45,7 +45,6 @@ class Exporter {
 
             val html =
                 div(
-                    style("th, td {border: 1px solid white; border-collapse: collapse; text-align: center;}"),
                     h1("$title (${content.size})"),
                     table().with(
                         thead().with(
@@ -84,7 +83,7 @@ class Exporter {
                                 }
                             }
                         )
-                    )
+                    ).attr("style", "th, td {border: 1px solid white; border-collapse: collapse; text-align: center;}")
                 )
 
             return html.renderFormatted()

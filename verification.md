@@ -1,11 +1,8 @@
 <div>
-    <style>
-        th, td {border: 1px solid white; border-collapse: collapse; text-align: center;}
-    </style>
     <h1>
         Failed (0)
     </h1>
-    <table>
+    <table style="th, td {border: 1px solid white; border-collapse: collapse; text-align: center;}">
         <thead>
             <th>
                 Year
@@ -32,13 +29,10 @@
 </div>
 
 <div>
-    <style>
-        th, td {border: 1px solid white; border-collapse: collapse; text-align: center;}
-    </style>
     <h1>
         Unsolved (7)
     </h1>
-    <table>
+    <table style="th, td {border: 1px solid white; border-collapse: collapse; text-align: center;}">
         <thead>
             <th>
                 Year
@@ -184,13 +178,10 @@
 </div>
 
 <div>
-    <style>
-        th, td {border: 1px solid white; border-collapse: collapse; text-align: center;}
-    </style>
     <h1>
         Solved (47)
     </h1>
-    <table>
+    <table style="th, td {border: 1px solid white; border-collapse: collapse; text-align: center;}">
         <thead>
             <th>
                 Year
@@ -260,7 +251,7 @@
                     1586300
                 </td>
                 <td>
-                    0.0001s
+                    0.0002s
                 </td>
             </tr>
             <tr>
@@ -274,7 +265,7 @@
                     3737498
                 </td>
                 <td>
-                    0.0044s
+                    0.0055s
                 </td>
             </tr>
             <tr>
@@ -291,7 +282,7 @@
                     2081
                 </td>
                 <td>
-                    0.0022s
+                    0.0029s
                 </td>
             </tr>
             <tr>
@@ -305,7 +296,7 @@
                     2341
                 </td>
                 <td>
-                    0.0025s
+                    0.0035s
                 </td>
             </tr>
             <tr>
@@ -322,7 +313,7 @@
                     117946
                 </td>
                 <td>
-                    0.1242s
+                    0.1169s
                 </td>
             </tr>
             <tr>
@@ -336,7 +327,7 @@
                     3938038
                 </td>
                 <td>
-                    0.6548s
+                    0.6751s
                 </td>
             </tr>
             <tr>
@@ -353,7 +344,7 @@
                     258
                 </td>
                 <td>
-                    0.0078s
+                    0.0077s
                 </td>
             </tr>
             <tr>
@@ -367,7 +358,7 @@
                     53
                 </td>
                 <td>
-                    0.0093s
+                    0.0084s
                 </td>
             </tr>
             <tr>
@@ -384,7 +375,7 @@
                     543903
                 </td>
                 <td>
-                    0.0489s
+                    0.0478s
                 </td>
             </tr>
             <tr>
@@ -398,7 +389,7 @@
                     14687245
                 </td>
                 <td>
-                    0.0297s
+                    0.0291s
                 </td>
             </tr>
             <tr>
@@ -415,7 +406,7 @@
                     46065
                 </td>
                 <td>
-                    0.0099s
+                    0.0091s
                 </td>
             </tr>
             <tr>
@@ -429,7 +420,7 @@
                     14134
                 </td>
                 <td>
-                    0.0028s
+                    0.0024s
                 </td>
             </tr>
             <tr>
@@ -446,7 +437,7 @@
                     1333
                 </td>
                 <td>
-                    0.0200s
+                    0.0199s
                 </td>
             </tr>
             <tr>
@@ -460,7 +451,7 @@
                     2046
                 </td>
                 <td>
-                    0.0039s
+                    0.0031s
                 </td>
             </tr>
             <tr>
@@ -477,7 +468,7 @@
                     251
                 </td>
                 <td>
-                    4.9183s
+                    4.9909s
                 </td>
             </tr>
             <tr>
@@ -491,7 +482,7 @@
                     898
                 </td>
                 <td>
-                    4.7267s
+                    4.7549s
                 </td>
             </tr>
             <tr>
@@ -508,7 +499,7 @@
                     360154
                 </td>
                 <td>
-                    0.0403s
+                    0.0392s
                 </td>
             </tr>
             <tr>
@@ -522,7 +513,7 @@
                     5103798
                 </td>
                 <td>
-                    0.1143s
+                    0.1109s
                 </td>
             </tr>
             <tr>
@@ -539,7 +530,7 @@
                     hxbxxyzz
                 </td>
                 <td>
-                    0.0109s
+                    0.0106s
                 </td>
             </tr>
             <tr>
@@ -553,7 +544,7 @@
                     hxcaabcc
                 </td>
                 <td>
-                    0.2100s
+                    0.2083s
                 </td>
             </tr>
             <tr>
@@ -570,7 +561,7 @@
                     119433
                 </td>
                 <td>
-                    0.0030s
+                    0.0036s
                 </td>
             </tr>
             <tr>
@@ -584,7 +575,7 @@
                     68466
                 </td>
                 <td>
-                    0.0049s
+                    0.0059s
                 </td>
             </tr>
             <tr>
@@ -601,7 +592,7 @@
                     2640
                 </td>
                 <td>
-                    0.0182s
+                    0.0233s
                 </td>
             </tr>
             <tr>
@@ -646,7 +637,7 @@
                     405
                 </td>
                 <td>
-                    0.0026s
+                    0.0023s
                 </td>
             </tr>
             <tr>
@@ -663,7 +654,7 @@
                     768
                 </td>
                 <td>
-                    0.0868s
+                    0.0939s
                 </td>
             </tr>
             <tr>
@@ -677,7 +668,7 @@
                     781
                 </td>
                 <td>
-                    0.0546s
+                    0.0813s
                 </td>
             </tr>
             <tr>
@@ -711,7 +702,7 @@
                     54578
                 </td>
                 <td>
-                    0.0054s
+                    0.0056s
                 </td>
             </tr>
             <tr>
@@ -745,7 +736,7 @@
                     23126924
                 </td>
                 <td>
-                    0.0105s
+                    0.0110s
                 </td>
             </tr>
             <tr>
@@ -762,7 +753,7 @@
                     502
                 </td>
                 <td>
-                    0.0026s
+                    0.0027s
                 </td>
             </tr>
             <tr>
@@ -793,7 +784,7 @@
                     188116424
                 </td>
                 <td>
-                    0.0021s
+                    0.0020s
                 </td>
             </tr>
             <tr>
@@ -807,7 +798,7 @@
                     104245808
                 </td>
                 <td>
-                    0.0015s
+                    0.0018s
                 </td>
             </tr>
             <tr>
@@ -824,7 +815,7 @@
                     2685
                 </td>
                 <td>
-                    0.0130s
+                    0.0153s
                 </td>
             </tr>
             <tr>
@@ -838,7 +829,7 @@
                     2048
                 </td>
                 <td>
-                    0.0077s
+                    0.0084s
                 </td>
             </tr>
             <tr>
@@ -855,7 +846,7 @@
                     4689
                 </td>
                 <td>
-                    0.0009s
+                    0.0007s
                 </td>
             </tr>
             <tr>
@@ -872,7 +863,7 @@
                     4939
                 </td>
                 <td>
-                    0.0020s
+                    0.0019s
                 </td>
             </tr>
             <tr>
@@ -889,7 +880,7 @@
                     5512534574980
                 </td>
                 <td>
-                    0.0388s
+                    0.0396s
                 </td>
             </tr>
             <tr>
@@ -903,7 +894,7 @@
                     328790210468594
                 </td>
                 <td>
-                    1.3880s
+                    1.4175s
                 </td>
             </tr>
             <tr>
@@ -920,7 +911,7 @@
                     351
                 </td>
                 <td>
-                    0.0007s
+                    0.0006s
                 </td>
             </tr>
             <tr>
@@ -937,7 +928,7 @@
                     216996
                 </td>
                 <td>
-                    0.0027s
+                    0.0036s
                 </td>
             </tr>
             <tr>
@@ -951,7 +942,7 @@
                     257335372288947
                 </td>
                 <td>
-                    0.0545s
+                    0.0656s
                 </td>
             </tr>
         </tbody>
