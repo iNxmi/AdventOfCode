@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="LaTeX in Markdown test">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Test.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="*EXPERIMENTAL* Markdown HTML implementation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results.md" beforeDir="false" afterPath="$PROJECT_DIR$/results.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/Task.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/Task.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Exporter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Exporter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/verification.md" beforeDir="false" afterPath="$PROJECT_DIR$/verification.md" afterDir="false" />
     </list>
@@ -260,7 +255,7 @@
       <workItem from="1748708942931" duration="4779000" />
       <workItem from="1748763757283" duration="1558000" />
       <workItem from="1748808776420" duration="15637000" />
-      <workItem from="1748828955434" duration="6542000" />
+      <workItem from="1748828955434" duration="6836000" />
     </task>
     <task id="LOCAL-00001" summary="cleanup">
       <option name="closed" value="true" />
@@ -590,7 +585,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748822956404</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="*EXPERIMENTAL* Markdown HTML implementation">
+      <option name="closed" value="true" />
+      <created>1748835648045</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1748835648045</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,7 +614,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Solved 2015 05 a,b&#10;Solved 2015 06 a,b" />
     <MESSAGE value="Fixed Y24D01&#10;Exported solutions to solutions.md" />
     <MESSAGE value="Updated Y15D07 a,b" />
     <MESSAGE value="Optimized Y15D07" />
@@ -636,7 +638,8 @@
     <MESSAGE value="Solved Y15D13 A,B" />
     <MESSAGE value="Implemented Time Measurement" />
     <MESSAGE value="LaTeX in Markdown test" />
-    <option name="LAST_COMMIT_MESSAGE" value="LaTeX in Markdown test" />
+    <MESSAGE value="*EXPERIMENTAL* Markdown HTML implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="*EXPERIMENTAL* Markdown HTML implementation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
