@@ -34,7 +34,7 @@ class Exporter {
             builder.appendLine(getTableVerificationHTML("Solved", Verifier.solved))
 
             val markdown = builder.toString()
-            Files.writeString(Paths.get("verification.md"), markdown)
+            Files.writeString(Paths.get("verification.html"), markdown)
         }
 
         private fun getTableVerificationHTML(title: String, content: Set<Entry>): String {
@@ -44,46 +44,49 @@ class Exporter {
             }
 
             val html =
-                div(
-                    h1("$title (${content.size})"),
-                    table().with(
-                        thead().with(
-                            th("Year"),
-                            th("Day"),
-                            th("Part"),
-                            th("Task"),
-                            th("Remote"),
-                            th("Time (s)")
-                        ),
-                        tbody().with(
-                            years.entries.flatMap { (year, day) ->
-                                val yearRowCount = day.values.sumOf { it.size }
-                                var yearPrinted = false
+                html(
+                    head(style("table, th, td {border: 1px solid black; border-collapse: collapse; text-align: center;}")),
+                    body(
+                        h1("$title (${content.size})"),
+                        table().with(
+                            thead().with(
+                                th("Year"),
+                                th("Day"),
+                                th("Part"),
+                                th("Task"),
+                                th("Remote"),
+                                th("Time (s)")
+                            ),
+                            tbody().with(
+                                years.entries.flatMap { (year, day) ->
+                                    val yearRowCount = day.values.sumOf { it.size }
+                                    var yearPrinted = false
 
-                                day.entries.flatMap { (day, events) ->
-                                    val dayRowCount = events.size
-                                    var dayPrinted = false
+                                    day.entries.flatMap { (day, events) ->
+                                        val dayRowCount = events.size
+                                        var dayPrinted = false
 
-                                    events.mapIndexed { _, event ->
-                                        tr().with(
-                                            if (!yearPrinted) {
-                                                yearPrinted = true
-                                                td(year.toString()).attr("rowspan", yearRowCount.toString())
-                                            } else null,
-                                            if (!dayPrinted) {
-                                                dayPrinted = true
-                                                td(day.toString()).attr("rowspan", dayRowCount.toString())
-                                            } else null,
-                                            td(event.part.toString()),
-                                            td(event.task.toString()),
-                                            td(event.remote.toString()),
-                                            td(("%.4fs").format(event.timeS).replace(",", "."))
-                                        )
+                                        events.mapIndexed { _, event ->
+                                            tr().with(
+                                                if (!yearPrinted) {
+                                                    yearPrinted = true
+                                                    td(year.toString()).attr("rowspan", yearRowCount.toString())
+                                                } else null,
+                                                if (!dayPrinted) {
+                                                    dayPrinted = true
+                                                    td(day.toString()).attr("rowspan", dayRowCount.toString())
+                                                } else null,
+                                                td(event.part.toString()),
+                                                td(event.task.toString()),
+                                                td(event.remote.toString()),
+                                                td(("%.4fs").format(event.timeS).replace(",", "."))
+                                            )
+                                        }
                                     }
                                 }
-                            }
+                            )
                         )
-                    ).attr("style", "th, td {border: 1px solid white; border-collapse: collapse; text-align: center;}")
+                    )
                 )
 
             return html.renderFormatted()
