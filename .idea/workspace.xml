@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="*EXPERIMENTAL* HTML test">
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Updated readme.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Exporter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Exporter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/verification.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/verification.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D13.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D13.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +136,7 @@
       <recent name="com.nami.assignments" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.ExporterKt">
+  <component name="RunManager" selected="Kotlin.Y15D13Kt">
     <configuration name="ExporterKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nami.tools.ExporterKt" />
       <module name="AdventOfCode" />
@@ -178,10 +174,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.Y15D13Kt" />
         <item itemvalue="Kotlin.ExporterKt" />
         <item itemvalue="Kotlin.TestKt" />
         <item itemvalue="Kotlin.Y15D01Kt" />
-        <item itemvalue="Kotlin.Y15D13Kt" />
         <item itemvalue="Kotlin.Y15D09Kt" />
       </list>
     </recent_temporary>
@@ -258,7 +254,7 @@
       <workItem from="1748708942931" duration="4779000" />
       <workItem from="1748763757283" duration="1558000" />
       <workItem from="1748808776420" duration="15637000" />
-      <workItem from="1748828955434" duration="8051000" />
+      <workItem from="1748828955434" duration="8649000" />
     </task>
     <task id="LOCAL-00001" summary="cleanup">
       <option name="closed" value="true" />
@@ -628,13 +624,22 @@
       <option name="project" value="LOCAL" />
       <updated>1748836658423</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Updated readme.md">
+      <option name="closed" value="true" />
+      <created>1748837130401</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1748837130401</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.env" />
     <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -649,7 +654,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated Y15D07 a,b" />
     <MESSAGE value="Optimized Y15D07" />
     <MESSAGE value="Small Cleanup" />
     <MESSAGE value="Solved Y15D08 a,b" />
@@ -674,7 +678,8 @@
     <MESSAGE value="LaTeX in Markdown test" />
     <MESSAGE value="*EXPERIMENTAL* Markdown HTML implementation" />
     <MESSAGE value="*EXPERIMENTAL* HTML test" />
-    <option name="LAST_COMMIT_MESSAGE" value="*EXPERIMENTAL* HTML test" />
+    <MESSAGE value="Updated readme.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated readme.md" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

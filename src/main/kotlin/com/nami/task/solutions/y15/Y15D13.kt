@@ -81,27 +81,29 @@ class Y15D13 : Task<Y15D13.Input>(2015, 13) {
     }
 
     override fun solveB(input: Input): Any {
-        val newSet = input.people.toMutableSet()
-        newSet.add("Me")
-        val permutations = newSet.toList().permutations()
-        permutations.size.println()
+        val permutations = input.people.toList().permutations()
 
         val sums = mutableSetOf<Int>()
         for (list in permutations) {
-            var sum = 0
             for (i in list.indices) {
-                val personA = list[i]
-                val personB = list[(i + 1) % list.size]
+                var sum = 0
+                for (j in list.indices) {
+                    if (i == j)
+                        continue
 
-                val ruleA = Pair(personA, personB)
-                val happinessA = input.rules[ruleA] ?: 0
+                    val personA = list[j]
+                    val personB = list[(j + 1) % list.size]
 
-                val ruleB = Pair(personB, personA)
-                val happinessB = input.rules[ruleB] ?: 0
+                    val ruleA = Pair(personA, personB)
+                    val happinessA = input.rules[ruleA] ?: 0
 
-                sum += happinessA + happinessB
+                    val ruleB = Pair(personB, personA)
+                    val happinessB = input.rules[ruleB] ?: 0
+
+                    sum += happinessA + happinessB
+                }
+                sums.add(sum)
             }
-            sums.add(sum)
         }
 
         return sums.max()
