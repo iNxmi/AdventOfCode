@@ -1,6 +1,6 @@
 package com.nami.tools
 
-import com.nami.round
+import j2html.TagCreator.*
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
@@ -29,27 +29,69 @@ class Exporter {
 
         fun verification() {
             val builder = StringBuilder()
-            builder.appendLine(getTableVerification("Failed", Verifier.failed))
-            builder.appendLine(getTableVerification("Unsolved", Verifier.unsolved))
-            builder.appendLine(getTableVerification("Solved", Verifier.solved))
+            builder.appendLine(getTableVerificationHTML("Failed", Verifier.failed))
+            builder.appendLine(getTableVerificationHTML("Unsolved", Verifier.unsolved))
+            builder.appendLine(getTableVerificationHTML("Solved", Verifier.solved))
 
             val markdown = builder.toString()
             Files.writeString(Paths.get("verification.md"), markdown)
         }
 
-        private fun getTableVerification(title: String, content: Set<Entry>): String {
-            val builder = StringBuilder()
-
-            builder.appendLine("# $title (${content.size})")
-            builder.appendLine("|Year|Day|Part|Task|Remote|Time (s)|")
-            builder.appendLine("|----|---|----|----|------|--------|")
-            content.sortedBy { it.id }.forEach { e ->
-                val timeString = ("%.4f").format( e.timeS.toFloat()).replace(",", ".")
-                builder.appendLine("|${e.year}|${e.day}|${e.part}|${e.task}|${e.remote}|${timeString}s|")
+        private fun getTableVerificationHTML(title: String, content: Set<Entry>): String {
+            val years = mutableMapOf<Int, Map<Int, List<Entry>>>()
+            content.groupBy { it.year }.forEach { (key, value) ->
+                years[key] = value.groupBy { it.day }
             }
 
-            return builder.toString()
+            val html =
+                html(
+                    head(style("th, td {border: 1px solid white; border-collapse: collapse; text-align: center;}")),
+                    body(
+                        h1("$title (${content.size})"),
+                        table().with(
+                            thead().with(
+                                th("Year"),
+                                th("Day"),
+                                th("Part"),
+                                th("Task"),
+                                th("Remote"),
+                                th("Time (s)")
+                            ),
+                            tbody().with(
+                                years.entries.flatMap { (year, day) ->
+                                    val yearRowCount = day.values.sumOf { it.size }
+                                    var yearPrinted = false
+
+                                    day.entries.flatMap { (day, events) ->
+                                        val dayRowCount = events.size
+                                        var dayPrinted = false
+
+                                        events.mapIndexed { _, event ->
+                                            tr().with(
+                                                if (!yearPrinted) {
+                                                    yearPrinted = true
+                                                    td(year.toString()).attr("rowspan", yearRowCount.toString())
+                                                } else null,
+                                                if (!dayPrinted) {
+                                                    dayPrinted = true
+                                                    td(day.toString()).attr("rowspan", dayRowCount.toString())
+                                                } else null,
+                                                td(event.part.toString()),
+                                                td(event.task.toString()),
+                                                td(event.remote.toString()),
+                                                td(("%.4fs").format(event.timeS))
+                                            )
+                                        }
+                                    }
+                                }
+                            )
+                        )
+                    )
+                )
+
+            return html.renderFormatted()
         }
+
 
     }
 }

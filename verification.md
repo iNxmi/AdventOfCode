@@ -1,82 +1,972 @@
-# Failed (0)
-|Year|Day|Part|Task|Remote|Time (s)|
-|----|---|----|----|------|--------|
+<html>
+    <head>
+        <style>
+            th, td {border: 1px solid white; border-collapse: collapse; text-align: center;}
+        </style>
+    </head>
+    <body>
+        <h1>
+            Failed (0)
+        </h1>
+        <table>
+            <thead>
+                <th>
+                    Year
+                </th>
+                <th>
+                    Day
+                </th>
+                <th>
+                    Part
+                </th>
+                <th>
+                    Task
+                </th>
+                <th>
+                    Remote
+                </th>
+                <th>
+                    Time (s)
+                </th>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </body>
+</html>
 
-# Unsolved (7)
-|Year|Day|Part|Task|Remote|Time (s)|
-|----|---|----|----|------|--------|
-|2015|15|A|null|null|0.0000s|
-|2015|15|B|null|null|0.0000s|
-|2024|5|B|null|null|0.0000s|
-|2024|6|B|null|null|0.0000s|
-|2024|8|B|1136|null|0.0017s|
-|2024|15|A|null|null|0.0000s|
-|2024|15|B|null|null|0.0000s|
+<html>
+    <head>
+        <style>
+            th, td {border: 1px solid white; border-collapse: collapse; text-align: center;}
+        </style>
+    </head>
+    <body>
+        <h1>
+            Unsolved (7)
+        </h1>
+        <table>
+            <thead>
+                <th>
+                    Year
+                </th>
+                <th>
+                    Day
+                </th>
+                <th>
+                    Part
+                </th>
+                <th>
+                    Task
+                </th>
+                <th>
+                    Remote
+                </th>
+                <th>
+                    Time (s)
+                </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2">
+                        2015
+                    </td>
+                    <td rowspan="2">
+                        15
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        null
+                    </td>
+                    <td>
+                        null
+                    </td>
+                    <td>
+                        0,0000s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        null
+                    </td>
+                    <td>
+                        null
+                    </td>
+                    <td>
+                        0,0000s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="5">
+                        2024
+                    </td>
+                    <td rowspan="1">
+                        5
+                    </td>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        null
+                    </td>
+                    <td>
+                        null
+                    </td>
+                    <td>
+                        0,0000s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1">
+                        6
+                    </td>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        null
+                    </td>
+                    <td>
+                        null
+                    </td>
+                    <td>
+                        0,0000s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1">
+                        8
+                    </td>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        1136
+                    </td>
+                    <td>
+                        null
+                    </td>
+                    <td>
+                        0,0020s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        15
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        null
+                    </td>
+                    <td>
+                        null
+                    </td>
+                    <td>
+                        0,0000s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        null
+                    </td>
+                    <td>
+                        null
+                    </td>
+                    <td>
+                        0,0000s
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
 
-# Solved (49)
-|Year|Day|Part|Task|Remote|Time (s)|
-|----|---|----|----|------|--------|
-|2015|1|A|138|138|0.0002s|
-|2015|1|B|1771|1771|0.0001s|
-|2015|2|A|1586300|1586300|0.0001s|
-|2015|2|B|3737498|3737498|0.0045s|
-|2015|3|A|2081|2081|0.0021s|
-|2015|3|B|2341|2341|0.0029s|
-|2015|4|A|117946|117946|0.1257s|
-|2015|4|B|3938038|3938038|0.6586s|
-|2015|5|A|258|258|0.0076s|
-|2015|5|B|53|53|0.0083s|
-|2015|6|A|543903|543903|0.0479s|
-|2015|6|B|14687245|14687245|0.0334s|
-|2015|7|A|46065|46065|0.0093s|
-|2015|7|B|14134|14134|0.0022s|
-|2015|8|A|1333|1333|0.0170s|
-|2015|8|B|2046|2046|0.0032s|
-|2015|9|A|251|251|5.6393s|
-|2015|9|B|898|898|5.0791s|
-|2015|10|A|360154|360154|0.0507s|
-|2015|10|B|5103798|5103798|0.1213s|
-|2015|11|A|hxbxxyzz|hxbxxyzz|0.0124s|
-|2015|11|B|hxcaabcc|hxcaabcc|0.2271s|
-|2015|12|A|119433|119433|0.0048s|
-|2015|12|B|68466|68466|0.0068s|
-|2015|13|A|733|733|5.0548s|
-|2015|13|B|725|725|254.1593s|
-|2015|14|A|2640|2640|0.0194s|
-|2015|14|B|1102|1102|0.0067s|
-|2015|16|A|103|103|0.0041s|
-|2015|16|B|405|405|0.0028s|
-|2015|18|A|768|768|0.1069s|
-|2015|18|B|781|781|0.0889s|
-|2023|1|A|55208|55208|0.0019s|
-|2023|1|B|54578|54578|0.0075s|
-|2024|1|A|1506483|1506483|0.0004s|
-|2024|1|B|23126924|23126924|0.0142s|
-|2024|2|A|502|502|0.0036s|
-|2024|2|B|544|544|0.0032s|
-|2024|3|A|188116424|188116424|0.0026s|
-|2024|3|B|104245808|104245808|0.0018s|
-|2024|4|A|2685|2685|0.0234s|
-|2024|4|B|2048|2048|0.0091s|
-|2024|5|A|4689|4689|0.0010s|
-|2024|6|A|4939|4939|0.0021s|
-|2024|7|A|5512534574980|5512534574980|0.0524s|
-|2024|7|B|328790210468594|328790210468594|1.5275s|
-|2024|8|A|351|351|0.0006s|
-|2024|11|A|216996|216996|0.0038s|
-|2024|11|B|257335372288947|257335372288947|0.0691s|
+<html>
+    <head>
+        <style>
+            th, td {border: 1px solid white; border-collapse: collapse; text-align: center;}
+        </style>
+    </head>
+    <body>
+        <h1>
+            Solved (47)
+        </h1>
+        <table>
+            <thead>
+                <th>
+                    Year
+                </th>
+                <th>
+                    Day
+                </th>
+                <th>
+                    Part
+                </th>
+                <th>
+                    Task
+                </th>
+                <th>
+                    Remote
+                </th>
+                <th>
+                    Time (s)
+                </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="30">
+                        2015
+                    </td>
+                    <td rowspan="2">
+                        1
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        138
+                    </td>
+                    <td>
+                        138
+                    </td>
+                    <td>
+                        0,0002s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        1771
+                    </td>
+                    <td>
+                        1771
+                    </td>
+                    <td>
+                        0,0001s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        2
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        1586300
+                    </td>
+                    <td>
+                        1586300
+                    </td>
+                    <td>
+                        0,0002s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        3737498
+                    </td>
+                    <td>
+                        3737498
+                    </td>
+                    <td>
+                        0,0088s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        3
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        2081
+                    </td>
+                    <td>
+                        2081
+                    </td>
+                    <td>
+                        0,0051s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        2341
+                    </td>
+                    <td>
+                        2341
+                    </td>
+                    <td>
+                        0,0054s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        4
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        117946
+                    </td>
+                    <td>
+                        117946
+                    </td>
+                    <td>
+                        0,1872s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        3938038
+                    </td>
+                    <td>
+                        3938038
+                    </td>
+                    <td>
+                        0,9859s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        5
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        258
+                    </td>
+                    <td>
+                        258
+                    </td>
+                    <td>
+                        0,0117s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        53
+                    </td>
+                    <td>
+                        53
+                    </td>
+                    <td>
+                        0,0114s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        6
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        543903
+                    </td>
+                    <td>
+                        543903
+                    </td>
+                    <td>
+                        0,0577s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        14687245
+                    </td>
+                    <td>
+                        14687245
+                    </td>
+                    <td>
+                        0,0563s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        7
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        46065
+                    </td>
+                    <td>
+                        46065
+                    </td>
+                    <td>
+                        0,0120s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        14134
+                    </td>
+                    <td>
+                        14134
+                    </td>
+                    <td>
+                        0,0030s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        8
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        1333
+                    </td>
+                    <td>
+                        1333
+                    </td>
+                    <td>
+                        0,0232s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        2046
+                    </td>
+                    <td>
+                        2046
+                    </td>
+                    <td>
+                        0,0040s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        9
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        251
+                    </td>
+                    <td>
+                        251
+                    </td>
+                    <td>
+                        7,2413s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        898
+                    </td>
+                    <td>
+                        898
+                    </td>
+                    <td>
+                        6,8230s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        10
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        360154
+                    </td>
+                    <td>
+                        360154
+                    </td>
+                    <td>
+                        0,0508s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        5103798
+                    </td>
+                    <td>
+                        5103798
+                    </td>
+                    <td>
+                        0,1589s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        11
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        hxbxxyzz
+                    </td>
+                    <td>
+                        hxbxxyzz
+                    </td>
+                    <td>
+                        0,0134s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        hxcaabcc
+                    </td>
+                    <td>
+                        hxcaabcc
+                    </td>
+                    <td>
+                        0,2627s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        12
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        119433
+                    </td>
+                    <td>
+                        119433
+                    </td>
+                    <td>
+                        0,0057s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        68466
+                    </td>
+                    <td>
+                        68466
+                    </td>
+                    <td>
+                        0,0179s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        14
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        2640
+                    </td>
+                    <td>
+                        2640
+                    </td>
+                    <td>
+                        0,0394s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        1102
+                    </td>
+                    <td>
+                        1102
+                    </td>
+                    <td>
+                        0,0073s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        16
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        103
+                    </td>
+                    <td>
+                        103
+                    </td>
+                    <td>
+                        0,0050s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        405
+                    </td>
+                    <td>
+                        405
+                    </td>
+                    <td>
+                        0,0055s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        18
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        768
+                    </td>
+                    <td>
+                        768
+                    </td>
+                    <td>
+                        0,1510s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        781
+                    </td>
+                    <td>
+                        781
+                    </td>
+                    <td>
+                        0,1277s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        2023
+                    </td>
+                    <td rowspan="2">
+                        1
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        55208
+                    </td>
+                    <td>
+                        55208
+                    </td>
+                    <td>
+                        0,0017s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        54578
+                    </td>
+                    <td>
+                        54578
+                    </td>
+                    <td>
+                        0,0092s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="15">
+                        2024
+                    </td>
+                    <td rowspan="2">
+                        1
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        1506483
+                    </td>
+                    <td>
+                        1506483
+                    </td>
+                    <td>
+                        0,0006s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        23126924
+                    </td>
+                    <td>
+                        23126924
+                    </td>
+                    <td>
+                        0,0183s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        2
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        502
+                    </td>
+                    <td>
+                        502
+                    </td>
+                    <td>
+                        0,0045s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        544
+                    </td>
+                    <td>
+                        544
+                    </td>
+                    <td>
+                        0,0043s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        3
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        188116424
+                    </td>
+                    <td>
+                        188116424
+                    </td>
+                    <td>
+                        0,0033s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        104245808
+                    </td>
+                    <td>
+                        104245808
+                    </td>
+                    <td>
+                        0,0040s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        4
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        2685
+                    </td>
+                    <td>
+                        2685
+                    </td>
+                    <td>
+                        0,0247s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        2048
+                    </td>
+                    <td>
+                        2048
+                    </td>
+                    <td>
+                        0,0123s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1">
+                        5
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        4689
+                    </td>
+                    <td>
+                        4689
+                    </td>
+                    <td>
+                        0,0021s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1">
+                        6
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        4939
+                    </td>
+                    <td>
+                        4939
+                    </td>
+                    <td>
+                        0,0030s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        7
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        5512534574980
+                    </td>
+                    <td>
+                        5512534574980
+                    </td>
+                    <td>
+                        0,0464s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        328790210468594
+                    </td>
+                    <td>
+                        328790210468594
+                    </td>
+                    <td>
+                        2,2460s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1">
+                        8
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        351
+                    </td>
+                    <td>
+                        351
+                    </td>
+                    <td>
+                        0,0007s
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        11
+                    </td>
+                    <td>
+                        A
+                    </td>
+                    <td>
+                        216996
+                    </td>
+                    <td>
+                        216996
+                    </td>
+                    <td>
+                        0,0040s
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        B
+                    </td>
+                    <td>
+                        257335372288947
+                    </td>
+                    <td>
+                        257335372288947
+                    </td>
+                    <td>
+                        0,1029s
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
 
-$$
-\begin{aligned}
-& \text {Table 1.1. A Jupyter notebook table using LaTeX }\\
-&\begin{array}{cccc}
-\hline \hline \text { Case } & \text { Method 1 } & \text { Method 2 } & \text { Method 3 } \\
-\hline 1 & 50 & 837 & 970 \\
-2 & 47 & 877 & 230 \\
-3 & 31 & 25 & 415 \\
-4 & 35 & 144 & 23656 \\
-5 & 45 & 300 & 556 \\
-\hline
-\end{array}
-\end{aligned}
-$$
