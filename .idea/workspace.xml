@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="*EXPERIMENTAL* Markdown HTML implementation">
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="*EXPERIMENTAL* HTML test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Exporter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Exporter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/verification.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/verification.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +258,7 @@
       <workItem from="1748708942931" duration="4779000" />
       <workItem from="1748763757283" duration="1558000" />
       <workItem from="1748808776420" duration="15637000" />
-      <workItem from="1748828955434" duration="7530000" />
+      <workItem from="1748828955434" duration="8051000" />
     </task>
     <task id="LOCAL-00001" summary="cleanup">
       <option name="closed" value="true" />
@@ -608,7 +612,23 @@
       <option name="project" value="LOCAL" />
       <updated>1748836098834</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="*EXPERIMENTAL* HTML test">
+      <option name="closed" value="true" />
+      <created>1748836637019</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1748836637019</updated>
+    </task>
+    <task id="LOCAL-00046" summary="*EXPERIMENTAL* HTML test">
+      <option name="closed" value="true" />
+      <created>1748836658423</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1748836658423</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -629,7 +649,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed Y24D01&#10;Exported solutions to solutions.md" />
     <MESSAGE value="Updated Y15D07 a,b" />
     <MESSAGE value="Optimized Y15D07" />
     <MESSAGE value="Small Cleanup" />
@@ -654,7 +673,8 @@
     <MESSAGE value="Implemented Time Measurement" />
     <MESSAGE value="LaTeX in Markdown test" />
     <MESSAGE value="*EXPERIMENTAL* Markdown HTML implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="*EXPERIMENTAL* Markdown HTML implementation" />
+    <MESSAGE value="*EXPERIMENTAL* HTML test" />
+    <option name="LAST_COMMIT_MESSAGE" value="*EXPERIMENTAL* HTML test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

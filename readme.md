@@ -6,8 +6,7 @@
 # Locations
 - Solutions ([com.nami.task.solutions](src/main/kotlin/com/nami/task/solutions))
 - Tools ([com.nami.tools](src/main/kotlin/com/nami/tools))
-- Results ([results.md](results.md))
-- Auto Verification ([verification.md](verification.md))
+- Results / Verification ([summary.md](summary.md))
 
 # .env
 To Allow the program to automatically fetch input and solutions follow these steps:
