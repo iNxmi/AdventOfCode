@@ -11,22 +11,15 @@ class Y15D01 : Task<String>(2015, 1) {
     override fun getProcessedInput(raw: String) = raw
 
     override fun solveA(input: String): Any {
-        var sum = 0
-        for (c in input.toCharArray()) {
-            if (c == '(')
-                sum++
-
-            if (c == ')')
-                sum--
-        }
-
-        return sum
+        val opening = input.count { it == '(' }
+        val closing = input.count { it == ')' }
+        return opening - closing
     }
 
     override fun solveB(input: String): Any {
         var sum = 0
         var count = 0
-        for (c in input.toCharArray()) {
+        for (c in input) {
             count++
 
             if (c == '(')

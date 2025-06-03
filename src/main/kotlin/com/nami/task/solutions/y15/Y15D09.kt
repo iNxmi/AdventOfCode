@@ -22,8 +22,10 @@ class Y15D09 : Task<Y15D09.Input>(2015, 9) {
         val nodes = mutableSetOf<Node>()
         val edges = mutableMapOf<Pair<Node, Node>, Int>()
 
-        val str = raw.lowercase().replace("to", ":").replace(" ", "")
-        str.lines().forEach { line ->
+        val string = raw.lowercase()
+            .replace("to", ":")
+            .replace(" ", "")
+        string.lines().forEach { line ->
             val split = line.split("=")
             val distance = split[1].toInt()
 

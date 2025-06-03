@@ -20,7 +20,7 @@ class Y15D07 : Task<Map<String, String>>(2015, 7) {
     )
 
     override fun getProcessedInput(raw: String): Map<String, String> {
-        val str = raw
+        val string = raw
             .replace("NOT", "!")
             .replace("AND", "&")
             .replace("OR", "|")
@@ -30,7 +30,7 @@ class Y15D07 : Task<Map<String, String>>(2015, 7) {
             .replace(" ", "")
 
         val wires = mutableMapOf<String, String>()
-        str.lines().forEach { line ->
+        string.lines().forEach { line ->
             val split = line.split("=")
             val id = split[1]
             val value = split[0]
@@ -73,12 +73,12 @@ class Y15D07 : Task<Map<String, String>>(2015, 7) {
         return states[id]!!
     }
 
-    private fun getOrEvaluate(cache: MutableMap<String, UShort>, wires: Map<String, String>, str: String): UShort =
-        str.toUShortOrNull() ?: evaluate(cache, wires, str)
+    private fun getOrEvaluate(cache: MutableMap<String, UShort>, wires: Map<String, String>, string: String): UShort =
+        string.toUShortOrNull() ?: evaluate(cache, wires, string)
 
-    private fun extract(str: String, chars: Set<Char>): String {
+    private fun extract(string: String, chars: Set<Char>): String {
         chars.forEach { char ->
-            if (str.contains(char))
+            if (string.contains(char))
                 return char.toString()
         }
 

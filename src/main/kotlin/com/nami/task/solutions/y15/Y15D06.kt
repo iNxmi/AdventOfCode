@@ -19,13 +19,13 @@ class Y15D06 : Task<List<Y15D06.Operation>>(2015, 6) {
     data class Operation(val type: Type, val start: Vector2i, val end: Vector2i)
 
     override fun getProcessedInput(raw: String): List<Operation> {
-        val str = raw
+        val string = raw
             .replace("turn on", "on")
             .replace("turn off", "off")
             .replace(" through", "")
 
         val operations = mutableListOf<Operation>()
-        str.lines().forEach { line ->
+        string.lines().forEach { line ->
             val type = if (line.contains("on"))
                 Type.ON
             else if (line.contains("toggle"))

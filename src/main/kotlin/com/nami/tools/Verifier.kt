@@ -34,9 +34,7 @@ class Verifier {
 
                 val resultARemote = Remote.getSolutionA(task.year, task.day)
                 val a = Entry(
-                    task.id,
-                    task.year,
-                    task.day,
+                    task.id, task.year, task.day,
                     Part.A,
                     result.a,
                     resultARemote,
@@ -46,9 +44,7 @@ class Verifier {
 
                 val resultBRemote = Remote.getSolutionB(task.year, task.day)
                 val b = Entry(
-                    task.id,
-                    task.year,
-                    task.day,
+                    task.id, task.year, task.day,
                     Part.B,
                     result.b,
                     resultBRemote,

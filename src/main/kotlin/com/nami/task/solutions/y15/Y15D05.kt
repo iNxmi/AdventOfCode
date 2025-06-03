@@ -25,20 +25,20 @@ class Y15D05 : Task<List<String>>(2015, 5) {
     override fun getProcessedInput(raw: String) = raw.lines()
 
     private val vowels = setOf('a', 'e', 'i', 'o', 'u')
-    private fun containsThreeVowels(str: String): Boolean {
+    private fun containsThreeVowels(string: String): Boolean {
         var count = 0
         vowels.forEach { v ->
-            count += str.count { it == v }
+            count += string.count { it == v }
         }
 
         return count >= 3
     }
 
     private val alphabet = ("abcdefghijklmnopqrstuvwxyz").toCharArray()
-    private fun containsOneLetterTwice(str: String): Boolean {
+    private fun containsOneLetterTwice(string: String): Boolean {
         alphabet.forEach { c ->
             val sequence = "$c$c"
-            if (str.contains(sequence))
+            if (string.contains(sequence))
                 return true
         }
 
@@ -46,9 +46,9 @@ class Y15D05 : Task<List<String>>(2015, 5) {
     }
 
     private val specifics = setOf("ab", "cd", "pq", "xy")
-    private fun containsSpecifics(str: String): Boolean {
+    private fun containsSpecifics(string: String): Boolean {
         specifics.forEach {
-            if (str.contains(it))
+            if (string.contains(it))
                 return true
         }
 
@@ -58,17 +58,17 @@ class Y15D05 : Task<List<String>>(2015, 5) {
     override fun solveA(input: List<String>) =
         input.count { containsThreeVowels(it) && containsOneLetterTwice(it) && !containsSpecifics(it) }
 
-    private fun containsTwoLetterPair(str: String): Boolean {
-        for (x in 1..<str.length) {
+    private fun containsTwoLetterPair(string: String): Boolean {
+        for (x in 1..<string.length) {
             val x0 = x - 1
-            val sequenceA = str.subSequence(x0..x)
+            val sequenceA = string.subSequence(x0..x)
 
-            for (y in 1..<str.length) {
+            for (y in 1..<string.length) {
                 val y0 = y - 1
                 if (y0 == x0 || y0 == x || y == x0 || y == x)
                     continue
 
-                val sequenceB = str.subSequence(y0..y)
+                val sequenceB = string.subSequence(y0..y)
                 if (sequenceA == sequenceB)
                     return true
             }
@@ -77,10 +77,10 @@ class Y15D05 : Task<List<String>>(2015, 5) {
         return false
     }
 
-    private fun containsLetterTwiceWithSpace(str: String): Boolean {
-        for (x in 0..<str.length - 2) {
-            val letterA = str[x]
-            val letterB = str[x + 2]
+    private fun containsLetterTwiceWithSpace(string: String): Boolean {
+        for (x in 0..<string.length - 2) {
+            val letterA = string[x]
+            val letterB = string[x + 2]
             if (letterA == letterB)
                 return true
         }

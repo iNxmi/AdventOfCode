@@ -18,9 +18,9 @@ class Y15D08 : Task<List<String>>(2015, 8) {
     override fun getProcessedInput(raw: String): List<String> = raw.lines()
 
     @OptIn(ExperimentalStdlibApi::class)
-    private fun escape(str: String): String {
-        var result = str
-            .subSequence(1..<str.length - 1).toString()
+    private fun escape(string: String): String {
+        var result = string
+            .subSequence(1..<string.length - 1).toString()
             .replace("\\\\", "\\")
             .replace("\\\"", "\"")
 
@@ -40,8 +40,8 @@ class Y15D08 : Task<List<String>>(2015, 8) {
         return code - memory
     }
 
-    private fun unescape(str: String): String {
-        var result = str
+    private fun unescape(string: String): String {
+        var result = string
             .replace("\\", "\\\\")
             .replace("\"", "\\\"")
 

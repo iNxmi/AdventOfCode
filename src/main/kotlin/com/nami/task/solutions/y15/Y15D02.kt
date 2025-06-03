@@ -4,19 +4,18 @@ import com.nami.println
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 import org.joml.Vector3i
-import kotlin.math.min
 
 class Y15D02 : Task<List<Vector3i>>(2015, 2) {
 
     override fun getRawTestInput() = TestInputSimplex("1x1x10")
 
     override fun getProcessedInput(raw: String): List<Vector3i> {
-        val lines = raw.lines()
-
         val result = mutableListOf<Vector3i>()
-        lines.forEach { line ->
-            val dimensions = line.split("x").map { it.toInt() }
-            result.add(Vector3i(dimensions[0], dimensions[1], dimensions[2]))
+        raw.lines().forEach { line ->
+            val dimensions = line.split("x")
+                .map { it.toInt() }
+                .toIntArray()
+            result.add(Vector3i(dimensions))
         }
 
         return result
@@ -26,16 +25,16 @@ class Y15D02 : Task<List<Vector3i>>(2015, 2) {
         var sum = 0
 
         for (dimension in input) {
-            val l = dimension.x
-            val w = dimension.y
-            val h = dimension.z
+            val length = dimension.x
+            val width = dimension.y
+            val height = dimension.z
 
-            val x = l * w
-            val y = w * h
-            val z = h * l
+            val x = length * width
+            val y = width * height
+            val z = height * length
 
             sum += 2 * (x + y + z)
-            sum += min(x, min(y, z))
+            sum += setOf(x, y, z).min()
         }
 
         return sum
@@ -45,16 +44,16 @@ class Y15D02 : Task<List<Vector3i>>(2015, 2) {
         var sum = 0
 
         for (dimension in input) {
-            val l = dimension.x
-            val w = dimension.y
-            val h = dimension.z
+            val length = dimension.x
+            val width = dimension.y
+            val height = dimension.z
 
-            val sortedList = mutableListOf(l, w, h).sorted()
-            val a = sortedList[0]
-            val b = sortedList[1]
+            val sorted = mutableListOf(length, width, height).sorted()
+            val a = sorted[0]
+            val b = sorted[1]
 
             sum += 2 * (a + b)
-            sum += l * w * h
+            sum += length * width * height
         }
 
         return sum
