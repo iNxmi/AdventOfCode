@@ -8,13 +8,14 @@ enum class Part { A, B }
 data class Entry(
     val id: Int, val year: Int, val day: Int,
     val part: Part,
-    val task: String?,
+    val task: Any?,
     val remote: String?,
-    val timeS: Double
+    val timeS: Double,
+    val bonus: Double?
 ) {
-    fun failed(): Boolean = task != null && remote != null && task != remote
-    fun unsolved(): Boolean = task == null || remote == null
-    fun solved(): Boolean = task != null && remote != null && task == remote
+    fun failed() = (remote != null && task.toString() != remote)
+    fun unsolved() = (remote == null)
+    fun solved() = (task != null && remote != null && task.toString() == remote)
 }
 
 class Verifier {
@@ -31,13 +32,29 @@ class Verifier {
             val entries = tasks.flatMap { task ->
                 val result = task.solve()
 
-                val resultATask = result.a.toString()
                 val resultARemote = Remote.getSolutionA(task.year, task.day)
-                val a = Entry(task.id, task.year, task.day, Part.A, resultATask, resultARemote, result.aTimeS)
+                val a = Entry(
+                    task.id,
+                    task.year,
+                    task.day,
+                    Part.A,
+                    result.a,
+                    resultARemote,
+                    result.aTimeS,
+                    task.bonusA()
+                )
 
-                val resultBTask = result.b.toString()
                 val resultBRemote = Remote.getSolutionB(task.year, task.day)
-                val b = Entry(task.id, task.year, task.day, Part.B, resultBTask, resultBRemote, result.bTimeS)
+                val b = Entry(
+                    task.id,
+                    task.year,
+                    task.day,
+                    Part.B,
+                    result.b,
+                    resultBRemote,
+                    result.bTimeS,
+                    task.bonusB()
+                )
 
                 setOf(a, b)
             }.toSet()

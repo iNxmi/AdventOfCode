@@ -2,6 +2,9 @@ package com.nami.task
 
 import com.nami.task.solutions.y15.*
 import com.nami.task.solutions.y23.Y23D01
+import com.nami.task.solutions.y23.Y23D02
+import com.nami.task.solutions.y23.Y23D03
+import com.nami.task.solutions.y23.Y23D04
 import com.nami.task.solutions.y24.*
 import com.nami.task.test.TestInput
 
@@ -31,9 +34,13 @@ abstract class Task<InputClass : Any>(
             Y15D14(),
             Y15D15(),
             Y15D16(),
-//            Y15D17(),
             Y15D18(),
+
             Y23D01(),
+            Y23D02(),
+            Y23D03(),
+            Y23D04(),
+
             Y24D01(),
             Y24D02(),
             Y24D03(),
@@ -54,9 +61,11 @@ abstract class Task<InputClass : Any>(
 
     open fun solveA(input: InputClass): Any? = null
     open fun solveATest(input: InputClass): Any? = solveA(input)
+    open fun bonusA(): Double? = null
 
     open fun solveB(input: InputClass): Any? = null
     open fun solveBTest(input: InputClass): Any? = solveB(input)
+    open fun bonusB(): Double? = null
 
     fun solve(): Result {
         val input = getProcessedInput(getRawInput())

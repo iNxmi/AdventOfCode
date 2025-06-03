@@ -51,6 +51,9 @@ class Y24D01 : Task<Y24D01.Input>(2024, 1) {
         return value
     }
 
+    override fun bonusA() = 3.0
+    override fun bonusB() = 7.0
+
 }
 
 fun main() = Y24D01().solve().println()

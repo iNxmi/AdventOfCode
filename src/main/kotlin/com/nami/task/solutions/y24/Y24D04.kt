@@ -89,6 +89,9 @@ class Y24D04 : Task<List<CharArray>>(2024, 4) {
         return count
     }
 
+    override fun bonusA() = 3.0
+    override fun bonusB() = 7.0
+
 }
 
 fun main() = Y24D04().solve().println()

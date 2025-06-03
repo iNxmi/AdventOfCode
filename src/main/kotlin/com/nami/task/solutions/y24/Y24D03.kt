@@ -57,6 +57,9 @@ class Y24D03 : Task<String>(2024, 3) {
         return queue.sumOf { it.first * it.second }
     }
 
+    override fun bonusA() = 3.0
+    override fun bonusB() = 7.0
+
 }
 
 fun main() = Y24D03().solve().println()

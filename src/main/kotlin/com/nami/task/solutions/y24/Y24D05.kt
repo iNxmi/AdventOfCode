@@ -185,6 +185,8 @@ class Y24D05 : Task<Y24D05.Input>(2024, 5) {
         return null
     }
 
+    override fun bonusA() = 5.0
+
 }
 
 fun main() = Y24D05().solve().println()

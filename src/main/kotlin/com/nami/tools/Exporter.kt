@@ -2,7 +2,6 @@ package com.nami.tools
 
 import j2html.TagCreator.*
 import java.nio.file.Files
-import java.nio.file.Path
 import java.nio.file.Paths
 
 class Exporter {
@@ -25,6 +24,7 @@ class Exporter {
 
             val html =
                 div(
+                    style("td, th, tr {text-align: center;}"),
                     h1("$title (${content.size})"),
                     table().with(
                         thead().with(
@@ -33,7 +33,8 @@ class Exporter {
                             th("Part"),
                             th("Task"),
                             th("Remote"),
-                            th("Time (s)")
+                            th("Time (s)"),
+                            th("Bonus (€)")
                         ),
                         tbody().with(
                             years.entries.flatMap { (year, day) ->
@@ -55,9 +56,12 @@ class Exporter {
                                                 td(day.toString()).attr("rowspan", dayRowCount.toString())
                                             } else null,
                                             td(event.part.toString()),
-                                            td(event.task.toString()),
-                                            td(event.remote.toString()),
-                                            td(("%.4fs").format(event.timeS).replace(",", "."))
+                                            if (event.task != null) td(event.task.toString()) else td(),
+                                            if (event.remote != null) td(event.remote.toString()) else td(),
+                                            td(("%.4fs").format(event.timeS).replace(",", ".")),
+                                            if (event.bonus != null) td(
+                                                ("%.2f€").format(event.bonus).replace(",", ".")
+                                            ) else td()
                                         )
                                     }
                                 }

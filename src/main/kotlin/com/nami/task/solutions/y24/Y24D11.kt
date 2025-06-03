@@ -61,13 +61,11 @@ class Y24D11 : Task<Map<Long, Long>>(2024, 11) {
         return map.values.sum()
     }
 
-    override fun solveA(input: Map<Long, Long>): Any {
-        return solve(input, 25)
-    }
+    override fun solveA(input: Map<Long, Long>) = solve(input, 25)
+    override fun solveB(input: Map<Long, Long>) = solve(input, 75)
 
-    override fun solveB(input: Map<Long, Long>): Any {
-        return solve(input, 75)
-    }
+    override fun bonusA() = 5.0
+    override fun bonusB() = 10.0
 
 }
 

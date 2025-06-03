@@ -86,6 +86,8 @@ class Y24D06 : Task<Y24D06.Input>(2024, 6) {
 
     override fun solveB(input: Input): Any? = null
 
+    override fun bonusA() = 5.0
+
 }
 
 fun main() = Y24D06().solve().println()

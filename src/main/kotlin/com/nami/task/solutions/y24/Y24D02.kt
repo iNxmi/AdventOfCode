@@ -110,6 +110,9 @@ class Y24D02 : Task<List<String>>(2024, 2) {
         return true
     }
 
+    override fun bonusA() = 3.0
+    override fun bonusB() = 7.0
+
 }
 
 fun main() = Y24D02().solve().println()

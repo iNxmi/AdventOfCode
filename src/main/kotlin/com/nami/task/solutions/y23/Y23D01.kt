@@ -77,6 +77,9 @@ class Y23D01 : Task<List<String>>(2023, 1) {
         return numbers.sum()
     }
 
+    override fun bonusA() = 2.0
+    override fun bonusB() = 3.0
+
 }
 
 fun main() = Y23D01().solve().println()

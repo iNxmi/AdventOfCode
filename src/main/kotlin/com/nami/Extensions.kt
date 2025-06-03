@@ -1,8 +1,5 @@
 package com.nami
 
-import kotlin.math.pow
-import kotlin.math.round
-
 fun <T> List<T>.permutations(level: Int = 0): Set<List<T>> {
     val size = this.size
 
@@ -24,8 +21,3 @@ fun <T> List<T>.permutations(level: Int = 0): Set<List<T>> {
 }
 
 fun Any?.println() = println(this)
-
-fun Double.round(decimals: Int): Double {
-    val scalar = (10.0).pow(decimals)
-    return round(this * scalar) / scalar
-}

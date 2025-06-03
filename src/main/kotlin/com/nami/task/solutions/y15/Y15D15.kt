@@ -2,12 +2,15 @@ package com.nami.task.solutions.y15
 
 import com.nami.println
 import com.nami.task.Task
-import com.nami.task.test.TestInput
 import com.nami.task.test.TestInputSimplex
+
+/*
+    START AND BARS
+ */
 
 class Y15D15 : Task<Set<Y15D15.Ingredient>>(2015, 15) {
 
-    override fun getRawTestInput(): TestInput = TestInputSimplex(
+    override fun getRawTestInput() = TestInputSimplex(
         """
         Butterscotch: capacity -1, durability -2, flavor 6, texture 3, calories 8
         Cinnamon: capacity 2, durability 3, flavor -2, texture -1, calories 3
@@ -50,13 +53,8 @@ class Y15D15 : Task<Set<Y15D15.Ingredient>>(2015, 15) {
         return set
     }
 
-    private val teaspoons = 100
-    private fun findOptimal(ingredients: Set<Ingredient>) {
-
-    }
-
-    override fun solveA(input: Set<Ingredient>): Any? = null
-    override fun solveB(input: Set<Ingredient>): Any? = null
+    override fun solveA(input: Set<Ingredient>) = null
+    override fun solveB(input: Set<Ingredient>) = null
 
 }
 

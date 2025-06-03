@@ -132,6 +132,9 @@ class Y24D07 : Task<List<Y24D07.Equation>>(2024, 7) {
         return possibleEquations.sumOf { it.solution }
     }
 
+    override fun bonusA() = 3.0
+    override fun bonusB() = 7.0
+
 }
 
 fun main() = Y24D07().solve().println()

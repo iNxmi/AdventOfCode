@@ -106,7 +106,6 @@ class Y24D15 : Task<Y24D15.Input>(2024, 15) {
     }
 
     override fun solveA(input: Input): Any? = null
-
     override fun solveB(input: Input): Any? = null
 
 }
