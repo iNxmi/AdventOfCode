@@ -1,12 +1,13 @@
 package com.nami.task.solutions.y24
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 
 class Y24D05 : Task<Y24D05.Input>(2024, 5) {
 
-    override fun getRawTestInput() = TestInputSimplex(
+    override fun getRawInputTest() = TestInputSimplex(
         """
         47|53
         97|13
@@ -137,56 +138,58 @@ class Y24D05 : Task<Y24D05.Input>(2024, 5) {
         return validUpdates
     }
 
-    private fun getSolution(updates: Set<List<Int>>): Int {
-        return updates.sumOf { it[(it.size - 1) / 2] }
+    private fun getSolution(updates: Set<List<Int>>) = updates.sumOf { it[(it.size - 1) / 2] }
+
+    override fun getA() = object : SubTask<Input> {
+        override fun solve(input: Input): Any {
+            val validUpdates = getValidUpdatesOld(input)
+            return getSolution(validUpdates)
+        }
+
+        override fun bonus() = 5.0
     }
 
-    override fun solveA(input: Input): Any {
-        val validUpdates = getValidUpdatesOld(input)
-        return getSolution(validUpdates)
+    override fun getB() = object : SubTask<Input> {
+        override fun solve(input: Input): Any? {
+            //        val invalidUpdates = getInvalidUpdates(input)
+            //
+            //        val reverseRules = mutableMapOf<Int, MutableSet<Int>>()
+            //        for (rule in input.rules) {
+            //            val key = rule.key
+            //            val set = rule.value
+            //
+            //            for (number in set) {
+            //                if (reverseRules[number] == null)
+            //                    reverseRules[number] = mutableSetOf()
+            //
+            //                reverseRules[number]!!.add(key)
+            //            }
+            //        }
+            //
+            //        val updates = mutableListOf<List<Int>>()
+            //        for (update in invalidUpdates) {
+            //            for (m in update) {
+            //                val newUpdate = mutableListOf(m)
+            //                for (n in update) {
+            //                    if (m == n)
+            //                        continue
+            //
+            //                    if (!reverseRules[m]!!.contains(n))
+            //                        break
+            //
+            //                    newUpdate.add(n)
+            //                }
+            //
+            //                if (newUpdate.size == update.size)
+            //                    updates.add(newUpdate)
+            //            }
+            //        }
+            //
+            //        return getSolution(updates.map { it.toIntArray() })
+            return null
+        }
     }
-
-    override fun solveB(input: Input): Any? {
-//        val invalidUpdates = getInvalidUpdates(input)
-//
-//        val reverseRules = mutableMapOf<Int, MutableSet<Int>>()
-//        for (rule in input.rules) {
-//            val key = rule.key
-//            val set = rule.value
-//
-//            for (number in set) {
-//                if (reverseRules[number] == null)
-//                    reverseRules[number] = mutableSetOf()
-//
-//                reverseRules[number]!!.add(key)
-//            }
-//        }
-//
-//        val updates = mutableListOf<List<Int>>()
-//        for (update in invalidUpdates) {
-//            for (m in update) {
-//                val newUpdate = mutableListOf(m)
-//                for (n in update) {
-//                    if (m == n)
-//                        continue
-//
-//                    if (!reverseRules[m]!!.contains(n))
-//                        break
-//
-//                    newUpdate.add(n)
-//                }
-//
-//                if (newUpdate.size == update.size)
-//                    updates.add(newUpdate)
-//            }
-//        }
-//
-//        return getSolution(updates.map { it.toIntArray() })
-        return null
-    }
-
-    override fun bonusA() = 5.0
 
 }
 
-fun main() = Y24D05().solve().println()
+fun main() = Y24D05().getResult().println()

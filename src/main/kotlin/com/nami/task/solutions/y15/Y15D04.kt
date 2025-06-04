@@ -1,13 +1,14 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 import java.security.MessageDigest
 
 class Y15D04 : Task<String>(2015, 4) {
 
-    override fun getRawTestInput() = TestInputSimplex("pqrstuv")
+    override fun getRawInputTest() = TestInputSimplex("pqrstuv")
 
     override fun getProcessedInput(raw: String) = raw
 
@@ -24,7 +25,8 @@ class Y15D04 : Task<String>(2015, 4) {
             val string = "$secret$i"
             val hash = md5(string)
 
-            if (hash.startsWith(prefix)) break
+            if (hash.startsWith(prefix))
+                break
 
             i++
         }
@@ -32,9 +34,14 @@ class Y15D04 : Task<String>(2015, 4) {
         return i
     }
 
-    override fun solveA(input: String) = crack(input, "00000")
-    override fun solveB(input: String) = crack(input, "000000")
+    override fun getA() = object : SubTask<String> {
+        override fun solve(input: String) = crack(input, "00000")
+    }
+
+    override fun getB() = object : SubTask<String> {
+        override fun solve(input: String) = crack(input, "000000")
+    }
 
 }
 
-fun main() = Y15D04().solve().println()
+fun main() = Y15D04().getResult().println()

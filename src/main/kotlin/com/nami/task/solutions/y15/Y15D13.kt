@@ -2,13 +2,14 @@ package com.nami.task.solutions.y15
 
 import com.nami.permutations
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInput
 import com.nami.task.test.TestInputSimplex
 
 class Y15D13 : Task<Y15D13.Input>(2015, 13) {
 
-    override fun getRawTestInput(): TestInput = TestInputSimplex(
+    override fun getRawInputTest(): TestInput = TestInputSimplex(
         """
             Alice would gain 54 happiness units by sitting next to Bob.
             Alice would lose 79 happiness units by sitting next to Carol.
@@ -56,59 +57,63 @@ class Y15D13 : Task<Y15D13.Input>(2015, 13) {
         return Input(people, rules)
     }
 
-    override fun solveA(input: Input): Any {
-        val permutations = input.people.toList().permutations()
+    override fun getA() = object : SubTask<Input> {
+        override fun solve(input: Input): Any {
+            val permutations = input.people.toList().permutations()
 
-        val sums = mutableSetOf<Int>()
-        for (list in permutations) {
-            var sum = 0
-            for (i in list.indices) {
-                val personA = list[i]
-                val personB = list[(i + 1) % list.size]
-
-                val ruleA = Pair(personA, personB)
-                val happinessA = input.rules[ruleA] ?: throw IllegalStateException("no  rule '$ruleA'")
-
-                val ruleB = Pair(personB, personA)
-                val happinessB = input.rules[ruleB] ?: throw IllegalStateException("no  rule '$ruleB'")
-
-                sum += happinessA + happinessB
-            }
-            sums.add(sum)
-        }
-
-        return sums.max()
-    }
-
-    override fun solveB(input: Input): Any {
-        val permutations = input.people.toList().permutations()
-
-        val sums = mutableSetOf<Int>()
-        for (list in permutations) {
-            for (i in list.indices) {
+            val sums = mutableSetOf<Int>()
+            for (list in permutations) {
                 var sum = 0
-                for (j in list.indices) {
-                    if (i == j)
-                        continue
-
-                    val personA = list[j]
-                    val personB = list[(j + 1) % list.size]
+                for (i in list.indices) {
+                    val personA = list[i]
+                    val personB = list[(i + 1) % list.size]
 
                     val ruleA = Pair(personA, personB)
-                    val happinessA = input.rules[ruleA] ?: 0
+                    val happinessA = input.rules[ruleA] ?: throw IllegalStateException("no  rule '$ruleA'")
 
                     val ruleB = Pair(personB, personA)
-                    val happinessB = input.rules[ruleB] ?: 0
+                    val happinessB = input.rules[ruleB] ?: throw IllegalStateException("no  rule '$ruleB'")
 
                     sum += happinessA + happinessB
                 }
                 sums.add(sum)
             }
-        }
 
-        return sums.max()
+            return sums.max()
+        }
+    }
+
+    override fun getB() = object : SubTask<Input> {
+        override fun solve(input: Input): Any {
+            val permutations = input.people.toList().permutations()
+
+            val sums = mutableSetOf<Int>()
+            for (list in permutations) {
+                for (i in list.indices) {
+                    var sum = 0
+                    for (j in list.indices) {
+                        if (i == j)
+                            continue
+
+                        val personA = list[j]
+                        val personB = list[(j + 1) % list.size]
+
+                        val ruleA = Pair(personA, personB)
+                        val happinessA = input.rules[ruleA] ?: 0
+
+                        val ruleB = Pair(personB, personA)
+                        val happinessB = input.rules[ruleB] ?: 0
+
+                        sum += happinessA + happinessB
+                    }
+                    sums.add(sum)
+                }
+            }
+
+            return sums.max()
+        }
     }
 
 }
 
-fun main() = Y15D13().solve().println()
+fun main() = Y15D13().getResult().println()

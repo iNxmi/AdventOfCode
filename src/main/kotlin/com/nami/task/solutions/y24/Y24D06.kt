@@ -1,13 +1,14 @@
 package com.nami.task.solutions.y24
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 import org.joml.Vector2i
 
 class Y24D06 : Task<Y24D06.Input>(2024, 6) {
 
-    override fun getRawTestInput() = TestInputSimplex(
+    override fun getRawInputTest() = TestInputSimplex(
         """
         ....#.....
         .........#
@@ -47,47 +48,51 @@ class Y24D06 : Task<Y24D06.Input>(2024, 6) {
         return Input(worldSize, position, obstacles)
     }
 
-    override fun solveA(input: Input): Any {
-        var direction = Pair(0, -1)
-        var positionX = input.position.x
-        var positionY = input.position.y
-        val visitedObstacles = mutableSetOf<Pair<Int, Int>>()
+    override fun getA() = object : SubTask<Input> {
+        override fun solve(input: Input): Any {
+            var direction = Pair(0, -1)
+            var positionX = input.position.x
+            var positionY = input.position.y
+            val visitedObstacles = mutableSetOf<Pair<Int, Int>>()
 
-        val positionsVisited = mutableSetOf<Pair<Int, Int>>()
-        positionsVisited.add(Pair(positionX, positionY))
-        while (positionX in 0..<input.worldSize.x && positionY in 0..<input.worldSize.y) {
-            val newPositionX = positionX + direction.first
-            val newPositionY = positionY + direction.second
+            val positionsVisited = mutableSetOf<Pair<Int, Int>>()
+            positionsVisited.add(Pair(positionX, positionY))
+            while (positionX in 0..<input.worldSize.x && positionY in 0..<input.worldSize.y) {
+                val newPositionX = positionX + direction.first
+                val newPositionY = positionY + direction.second
 
-            if (newPositionX !in 0..<input.worldSize.x || newPositionY !in 0..<input.worldSize.y)
-                break
+                if (newPositionX !in 0..<input.worldSize.x || newPositionY !in 0..<input.worldSize.y)
+                    break
 
-            if (input.obstacles.contains(Vector2i(newPositionX, newPositionY))) {
-                val newDirection = when (direction) {
-                    Pair(0, -1) -> Pair(1, 0)
-                    Pair(1, 0) -> Pair(0, 1)
-                    Pair(0, 1) -> Pair(-1, 0)
-                    Pair(-1, 0) -> Pair(0, -1)
-                    else -> throw IllegalArgumentException("Unknown direction")
+                if (input.obstacles.contains(Vector2i(newPositionX, newPositionY))) {
+                    val newDirection = when (direction) {
+                        Pair(0, -1) -> Pair(1, 0)
+                        Pair(1, 0) -> Pair(0, 1)
+                        Pair(0, 1) -> Pair(-1, 0)
+                        Pair(-1, 0) -> Pair(0, -1)
+                        else -> throw IllegalArgumentException("Unknown direction")
+                    }
+                    direction = newDirection
+                    visitedObstacles.add(Pair(newPositionX, newPositionY))
+                    continue
                 }
-                direction = newDirection
-                visitedObstacles.add(Pair(newPositionX, newPositionY))
-                continue
+
+                positionX = newPositionX
+                positionY = newPositionY
+
+                positionsVisited.add(Pair(newPositionX, newPositionY))
             }
 
-            positionX = newPositionX
-            positionY = newPositionY
-
-            positionsVisited.add(Pair(newPositionX, newPositionY))
+            return positionsVisited.size
         }
 
-        return positionsVisited.size
+        override fun bonus() = 5.0
     }
 
-    override fun solveB(input: Input): Any? = null
-
-    override fun bonusA() = 5.0
+    override fun getB() = object : SubTask<Input> {
+        override fun solve(input: Input) = null
+    }
 
 }
 
-fun main() = Y24D06().solve().println()
+fun main() = Y24D06().getResult().println()

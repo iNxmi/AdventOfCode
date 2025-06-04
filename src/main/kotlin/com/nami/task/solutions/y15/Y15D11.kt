@@ -1,6 +1,7 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInput
 import com.nami.task.test.TestInputSimplex
@@ -17,7 +18,7 @@ class Y15D11 : Task<String>(2015, 11) {
             segments.add(alphabet.substring(i, i + length))
     }
 
-    override fun getRawTestInput(): TestInput = TestInputSimplex("ghijklmn")
+    override fun getRawInputTest(): TestInput = TestInputSimplex("ghijklmn")
 
     override fun getProcessedInput(raw: String): String = raw
 
@@ -82,10 +83,14 @@ class Y15D11 : Task<String>(2015, 11) {
         throw IllegalStateException("No password found")
     }
 
-    override fun solveA(input: String): String = find(input)
+    override fun getA() = object : SubTask<String> {
+        override fun solve(input: String) = find(input)
+    }
 
-    override fun solveB(input: String): Any = find(solveA(input))
+    override fun getB() = object : SubTask<String> {
+        override fun solve(input: String) = find(getA().solve(input).toString())
+    }
 
 }
 
-fun main() = Y15D11().solve().println()
+fun main() = Y15D11().getResult().println()

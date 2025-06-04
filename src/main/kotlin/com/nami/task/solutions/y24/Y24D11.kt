@@ -1,12 +1,13 @@
 package com.nami.task.solutions.y24
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 
 class Y24D11 : Task<Map<Long, Long>>(2024, 11) {
 
-    override fun getRawTestInput() = TestInputSimplex("125 17")
+    override fun getRawInputTest() = TestInputSimplex("125 17")
 
     override fun getProcessedInput(raw: String): Map<Long, Long> {
         val map = mutableMapOf<Long, Long>()
@@ -61,12 +62,16 @@ class Y24D11 : Task<Map<Long, Long>>(2024, 11) {
         return map.values.sum()
     }
 
-    override fun solveA(input: Map<Long, Long>) = solve(input, 25)
-    override fun solveB(input: Map<Long, Long>) = solve(input, 75)
+    override fun getA() = object : SubTask<Map<Long, Long>> {
+        override fun solve(input: Map<Long, Long>) = solve(input, 25)
+        override fun bonus() = 5.0
+    }
 
-    override fun bonusA() = 5.0
-    override fun bonusB() = 10.0
+    override fun getB() = object : SubTask<Map<Long, Long>> {
+        override fun solve(input: Map<Long, Long>) = solve(input, 75)
+        override fun bonus() = 10.0
+    }
 
 }
 
-fun main() = Y24D11().solve().println()
+fun main() = Y24D11().getResult().println()

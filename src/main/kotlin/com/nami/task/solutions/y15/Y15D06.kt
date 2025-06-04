@@ -1,13 +1,14 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 import org.joml.Vector2i
 
 class Y15D06 : Task<List<Y15D06.Operation>>(2015, 6) {
 
-    override fun getRawTestInput() = TestInputSimplex(
+    override fun getRawInputTest() = TestInputSimplex(
         """
         turn on 0,0 through 999,999
         toggle 0,0 through 999,0
@@ -49,43 +50,47 @@ class Y15D06 : Task<List<Y15D06.Operation>>(2015, 6) {
 
     private val size = 1000
 
-    override fun solveA(input: List<Operation>): Any {
-        val lights = BooleanArray(size * size) { false }
-        input.forEach { operation ->
-            for (y in operation.start.y..operation.end.y)
-                for (x in operation.start.x..operation.end.x) {
-                    val index = x + y * size
+    override fun getA() = object : SubTask<List<Operation>> {
+        override fun solve(input: List<Operation>): Any {
+            val lights = BooleanArray(size * size) { false }
+            input.forEach { operation ->
+                for (y in operation.start.y..operation.end.y)
+                    for (x in operation.start.x..operation.end.x) {
+                        val index = x + y * size
 
-                    lights[index] = when (operation.type) {
-                        Type.ON -> true
-                        Type.TOGGLE -> !lights[index]
-                        Type.OFF -> false
+                        lights[index] = when (operation.type) {
+                            Type.ON -> true
+                            Type.TOGGLE -> !lights[index]
+                            Type.OFF -> false
+                        }
                     }
-                }
+            }
+            return lights.count { it }
         }
-        return lights.count { it }
     }
 
-    override fun solveB(input: List<Operation>): Any {
-        val lights = IntArray(size * size) { 0 }
-        input.forEach { operation ->
-            for (y in operation.start.y..operation.end.y)
-                for (x in operation.start.x..operation.end.x) {
-                    val index = x + y * size
-                    val value = lights[index]
+    override fun getB() = object : SubTask<List<Operation>> {
+        override fun solve(input: List<Operation>): Any {
+            val lights = IntArray(size * size) { 0 }
+            input.forEach { operation ->
+                for (y in operation.start.y..operation.end.y)
+                    for (x in operation.start.x..operation.end.x) {
+                        val index = x + y * size
+                        val value = lights[index]
 
-                    val result = when (operation.type) {
-                        Type.ON -> value + 1
-                        Type.TOGGLE -> value + 2
-                        Type.OFF -> value - 1
+                        val result = when (operation.type) {
+                            Type.ON -> value + 1
+                            Type.TOGGLE -> value + 2
+                            Type.OFF -> value - 1
+                        }
+
+                        lights[index] = if (result >= 0) result else 0
                     }
-
-                    lights[index] = if (result >= 0) result else 0
-                }
+            }
+            return lights.sum()
         }
-        return lights.sum()
     }
 
 }
 
-fun main() = Y15D06().solve().println()
+fun main() = Y15D06().getResult().println()

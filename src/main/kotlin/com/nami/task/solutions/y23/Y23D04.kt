@@ -1,19 +1,24 @@
 package com.nami.task.solutions.y23
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 
 class Y23D04 : Task<List<String>>(2023, 4) {
 
-    override fun getRawTestInput() = null
+    override fun getRawInputTest() = null
 
     override fun getProcessedInput(raw: String) = raw.lines()
 
-    override fun solveA(input: List<String>) = null
-    override fun solveB(input: List<String>) = null
+    override fun getA() = object : SubTask<List<String>> {
+        override fun solve(input: List<String>) = null
+        override fun bonus() = 2.0
+    }
 
-    override fun bonusA() = 2.0
+    override fun getB() = object : SubTask<List<String>> {
+        override fun solve(input: List<String>) = null
+    }
 
 }
 
-fun main() = Y23D03().solve().println()
+fun main() = Y23D03().getResult().println()

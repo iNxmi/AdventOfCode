@@ -1,12 +1,13 @@
 package com.nami.task.solutions.y23
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 
 class Y23D02 : Task<Map<Int, List<Y23D02.Draw>>>(2023, 2) {
 
-    override fun getRawTestInput() = TestInputSimplex(
+    override fun getRawInputTest() = TestInputSimplex(
         """
             Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
             Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
@@ -64,31 +65,36 @@ class Y23D02 : Task<Map<Int, List<Y23D02.Draw>>>(2023, 2) {
         return result
     }
 
-    override fun solveA(input: Map<Int, List<Draw>>): Any {
-        val filtered = input.filter { (_, game) ->
-            game.maxOf { it.red } <= 12 &&
-                    game.maxOf { it.green } <= 13 &&
-                    game.maxOf { it.blue } <= 14
+    override fun getA() = object : SubTask<Map<Int, List<Draw>>> {
+        override fun solve(input: Map<Int, List<Draw>>): Any {
+            val filtered = input.filter { (_, game) ->
+                game.maxOf { it.red } <= 12 &&
+                        game.maxOf { it.green } <= 13 &&
+                        game.maxOf { it.blue } <= 14
+            }
+
+            //because the list starts with index 0 but the puzzle input starts with index 1
+            return filtered.keys.sumOf { it + 1 }
         }
 
-        //because the list starts with index 0 but the puzzle input starts with index 1
-        return filtered.keys.sumOf { it + 1 }
+        override fun bonus() = 2.0
     }
 
-    override fun solveB(input: Map<Int, List<Draw>>): Any {
-        val minimal = input.map { (_, game) ->
-            val red = game.maxOf { it.red }
-            val green = game.maxOf { it.green }
-            val blue = game.maxOf { it.blue }
-            Draw(red, green, blue)
+    override fun getB() = object : SubTask<Map<Int, List<Draw>>> {
+        override fun solve(input: Map<Int, List<Draw>>): Any {
+            val minimal = input.map { (_, game) ->
+                val red = game.maxOf { it.red }
+                val green = game.maxOf { it.green }
+                val blue = game.maxOf { it.blue }
+                Draw(red, green, blue)
+            }
+
+            return minimal.sumOf { it.red * it.green * it.blue }
         }
 
-        return minimal.sumOf { it.red * it.green * it.blue }
+        override fun bonus() = 3.0
     }
-
-    override fun bonusA() = 2.0
-    override fun bonusB() = 3.0
 
 }
 
-fun main() = Y23D02().solve().println()
+fun main() = Y23D02().getResult().println()

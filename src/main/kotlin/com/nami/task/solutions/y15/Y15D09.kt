@@ -2,12 +2,13 @@ package com.nami.task.solutions.y15
 
 import com.nami.permutations
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 
 class Y15D09 : Task<Y15D09.Input>(2015, 9) {
 
-    override fun getRawTestInput() = TestInputSimplex(
+    override fun getRawInputTest() = TestInputSimplex(
         """
         London to Dublin = 464
         London to Belfast = 518
@@ -63,18 +64,22 @@ class Y15D09 : Task<Y15D09.Input>(2015, 9) {
         return result
     }
 
-    override fun solveA(input: Input): Any {
-        val distances = distances(input)
-        val result = distances.toSortedMap().firstEntry()
-        return result.key
+    override fun getA() = object : SubTask<Input> {
+        override fun solve(input: Input): Any? {
+            val distances = distances(input)
+            val result = distances.toSortedMap().firstEntry()
+            return result.key
+        }
     }
 
-    override fun solveB(input: Input): Any {
-        val distances = distances(input)
-        val result = distances.toSortedMap().reversed().firstEntry()
-        return result.key
+    override fun getB() = object : SubTask<Input> {
+        override fun solve(input: Input): Any? {
+            val distances = distances(input)
+            val result = distances.toSortedMap().reversed().firstEntry()
+            return result.key
+        }
     }
 
 }
 
-fun main() = Y15D09().solve().println()
+fun main() = Y15D09().getResult().println()

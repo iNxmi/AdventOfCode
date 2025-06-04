@@ -1,12 +1,13 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 
 class Y15D08 : Task<List<String>>(2015, 8) {
 
-    override fun getRawTestInput() = TestInputSimplex(
+    override fun getRawInputTest() = TestInputSimplex(
         """
         ""
         "abc"
@@ -34,12 +35,6 @@ class Y15D08 : Task<List<String>>(2015, 8) {
         return result
     }
 
-    override fun solveA(input: List<String>): Any {
-        val code = input.sumOf { it.length }
-        val memory = input.map { escape(it) }.sumOf { it.length }
-        return code - memory
-    }
-
     private fun unescape(string: String): String {
         var result = string
             .replace("\\", "\\\\")
@@ -50,12 +45,22 @@ class Y15D08 : Task<List<String>>(2015, 8) {
         return result
     }
 
-    override fun solveB(input: List<String>): Any {
-        val newlyEncoded = input.map { unescape(it) }.sumOf { it.length }
-        val original = input.sumOf { it.length }
-        return newlyEncoded - original
+    override fun getA() = object : SubTask<List<String>> {
+        override fun solve(input: List<String>): Any {
+            val code = input.sumOf { it.length }
+            val memory = input.map { escape(it) }.sumOf { it.length }
+            return code - memory
+        }
+    }
+
+    override fun getB() = object : SubTask<List<String>> {
+        override fun solve(input: List<String>): Any {
+            val newlyEncoded = input.map { unescape(it) }.sumOf { it.length }
+            val original = input.sumOf { it.length }
+            return newlyEncoded - original
+        }
     }
 
 }
 
-fun main() = Y15D08().solve().println()
+fun main() = Y15D08().getResult().println()

@@ -1,13 +1,14 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInput
 import com.nami.task.test.TestInputSimplex
 
 class Y15D14 : Task<Set<Y15D14.Racer>>(2015, 14) {
 
-    override fun getRawTestInput(): TestInput = TestInputSimplex(
+    override fun getRawInputTest(): TestInput = TestInputSimplex(
         """
         Comet can fly 14 km/s for 10 seconds, but then must rest for 127 seconds.
         Dancer can fly 16 km/s for 11 seconds, but then must rest for 162 seconds.
@@ -20,6 +21,8 @@ class Y15D14 : Task<Set<Y15D14.Racer>>(2015, 14) {
         val timeMove: Int,
         val timeRest: Int
     )
+
+    data class RaceResult(val distance: Int, val points: Int)
 
     override fun getProcessedInput(raw: String): Set<Racer> {
         val string = raw
@@ -46,7 +49,6 @@ class Y15D14 : Task<Set<Y15D14.Racer>>(2015, 14) {
         return result
     }
 
-    data class RaceResult(val distance: Int, val points: Int)
     private fun race(racers: Set<Racer>, duration: Int): Map<Racer, RaceResult> {
         val distances = HashMap<Racer, Int>()
         val points = mutableMapOf<Racer, Int>()
@@ -74,12 +76,16 @@ class Y15D14 : Task<Set<Y15D14.Racer>>(2015, 14) {
         return result
     }
 
-    override fun solveA(input: Set<Racer>): Any = race(input, 2503).maxOf { it.value.distance }
-    override fun solveATest(input: Set<Racer>): Any = race(input, 1000).maxOf { it.value.distance }
+    override fun getA() = object : SubTask<Set<Racer>> {
+        override fun solve(input: Set<Racer>) = race(input, 2503).maxOf { it.value.distance }
+        override fun test(input: Set<Racer>) = race(input, 1000).maxOf { it.value.distance }
+    }
 
-    override fun solveB(input: Set<Racer>): Any = race(input, 2503).maxOf { it.value.points }
-    override fun solveBTest(input: Set<Racer>): Any = race(input, 1000).maxOf { it.value.points }
+    override fun getB() = object : SubTask<Set<Racer>> {
+        override fun solve(input: Set<Racer>) = race(input, 2503).maxOf { it.value.points }
+        override fun test(input: Set<Racer>) = race(input, 1000).maxOf { it.value.points }
+    }
 
 }
 
-fun main() = Y15D14().solve().println()
+fun main() = Y15D14().getResult().println()

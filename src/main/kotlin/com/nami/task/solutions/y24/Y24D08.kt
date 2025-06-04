@@ -1,13 +1,14 @@
 package com.nami.task.solutions.y24
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 import org.joml.Vector2i
 
 class Y24D08 : Task<Y24D08.Input>(2024, 8) {
 
-    override fun getRawTestInput() = TestInputSimplex(
+    override fun getRawInputTest() = TestInputSimplex(
         """
         ............
         ........0...
@@ -51,29 +52,6 @@ class Y24D08 : Task<Y24D08.Input>(2024, 8) {
         return Input(size, map)
     }
 
-    override fun solveA(input: Input): Any {
-        val antinodes = mutableSetOf<Vector2i>()
-        for (key in input.nodes.keys) {
-            for (p1 in input.nodes[key]!!)
-                for (p2 in input.nodes[key]!!) {
-                    if (p1 == p2)
-                        continue
-
-                    val direction = Vector2i(p2).sub(p1)
-
-                    val antinode1 = Vector2i(p2).add(direction)
-                    if (antinode1.x in 0..<input.size.x && antinode1.y in 0..<input.size.y)
-                        antinodes.add(antinode1)
-
-                    val antinode2 = Vector2i(p1).sub(direction)
-                    if (antinode2.x in 0..<input.size.x && antinode2.y in 0..<input.size.y)
-                        antinodes.add(antinode2)
-                }
-        }
-
-        return antinodes.size
-    }
-
     private fun getAntinodes(positionA: Vector2i, positionB: Vector2i, worldSize: Vector2i): Set<Vector2i> {
         val direction = Vector2i(positionB).sub(positionA)
 
@@ -111,18 +89,45 @@ class Y24D08 : Task<Y24D08.Input>(2024, 8) {
         return antinodes
     }
 
-    override fun solveB(input: Input): Any {
-        val antinodes = mutableSetOf<Vector2i>()
+    override fun getA() = object : SubTask<Input> {
+        override fun solve(input: Input): Any? {
+            val antinodes = mutableSetOf<Vector2i>()
+            for (key in input.nodes.keys) {
+                for (p1 in input.nodes[key]!!)
+                    for (p2 in input.nodes[key]!!) {
+                        if (p1 == p2)
+                            continue
 
-        for (key in input.nodes.keys)
-            for (p1 in input.nodes[key]!!)
-                for (p2 in input.nodes[key]!!)
-                    if (p1 != p2)
-                        antinodes.addAll(getAntinodes(p1, p2, input.size))
+                        val direction = Vector2i(p2).sub(p1)
 
-        return antinodes.size
+                        val antinode1 = Vector2i(p2).add(direction)
+                        if (antinode1.x in 0..<input.size.x && antinode1.y in 0..<input.size.y)
+                            antinodes.add(antinode1)
+
+                        val antinode2 = Vector2i(p1).sub(direction)
+                        if (antinode2.x in 0..<input.size.x && antinode2.y in 0..<input.size.y)
+                            antinodes.add(antinode2)
+                    }
+            }
+
+            return antinodes.size
+        }
+    }
+
+    override fun getB() = object : SubTask<Input> {
+        override fun solve(input: Input): Any? {
+            val antinodes = mutableSetOf<Vector2i>()
+
+            for (key in input.nodes.keys)
+                for (p1 in input.nodes[key]!!)
+                    for (p2 in input.nodes[key]!!)
+                        if (p1 != p2)
+                            antinodes.addAll(getAntinodes(p1, p2, input.size))
+
+            return antinodes.size
+        }
     }
 
 }
 
-fun main() = Y24D08().solve().println()
+fun main() = Y24D08().getResult().println()

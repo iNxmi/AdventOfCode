@@ -30,26 +30,26 @@ class Verifier {
         private fun verify(): Set<Entry> {
             val tasks = Task.getAll()
             val entries = tasks.flatMap { task ->
-                val result = task.solve()
+                val result = task.getResult()
 
                 val resultARemote = Remote.getSolutionA(task.year, task.day)
                 val a = Entry(
                     task.id, task.year, task.day,
                     Part.A,
-                    result.a,
+                    result.a.result,
                     resultARemote,
-                    result.aTimeS,
-                    task.bonusA()
+                    result.a.timeS,
+                    task.getA().bonus()
                 )
 
                 val resultBRemote = Remote.getSolutionB(task.year, task.day)
                 val b = Entry(
                     task.id, task.year, task.day,
                     Part.B,
-                    result.b,
+                    result.b.result,
                     resultBRemote,
-                    result.bTimeS,
-                    task.bonusB()
+                    result.b.timeS,
+                    task.getB().bonus()
                 )
 
                 setOf(a, b)

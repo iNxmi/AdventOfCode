@@ -1,13 +1,14 @@
 package com.nami.task.solutions.y24
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 import kotlin.math.abs
 
 class Y24D02 : Task<List<String>>(2024, 2) {
 
-    override fun getRawTestInput() = TestInputSimplex(
+    override fun getRawInputTest() = TestInputSimplex(
         """
         7 6 4 2 1
         1 2 7 8 9
@@ -19,34 +20,6 @@ class Y24D02 : Task<List<String>>(2024, 2) {
     )
 
     override fun getProcessedInput(raw: String) = raw.lines()
-
-    override fun solveA(input: List<String>): Any {
-        val valid = mutableSetOf<List<Int>>()
-        val invalid = mutableSetOf<List<Int>>()
-        for (line in input) {
-            val split = line.split(" ").map { it.toInt() }
-            if (isAscending(split.toMutableList(), 0) || isDescending(split.toMutableList(), 0))
-                valid.add(split)
-            else
-                invalid.add(split)
-        }
-
-        return valid.size
-    }
-
-    override fun solveB(input: List<String>): Any {
-        val valid = mutableSetOf<List<Int>>()
-        val invalid = mutableSetOf<List<Int>>()
-        for (line in input) {
-            val split = line.split(" ").map { it.toInt() }.toMutableList()
-            if (isAscending(split.toMutableList(), 1) || isDescending(split.toMutableList(), 1))
-                valid.add(split)
-            else
-                invalid.add(split)
-        }
-
-        return valid.size
-    }
 
     private fun isAscending(list: MutableList<Int>, damp: Int): Boolean {
         if (damp < 0)
@@ -110,9 +83,42 @@ class Y24D02 : Task<List<String>>(2024, 2) {
         return true
     }
 
-    override fun bonusA() = 3.0
-    override fun bonusB() = 7.0
+    override fun getA() = object : SubTask<List<String>> {
+        override fun solve(input: List<String>): Any {
+            val valid = mutableSetOf<List<Int>>()
+            val invalid = mutableSetOf<List<Int>>()
+            for (line in input) {
+                val split = line.split(" ").map { it.toInt() }
+                if (isAscending(split.toMutableList(), 0) || isDescending(split.toMutableList(), 0))
+                    valid.add(split)
+                else
+                    invalid.add(split)
+            }
+
+            return valid.size
+        }
+
+        override fun bonus() = 3.0
+    }
+
+    override fun getB() = object : SubTask<List<String>> {
+        override fun solve(input: List<String>): Any {
+            val valid = mutableSetOf<List<Int>>()
+            val invalid = mutableSetOf<List<Int>>()
+            for (line in input) {
+                val split = line.split(" ").map { it.toInt() }.toMutableList()
+                if (isAscending(split.toMutableList(), 1) || isDescending(split.toMutableList(), 1))
+                    valid.add(split)
+                else
+                    invalid.add(split)
+            }
+
+            return valid.size
+        }
+
+        override fun bonus() = 7.0
+    }
 
 }
 
-fun main() = Y24D02().solve().println()
+fun main() = Y24D02().getResult().println()

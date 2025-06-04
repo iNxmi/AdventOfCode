@@ -1,13 +1,14 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInputDuplex
 import org.joml.Vector2i
 
 class Y15D18 : Task<Y15D18.World>(2015, 18) {
 
-    override fun getRawTestInput() = TestInputDuplex(
+    override fun getRawInputTest() = TestInputDuplex(
         """
             .#.#.#
             ...##.
@@ -95,9 +96,6 @@ class Y15D18 : Task<Y15D18.World>(2015, 18) {
         return cells.size
     }
 
-    override fun solveA(input: World): Any = simulateA(input, 100)
-    override fun solveATest(input: World): Any = simulateA(input, 4)
-
     private fun simulateB(world: World, iterations: Int): Int {
         val cells = world.cells.toMutableSet()
         for (i in 0..<iterations) {
@@ -114,9 +112,16 @@ class Y15D18 : Task<Y15D18.World>(2015, 18) {
         return cells.size
     }
 
-    override fun solveB(input: World): Any = simulateB(input, 100)
-    override fun solveBTest(input: World): Any = simulateB(input, 5)
+    override fun getA() = object : SubTask<World> {
+        override fun solve(input: World) = simulateA(input, 100)
+        override fun test(input: World) = simulateA(input, 4)
+    }
+
+    override fun getB() = object : SubTask<World> {
+        override fun solve(input: World) = simulateB(input, 100)
+        override fun test(input: World) = simulateB(input, 5)
+    }
 
 }
 
-fun main() = Y15D18().solve().println()
+fun main() = Y15D18().getResult().println()

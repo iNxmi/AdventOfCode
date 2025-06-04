@@ -1,6 +1,7 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInput
 import com.nami.task.test.TestInputSimplex
@@ -8,7 +9,7 @@ import kotlinx.serialization.json.*
 
 class Y15D12 : Task<Y15D12.Input>(2015, 12) {
 
-    override fun getRawTestInput(): TestInput = TestInputSimplex(
+    override fun getRawInputTest(): TestInput = TestInputSimplex(
         """
         {
            "a": [1, 2, 3],
@@ -29,8 +30,6 @@ class Y15D12 : Task<Y15D12.Input>(2015, 12) {
 
     private val regex = ("(-*(\\d+))").toRegex()
     private fun sum(string: String): Int = regex.findAll(string).sumOf { it.value.toInt() }
-
-    override fun solveA(input: Input): Any = sum(input.raw)
 
     private fun filterArray(json: JsonArray, predicate: String): JsonArray = buildJsonArray {
         json.forEach { value ->
@@ -60,11 +59,17 @@ class Y15D12 : Task<Y15D12.Input>(2015, 12) {
         }
     }
 
-    override fun solveB(input: Input): Any {
-        val filtered = filterObject(input.json, "red")
-        return sum(filtered.toString())
+    override fun getA() = object : SubTask<Input> {
+        override fun solve(input: Input) = sum(input.raw)
+    }
+
+    override fun getB() = object : SubTask<Input> {
+        override fun solve(input: Input): Any {
+            val filtered = filterObject(input.json, "red")
+            return sum(filtered.toString())
+        }
     }
 
 }
 
-fun main() = Y15D12().solve().println()
+fun main() = Y15D12().getResult().println()

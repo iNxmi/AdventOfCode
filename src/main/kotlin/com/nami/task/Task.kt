@@ -54,43 +54,47 @@ abstract class Task<InputClass : Any>(
         )
     }
 
-    private fun getRawInput(): String = Remote.getInput(year, day)
-    abstract fun getRawTestInput(): TestInput?
+    abstract fun getRawInputTest(): TestInput?
 
     abstract fun getProcessedInput(raw: String): InputClass
 
-    open fun solveA(input: InputClass): Any? = null
-    open fun solveATest(input: InputClass): Any? = solveA(input)
-    open fun bonusA(): Double? = null
+    abstract fun getA(): SubTask<InputClass>
+    abstract fun getB(): SubTask<InputClass>
 
-    open fun solveB(input: InputClass): Any? = null
-    open fun solveBTest(input: InputClass): Any? = solveB(input)
-    open fun bonusB(): Double? = null
+    fun getResult(): Result {
+        val input = this.getProcessedInput(Remote.getInput(year, day))
 
-    fun solve(): Result {
-        val input = getProcessedInput(getRawInput())
+        val a = getA()
+        val b = getB()
 
-        val aTimeStartNs = System.nanoTime()
-        val a = solveA(input)
-        val aTimeNs = System.nanoTime() - aTimeStartNs
-        val aTimeS = aTimeNs * 1E-9
+        val resultA = a.getResult(input)
+        val resultB = b.getResult(input)
 
-        val bTimeStartNs = System.nanoTime()
-        val b = solveB(input)
-        val bTimeNs = System.nanoTime() - bTimeStartNs
-        val bTimeS = bTimeNs * 1E-9
+        val hasTestInput = getRawInputTest() != null
+        if (hasTestInput) {
+            val inputTestA = this.getProcessedInput(this.getRawInputTest()!!.getRawTestInputA())
+            val inputTestB = this.getProcessedInput(this.getRawInputTest()!!.getRawTestInputB())
+            val resultATest = a.getResultTest(inputTestA)
+            val resultBTest = b.getResultTest(inputTestB)
 
-        val result = Result(
-            id, year, day,
+            return Result(
+                resultA, resultATest,
+                resultB, resultBTest
+            )
+        }
 
-            a, aTimeS,
-            b, bTimeS,
-
-            if (getRawTestInput() != null) solveATest(getProcessedInput(getRawTestInput()!!.getRawTestInputA())) else null,
-            if (getRawTestInput() != null) solveBTest(getProcessedInput(getRawTestInput()!!.getRawTestInputB())) else null
+        return Result(
+            resultA, SubTask.Result(0, 0.0),
+            resultB, SubTask.Result(0, 0.0)
         )
-
-        return result
     }
+
+    data class Result(
+        val a: SubTask.Result,
+        val aTest: SubTask.Result,
+
+        val b: SubTask.Result,
+        val bTest: SubTask.Result
+    )
 
 }

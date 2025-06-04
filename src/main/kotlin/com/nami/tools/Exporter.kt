@@ -114,6 +114,6 @@ class Exporter {
 }
 
 fun main() {
-//    Exporter.verification()
-    Exporter.verificationXLSX()
+    Exporter.verification()
+//    Exporter.verificationXLSX()
 }

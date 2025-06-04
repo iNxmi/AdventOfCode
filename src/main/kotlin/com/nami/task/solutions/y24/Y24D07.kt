@@ -1,13 +1,14 @@
 package com.nami.task.solutions.y24
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 import kotlin.math.pow
 
 class Y24D07 : Task<List<Y24D07.Equation>>(2024, 7) {
 
-    override fun getRawTestInput() = TestInputSimplex(
+    override fun getRawInputTest() = TestInputSimplex(
         """
         190: 10 19
         3267: 81 40 27
@@ -39,45 +40,6 @@ class Y24D07 : Task<List<Y24D07.Equation>>(2024, 7) {
         return equations
     }
 
-    override fun solveA(input: List<Equation>): Any {
-        //0 = +
-        //1 = *
-
-        val possibleEquations = mutableListOf<Equation>()
-        for (equation in input) {
-            val bit = equation.numbers.size - 1
-            val highestNumber = ((2.0).pow(bit.toDouble()) - 1).toInt()
-
-            for (i in 0..highestNumber) {
-                val binary = Integer.toBinaryString(i).padStart(bit, '0').toCharArray()
-
-                var solution: Long = equation.numbers[0].toLong()
-                var count = 0
-                for (operator in 1..<equation.numbers.size) {
-                    val n = equation.numbers[operator]
-
-                    if (binary[count] == '0') {
-                        solution += n
-                    } else if (binary[count] == '1') {
-                        solution *= n
-                    }
-
-                    count++
-                }
-
-                if (solution == equation.solution) {
-                    possibleEquations.add(equation)
-                    break
-                }
-
-            }
-
-        }
-
-        return possibleEquations.sumOf { it.solution }
-    }
-
-
     private fun convertIntToBase(i: Int, base: Int): String {
         val chars: CharArray = ("012").toCharArray()
 
@@ -90,51 +52,93 @@ class Y24D07 : Task<List<Y24D07.Equation>>(2024, 7) {
         return builder.reverse().toString()
     }
 
-    override fun solveB(input: List<Equation>): Any {
+    override fun getA() = object : SubTask<List<Equation>> {
+        override fun solve(input: List<Equation>): Any? {
+            //0 = +
+            //1 = *
 
-        //0 = +
-        //1 = *
-        //1 = || -> concat
+            val possibleEquations = mutableListOf<Equation>()
+            for (equation in input) {
+                val bit = equation.numbers.size - 1
+                val highestNumber = ((2.0).pow(bit.toDouble()) - 1).toInt()
 
-        val possibleEquations = mutableListOf<Equation>()
-        for (equation in input) {
-            val bit = equation.numbers.size - 1
-            val highestNumber = ((3.0).pow(bit.toDouble()) - 1).toInt()
+                for (i in 0..highestNumber) {
+                    val binary = Integer.toBinaryString(i).padStart(bit, '0').toCharArray()
 
-            for (i in 0..highestNumber) {
-                val trinary = convertIntToBase(i, 3).padStart(bit, '0').toCharArray()
+                    var solution: Long = equation.numbers[0].toLong()
+                    var count = 0
+                    for (operator in 1..<equation.numbers.size) {
+                        val n = equation.numbers[operator]
 
-                var solution: Long = equation.numbers[0].toLong()
-                var count = 0
-                for (operator in 1..<equation.numbers.size) {
-                    val n = equation.numbers[operator]
+                        if (binary[count] == '0') {
+                            solution += n
+                        } else if (binary[count] == '1') {
+                            solution *= n
+                        }
 
-                    if (trinary[count] == '0') {
-                        solution += n
-                    } else if (trinary[count] == '1') {
-                        solution *= n
-                    } else if (trinary[count] == '2') {
-                        solution = ("$solution$n").toLong()
+                        count++
                     }
 
-                    count++
-                }
+                    if (solution == equation.solution) {
+                        possibleEquations.add(equation)
+                        break
+                    }
 
-                if (solution == equation.solution) {
-                    possibleEquations.add(equation)
-                    break
                 }
 
             }
 
+            return possibleEquations.sumOf { it.solution }
         }
 
-        return possibleEquations.sumOf { it.solution }
+        override fun bonus() = 3.0
     }
 
-    override fun bonusA() = 3.0
-    override fun bonusB() = 7.0
+    override fun getB() = object : SubTask<List<Equation>> {
+        override fun solve(input: List<Equation>): Any? {
+            //0 = +
+            //1 = *
+            //1 = || -> concat
+
+            val possibleEquations = mutableListOf<Equation>()
+            for (equation in input) {
+                val bit = equation.numbers.size - 1
+                val highestNumber = ((3.0).pow(bit.toDouble()) - 1).toInt()
+
+                for (i in 0..highestNumber) {
+                    val trinary = convertIntToBase(i, 3).padStart(bit, '0').toCharArray()
+
+                    var solution: Long = equation.numbers[0].toLong()
+                    var count = 0
+                    for (operator in 1..<equation.numbers.size) {
+                        val n = equation.numbers[operator]
+
+                        if (trinary[count] == '0') {
+                            solution += n
+                        } else if (trinary[count] == '1') {
+                            solution *= n
+                        } else if (trinary[count] == '2') {
+                            solution = ("$solution$n").toLong()
+                        }
+
+                        count++
+                    }
+
+                    if (solution == equation.solution) {
+                        possibleEquations.add(equation)
+                        break
+                    }
+
+                }
+
+            }
+
+            return possibleEquations.sumOf { it.solution }
+        }
+
+        override fun bonus() = 7.0
+    }
 
 }
 
-fun main() = Y24D07().solve().println()
+fun main() = Y24D07().getResult().println()

@@ -1,13 +1,14 @@
 package com.nami.task.solutions.y24
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 import kotlin.math.abs
 
 class Y24D01 : Task<Y24D01.Input>(2024, 1) {
 
-    override fun getRawTestInput() = TestInputSimplex(
+    override fun getRawInputTest() = TestInputSimplex(
         """
         3   4
         4   3
@@ -32,28 +33,33 @@ class Y24D01 : Task<Y24D01.Input>(2024, 1) {
         return Input(left, right)
     }
 
-    override fun solveA(input: Input): Any {
-        val distances = mutableListOf<Int>()
+    override fun getA() = object : SubTask<Input> {
+        override fun solve(input: Input): Any {
+            val distances = mutableListOf<Int>()
 
-        for (i in input.left.indices)
-            distances.add(abs(input.left[i] - input.right[i]))
+            for (i in input.left.indices)
+                distances.add(abs(input.left[i] - input.right[i]))
 
-        return distances.sum()
-    }
-
-    override fun solveB(input: Input): Any {
-        var value = 0
-        for (number in input.left) {
-            val count = input.right.count { it == number }
-            value += number * count
+            return distances.sum()
         }
 
-        return value
+        override fun bonus() = 3.0
     }
 
-    override fun bonusA() = 3.0
-    override fun bonusB() = 7.0
+    override fun getB() = object : SubTask<Input> {
+        override fun solve(input: Input): Any {
+            var value = 0
+            for (number in input.left) {
+                val count = input.right.count { it == number }
+                value += number * count
+            }
+
+            return value
+        }
+
+        override fun bonus() = 7.0
+    }
 
 }
 
-fun main() = Y24D01().solve().println()
+fun main() = Y24D01().getResult().println()

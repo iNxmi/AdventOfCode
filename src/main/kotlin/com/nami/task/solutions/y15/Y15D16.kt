@@ -1,11 +1,12 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 
 class Y15D16 : Task<Set<Y15D16.Aunt>>(2015, 16) {
 
-    override fun getRawTestInput() = null
+    override fun getRawInputTest() = null
 
     data class Aunt(
         val id: Int,
@@ -67,46 +68,50 @@ class Y15D16 : Task<Set<Y15D16.Aunt>>(2015, 16) {
         return set
     }
 
-    override fun solveA(input: Set<Aunt>): Any {
-        val aunts = input.asSequence()
-            .filter { it.children == null || it.children == 3 }
-            .filter { it.cats == null || it.cats == 7 }
-            .filter { it.samoyeds == null || it.samoyeds == 2 }
-            .filter { it.pomeranians == null || it.pomeranians == 3 }
-            .filter { it.akitas == null || it.akitas == 0 }
-            .filter { it.vizslas == null || it.vizslas == 0 }
-            .filter { it.goldfish == null || it.goldfish == 5 }
-            .filter { it.trees == null || it.trees == 3 }
-            .filter { it.cars == null || it.cars == 2 }
-            .filter { it.perfumes == null || it.perfumes == 1 }
-            .toList()
+    override fun getA() = object : SubTask<Set<Aunt>> {
+        override fun solve(input: Set<Aunt>): Any {
+            val aunts = input.asSequence()
+                .filter { it.children == null || it.children == 3 }
+                .filter { it.cats == null || it.cats == 7 }
+                .filter { it.samoyeds == null || it.samoyeds == 2 }
+                .filter { it.pomeranians == null || it.pomeranians == 3 }
+                .filter { it.akitas == null || it.akitas == 0 }
+                .filter { it.vizslas == null || it.vizslas == 0 }
+                .filter { it.goldfish == null || it.goldfish == 5 }
+                .filter { it.trees == null || it.trees == 3 }
+                .filter { it.cars == null || it.cars == 2 }
+                .filter { it.perfumes == null || it.perfumes == 1 }
+                .toList()
 
-        if (aunts.size > 1)
-            throw IllegalStateException("Error (A): More than 1 aunt Sue found -> $aunts")
+            if (aunts.size > 1)
+                throw IllegalStateException("Error (A): More than 1 aunt Sue found -> $aunts")
 
-        return aunts.first().id
+            return aunts.first().id
+        }
     }
 
-    override fun solveB(input: Set<Aunt>): Any {
-        val aunts = input.asSequence()
-            .filter { it.children == null || it.children == 3 }
-            .filter { it.cats == null || it.cats > 7 }
-            .filter { it.samoyeds == null || it.samoyeds == 2 }
-            .filter { it.pomeranians == null || it.pomeranians < 3 }
-            .filter { it.akitas == null || it.akitas == 0 }
-            .filter { it.vizslas == null || it.vizslas == 0 }
-            .filter { it.goldfish == null || it.goldfish < 5 }
-            .filter { it.trees == null || it.trees > 3 }
-            .filter { it.cars == null || it.cars == 2 }
-            .filter { it.perfumes == null || it.perfumes == 1 }
-            .toList()
+    override fun getB() = object : SubTask<Set<Aunt>> {
+        override fun solve(input: Set<Aunt>): Any {
+            val aunts = input.asSequence()
+                .filter { it.children == null || it.children == 3 }
+                .filter { it.cats == null || it.cats > 7 }
+                .filter { it.samoyeds == null || it.samoyeds == 2 }
+                .filter { it.pomeranians == null || it.pomeranians < 3 }
+                .filter { it.akitas == null || it.akitas == 0 }
+                .filter { it.vizslas == null || it.vizslas == 0 }
+                .filter { it.goldfish == null || it.goldfish < 5 }
+                .filter { it.trees == null || it.trees > 3 }
+                .filter { it.cars == null || it.cars == 2 }
+                .filter { it.perfumes == null || it.perfumes == 1 }
+                .toList()
 
-        if (aunts.size > 1)
-            throw IllegalStateException("Error (B): More than 1 aunt Sue found -> $aunts")
+            if (aunts.size > 1)
+                throw IllegalStateException("Error (B): More than 1 aunt Sue found -> $aunts")
 
-        return aunts.first().id
+            return aunts.first().id
+        }
     }
 
 }
 
-fun main() = Y15D16().solve().println()
+fun main() = Y15D16().getResult().println()

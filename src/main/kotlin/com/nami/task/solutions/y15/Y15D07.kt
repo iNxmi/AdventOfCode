@@ -1,12 +1,13 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 
 class Y15D07 : Task<Map<String, String>>(2015, 7) {
 
-    override fun getRawTestInput() = TestInputSimplex(
+    override fun getRawInputTest() = TestInputSimplex(
         """
         123 -> x
         456 -> y
@@ -85,18 +86,22 @@ class Y15D07 : Task<Map<String, String>>(2015, 7) {
         return ""
     }
 
-    override fun solveA(input: Map<String, String>): Any = evaluate(mutableMapOf(), input, "a").toInt()
-    override fun solveATest(input: Map<String, String>): Any? = null
-
-    override fun solveB(input: Map<String, String>): Any {
-        val rewired = input.toMutableMap()
-        rewired["b"] = solveA(input).toString()
-
-        return evaluate(mutableMapOf(), rewired, "a").toInt()
+    override fun getA() = object : SubTask<Map<String, String>> {
+        override fun solve(input: Map<String, String>) = evaluate(mutableMapOf(), input, "a").toInt()
+        override fun test(input: Map<String, String>) = null
     }
 
-    override fun solveBTest(input: Map<String, String>): Any? = null
+    override fun getB() = object : SubTask<Map<String, String>> {
+        override fun solve(input: Map<String, String>): Any {
+            val rewired = input.toMutableMap()
+            rewired["b"] = getA().solve(input).toString()
+
+            return evaluate(mutableMapOf(), rewired, "a").toInt()
+        }
+
+        override fun test(input: Map<String, String>) = null
+    }
 
 }
 
-fun main() = Y15D07().solve().println()
+fun main() = Y15D07().getResult().println()

@@ -1,6 +1,7 @@
 package com.nami.task.solutions.y24
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInputSimplex
 import org.joml.Vector2i
@@ -8,7 +9,7 @@ import javax.naming.directory.InvalidAttributesException
 
 class Y24D15 : Task<Y24D15.Input>(2024, 15) {
 
-    override fun getRawTestInput() = TestInputSimplex(
+    override fun getRawInputTest() = TestInputSimplex(
         """
         ##########
         #..O..O.O#
@@ -105,9 +106,14 @@ class Y24D15 : Task<Y24D15.Input>(2024, 15) {
         return Input(world, instructions)
     }
 
-    override fun solveA(input: Input): Any? = null
-    override fun solveB(input: Input): Any? = null
+    override fun getA() = object : SubTask<Input> {
+        override fun solve(input: Input) = null
+    }
+
+    override fun getB() = object : SubTask<Input> {
+        override fun solve(input: Input) = null
+    }
 
 }
 
-fun main() = Y24D15().solve().println()
+fun main() = Y24D15().getResult().println()

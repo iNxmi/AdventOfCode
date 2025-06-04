@@ -1,12 +1,13 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
+import com.nami.task.SubTask
 import com.nami.task.Task
 import com.nami.task.test.TestInputDuplex
 
 class Y15D05 : Task<List<String>>(2015, 5) {
 
-    override fun getRawTestInput() = TestInputDuplex(
+    override fun getRawInputTest() = TestInputDuplex(
         """
         ugknbfddgicrmopn
         aaa
@@ -55,9 +56,6 @@ class Y15D05 : Task<List<String>>(2015, 5) {
         return false
     }
 
-    override fun solveA(input: List<String>) =
-        input.count { containsThreeVowels(it) && containsOneLetterTwice(it) && !containsSpecifics(it) }
-
     private fun containsTwoLetterPair(string: String): Boolean {
         for (x in 1..<string.length) {
             val x0 = x - 1
@@ -88,9 +86,16 @@ class Y15D05 : Task<List<String>>(2015, 5) {
         return false
     }
 
-    override fun solveB(input: List<String>) =
-        input.count { containsTwoLetterPair(it) && containsLetterTwiceWithSpace(it) }
+    override fun getA() = object : SubTask<List<String>> {
+        override fun solve(input: List<String>) =
+            input.count { containsThreeVowels(it) && containsOneLetterTwice(it) && !containsSpecifics(it) }
+    }
+
+    override fun getB() = object : SubTask<List<String>> {
+        override fun solve(input: List<String>) =
+            input.count { containsTwoLetterPair(it) && containsLetterTwiceWithSpace(it) }
+    }
 
 }
 
-fun main() = Y15D05().solve().println()
+fun main() = Y15D05().getResult().println()
