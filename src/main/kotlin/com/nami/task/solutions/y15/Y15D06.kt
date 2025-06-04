@@ -50,7 +50,7 @@ class Y15D06 : Task<List<Y15D06.Operation>>(2015, 6) {
 
     private val size = 1000
 
-    override fun getA() = object : SubTask<List<Operation>> {
+    override fun getSubTaskA() = object : SubTask<List<Operation>> {
         override fun solve(input: List<Operation>): Any {
             val lights = BooleanArray(size * size) { false }
             input.forEach { operation ->
@@ -69,7 +69,7 @@ class Y15D06 : Task<List<Y15D06.Operation>>(2015, 6) {
         }
     }
 
-    override fun getB() = object : SubTask<List<Operation>> {
+    override fun getSubTaskB() = object : SubTask<List<Operation>> {
         override fun solve(input: List<Operation>): Any {
             val lights = IntArray(size * size) { 0 }
             input.forEach { operation ->

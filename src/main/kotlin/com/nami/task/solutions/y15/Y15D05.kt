@@ -86,12 +86,12 @@ class Y15D05 : Task<List<String>>(2015, 5) {
         return false
     }
 
-    override fun getA() = object : SubTask<List<String>> {
+    override fun getSubTaskA() = object : SubTask<List<String>> {
         override fun solve(input: List<String>) =
             input.count { containsThreeVowels(it) && containsOneLetterTwice(it) && !containsSpecifics(it) }
     }
 
-    override fun getB() = object : SubTask<List<String>> {
+    override fun getSubTaskB() = object : SubTask<List<String>> {
         override fun solve(input: List<String>) =
             input.count { containsTwoLetterPair(it) && containsLetterTwiceWithSpace(it) }
     }

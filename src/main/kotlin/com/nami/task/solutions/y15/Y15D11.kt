@@ -83,12 +83,12 @@ class Y15D11 : Task<String>(2015, 11) {
         throw IllegalStateException("No password found")
     }
 
-    override fun getA() = object : SubTask<String> {
+    override fun getSubTaskA() = object : SubTask<String> {
         override fun solve(input: String) = find(input)
     }
 
-    override fun getB() = object : SubTask<String> {
-        override fun solve(input: String) = find(getA().solve(input).toString())
+    override fun getSubTaskB() = object : SubTask<String> {
+        override fun solve(input: String) = find(getSubTaskA().solve(input).toString())
     }
 
 }

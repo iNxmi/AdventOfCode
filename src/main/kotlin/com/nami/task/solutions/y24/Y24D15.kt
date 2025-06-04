@@ -106,11 +106,11 @@ class Y24D15 : Task<Y24D15.Input>(2024, 15) {
         return Input(world, instructions)
     }
 
-    override fun getA() = object : SubTask<Input> {
+    override fun getSubTaskA() = object : SubTask<Input> {
         override fun solve(input: Input) = null
     }
 
-    override fun getB() = object : SubTask<Input> {
+    override fun getSubTaskB() = object : SubTask<Input> {
         override fun solve(input: Input) = null
     }
 

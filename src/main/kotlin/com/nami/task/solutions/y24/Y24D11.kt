@@ -62,12 +62,12 @@ class Y24D11 : Task<Map<Long, Long>>(2024, 11) {
         return map.values.sum()
     }
 
-    override fun getA() = object : SubTask<Map<Long, Long>> {
+    override fun getSubTaskA() = object : SubTask<Map<Long, Long>> {
         override fun solve(input: Map<Long, Long>) = solve(input, 25)
         override fun bonus() = 5.0
     }
 
-    override fun getB() = object : SubTask<Map<Long, Long>> {
+    override fun getSubTaskB() = object : SubTask<Map<Long, Long>> {
         override fun solve(input: Map<Long, Long>) = solve(input, 75)
         override fun bonus() = 10.0
     }

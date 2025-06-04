@@ -12,7 +12,7 @@ class Y24D03 : Task<String>(2024, 3) {
 
     override fun getProcessedInput(raw: String) = raw
 
-    override fun getA() = object : SubTask<String> {
+    override fun getSubTaskA() = object : SubTask<String> {
         //TODO cleanup
         override fun solve(input: String): Any {
             val regex = ("mul\\(\\d+,\\d+\\)").toRegex()
@@ -33,7 +33,7 @@ class Y24D03 : Task<String>(2024, 3) {
         override fun bonus() = 3.0
     }
 
-    override fun getB() = object : SubTask<String> {
+    override fun getSubTaskB() = object : SubTask<String> {
         override fun solve(input: String): Any {
             val regex = ("mul\\(\\d+,\\d+\\)|do\\(\\)|don't\\(\\)").toRegex()
             val matches = regex.findAll(input).map { it.value }.toList()

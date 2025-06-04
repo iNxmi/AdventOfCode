@@ -65,7 +65,7 @@ class Y23D02 : Task<Map<Int, List<Y23D02.Draw>>>(2023, 2) {
         return result
     }
 
-    override fun getA() = object : SubTask<Map<Int, List<Draw>>> {
+    override fun getSubTaskA() = object : SubTask<Map<Int, List<Draw>>> {
         override fun solve(input: Map<Int, List<Draw>>): Any {
             val filtered = input.filter { (_, game) ->
                 game.maxOf { it.red } <= 12 &&
@@ -80,7 +80,7 @@ class Y23D02 : Task<Map<Int, List<Y23D02.Draw>>>(2023, 2) {
         override fun bonus() = 2.0
     }
 
-    override fun getB() = object : SubTask<Map<Int, List<Draw>>> {
+    override fun getSubTaskB() = object : SubTask<Map<Int, List<Draw>>> {
         override fun solve(input: Map<Int, List<Draw>>): Any {
             val minimal = input.map { (_, game) ->
                 val red = game.maxOf { it.red }

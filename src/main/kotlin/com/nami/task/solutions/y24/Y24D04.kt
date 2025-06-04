@@ -64,7 +64,7 @@ class Y24D04 : Task<List<CharArray>>(2024, 4) {
         return count >= 2
     }
 
-    override fun getA() = object : SubTask<List<CharArray>> {
+    override fun getSubTaskA() = object : SubTask<List<CharArray>> {
         override fun solve(input: List<CharArray>): Any? {
             var count = 0
             for (y in input.indices)
@@ -84,7 +84,7 @@ class Y24D04 : Task<List<CharArray>>(2024, 4) {
         override fun bonus() = 3.0
     }
 
-    override fun getB() = object : SubTask<List<CharArray>> {
+    override fun getSubTaskB() = object : SubTask<List<CharArray>> {
         override fun solve(input: List<CharArray>): Any? {
             var count = 0
             for (y in input.indices)

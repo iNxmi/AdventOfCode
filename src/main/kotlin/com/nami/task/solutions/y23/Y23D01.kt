@@ -32,7 +32,7 @@ class Y23D01 : Task<List<String>>(2023, 1) {
         return array[digit]
     }
 
-    override fun getA() = object : SubTask<List<String>> {
+    override fun getSubTaskA() = object : SubTask<List<String>> {
         override fun solve(input: List<String>): Any {
             val numbers = mutableListOf<Int>()
 
@@ -53,7 +53,7 @@ class Y23D01 : Task<List<String>>(2023, 1) {
         override fun bonus() = 2.0
     }
 
-    override fun getB() = object : SubTask<List<String>> {
+    override fun getSubTaskB() = object : SubTask<List<String>> {
         override fun solve(input: List<String>): Any {
             val digits = mutableMapOf<String, Int>()
             for (i in 0..9) {

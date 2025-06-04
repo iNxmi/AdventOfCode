@@ -68,7 +68,7 @@ class Y15D16 : Task<Set<Y15D16.Aunt>>(2015, 16) {
         return set
     }
 
-    override fun getA() = object : SubTask<Set<Aunt>> {
+    override fun getSubTaskA() = object : SubTask<Set<Aunt>> {
         override fun solve(input: Set<Aunt>): Any {
             val aunts = input.asSequence()
                 .filter { it.children == null || it.children == 3 }
@@ -90,7 +90,7 @@ class Y15D16 : Task<Set<Y15D16.Aunt>>(2015, 16) {
         }
     }
 
-    override fun getB() = object : SubTask<Set<Aunt>> {
+    override fun getSubTaskB() = object : SubTask<Set<Aunt>> {
         override fun solve(input: Set<Aunt>): Any {
             val aunts = input.asSequence()
                 .filter { it.children == null || it.children == 3 }

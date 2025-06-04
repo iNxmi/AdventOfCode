@@ -10,12 +10,12 @@ class Y23D03 : Task<List<String>>(2023, 3) {
 
     override fun getProcessedInput(raw: String) = raw.lines()
 
-    override fun getA() = object: SubTask<List<String>> {
+    override fun getSubTaskA() = object: SubTask<List<String>> {
         override fun solve(input: List<String>) = null
         override fun bonus() = 2.0
     }
 
-    override fun getB() = object: SubTask<List<String>> {
+    override fun getSubTaskB() = object: SubTask<List<String>> {
         override fun solve(input: List<String>) = null
         override fun bonus() = 3.0
     }

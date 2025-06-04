@@ -54,11 +54,11 @@ class Y15D15 : Task<Set<Y15D15.Ingredient>>(2015, 15) {
         return set
     }
 
-    override fun getA() = object: SubTask<Set<Ingredient>> {
+    override fun getSubTaskA() = object: SubTask<Set<Ingredient>> {
         override fun solve(input: Set<Ingredient>) = null
     }
 
-    override fun getB() = object: SubTask<Set<Ingredient>> {
+    override fun getSubTaskB() = object: SubTask<Set<Ingredient>> {
         override fun solve(input: Set<Ingredient>) = null
     }
 

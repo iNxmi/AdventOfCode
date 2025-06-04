@@ -64,7 +64,7 @@ class Y15D09 : Task<Y15D09.Input>(2015, 9) {
         return result
     }
 
-    override fun getA() = object : SubTask<Input> {
+    override fun getSubTaskA() = object : SubTask<Input> {
         override fun solve(input: Input): Any? {
             val distances = distances(input)
             val result = distances.toSortedMap().firstEntry()
@@ -72,7 +72,7 @@ class Y15D09 : Task<Y15D09.Input>(2015, 9) {
         }
     }
 
-    override fun getB() = object : SubTask<Input> {
+    override fun getSubTaskB() = object : SubTask<Input> {
         override fun solve(input: Input): Any? {
             val distances = distances(input)
             val result = distances.toSortedMap().reversed().firstEntry()

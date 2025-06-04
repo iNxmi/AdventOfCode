@@ -45,7 +45,7 @@ class Y15D08 : Task<List<String>>(2015, 8) {
         return result
     }
 
-    override fun getA() = object : SubTask<List<String>> {
+    override fun getSubTaskA() = object : SubTask<List<String>> {
         override fun solve(input: List<String>): Any {
             val code = input.sumOf { it.length }
             val memory = input.map { escape(it) }.sumOf { it.length }
@@ -53,7 +53,7 @@ class Y15D08 : Task<List<String>>(2015, 8) {
         }
     }
 
-    override fun getB() = object : SubTask<List<String>> {
+    override fun getSubTaskB() = object : SubTask<List<String>> {
         override fun solve(input: List<String>): Any {
             val newlyEncoded = input.map { unescape(it) }.sumOf { it.length }
             val original = input.sumOf { it.length }

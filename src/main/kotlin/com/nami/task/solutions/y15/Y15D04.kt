@@ -34,11 +34,11 @@ class Y15D04 : Task<String>(2015, 4) {
         return i
     }
 
-    override fun getA() = object : SubTask<String> {
+    override fun getSubTaskA() = object : SubTask<String> {
         override fun solve(input: String) = crack(input, "00000")
     }
 
-    override fun getB() = object : SubTask<String> {
+    override fun getSubTaskB() = object : SubTask<String> {
         override fun solve(input: String) = crack(input, "000000")
     }
 

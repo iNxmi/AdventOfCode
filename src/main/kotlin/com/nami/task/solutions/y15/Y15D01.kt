@@ -11,18 +11,15 @@ class Y15D01 : Task<String>(2015, 1) {
 
     override fun getProcessedInput(raw: String) = raw
 
-    override fun getA() = object : SubTask<String> {
-
+    override fun getSubTaskA() = object : SubTask<String> {
         override fun solve(input: String): Any {
             val opening = input.count { it == '(' }
             val closing = input.count { it == ')' }
             return opening - closing
         }
-
     }
 
-    override fun getB() = object : SubTask<String> {
-
+    override fun getSubTaskB() = object : SubTask<String> {
         override fun solve(input: String): Any {
             var sum = 0
             var count = 0
@@ -41,7 +38,6 @@ class Y15D01 : Task<String>(2015, 1) {
 
             return count
         }
-
     }
 
 }

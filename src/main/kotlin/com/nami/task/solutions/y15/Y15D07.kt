@@ -86,15 +86,15 @@ class Y15D07 : Task<Map<String, String>>(2015, 7) {
         return ""
     }
 
-    override fun getA() = object : SubTask<Map<String, String>> {
+    override fun getSubTaskA() = object : SubTask<Map<String, String>> {
         override fun solve(input: Map<String, String>) = evaluate(mutableMapOf(), input, "a").toInt()
         override fun test(input: Map<String, String>) = null
     }
 
-    override fun getB() = object : SubTask<Map<String, String>> {
+    override fun getSubTaskB() = object : SubTask<Map<String, String>> {
         override fun solve(input: Map<String, String>): Any {
             val rewired = input.toMutableMap()
-            rewired["b"] = getA().solve(input).toString()
+            rewired["b"] = getSubTaskA().solve(input).toString()
 
             return evaluate(mutableMapOf(), rewired, "a").toInt()
         }

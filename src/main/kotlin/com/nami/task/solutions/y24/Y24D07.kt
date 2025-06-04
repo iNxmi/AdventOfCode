@@ -52,7 +52,7 @@ class Y24D07 : Task<List<Y24D07.Equation>>(2024, 7) {
         return builder.reverse().toString()
     }
 
-    override fun getA() = object : SubTask<List<Equation>> {
+    override fun getSubTaskA() = object : SubTask<List<Equation>> {
         override fun solve(input: List<Equation>): Any? {
             //0 = +
             //1 = *
@@ -94,7 +94,7 @@ class Y24D07 : Task<List<Y24D07.Equation>>(2024, 7) {
         override fun bonus() = 3.0
     }
 
-    override fun getB() = object : SubTask<List<Equation>> {
+    override fun getSubTaskB() = object : SubTask<List<Equation>> {
         override fun solve(input: List<Equation>): Any? {
             //0 = +
             //1 = *

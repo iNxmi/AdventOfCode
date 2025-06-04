@@ -57,7 +57,7 @@ class Y15D13 : Task<Y15D13.Input>(2015, 13) {
         return Input(people, rules)
     }
 
-    override fun getA() = object : SubTask<Input> {
+    override fun getSubTaskA() = object : SubTask<Input> {
         override fun solve(input: Input): Any {
             val permutations = input.people.toList().permutations()
 
@@ -83,7 +83,7 @@ class Y15D13 : Task<Y15D13.Input>(2015, 13) {
         }
     }
 
-    override fun getB() = object : SubTask<Input> {
+    override fun getSubTaskB() = object : SubTask<Input> {
         override fun solve(input: Input): Any {
             val permutations = input.people.toList().permutations()
 

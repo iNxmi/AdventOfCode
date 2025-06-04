@@ -22,8 +22,8 @@ class Y15D02 : Task<List<Vector3i>>(2015, 2) {
         return result
     }
 
-    override fun getA() = object : SubTask<List<Vector3i>> {
-        override fun solve(input: List<Vector3i>): Any? {
+    override fun getSubTaskA() = object : SubTask<List<Vector3i>> {
+        override fun solve(input: List<Vector3i>): Any {
             var sum = 0
 
             for (dimension in input) {
@@ -43,8 +43,8 @@ class Y15D02 : Task<List<Vector3i>>(2015, 2) {
         }
     }
 
-    override fun getB() = object : SubTask<List<Vector3i>> {
-        override fun solve(input: List<Vector3i>): Any? {
+    override fun getSubTaskB() = object : SubTask<List<Vector3i>> {
+        override fun solve(input: List<Vector3i>): Any {
             var sum = 0
 
             for (dimension in input) {

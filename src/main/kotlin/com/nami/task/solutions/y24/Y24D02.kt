@@ -83,7 +83,7 @@ class Y24D02 : Task<List<String>>(2024, 2) {
         return true
     }
 
-    override fun getA() = object : SubTask<List<String>> {
+    override fun getSubTaskA() = object : SubTask<List<String>> {
         override fun solve(input: List<String>): Any {
             val valid = mutableSetOf<List<Int>>()
             val invalid = mutableSetOf<List<Int>>()
@@ -101,7 +101,7 @@ class Y24D02 : Task<List<String>>(2024, 2) {
         override fun bonus() = 3.0
     }
 
-    override fun getB() = object : SubTask<List<String>> {
+    override fun getSubTaskB() = object : SubTask<List<String>> {
         override fun solve(input: List<String>): Any {
             val valid = mutableSetOf<List<Int>>()
             val invalid = mutableSetOf<List<Int>>()

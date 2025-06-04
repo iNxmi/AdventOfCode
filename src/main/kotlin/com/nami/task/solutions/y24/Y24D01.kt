@@ -33,7 +33,7 @@ class Y24D01 : Task<Y24D01.Input>(2024, 1) {
         return Input(left, right)
     }
 
-    override fun getA() = object : SubTask<Input> {
+    override fun getSubTaskA() = object : SubTask<Input> {
         override fun solve(input: Input): Any {
             val distances = mutableListOf<Int>()
 
@@ -46,7 +46,7 @@ class Y24D01 : Task<Y24D01.Input>(2024, 1) {
         override fun bonus() = 3.0
     }
 
-    override fun getB() = object : SubTask<Input> {
+    override fun getSubTaskB() = object : SubTask<Input> {
         override fun solve(input: Input): Any {
             var value = 0
             for (number in input.left) {

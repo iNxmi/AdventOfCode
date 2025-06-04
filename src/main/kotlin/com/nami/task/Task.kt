@@ -58,14 +58,14 @@ abstract class Task<InputClass : Any>(
 
     abstract fun getProcessedInput(raw: String): InputClass
 
-    abstract fun getA(): SubTask<InputClass>
-    abstract fun getB(): SubTask<InputClass>
+    abstract fun getSubTaskA(): SubTask<InputClass>
+    abstract fun getSubTaskB(): SubTask<InputClass>
 
     fun getResult(): Result {
         val input = this.getProcessedInput(Remote.getInput(year, day))
 
-        val a = getA()
-        val b = getB()
+        val a = getSubTaskA()
+        val b = getSubTaskB()
 
         val resultA = a.getResult(input)
         val resultB = b.getResult(input)

@@ -16,7 +16,7 @@ class Y15D03 : Task<String>(2015, 3) {
         return raw
     }
 
-    override fun getA() = object : SubTask<String> {
+    override fun getSubTaskA() = object : SubTask<String> {
         override fun solve(input: String): Any {
             var x = 0
             var y = 0
@@ -39,7 +39,7 @@ class Y15D03 : Task<String>(2015, 3) {
         }
     }
 
-    override fun getB() = object : SubTask<String> {
+    override fun getSubTaskB() = object : SubTask<String> {
         override fun solve(input: String): Any {
             var xSanta = 0
             var ySanta = 0

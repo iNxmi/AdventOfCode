@@ -112,12 +112,12 @@ class Y15D18 : Task<Y15D18.World>(2015, 18) {
         return cells.size
     }
 
-    override fun getA() = object : SubTask<World> {
+    override fun getSubTaskA() = object : SubTask<World> {
         override fun solve(input: World) = simulateA(input, 100)
         override fun test(input: World) = simulateA(input, 4)
     }
 
-    override fun getB() = object : SubTask<World> {
+    override fun getSubTaskB() = object : SubTask<World> {
         override fun solve(input: World) = simulateB(input, 100)
         override fun test(input: World) = simulateB(input, 5)
     }

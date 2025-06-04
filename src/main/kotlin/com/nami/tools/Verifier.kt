@@ -39,7 +39,7 @@ class Verifier {
                     result.a.result,
                     resultARemote,
                     result.a.timeS,
-                    task.getA().bonus()
+                    task.getSubTaskA().bonus()
                 )
 
                 val resultBRemote = Remote.getSolutionB(task.year, task.day)
@@ -49,7 +49,7 @@ class Verifier {
                     result.b.result,
                     resultBRemote,
                     result.b.timeS,
-                    task.getB().bonus()
+                    task.getSubTaskB().bonus()
                 )
 
                 setOf(a, b)

@@ -41,12 +41,12 @@ class Y15D10 : Task<String>(2015, 10) {
         return result
     }
 
-    override fun getA() = object : SubTask<String> {
+    override fun getSubTaskA() = object : SubTask<String> {
         override fun solve(input: String): Any = iterate(input, 40).length
         override fun test(input: String): Any = iterate(input, 5).length
     }
 
-    override fun getB() = object : SubTask<String> {
+    override fun getSubTaskB() = object : SubTask<String> {
         override fun solve(input: String): Any = iterate(input, 50).length
         override fun test(input: String) = null
     }

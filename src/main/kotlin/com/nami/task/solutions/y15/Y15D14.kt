@@ -76,12 +76,12 @@ class Y15D14 : Task<Set<Y15D14.Racer>>(2015, 14) {
         return result
     }
 
-    override fun getA() = object : SubTask<Set<Racer>> {
+    override fun getSubTaskA() = object : SubTask<Set<Racer>> {
         override fun solve(input: Set<Racer>) = race(input, 2503).maxOf { it.value.distance }
         override fun test(input: Set<Racer>) = race(input, 1000).maxOf { it.value.distance }
     }
 
-    override fun getB() = object : SubTask<Set<Racer>> {
+    override fun getSubTaskB() = object : SubTask<Set<Racer>> {
         override fun solve(input: Set<Racer>) = race(input, 2503).maxOf { it.value.points }
         override fun test(input: Set<Racer>) = race(input, 1000).maxOf { it.value.points }
     }

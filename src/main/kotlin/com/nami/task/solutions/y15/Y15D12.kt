@@ -59,11 +59,11 @@ class Y15D12 : Task<Y15D12.Input>(2015, 12) {
         }
     }
 
-    override fun getA() = object : SubTask<Input> {
+    override fun getSubTaskA() = object : SubTask<Input> {
         override fun solve(input: Input) = sum(input.raw)
     }
 
-    override fun getB() = object : SubTask<Input> {
+    override fun getSubTaskB() = object : SubTask<Input> {
         override fun solve(input: Input): Any {
             val filtered = filterObject(input.json, "red")
             return sum(filtered.toString())

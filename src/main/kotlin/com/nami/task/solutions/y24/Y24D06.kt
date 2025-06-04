@@ -48,7 +48,7 @@ class Y24D06 : Task<Y24D06.Input>(2024, 6) {
         return Input(worldSize, position, obstacles)
     }
 
-    override fun getA() = object : SubTask<Input> {
+    override fun getSubTaskA() = object : SubTask<Input> {
         override fun solve(input: Input): Any {
             var direction = Pair(0, -1)
             var positionX = input.position.x
@@ -89,7 +89,7 @@ class Y24D06 : Task<Y24D06.Input>(2024, 6) {
         override fun bonus() = 5.0
     }
 
-    override fun getB() = object : SubTask<Input> {
+    override fun getSubTaskB() = object : SubTask<Input> {
         override fun solve(input: Input) = null
     }
 

@@ -140,7 +140,7 @@ class Y24D05 : Task<Y24D05.Input>(2024, 5) {
 
     private fun getSolution(updates: Set<List<Int>>) = updates.sumOf { it[(it.size - 1) / 2] }
 
-    override fun getA() = object : SubTask<Input> {
+    override fun getSubTaskA() = object : SubTask<Input> {
         override fun solve(input: Input): Any {
             val validUpdates = getValidUpdatesOld(input)
             return getSolution(validUpdates)
@@ -149,7 +149,7 @@ class Y24D05 : Task<Y24D05.Input>(2024, 5) {
         override fun bonus() = 5.0
     }
 
-    override fun getB() = object : SubTask<Input> {
+    override fun getSubTaskB() = object : SubTask<Input> {
         override fun solve(input: Input): Any? {
             //        val invalidUpdates = getInvalidUpdates(input)
             //

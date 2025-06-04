@@ -89,7 +89,7 @@ class Y24D08 : Task<Y24D08.Input>(2024, 8) {
         return antinodes
     }
 
-    override fun getA() = object : SubTask<Input> {
+    override fun getSubTaskA() = object : SubTask<Input> {
         override fun solve(input: Input): Any? {
             val antinodes = mutableSetOf<Vector2i>()
             for (key in input.nodes.keys) {
@@ -114,7 +114,7 @@ class Y24D08 : Task<Y24D08.Input>(2024, 8) {
         }
     }
 
-    override fun getB() = object : SubTask<Input> {
+    override fun getSubTaskB() = object : SubTask<Input> {
         override fun solve(input: Input): Any? {
             val antinodes = mutableSetOf<Vector2i>()
 
