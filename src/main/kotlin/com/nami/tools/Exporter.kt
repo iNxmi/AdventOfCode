@@ -1,6 +1,10 @@
 package com.nami.tools
 
 import j2html.TagCreator.*
+import org.apache.poi.ss.usermodel.CellType
+import org.apache.poi.xssf.usermodel.XSSFSheet
+import org.apache.poi.xssf.usermodel.XSSFWorkbook
+import java.io.FileOutputStream
 import java.nio.file.Files
 import java.nio.file.Paths
 
@@ -14,6 +18,39 @@ class Exporter {
 
             val markdown = builder.toString()
             Files.writeString(Paths.get("summary.md"), markdown)
+        }
+
+        fun verificationXLSX() {
+            val workbook = XSSFWorkbook()
+
+            val sheetFailed = getSheet("Failed", Verifier.failed, workbook)
+            val sheetUnsolved = getSheet("Unsolved", Verifier.unsolved, workbook)
+            val sheetSolved = getSheet("Solved", Verifier.solved, workbook)
+
+            workbook.write(FileOutputStream("summary.xlsx"))
+        }
+
+        private fun getSheet(title: String, content: Set<Entry>, workbook: XSSFWorkbook): XSSFSheet {
+            val sheet = workbook.createSheet("$title (${content.size})")
+            content.withIndex().forEach { (index, entry) ->
+                val row = sheet.createRow(index)
+                val cellYear = row.createCell(0)
+                cellYear.setCellValue(entry.year.toDouble())
+                row.getCell(0).cellType = CellType.NUMERIC
+                row.createCell(1).setCellValue(entry.day.toDouble())
+                row.createCell(2).setCellValue(entry.part.toString())
+                row.createCell(3).setCellValue(entry.task.toString())
+                row.createCell(4).setCellValue(entry.remote.toString())
+                row.createCell(5).setCellValue(entry.timeS)
+
+                val bonusStyle = workbook.createCellStyle()
+                val bonusDataFormat = workbook.createDataFormat()
+                bonusStyle.dataFormat = bonusDataFormat.getFormat("#,##0.00€")
+                val bonusCell = row.createCell(6)
+                bonusCell.setCellValue(entry.bonus ?: 0.0)
+                bonusCell.cellStyle = bonusStyle
+            }
+            return sheet
         }
 
         private fun getTableVerificationHTML(title: String, content: Set<Entry>): String {
@@ -73,10 +110,10 @@ class Exporter {
             return html.renderFormatted()
         }
 
-
     }
 }
 
 fun main() {
-    Exporter.verification()
+//    Exporter.verification()
+    Exporter.verificationXLSX()
 }

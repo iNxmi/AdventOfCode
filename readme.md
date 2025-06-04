@@ -17,4 +17,4 @@ To Allow the program to automatically fetch input and solutions follow these ste
 # Todo
 - Solve every single Puzzle
 - Improve [Remote.kt](src/main/kotlin/com/nami/task/Remote.kt) (less http requests, code cleanup)
-- Export as .xlsx first and then to html/md
+- Export as .xlsx first and then to html/md (Apache POI)
