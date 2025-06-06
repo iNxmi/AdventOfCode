@@ -3,11 +3,11 @@ package com.nami.task.solutions.y24
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInputSimplex
+import com.nami.task.input.InputSimplex
 
 class Y24D05 : Task<Y24D05.Input>(2024, 5) {
 
-    override fun getRawInputTest() = TestInputSimplex(
+    override fun getRawInputTest() = InputSimplex(
         """
         47|53
         97|13

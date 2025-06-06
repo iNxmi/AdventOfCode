@@ -45,24 +45,26 @@ class Y15D16 : Task<Set<Y15D16.Aunt>>(2015, 16) {
 
             split.forEach { part ->
                 val split2 = part.split(":")
-                val data = split2[1]
+                val data = split2[1].toInt()
                 when (split2[0]) {
-                    "children" -> children = data.toInt()
-                    "cats" -> cats = data.toInt()
-                    "samoyeds" -> samoyeds = data.toInt()
-                    "pomeranians" -> pomeranians = data.toInt()
-                    "akitas" -> akitas = data.toInt()
-                    "vizslas" -> vizslas = data.toInt()
-                    "goldfish" -> goldfish = data.toInt()
-                    "trees" -> trees = data.toInt()
-                    "cars" -> cars = data.toInt()
-                    "perfumes" -> perfumes = data.toInt()
+                    "children" -> children = data
+                    "cats" -> cats = data
+                    "samoyeds" -> samoyeds = data
+                    "pomeranians" -> pomeranians = data
+                    "akitas" -> akitas = data
+                    "vizslas" -> vizslas = data
+                    "goldfish" -> goldfish = data
+                    "trees" -> trees = data
+                    "cars" -> cars = data
+                    "perfumes" -> perfumes = data
                 }
             }
 
-            val aunt =
-                Aunt(index + 1, children, cats, samoyeds, pomeranians, akitas, vizslas, goldfish, trees, cars, perfumes)
-            set.add(aunt)
+            set.add(
+                Aunt(
+                    index + 1, children, cats, samoyeds, pomeranians, akitas, vizslas, goldfish, trees, cars, perfumes
+                )
+            )
         }
 
         return set
@@ -88,6 +90,7 @@ class Y15D16 : Task<Set<Y15D16.Aunt>>(2015, 16) {
 
             return aunts.first().id
         }
+        override fun bonus() = 5.0
     }
 
     override fun getSubTaskB() = object : SubTask<Set<Aunt>> {
@@ -110,6 +113,7 @@ class Y15D16 : Task<Set<Y15D16.Aunt>>(2015, 16) {
 
             return aunts.first().id
         }
+        override fun bonus() = 10.0
     }
 
 }

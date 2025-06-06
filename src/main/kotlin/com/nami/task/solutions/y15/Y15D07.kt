@@ -3,11 +3,11 @@ package com.nami.task.solutions.y15
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInputSimplex
+import com.nami.task.input.InputSimplex
 
 class Y15D07 : Task<Map<String, String>>(2015, 7) {
 
-    override fun getRawInputTest() = TestInputSimplex(
+    override fun getRawInputTest() = InputSimplex(
         """
         123 -> x
         456 -> y
@@ -89,6 +89,7 @@ class Y15D07 : Task<Map<String, String>>(2015, 7) {
     override fun getSubTaskA() = object : SubTask<Map<String, String>> {
         override fun solve(input: Map<String, String>) = evaluate(mutableMapOf(), input, "a").toInt()
         override fun test(input: Map<String, String>) = null
+        override fun bonus() = 5.0
     }
 
     override fun getSubTaskB() = object : SubTask<Map<String, String>> {
@@ -100,6 +101,8 @@ class Y15D07 : Task<Map<String, String>>(2015, 7) {
         }
 
         override fun test(input: Map<String, String>) = null
+
+        override fun bonus() = 10.0
     }
 
 }

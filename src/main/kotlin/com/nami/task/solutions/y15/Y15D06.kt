@@ -3,12 +3,12 @@ package com.nami.task.solutions.y15
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInputSimplex
+import com.nami.task.input.InputSimplex
 import org.joml.Vector2i
 
 class Y15D06 : Task<List<Y15D06.Operation>>(2015, 6) {
 
-    override fun getRawInputTest() = TestInputSimplex(
+    override fun getRawInputTest() = InputSimplex(
         """
         turn on 0,0 through 999,999
         toggle 0,0 through 999,0
@@ -67,6 +67,7 @@ class Y15D06 : Task<List<Y15D06.Operation>>(2015, 6) {
             }
             return lights.count { it }
         }
+        override fun bonus() = 5.0
     }
 
     override fun getSubTaskB() = object : SubTask<List<Operation>> {
@@ -89,6 +90,7 @@ class Y15D06 : Task<List<Y15D06.Operation>>(2015, 6) {
             }
             return lights.sum()
         }
+        override fun bonus() = 10.0
     }
 
 }

@@ -3,12 +3,12 @@ package com.nami.task.solutions.y24
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInputSimplex
+import com.nami.task.input.InputSimplex
 
 class Y24D03 : Task<String>(2024, 3) {
 
     override fun getRawInputTest() =
-        TestInputSimplex("xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))")
+        InputSimplex("xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))")
 
     override fun getProcessedInput(raw: String) = raw
 

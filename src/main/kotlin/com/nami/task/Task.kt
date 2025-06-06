@@ -1,12 +1,13 @@
 package com.nami.task
 
+import com.nami.task.input.Input
 import com.nami.task.solutions.y15.*
+import com.nami.task.solutions.y16.Y16D01
 import com.nami.task.solutions.y23.Y23D01
 import com.nami.task.solutions.y23.Y23D02
 import com.nami.task.solutions.y23.Y23D03
 import com.nami.task.solutions.y23.Y23D04
 import com.nami.task.solutions.y24.*
-import com.nami.task.test.TestInput
 
 abstract class Task<InputClass : Any>(
     val year: Int,
@@ -36,6 +37,8 @@ abstract class Task<InputClass : Any>(
             Y15D16(),
             Y15D18(),
 
+            Y16D01(),
+
             Y23D01(),
             Y23D02(),
             Y23D03(),
@@ -54,12 +57,18 @@ abstract class Task<InputClass : Any>(
         )
     }
 
-    abstract fun getRawInputTest(): TestInput?
+    abstract fun getRawInputTest(): Input?
 
     abstract fun getProcessedInput(raw: String): InputClass
 
     abstract fun getSubTaskA(): SubTask<InputClass>
     abstract fun getSubTaskB(): SubTask<InputClass>
+
+    private fun print(content: Any?) = println(content)
+    protected fun info(content: Any?) = print("Info: $content")
+    protected fun debug(content: Any?) = print("Debug: $content")
+    protected fun error(content: Any?) = print("Error: $content")
+    protected fun critical(content: Any?) = print("Critical: $content")
 
     fun getResult(): Result {
         val input = this.getProcessedInput(Remote.getInput(year, day))
@@ -95,6 +104,15 @@ abstract class Task<InputClass : Any>(
 
         val b: SubTask.Result,
         val bTest: SubTask.Result
-    )
+    ) {
+        override fun toString(): String {
+            return """
+                A: ${a.result} ${("%.2fs").format(a.timeS).replace(",", ".")}
+                A_TEST: ${aTest.result} ${("%.2fs").format(aTest.timeS).replace(",", ".")}
+                B: ${b.result} ${("%.2fs").format(b.timeS).replace(",", ".")}
+                B_TEST: ${bTest.result} ${("%.2fs").format(bTest.timeS).replace(",", ".")}
+            """.trimIndent()
+        }
+    }
 
 }

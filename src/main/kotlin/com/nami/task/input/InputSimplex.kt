@@ -1,8 +1,8 @@
-package com.nami.task.test
+package com.nami.task.input
 
-class TestInputSimplex(
+class InputSimplex(
     private val raw: String
-) : TestInput {
+) : Input {
 
     override fun getRawTestInputA(): String {
         return raw

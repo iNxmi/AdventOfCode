@@ -3,12 +3,12 @@ package com.nami.task.solutions.y15
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInputSimplex
+import com.nami.task.input.InputSimplex
 import java.security.MessageDigest
 
 class Y15D04 : Task<String>(2015, 4) {
 
-    override fun getRawInputTest() = TestInputSimplex("pqrstuv")
+    override fun getRawInputTest() = InputSimplex("pqrstuv")
 
     override fun getProcessedInput(raw: String) = raw
 
@@ -36,10 +36,12 @@ class Y15D04 : Task<String>(2015, 4) {
 
     override fun getSubTaskA() = object : SubTask<String> {
         override fun solve(input: String) = crack(input, "00000")
+        override fun bonus() = 5.0
     }
 
     override fun getSubTaskB() = object : SubTask<String> {
         override fun solve(input: String) = crack(input, "000000")
+        override fun bonus() = 10.0
     }
 
 }

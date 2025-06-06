@@ -1,6 +1,6 @@
-package com.nami.task.test
+package com.nami.task.input
 
-interface TestInput {
+interface Input {
 
     fun getRawTestInputA(): String
     fun getRawTestInputB(): String

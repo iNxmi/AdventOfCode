@@ -3,12 +3,12 @@ package com.nami.task.solutions.y24
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInputSimplex
+import com.nami.task.input.InputSimplex
 import org.joml.Vector2i
 
 class Y24D08 : Task<Y24D08.Input>(2024, 8) {
 
-    override fun getRawInputTest() = TestInputSimplex(
+    override fun getRawInputTest() = InputSimplex(
         """
         ............
         ........0...
@@ -112,6 +112,7 @@ class Y24D08 : Task<Y24D08.Input>(2024, 8) {
 
             return antinodes.size
         }
+        override fun bonus() = 5.0
     }
 
     override fun getSubTaskB() = object : SubTask<Input> {

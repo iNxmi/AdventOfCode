@@ -3,11 +3,11 @@ package com.nami.task.solutions.y23
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInputSimplex
+import com.nami.task.input.InputSimplex
 
 class Y23D02 : Task<Map<Int, List<Y23D02.Draw>>>(2023, 2) {
 
-    override fun getRawInputTest() = TestInputSimplex(
+    override fun getRawInputTest() = InputSimplex(
         """
             Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
             Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue

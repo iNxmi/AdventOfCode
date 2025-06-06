@@ -3,12 +3,12 @@ package com.nami.task.solutions.y15
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInput
-import com.nami.task.test.TestInputSimplex
+import com.nami.task.input.Input
+import com.nami.task.input.InputSimplex
 
 class Y15D14 : Task<Set<Y15D14.Racer>>(2015, 14) {
 
-    override fun getRawInputTest(): TestInput = TestInputSimplex(
+    override fun getRawInputTest(): Input = InputSimplex(
         """
         Comet can fly 14 km/s for 10 seconds, but then must rest for 127 seconds.
         Dancer can fly 16 km/s for 11 seconds, but then must rest for 162 seconds.
@@ -79,11 +79,13 @@ class Y15D14 : Task<Set<Y15D14.Racer>>(2015, 14) {
     override fun getSubTaskA() = object : SubTask<Set<Racer>> {
         override fun solve(input: Set<Racer>) = race(input, 2503).maxOf { it.value.distance }
         override fun test(input: Set<Racer>) = race(input, 1000).maxOf { it.value.distance }
+        override fun bonus() = 5.0
     }
 
     override fun getSubTaskB() = object : SubTask<Set<Racer>> {
         override fun solve(input: Set<Racer>) = race(input, 2503).maxOf { it.value.points }
         override fun test(input: Set<Racer>) = race(input, 1000).maxOf { it.value.points }
+        override fun bonus() = 10.0
     }
 
 }

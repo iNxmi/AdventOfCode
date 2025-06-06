@@ -3,12 +3,12 @@ package com.nami.task.solutions.y15
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInputDuplex
+import com.nami.task.input.InputDuplex
 import org.joml.Vector2i
 
 class Y15D18 : Task<Y15D18.World>(2015, 18) {
 
-    override fun getRawInputTest() = TestInputDuplex(
+    override fun getRawInputTest() = InputDuplex(
         """
             .#.#.#
             ...##.
@@ -115,11 +115,13 @@ class Y15D18 : Task<Y15D18.World>(2015, 18) {
     override fun getSubTaskA() = object : SubTask<World> {
         override fun solve(input: World) = simulateA(input, 100)
         override fun test(input: World) = simulateA(input, 4)
+        override fun bonus() = 5.0
     }
 
     override fun getSubTaskB() = object : SubTask<World> {
         override fun solve(input: World) = simulateB(input, 100)
         override fun test(input: World) = simulateB(input, 5)
+        override fun bonus() = 10.0
     }
 
 }

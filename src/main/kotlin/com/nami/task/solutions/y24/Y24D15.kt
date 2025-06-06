@@ -3,13 +3,13 @@ package com.nami.task.solutions.y24
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInputSimplex
+import com.nami.task.input.InputSimplex
 import org.joml.Vector2i
 import javax.naming.directory.InvalidAttributesException
 
 class Y24D15 : Task<Y24D15.Input>(2024, 15) {
 
-    override fun getRawInputTest() = TestInputSimplex(
+    override fun getRawInputTest() = InputSimplex(
         """
         ##########
         #..O..O.O#

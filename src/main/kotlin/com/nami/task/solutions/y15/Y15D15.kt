@@ -3,7 +3,7 @@ package com.nami.task.solutions.y15
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInputSimplex
+import com.nami.task.input.InputSimplex
 
 /*
     STARS AND BARS
@@ -11,7 +11,7 @@ import com.nami.task.test.TestInputSimplex
 
 class Y15D15 : Task<Set<Y15D15.Ingredient>>(2015, 15) {
 
-    override fun getRawInputTest() = TestInputSimplex(
+    override fun getRawInputTest() = InputSimplex(
         """
         Butterscotch: capacity -1, durability -2, flavor 6, texture 3, calories 8
         Cinnamon: capacity 2, durability 3, flavor -2, texture -1, calories 3

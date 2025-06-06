@@ -3,8 +3,8 @@ package com.nami.task.solutions.y15
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInput
-import com.nami.task.test.TestInputSimplex
+import com.nami.task.input.Input
+import com.nami.task.input.InputSimplex
 
 class Y15D11 : Task<String>(2015, 11) {
 
@@ -18,7 +18,7 @@ class Y15D11 : Task<String>(2015, 11) {
             segments.add(alphabet.substring(i, i + length))
     }
 
-    override fun getRawInputTest(): TestInput = TestInputSimplex("ghijklmn")
+    override fun getRawInputTest(): Input = InputSimplex("ghijklmn")
 
     override fun getProcessedInput(raw: String): String = raw
 
@@ -85,10 +85,12 @@ class Y15D11 : Task<String>(2015, 11) {
 
     override fun getSubTaskA() = object : SubTask<String> {
         override fun solve(input: String) = find(input)
+        override fun bonus() = 5.0
     }
 
     override fun getSubTaskB() = object : SubTask<String> {
         override fun solve(input: String) = find(getSubTaskA().solve(input).toString())
+        override fun bonus() = 10.0
     }
 
 }

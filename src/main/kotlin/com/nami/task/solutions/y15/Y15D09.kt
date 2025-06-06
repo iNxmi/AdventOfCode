@@ -4,11 +4,11 @@ import com.nami.permutations
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInputSimplex
+import com.nami.task.input.InputSimplex
 
 class Y15D09 : Task<Y15D09.Input>(2015, 9) {
 
-    override fun getRawInputTest() = TestInputSimplex(
+    override fun getRawInputTest() = InputSimplex(
         """
         London to Dublin = 464
         London to Belfast = 518
@@ -70,6 +70,7 @@ class Y15D09 : Task<Y15D09.Input>(2015, 9) {
             val result = distances.toSortedMap().firstEntry()
             return result.key
         }
+        override fun bonus() = 5.0
     }
 
     override fun getSubTaskB() = object : SubTask<Input> {
@@ -78,6 +79,7 @@ class Y15D09 : Task<Y15D09.Input>(2015, 9) {
             val result = distances.toSortedMap().reversed().firstEntry()
             return result.key
         }
+        override fun bonus() = 10.0
     }
 
 }

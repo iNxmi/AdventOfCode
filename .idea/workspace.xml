@@ -4,7 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Converted to new class structure" />
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Merge: Master &lt;- Subtask">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y16/Y16D01.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/Task.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/Task.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D01.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D02.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D02.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D03.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D03.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D04.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D04.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D05.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D05.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D06.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D06.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D07.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D07.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D08.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D08.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D09.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D09.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D10.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D10.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D11.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D11.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D12.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D12.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D13.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D13.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D14.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D14.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D15.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D15.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D16.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D16.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D18.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D18.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y23/Y23D01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y23/Y23D01.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y23/Y23D02.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y23/Y23D02.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D01.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D02.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D02.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D03.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D03.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D04.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D04.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D05.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D05.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D06.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D06.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D07.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D07.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D08.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D08.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D11.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D11.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D15.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D15.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/test/TestInput.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/input/Input.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/test/TestInputDuplex.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/input/InputDuplex.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/test/TestInputSimplex.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/input/InputSimplex.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/summary.md" beforeDir="false" afterPath="$PROJECT_DIR$/summary.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +54,7 @@
         <option value="Class" />
         <option value="Kotlin Enum" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -59,64 +97,65 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Kotlin.A2301Kt.executor": "Run",
-    "Kotlin.A2302Kt (1).executor": "Run",
-    "Kotlin.A2302Kt.executor": "Run",
-    "Kotlin.A2401Kt.executor": "Run",
-    "Kotlin.A2402Kt.executor": "Run",
-    "Kotlin.B2301Kt (1).executor": "Run",
-    "Kotlin.B2301Kt.executor": "Run",
-    "Kotlin.B2302Kt.executor": "Run",
-    "Kotlin.B2401Kt.executor": "Run",
-    "Kotlin.D01Kt.executor": "Run",
-    "Kotlin.D02Kt.executor": "Run",
-    "Kotlin.ExportKt.executor": "Run",
-    "Kotlin.ExporterKt.executor": "Run",
-    "Kotlin.MainKt.executor": "Run",
-    "Kotlin.PartAKt.executor": "Run",
-    "Kotlin.TestKt.executor": "Run",
-    "Kotlin.VerifyKt.executor": "Debug",
-    "Kotlin.Y15D01Kt.executor": "Run",
-    "Kotlin.Y15D06Kt.executor": "Run",
-    "Kotlin.Y15D07Kt.executor": "Run",
-    "Kotlin.Y15D08Kt.executor": "Run",
-    "Kotlin.Y15D09Kt.executor": "Run",
-    "Kotlin.Y15D10Kt.executor": "Run",
-    "Kotlin.Y15D11Kt.executor": "Run",
-    "Kotlin.Y15D12Kt.executor": "Run",
-    "Kotlin.Y15D13Kt.executor": "Run",
-    "Kotlin.Y15D14Kt.executor": "Run",
-    "Kotlin.Y15D15Kt.executor": "Run",
-    "Kotlin.Y15D16Kt.executor": "Run",
-    "Kotlin.Y15D18Kt.executor": "Run",
-    "Kotlin.Y23D01Kt.executor": "Run",
-    "Kotlin.Y23D02Kt.executor": "Run",
-    "Kotlin.Y23D1Kt.executor": "Run",
-    "Kotlin.Y24D1Kt.executor": "Run",
-    "Kotlin.Y24D2Kt.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last.edited.regexp": "\\x27",
-    "last_opened_file_path": "G:/My Drive/.projects/kotlin/AdventOfCode/src/main/kotlin/com/nami/task/solutions/y23",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.50413984",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Kotlin.A2301Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.A2302Kt (1).executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.A2302Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.A2401Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.A2402Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.B2301Kt (1).executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.B2301Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.B2302Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.B2401Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.D01Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.D02Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.ExportKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.ExporterKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.PartAKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.TestKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.VerifyKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.Y15D01Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y15D06Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y15D07Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y15D08Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y15D09Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y15D10Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y15D11Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y15D12Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y15D13Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y15D14Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y15D15Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y15D16Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y15D18Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y16D01Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y23D01Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y23D02Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y23D1Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y24D1Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Y24D2Kt.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last.edited.regexp&quot;: &quot;\\x27&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/My Drive/.projects/kotlin/AdventOfCode/src/main/kotlin/com/nami/task/solutions/y23&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.50413984&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\kotlin\com\nami\task\solutions\y23" />
@@ -156,8 +195,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Y15D13Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.task.solutions.y15.Y15D13Kt" />
+    <configuration name="Y16D01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.task.solutions.y16.Y16D01Kt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -180,10 +219,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.ExporterKt" />
+        <item itemvalue="Kotlin.Y16D01Kt" />
         <item itemvalue="Kotlin.Y23D01Kt" />
         <item itemvalue="Kotlin.Y23D02Kt" />
         <item itemvalue="Kotlin.Y15D01Kt" />
-        <item itemvalue="Kotlin.Y15D13Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -274,14 +313,10 @@
       <workItem from="1748988995454" duration="3242000" />
       <workItem from="1749001228349" duration="13000" />
       <workItem from="1749003745245" duration="7141000" />
-    </task>
-    <task id="LOCAL-00005" summary="solution 2024 02">
-      <option name="closed" value="true" />
-      <created>1733236173552</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1733236173552</updated>
+      <workItem from="1749037490932" duration="721000" />
+      <workItem from="1749100006097" duration="3352000" />
+      <workItem from="1749140404164" duration="203000" />
+      <workItem from="1749198612897" duration="220000" />
     </task>
     <task id="LOCAL-00006" summary="updated README.MD">
       <option name="closed" value="true" />
@@ -667,7 +702,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749010446849</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Merge: Master &lt;- Subtask">
+      <option name="closed" value="true" />
+      <created>1749011321544</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1749011321544</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -689,7 +732,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Made som compatability adjustments in Assignment&#10;Solved Y15D11 a,b" />
     <MESSAGE value="Improved Exporter&#10;Exported Solutions" />
     <MESSAGE value="Solved Y15D12 a" />
     <MESSAGE value="Solved Y15D12 b" />
@@ -714,7 +756,8 @@
     <MESSAGE value="Solved Y23D01 A,B&#10;Solved Y23D02 A,B" />
     <MESSAGE value="Backup" />
     <MESSAGE value="Converted to new class structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Converted to new class structure" />
+    <MESSAGE value="Merge: Master &lt;- Subtask" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge: Master &lt;- Subtask" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

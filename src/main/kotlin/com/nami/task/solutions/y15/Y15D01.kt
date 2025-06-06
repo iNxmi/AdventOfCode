@@ -3,11 +3,11 @@ package com.nami.task.solutions.y15
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInputDuplex
+import com.nami.task.input.InputDuplex
 
 class Y15D01 : Task<String>(2015, 1) {
 
-    override fun getRawInputTest() = TestInputDuplex("))(((((", "()())")
+    override fun getRawInputTest() = InputDuplex("))(((((", "()())")
 
     override fun getProcessedInput(raw: String) = raw
 
@@ -17,6 +17,7 @@ class Y15D01 : Task<String>(2015, 1) {
             val closing = input.count { it == ')' }
             return opening - closing
         }
+        override fun bonus() = 5.0
     }
 
     override fun getSubTaskB() = object : SubTask<String> {
@@ -38,8 +39,8 @@ class Y15D01 : Task<String>(2015, 1) {
 
             return count
         }
+        override fun bonus() = 10.0
     }
-
 }
 
 fun main() = Y15D01().getResult().println()

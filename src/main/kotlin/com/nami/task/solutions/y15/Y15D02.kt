@@ -3,12 +3,12 @@ package com.nami.task.solutions.y15
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInputSimplex
+import com.nami.task.input.InputSimplex
 import org.joml.Vector3i
 
 class Y15D02 : Task<List<Vector3i>>(2015, 2) {
 
-    override fun getRawInputTest() = TestInputSimplex("1x1x10")
+    override fun getRawInputTest() = InputSimplex("1x1x10")
 
     override fun getProcessedInput(raw: String): List<Vector3i> {
         val result = mutableListOf<Vector3i>()
@@ -41,6 +41,7 @@ class Y15D02 : Task<List<Vector3i>>(2015, 2) {
 
             return sum
         }
+        override fun bonus() = 5.0
     }
 
     override fun getSubTaskB() = object : SubTask<List<Vector3i>> {
@@ -62,6 +63,7 @@ class Y15D02 : Task<List<Vector3i>>(2015, 2) {
 
             return sum
         }
+        override fun bonus() = 10.0
     }
 
 }

@@ -3,11 +3,11 @@ package com.nami.task.solutions.y15
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInputSimplex
+import com.nami.task.input.InputSimplex
 
 class Y15D08 : Task<List<String>>(2015, 8) {
 
-    override fun getRawInputTest() = TestInputSimplex(
+    override fun getRawInputTest() = InputSimplex(
         """
         ""
         "abc"
@@ -51,6 +51,7 @@ class Y15D08 : Task<List<String>>(2015, 8) {
             val memory = input.map { escape(it) }.sumOf { it.length }
             return code - memory
         }
+        override fun bonus() = 5.0
     }
 
     override fun getSubTaskB() = object : SubTask<List<String>> {
@@ -59,6 +60,7 @@ class Y15D08 : Task<List<String>>(2015, 8) {
             val original = input.sumOf { it.length }
             return newlyEncoded - original
         }
+        override fun bonus() = 10.0
     }
 
 }

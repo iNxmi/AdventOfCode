@@ -3,13 +3,13 @@ package com.nami.task.solutions.y15
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInput
-import com.nami.task.test.TestInputSimplex
+import com.nami.task.input.Input
+import com.nami.task.input.InputSimplex
 
 class Y15D03 : Task<String>(2015, 3) {
 
-    override fun getRawInputTest(): TestInput {
-        return TestInputSimplex("^v^v^v^v^v")
+    override fun getRawInputTest(): Input {
+        return InputSimplex("^v^v^v^v^v")
     }
 
     override fun getProcessedInput(raw: String): String {
@@ -37,6 +37,7 @@ class Y15D03 : Task<String>(2015, 3) {
 
             return houses.size
         }
+        override fun bonus() = 5.0
     }
 
     override fun getSubTaskB() = object : SubTask<String> {
@@ -76,6 +77,7 @@ class Y15D03 : Task<String>(2015, 3) {
 
             return houses.size
         }
+        override fun bonus() = 10.0
     }
 
 }

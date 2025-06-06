@@ -3,11 +3,11 @@ package com.nami.task.solutions.y24
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInputSimplex
+import com.nami.task.input.InputSimplex
 
 class Y24D11 : Task<Map<Long, Long>>(2024, 11) {
 
-    override fun getRawInputTest() = TestInputSimplex("125 17")
+    override fun getRawInputTest() = InputSimplex("125 17")
 
     override fun getProcessedInput(raw: String): Map<Long, Long> {
         val map = mutableMapOf<Long, Long>()

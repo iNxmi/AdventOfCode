@@ -3,12 +3,12 @@ package com.nami.task.solutions.y24
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInputSimplex
+import com.nami.task.input.InputSimplex
 import kotlin.math.pow
 
 class Y24D07 : Task<List<Y24D07.Equation>>(2024, 7) {
 
-    override fun getRawInputTest() = TestInputSimplex(
+    override fun getRawInputTest() = InputSimplex(
         """
         190: 10 19
         3267: 81 40 27

@@ -3,12 +3,12 @@ package com.nami.task.solutions.y15
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInput
-import com.nami.task.test.TestInputSimplex
+import com.nami.task.input.Input
+import com.nami.task.input.InputSimplex
 
 class Y15D10 : Task<String>(2015, 10) {
 
-    override fun getRawInputTest(): TestInput = TestInputSimplex("1")
+    override fun getRawInputTest(): Input = InputSimplex("1")
 
     override fun getProcessedInput(raw: String): String = raw
 
@@ -44,11 +44,13 @@ class Y15D10 : Task<String>(2015, 10) {
     override fun getSubTaskA() = object : SubTask<String> {
         override fun solve(input: String): Any = iterate(input, 40).length
         override fun test(input: String): Any = iterate(input, 5).length
+        override fun bonus() = 5.0
     }
 
     override fun getSubTaskB() = object : SubTask<String> {
         override fun solve(input: String): Any = iterate(input, 50).length
         override fun test(input: String) = null
+        override fun bonus() = 10.0
     }
 
 }

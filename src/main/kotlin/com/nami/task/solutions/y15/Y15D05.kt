@@ -3,11 +3,11 @@ package com.nami.task.solutions.y15
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInputDuplex
+import com.nami.task.input.InputDuplex
 
 class Y15D05 : Task<List<String>>(2015, 5) {
 
-    override fun getRawInputTest() = TestInputDuplex(
+    override fun getRawInputTest() = InputDuplex(
         """
         ugknbfddgicrmopn
         aaa
@@ -89,11 +89,13 @@ class Y15D05 : Task<List<String>>(2015, 5) {
     override fun getSubTaskA() = object : SubTask<List<String>> {
         override fun solve(input: List<String>) =
             input.count { containsThreeVowels(it) && containsOneLetterTwice(it) && !containsSpecifics(it) }
+        override fun bonus() = 5.0
     }
 
     override fun getSubTaskB() = object : SubTask<List<String>> {
         override fun solve(input: List<String>) =
             input.count { containsTwoLetterPair(it) && containsLetterTwiceWithSpace(it) }
+        override fun bonus() = 10.0
     }
 
 }

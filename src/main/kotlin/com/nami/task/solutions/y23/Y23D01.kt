@@ -3,12 +3,12 @@ package com.nami.task.solutions.y23
 import com.nami.println
 import com.nami.task.SubTask
 import com.nami.task.Task
-import com.nami.task.test.TestInputDuplex
+import com.nami.task.input.InputDuplex
 import java.util.*
 
 class Y23D01 : Task<List<String>>(2023, 1) {
 
-    override fun getRawInputTest() = TestInputDuplex(
+    override fun getRawInputTest() = InputDuplex(
         """
         1abc2
         pqr3stu8vwx

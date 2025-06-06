@@ -1,9 +1,9 @@
-package com.nami.task.test
+package com.nami.task.input
 
-class TestInputDuplex(
+class InputDuplex(
     private val aRaw: String,
     private val bRaw: String
-) : TestInput {
+) : Input {
 
     override fun getRawTestInputA(): String {
         return aRaw
