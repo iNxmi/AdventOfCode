@@ -4,42 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Merge: Master &lt;- Subtask">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y16/Y16D01.kt" afterDir="false" />
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Received bonus">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/Task.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/Task.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D01.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D02.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D02.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D03.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D03.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D04.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D04.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D05.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D05.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D06.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D06.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D07.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D07.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D08.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D08.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D09.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D09.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D10.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D10.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D11.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D11.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D12.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D12.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D13.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D13.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D14.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D14.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D15.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D15.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D16.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D16.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D18.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D18.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y23/Y23D01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y23/Y23D01.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y23/Y23D02.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y23/Y23D02.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D01.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D02.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D02.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D03.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D03.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D04.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D04.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D05.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D05.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D06.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D06.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D07.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D07.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D08.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D08.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D11.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D11.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D15.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y24/Y24D15.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/test/TestInput.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/input/Input.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/test/TestInputDuplex.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/input/InputDuplex.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/test/TestInputSimplex.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/input/InputSimplex.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y16/Y16D01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y16/Y16D01.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/summary.md" beforeDir="false" afterPath="$PROJECT_DIR$/summary.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -316,15 +283,9 @@
       <workItem from="1749037490932" duration="721000" />
       <workItem from="1749100006097" duration="3352000" />
       <workItem from="1749140404164" duration="203000" />
-      <workItem from="1749198612897" duration="220000" />
-    </task>
-    <task id="LOCAL-00006" summary="updated README.MD">
-      <option name="closed" value="true" />
-      <created>1733236717694</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1733236717694</updated>
+      <workItem from="1749198612897" duration="754000" />
+      <workItem from="1749259914640" duration="788000" />
+      <workItem from="1749261108520" duration="2165000" />
     </task>
     <task id="LOCAL-00007" summary="solved 2024 03">
       <option name="closed" value="true" />
@@ -710,7 +671,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749011321544</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Received bonus">
+      <option name="closed" value="true" />
+      <created>1749198966435</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1749198966435</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -732,7 +701,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Improved Exporter&#10;Exported Solutions" />
     <MESSAGE value="Solved Y15D12 a" />
     <MESSAGE value="Solved Y15D12 b" />
     <MESSAGE value="Optimized Y15D12 b" />
@@ -757,7 +725,8 @@
     <MESSAGE value="Backup" />
     <MESSAGE value="Converted to new class structure" />
     <MESSAGE value="Merge: Master &lt;- Subtask" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge: Master &lt;- Subtask" />
+    <MESSAGE value="Received bonus" />
+    <option name="LAST_COMMIT_MESSAGE" value="Received bonus" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
