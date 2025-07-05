@@ -7,6 +7,7 @@ import com.nami.task.input.InputSimplex
 
 /*
     STARS AND BARS
+    TODO i am not very satisfied with the current solution so i want to rewrite it more universally
  */
 
 class Y15D15 : Task<Set<Y15D15.Ingredient>>(2015, 15) {
@@ -17,6 +18,19 @@ class Y15D15 : Task<Set<Y15D15.Ingredient>>(2015, 15) {
         Cinnamon: capacity 2, durability 3, flavor -2, texture -1, calories 3
         """.trimIndent()
     )
+
+    data class Recipe(val ingredients: Map<Ingredient, Int>) {
+        fun score(): Int {
+            val capacity = ingredients.entries.sumOf { (key, value) -> key.capacity * value }.coerceAtLeast(0)
+            val durability = ingredients.entries.sumOf { (key, value) -> key.durability * value }.coerceAtLeast(0)
+            val flavor = ingredients.entries.sumOf { (key, value) -> key.flavor * value }.coerceAtLeast(0)
+            val texture = ingredients.entries.sumOf { (key, value) -> key.texture * value }.coerceAtLeast(0)
+
+            return capacity * durability * flavor * texture
+        }
+
+        fun calories() = ingredients.entries.sumOf { (key, value) -> key.calories * value }
+    }
 
     data class Ingredient(
         val name: String,
@@ -54,12 +68,92 @@ class Y15D15 : Task<Set<Y15D15.Ingredient>>(2015, 15) {
         return set
     }
 
-    override fun getSubTaskA() = object: SubTask<Set<Ingredient>> {
-        override fun solve(input: Set<Ingredient>) = null
+    override fun getSubTaskA() = object : SubTask<Set<Ingredient>> {
+        override fun solve(input: Set<Ingredient>): Int {
+            var recipe = Recipe(mapOf())
+
+            for (x in 0..100)
+                for (y in 0..100 - x)
+                    for (z in 0..100 - x - y) {
+                        val w = 100 - x - y - z
+
+                        val map = mutableMapOf<Ingredient, Int>()
+                        map[input.elementAt(0)] = x
+                        map[input.elementAt(1)] = y
+                        map[input.elementAt(2)] = z
+                        map[input.elementAt(3)] = w
+
+                        val current = Recipe(map)
+
+                        if (current.score() > recipe.score())
+                            recipe = current
+                    }
+
+            return recipe.score()
+        }
+
+        override fun test(input: Set<Ingredient>): Int {
+            var recipe = Recipe(mapOf())
+
+            for (x in 0..100) {
+                val y = 100 - x
+
+                val map = mutableMapOf<Ingredient, Int>()
+                map[input.elementAt(0)] = x
+                map[input.elementAt(1)] = y
+
+                val current = Recipe(map)
+
+                if (current.score() > recipe.score())
+                    recipe = current
+            }
+
+            return recipe.score()
+        }
     }
 
-    override fun getSubTaskB() = object: SubTask<Set<Ingredient>> {
-        override fun solve(input: Set<Ingredient>) = null
+    override fun getSubTaskB() = object : SubTask<Set<Ingredient>> {
+        override fun solve(input: Set<Ingredient>): Int {
+            var recipe = Recipe(mapOf())
+
+            for (x in 0..100)
+                for (y in 0..100 - x)
+                    for (z in 0..100 - x - y) {
+                        val w = 100 - x - y - z
+
+                        val map = mutableMapOf<Ingredient, Int>()
+                        map[input.elementAt(0)] = x
+                        map[input.elementAt(1)] = y
+                        map[input.elementAt(2)] = z
+                        map[input.elementAt(3)] = w
+
+                        val current = Recipe(map)
+
+                        if (current.calories() == 500 && current.score() > recipe.score())
+                            recipe = current
+                    }
+
+            return recipe.score()
+        }
+
+        override fun test(input: Set<Ingredient>): Int {
+            var recipe = Recipe(mapOf())
+
+            for (x in 0..100) {
+                val y = 100 - x
+
+                val map = mutableMapOf<Ingredient, Int>()
+                map[input.elementAt(0)] = x
+                map[input.elementAt(1)] = y
+
+                val current = Recipe(map)
+
+                if (current.calories() == 500 && current.score() > recipe.score())
+                    recipe = current
+            }
+
+            return recipe.score()
+        }
     }
 
 }
