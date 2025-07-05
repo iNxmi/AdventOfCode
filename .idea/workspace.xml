@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Solved Y16D01 A,B">
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Exported Y15D15 {A, B}">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D17.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Test.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D15.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D15.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,70 +63,70 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Kotlin.A2301Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.A2302Kt (1).executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.A2302Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.A2401Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.A2402Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.B2301Kt (1).executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.B2301Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.B2302Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.B2401Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.D01Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.D02Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.ExportKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.ExporterKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.PartAKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.TestKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.VerifyKt.executor&quot;: &quot;Debug&quot;,
-    &quot;Kotlin.Y15D01Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D06Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D07Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D08Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D09Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D10Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D11Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D12Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D13Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D14Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D15Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D16Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D18Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y16D01Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y23D01Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y23D02Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y23D1Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y24D1Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y24D2Kt.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last.edited.regexp&quot;: &quot;\\x27&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/My Drive/.projects/kotlin/AdventOfCode/src/main/kotlin/com/nami/task/solutions/y23&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.50413984&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Kotlin.A2301Kt.executor": "Run",
+    "Kotlin.A2302Kt (1).executor": "Run",
+    "Kotlin.A2302Kt.executor": "Run",
+    "Kotlin.A2401Kt.executor": "Run",
+    "Kotlin.A2402Kt.executor": "Run",
+    "Kotlin.B2301Kt (1).executor": "Run",
+    "Kotlin.B2301Kt.executor": "Run",
+    "Kotlin.B2302Kt.executor": "Run",
+    "Kotlin.B2401Kt.executor": "Run",
+    "Kotlin.D01Kt.executor": "Run",
+    "Kotlin.D02Kt.executor": "Run",
+    "Kotlin.ExportKt.executor": "Run",
+    "Kotlin.ExporterKt.executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "Kotlin.PartAKt.executor": "Run",
+    "Kotlin.TestKt.executor": "Run",
+    "Kotlin.VerifyKt.executor": "Debug",
+    "Kotlin.Y15D01Kt.executor": "Run",
+    "Kotlin.Y15D06Kt.executor": "Run",
+    "Kotlin.Y15D07Kt.executor": "Run",
+    "Kotlin.Y15D08Kt.executor": "Run",
+    "Kotlin.Y15D09Kt.executor": "Run",
+    "Kotlin.Y15D10Kt.executor": "Run",
+    "Kotlin.Y15D11Kt.executor": "Run",
+    "Kotlin.Y15D12Kt.executor": "Run",
+    "Kotlin.Y15D13Kt.executor": "Run",
+    "Kotlin.Y15D14Kt.executor": "Run",
+    "Kotlin.Y15D15Kt.executor": "Run",
+    "Kotlin.Y15D16Kt.executor": "Run",
+    "Kotlin.Y15D18Kt.executor": "Run",
+    "Kotlin.Y16D01Kt.executor": "Run",
+    "Kotlin.Y23D01Kt.executor": "Run",
+    "Kotlin.Y23D02Kt.executor": "Run",
+    "Kotlin.Y23D1Kt.executor": "Run",
+    "Kotlin.Y24D1Kt.executor": "Run",
+    "Kotlin.Y24D2Kt.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last.edited.regexp": "\\x27",
+    "last_opened_file_path": "G:/My Drive/.projects/kotlin/AdventOfCode/src/main/kotlin/com/nami/task/solutions/y15",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.50413984",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\kotlin\com\nami\task\solutions\y23" />
       <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\kotlin\com\nami\task\solutions\y15" />
+      <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\kotlin\com\nami\task\solutions\y23" />
       <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\kotlin\com\nami\assignments\y15" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -293,23 +291,7 @@
       <workItem from="1751388597597" duration="1729000" />
       <workItem from="1751465527003" duration="71000" />
       <workItem from="1751467264036" duration="1804000" />
-      <workItem from="1751681781118" duration="2814000" />
-    </task>
-    <task id="LOCAL-00008" summary="solved 2015 01 and 2015 02">
-      <option name="closed" value="true" />
-      <created>1733267075495</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1733267075495</updated>
-    </task>
-    <task id="LOCAL-00009" summary="solved 2015 03">
-      <option name="closed" value="true" />
-      <created>1733269261175</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1733269261175</updated>
+      <workItem from="1751681781118" duration="4280000" />
     </task>
     <task id="LOCAL-00010" summary="solved 2015 04">
       <option name="closed" value="true" />
@@ -687,7 +669,23 @@
       <option name="project" value="LOCAL" />
       <updated>1749263748791</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Solved Y15D15 {A, B}">
+      <option name="closed" value="true" />
+      <created>1751686565524</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1751686565524</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Exported Y15D15 {A, B}">
+      <option name="closed" value="true" />
+      <created>1751686670889</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1751686670889</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -709,8 +707,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Solved Y15D12 b" />
-    <MESSAGE value="Optimized Y15D12 b" />
     <MESSAGE value="Solved Y15D14 a,b" />
     <MESSAGE value="Solved Y15D16 A;B" />
     <MESSAGE value="Updated Assignment.kt&#10;Updated every assignment accordingly" />
@@ -734,7 +730,9 @@
     <MESSAGE value="Merge: Master &lt;- Subtask" />
     <MESSAGE value="Received bonus" />
     <MESSAGE value="Solved Y16D01 A,B" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solved Y16D01 A,B" />
+    <MESSAGE value="Solved Y15D15 {A, B}" />
+    <MESSAGE value="Exported Y15D15 {A, B}" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exported Y15D15 {A, B}" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
