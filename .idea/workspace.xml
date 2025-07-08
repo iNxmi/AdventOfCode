@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Exported Y15D15 {A, B}">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D17.kt" afterDir="false" />
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Prepared Y15D17">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/Remote.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/Remote.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D17.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y15/Y15D17.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +95,7 @@
     "Kotlin.Y15D14Kt.executor": "Run",
     "Kotlin.Y15D15Kt.executor": "Run",
     "Kotlin.Y15D16Kt.executor": "Run",
+    "Kotlin.Y15D17Kt.executor": "Run",
     "Kotlin.Y15D18Kt.executor": "Run",
     "Kotlin.Y16D01Kt.executor": "Run",
     "Kotlin.Y23D01Kt.executor": "Run",
@@ -169,15 +171,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Y16D01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.task.solutions.y16.Y16D01Kt" />
+    <configuration name="Y15D17Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.task.solutions.y15.Y15D17Kt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Y23D01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.task.solutions.y23.Y23D01Kt" />
+    <configuration name="Y16D01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.task.solutions.y16.Y16D01Kt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -186,10 +188,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.ExporterKt" />
+        <item itemvalue="Kotlin.Y15D17Kt" />
         <item itemvalue="Kotlin.Y15D15Kt" />
         <item itemvalue="Kotlin.TestKt" />
         <item itemvalue="Kotlin.Y16D01Kt" />
-        <item itemvalue="Kotlin.Y23D01Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -291,15 +293,9 @@
       <workItem from="1751388597597" duration="1729000" />
       <workItem from="1751465527003" duration="71000" />
       <workItem from="1751467264036" duration="1804000" />
-      <workItem from="1751681781118" duration="4280000" />
-    </task>
-    <task id="LOCAL-00010" summary="solved 2015 04">
-      <option name="closed" value="true" />
-      <created>1733269942875</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1733269942875</updated>
+      <workItem from="1751681781118" duration="4304000" />
+      <workItem from="1751727372758" duration="739000" />
+      <workItem from="1752009365013" duration="1756000" />
     </task>
     <task id="LOCAL-00011" summary="solved 2024 04">
       <option name="closed" value="true" />
@@ -685,7 +681,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751686670889</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Prepared Y15D17">
+      <option name="closed" value="true" />
+      <created>1751688033338</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1751688033338</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -707,7 +711,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Solved Y15D14 a,b" />
     <MESSAGE value="Solved Y15D16 A;B" />
     <MESSAGE value="Updated Assignment.kt&#10;Updated every assignment accordingly" />
     <MESSAGE value="Updated Exporter" />
@@ -732,7 +735,8 @@
     <MESSAGE value="Solved Y16D01 A,B" />
     <MESSAGE value="Solved Y15D15 {A, B}" />
     <MESSAGE value="Exported Y15D15 {A, B}" />
-    <option name="LAST_COMMIT_MESSAGE" value="Exported Y15D15 {A, B}" />
+    <MESSAGE value="Prepared Y15D17" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prepared Y15D17" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

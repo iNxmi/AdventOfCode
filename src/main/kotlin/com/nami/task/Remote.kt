@@ -3,6 +3,7 @@ package com.nami.task
 import io.github.cdimascio.dotenv.dotenv
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import org.jsoup.HttpStatusException
 import org.jsoup.Jsoup
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -119,7 +120,17 @@ class Remote {
             val url = "https://adventofcode.com/$year/day/$day/input"
             println("Fetching Input ${year}_${day} -> $url")
 
-            val doc = Jsoup.connect(url).cookie("session", TOKEN_ORIGINAL).get()
+            val doc = try {
+                Jsoup.connect(url)
+                    .cookie("session", TOKEN_ORIGINAL)
+                    .get()
+            } catch (e: HttpStatusException) {
+                throw HttpStatusException(
+                    "HTTP error fetching URL (Is your SESSION invalid?)",
+                    e.statusCode,
+                    e.url
+                )
+            }
             val string = doc.connection().execute().body().trim()
 
             return string
