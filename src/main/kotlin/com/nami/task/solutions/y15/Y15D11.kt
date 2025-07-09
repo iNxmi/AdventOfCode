@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.Input
 import com.nami.task.input.InputSimplex
@@ -83,16 +83,16 @@ class Y15D11 : Task<String>(2015, 11) {
         throw IllegalStateException("No password found")
     }
 
-    override fun getSubTaskA() = object : SubTask<String> {
+    override fun getPartA() = object : Part<String> {
         override fun solve(input: String) = find(input)
         override fun bonus() = 5.0
     }
 
-    override fun getSubTaskB() = object : SubTask<String> {
-        override fun solve(input: String) = find(getSubTaskA().solve(input).toString())
+    override fun getPartB() = object : Part<String> {
+        override fun solve(input: String) = find(getPartA().solve(input).toString())
         override fun bonus() = 10.0
     }
 
 }
 
-fun main() = Y15D11().getResult().println()
+fun main() = Y15D11().printResult()

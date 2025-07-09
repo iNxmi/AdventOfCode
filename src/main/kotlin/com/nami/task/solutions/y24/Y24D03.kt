@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y24
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
 
@@ -12,7 +12,7 @@ class Y24D03 : Task<String>(2024, 3) {
 
     override fun getProcessedInput(raw: String) = raw
 
-    override fun getSubTaskA() = object : SubTask<String> {
+    override fun getPartA() = object : Part<String> {
         //TODO cleanup
         override fun solve(input: String): Any {
             val regex = ("mul\\(\\d+,\\d+\\)").toRegex()
@@ -33,7 +33,7 @@ class Y24D03 : Task<String>(2024, 3) {
         override fun bonus() = 3.0
     }
 
-    override fun getSubTaskB() = object : SubTask<String> {
+    override fun getPartB() = object : Part<String> {
         override fun solve(input: String): Any {
             val regex = ("mul\\(\\d+,\\d+\\)|do\\(\\)|don't\\(\\)").toRegex()
             val matches = regex.findAll(input).map { it.value }.toList()
@@ -68,4 +68,4 @@ class Y24D03 : Task<String>(2024, 3) {
 
 }
 
-fun main() = Y24D03().getResult().println()
+fun main() = Y24D03().printResult()

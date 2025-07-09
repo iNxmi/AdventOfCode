@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.Input
 import com.nami.task.input.InputSimplex
@@ -16,7 +16,7 @@ class Y15D03 : Task<String>(2015, 3) {
         return raw
     }
 
-    override fun getSubTaskA() = object : SubTask<String> {
+    override fun getPartA() = object : Part<String> {
         override fun solve(input: String): Any {
             var x = 0
             var y = 0
@@ -40,7 +40,7 @@ class Y15D03 : Task<String>(2015, 3) {
         override fun bonus() = 5.0
     }
 
-    override fun getSubTaskB() = object : SubTask<String> {
+    override fun getPartB() = object : Part<String> {
         override fun solve(input: String): Any {
             var xSanta = 0
             var ySanta = 0
@@ -82,4 +82,4 @@ class Y15D03 : Task<String>(2015, 3) {
 
 }
 
-fun main() = Y15D03().getResult().println()
+fun main() = Y15D03().printResult()

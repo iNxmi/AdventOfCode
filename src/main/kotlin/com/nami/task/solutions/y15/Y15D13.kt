@@ -2,7 +2,7 @@ package com.nami.task.solutions.y15
 
 import com.nami.permutations
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
 
@@ -56,7 +56,7 @@ class Y15D13 : Task<Y15D13.Input>(2015, 13) {
         return Input(people, rules)
     }
 
-    override fun getSubTaskA() = object : SubTask<Input> {
+    override fun getPartA() = object : Part<Input> {
         override fun solve(input: Input): Any {
             val permutations = input.people.toList().permutations()
 
@@ -83,7 +83,7 @@ class Y15D13 : Task<Y15D13.Input>(2015, 13) {
         override fun bonus() = 5.0
     }
 
-    override fun getSubTaskB() = object : SubTask<Input> {
+    override fun getPartB() = object : Part<Input> {
         override fun solve(input: Input): Any {
             val permutations = input.people.toList().permutations()
 
@@ -117,4 +117,4 @@ class Y15D13 : Task<Y15D13.Input>(2015, 13) {
 
 }
 
-fun main() = Y15D13().getResult().println()
+fun main() = Y15D13().printResult()

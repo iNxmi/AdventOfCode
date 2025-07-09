@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
 import org.joml.Vector2i
@@ -50,7 +50,7 @@ class Y15D06 : Task<List<Y15D06.Operation>>(2015, 6) {
 
     private val size = 1000
 
-    override fun getSubTaskA() = object : SubTask<List<Operation>> {
+    override fun getPartA() = object : Part<List<Operation>> {
         override fun solve(input: List<Operation>): Any {
             val lights = BooleanArray(size * size) { false }
             input.forEach { operation ->
@@ -70,7 +70,7 @@ class Y15D06 : Task<List<Y15D06.Operation>>(2015, 6) {
         override fun bonus() = 5.0
     }
 
-    override fun getSubTaskB() = object : SubTask<List<Operation>> {
+    override fun getPartB() = object : Part<List<Operation>> {
         override fun solve(input: List<Operation>): Any {
             val lights = IntArray(size * size) { 0 }
             input.forEach { operation ->
@@ -95,4 +95,4 @@ class Y15D06 : Task<List<Y15D06.Operation>>(2015, 6) {
 
 }
 
-fun main() = Y15D06().getResult().println()
+fun main() = Y15D06().printResult()

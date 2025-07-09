@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y24
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
 
@@ -140,7 +140,7 @@ class Y24D05 : Task<Y24D05.Input>(2024, 5) {
 
     private fun getSolution(updates: Set<List<Int>>) = updates.sumOf { it[(it.size - 1) / 2] }
 
-    override fun getSubTaskA() = object : SubTask<Input> {
+    override fun getPartA() = object : Part<Input> {
         override fun solve(input: Input): Any {
             val validUpdates = getValidUpdatesOld(input)
             return getSolution(validUpdates)
@@ -149,7 +149,7 @@ class Y24D05 : Task<Y24D05.Input>(2024, 5) {
         override fun bonus() = 5.0
     }
 
-    override fun getSubTaskB() = object : SubTask<Input> {
+    override fun getPartB() = object : Part<Input> {
         override fun solve(input: Input): Any? {
             //        val invalidUpdates = getInvalidUpdates(input)
             //
@@ -192,4 +192,4 @@ class Y24D05 : Task<Y24D05.Input>(2024, 5) {
 
 }
 
-fun main() = Y24D05().getResult().println()
+fun main() = Y24D05().printResult()

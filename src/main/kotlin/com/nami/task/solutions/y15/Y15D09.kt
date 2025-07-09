@@ -2,7 +2,7 @@ package com.nami.task.solutions.y15
 
 import com.nami.permutations
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
 
@@ -64,7 +64,7 @@ class Y15D09 : Task<Y15D09.Input>(2015, 9) {
         return result
     }
 
-    override fun getSubTaskA() = object : SubTask<Input> {
+    override fun getPartA() = object : Part<Input> {
         override fun solve(input: Input): Any? {
             val distances = distances(input)
             val result = distances.toSortedMap().firstEntry()
@@ -73,7 +73,7 @@ class Y15D09 : Task<Y15D09.Input>(2015, 9) {
         override fun bonus() = 5.0
     }
 
-    override fun getSubTaskB() = object : SubTask<Input> {
+    override fun getPartB() = object : Part<Input> {
         override fun solve(input: Input): Any? {
             val distances = distances(input)
             val result = distances.toSortedMap().reversed().firstEntry()
@@ -84,4 +84,4 @@ class Y15D09 : Task<Y15D09.Input>(2015, 9) {
 
 }
 
-fun main() = Y15D09().getResult().println()
+fun main() = Y15D09().printResult()

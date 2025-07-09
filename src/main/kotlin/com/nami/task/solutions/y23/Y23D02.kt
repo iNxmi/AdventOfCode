@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y23
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
 
@@ -65,7 +65,7 @@ class Y23D02 : Task<Map<Int, List<Y23D02.Draw>>>(2023, 2) {
         return result
     }
 
-    override fun getSubTaskA() = object : SubTask<Map<Int, List<Draw>>> {
+    override fun getPartA() = object : Part<Map<Int, List<Draw>>> {
         override fun solve(input: Map<Int, List<Draw>>): Any {
             val filtered = input.filter { (_, game) ->
                 game.maxOf { it.red } <= 12 &&
@@ -80,7 +80,7 @@ class Y23D02 : Task<Map<Int, List<Y23D02.Draw>>>(2023, 2) {
         override fun bonus() = 2.0
     }
 
-    override fun getSubTaskB() = object : SubTask<Map<Int, List<Draw>>> {
+    override fun getPartB() = object : Part<Map<Int, List<Draw>>> {
         override fun solve(input: Map<Int, List<Draw>>): Any {
             val minimal = input.map { (_, game) ->
                 val red = game.maxOf { it.red }
@@ -97,4 +97,4 @@ class Y23D02 : Task<Map<Int, List<Y23D02.Draw>>>(2023, 2) {
 
 }
 
-fun main() = Y23D02().getResult().println()
+fun main() = Y23D02().printResult()

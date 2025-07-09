@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
 import java.security.MessageDigest
@@ -34,16 +34,16 @@ class Y15D04 : Task<String>(2015, 4) {
         return i
     }
 
-    override fun getSubTaskA() = object : SubTask<String> {
+    override fun getPartA() = object : Part<String> {
         override fun solve(input: String) = crack(input, "00000")
         override fun bonus() = 5.0
     }
 
-    override fun getSubTaskB() = object : SubTask<String> {
+    override fun getPartB() = object : Part<String> {
         override fun solve(input: String) = crack(input, "000000")
         override fun bonus() = 10.0
     }
 
 }
 
-fun main() = Y15D04().getResult().println()
+fun main() = Y15D04().printResult()

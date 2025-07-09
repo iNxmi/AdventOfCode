@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y24
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
 import kotlin.math.pow
@@ -52,7 +52,7 @@ class Y24D07 : Task<List<Y24D07.Equation>>(2024, 7) {
         return builder.reverse().toString()
     }
 
-    override fun getSubTaskA() = object : SubTask<List<Equation>> {
+    override fun getPartA() = object : Part<List<Equation>> {
         override fun solve(input: List<Equation>): Any? {
             //0 = +
             //1 = *
@@ -94,7 +94,7 @@ class Y24D07 : Task<List<Y24D07.Equation>>(2024, 7) {
         override fun bonus() = 3.0
     }
 
-    override fun getSubTaskB() = object : SubTask<List<Equation>> {
+    override fun getPartB() = object : Part<List<Equation>> {
         override fun solve(input: List<Equation>): Any? {
             //0 = +
             //1 = *
@@ -141,4 +141,4 @@ class Y24D07 : Task<List<Y24D07.Equation>>(2024, 7) {
 
 }
 
-fun main() = Y24D07().getResult().println()
+fun main() = Y24D07().printResult()

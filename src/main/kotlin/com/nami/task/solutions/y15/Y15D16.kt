@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 
 class Y15D16 : Task<Set<Y15D16.Aunt>>(2015, 16) {
@@ -70,7 +70,7 @@ class Y15D16 : Task<Set<Y15D16.Aunt>>(2015, 16) {
         return set
     }
 
-    override fun getSubTaskA() = object : SubTask<Set<Aunt>> {
+    override fun getPartA() = object : Part<Set<Aunt>> {
         override fun solve(input: Set<Aunt>): Any {
             val aunts = input.asSequence()
                 .filter { it.children == null || it.children == 3 }
@@ -93,7 +93,7 @@ class Y15D16 : Task<Set<Y15D16.Aunt>>(2015, 16) {
         override fun bonus() = 5.0
     }
 
-    override fun getSubTaskB() = object : SubTask<Set<Aunt>> {
+    override fun getPartB() = object : Part<Set<Aunt>> {
         override fun solve(input: Set<Aunt>): Any {
             val aunts = input.asSequence()
                 .filter { it.children == null || it.children == 3 }
@@ -118,4 +118,4 @@ class Y15D16 : Task<Set<Y15D16.Aunt>>(2015, 16) {
 
 }
 
-fun main() = Y15D16().getResult().println()
+fun main() = Y15D16().printResult()

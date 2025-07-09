@@ -66,6 +66,7 @@ class Remote {
             return entriesInput[id]!!
         }
 
+        fun getSolutions(year: Int, day: Int) = Pair(getSolutionA(year, day), getSolutionB(year, day))
         fun getSolutionA(year: Int, day: Int): String? {
             require(YEAR_RANGE.contains(year)) { "Year must be in '$YEAR_RANGE'" }
             require(DAY_RANGE.contains(day)) { "Day must be in '$DAY_RANGE'" }
@@ -90,7 +91,6 @@ class Remote {
 
             return entriesInput[id]!!
         }
-
         fun getSolutionB(year: Int, day: Int): String? {
             require(YEAR_RANGE.contains(year)) { "Year must be in '$YEAR_RANGE'" }
             require(DAY_RANGE.contains(day)) { "Day must be in '$DAY_RANGE'" }

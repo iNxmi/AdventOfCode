@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
 
@@ -45,7 +45,7 @@ class Y15D08 : Task<List<String>>(2015, 8) {
         return result
     }
 
-    override fun getSubTaskA() = object : SubTask<List<String>> {
+    override fun getPartA() = object : Part<List<String>> {
         override fun solve(input: List<String>): Any {
             val code = input.sumOf { it.length }
             val memory = input.map { escape(it) }.sumOf { it.length }
@@ -54,7 +54,7 @@ class Y15D08 : Task<List<String>>(2015, 8) {
         override fun bonus() = 5.0
     }
 
-    override fun getSubTaskB() = object : SubTask<List<String>> {
+    override fun getPartB() = object : Part<List<String>> {
         override fun solve(input: List<String>): Any {
             val newlyEncoded = input.map { unescape(it) }.sumOf { it.length }
             val original = input.sumOf { it.length }
@@ -65,4 +65,4 @@ class Y15D08 : Task<List<String>>(2015, 8) {
 
 }
 
-fun main() = Y15D08().getResult().println()
+fun main() = Y15D08().printResult()

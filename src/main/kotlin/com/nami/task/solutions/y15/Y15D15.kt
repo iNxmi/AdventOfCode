@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
 
@@ -68,7 +68,7 @@ class Y15D15 : Task<Set<Y15D15.Ingredient>>(2015, 15) {
         return set
     }
 
-    override fun getSubTaskA() = object : SubTask<Set<Ingredient>> {
+    override fun getPartA() = object : Part<Set<Ingredient>> {
         override fun solve(input: Set<Ingredient>): Int {
             var recipe = Recipe(mapOf())
 
@@ -110,9 +110,11 @@ class Y15D15 : Task<Set<Y15D15.Ingredient>>(2015, 15) {
 
             return recipe.score()
         }
+
+        override fun comment() = "Needs Improvement (Stars and Bars)"
     }
 
-    override fun getSubTaskB() = object : SubTask<Set<Ingredient>> {
+    override fun getPartB() = object : Part<Set<Ingredient>> {
         override fun solve(input: Set<Ingredient>): Int {
             var recipe = Recipe(mapOf())
 
@@ -154,8 +156,10 @@ class Y15D15 : Task<Set<Y15D15.Ingredient>>(2015, 15) {
 
             return recipe.score()
         }
+
+        override fun comment() = "Needs Improvement (Stars and Bars)"
     }
 
 }
 
-fun main() = Y15D15().getResult().println()
+fun main() = Y15D15().printResult()

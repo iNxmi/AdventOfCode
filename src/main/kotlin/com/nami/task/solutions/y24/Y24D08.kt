@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y24
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
 import org.joml.Vector2i
@@ -89,7 +89,7 @@ class Y24D08 : Task<Y24D08.Input>(2024, 8) {
         return antinodes
     }
 
-    override fun getSubTaskA() = object : SubTask<Input> {
+    override fun getPartA() = object : Part<Input> {
         override fun solve(input: Input): Any {
             val antinodes = mutableSetOf<Vector2i>()
             for (key in input.nodes.keys) {
@@ -115,7 +115,7 @@ class Y24D08 : Task<Y24D08.Input>(2024, 8) {
         override fun bonus() = 5.0
     }
 
-    override fun getSubTaskB() = object : SubTask<Input> {
+    override fun getPartB() = object : Part<Input> {
         override fun solve(input: Input): Any? {
             val antinodes = mutableSetOf<Vector2i>()
 
@@ -131,4 +131,4 @@ class Y24D08 : Task<Y24D08.Input>(2024, 8) {
 
 }
 
-fun main() = Y24D08().getResult().println()
+fun main() = Y24D08().printResult()

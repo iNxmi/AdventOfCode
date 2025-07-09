@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y24
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
 import org.joml.Vector2i
@@ -48,7 +48,7 @@ class Y24D06 : Task<Y24D06.Input>(2024, 6) {
         return Input(worldSize, position, obstacles)
     }
 
-    override fun getSubTaskA() = object : SubTask<Input> {
+    override fun getPartA() = object : Part<Input> {
         override fun solve(input: Input): Any {
             var direction = Pair(0, -1)
             var positionX = input.position.x
@@ -89,10 +89,10 @@ class Y24D06 : Task<Y24D06.Input>(2024, 6) {
         override fun bonus() = 5.0
     }
 
-    override fun getSubTaskB() = object : SubTask<Input> {
+    override fun getPartB() = object : Part<Input> {
         override fun solve(input: Input) = null
     }
 
 }
 
-fun main() = Y24D06().getResult().println()
+fun main() = Y24D06().printResult()

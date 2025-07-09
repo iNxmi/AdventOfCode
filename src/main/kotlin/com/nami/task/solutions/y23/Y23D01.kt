@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y23
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputDuplex
 import java.util.*
@@ -32,7 +32,7 @@ class Y23D01 : Task<List<String>>(2023, 1) {
         return array[digit]
     }
 
-    override fun getSubTaskA() = object : SubTask<List<String>> {
+    override fun getPartA() = object : Part<List<String>> {
         override fun solve(input: List<String>): Any {
             val numbers = mutableListOf<Int>()
 
@@ -53,7 +53,7 @@ class Y23D01 : Task<List<String>>(2023, 1) {
         override fun bonus() = 2.0
     }
 
-    override fun getSubTaskB() = object : SubTask<List<String>> {
+    override fun getPartB() = object : Part<List<String>> {
         override fun solve(input: List<String>): Any {
             val digits = mutableMapOf<String, Int>()
             for (i in 0..9) {
@@ -88,4 +88,4 @@ class Y23D01 : Task<List<String>>(2023, 1) {
 
 }
 
-fun main() = Y23D01().getResult().println()
+fun main() = Y23D01().printResult()

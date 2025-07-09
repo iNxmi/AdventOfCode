@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y16
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputDuplex
 import org.joml.Vector2i
@@ -54,7 +54,7 @@ class Y16D01 : Task<List<Y16D01.Move>>(2016, 1) {
         return result
     }
 
-    override fun getSubTaskA() = object : SubTask<List<Move>> {
+    override fun getPartA() = object : Part<List<Move>> {
         override fun solve(input: List<Move>): Any? {
             val position = Vector2i()
             var direction = Vector2i(0, 1)
@@ -70,7 +70,7 @@ class Y16D01 : Task<List<Y16D01.Move>>(2016, 1) {
         }
     }
 
-    override fun getSubTaskB() = object : SubTask<List<Move>> {
+    override fun getPartB() = object : Part<List<Move>> {
         override fun solve(input: List<Move>): Any {
             val visited = mutableSetOf<Vector2i>()
             val position = Vector2i()
@@ -95,4 +95,4 @@ class Y16D01 : Task<List<Y16D01.Move>>(2016, 1) {
 
 }
 
-fun main() = Y16D01().getResult().println()
+fun main() = Y16D01().printResult()

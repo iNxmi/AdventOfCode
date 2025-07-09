@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
 
@@ -86,16 +86,16 @@ class Y15D07 : Task<Map<String, String>>(2015, 7) {
         return ""
     }
 
-    override fun getSubTaskA() = object : SubTask<Map<String, String>> {
+    override fun getPartA() = object : Part<Map<String, String>> {
         override fun solve(input: Map<String, String>) = evaluate(mutableMapOf(), input, "a").toInt()
         override fun test(input: Map<String, String>) = null
         override fun bonus() = 5.0
     }
 
-    override fun getSubTaskB() = object : SubTask<Map<String, String>> {
+    override fun getPartB() = object : Part<Map<String, String>> {
         override fun solve(input: Map<String, String>): Any {
             val rewired = input.toMutableMap()
-            rewired["b"] = getSubTaskA().solve(input).toString()
+            rewired["b"] = getPartA().solve(input).toString()
 
             return evaluate(mutableMapOf(), rewired, "a").toInt()
         }
@@ -107,4 +107,4 @@ class Y15D07 : Task<Map<String, String>>(2015, 7) {
 
 }
 
-fun main() = Y15D07().getResult().println()
+fun main() = Y15D07().printResult()

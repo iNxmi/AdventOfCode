@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y24
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
 import kotlin.math.abs
@@ -83,7 +83,7 @@ class Y24D02 : Task<List<String>>(2024, 2) {
         return true
     }
 
-    override fun getSubTaskA() = object : SubTask<List<String>> {
+    override fun getPartA() = object : Part<List<String>> {
         override fun solve(input: List<String>): Any {
             val valid = mutableSetOf<List<Int>>()
             val invalid = mutableSetOf<List<Int>>()
@@ -101,7 +101,7 @@ class Y24D02 : Task<List<String>>(2024, 2) {
         override fun bonus() = 3.0
     }
 
-    override fun getSubTaskB() = object : SubTask<List<String>> {
+    override fun getPartB() = object : Part<List<String>> {
         override fun solve(input: List<String>): Any {
             val valid = mutableSetOf<List<Int>>()
             val invalid = mutableSetOf<List<Int>>()
@@ -121,4 +121,4 @@ class Y24D02 : Task<List<String>>(2024, 2) {
 
 }
 
-fun main() = Y24D02().getResult().println()
+fun main() = Y24D02().printResult()

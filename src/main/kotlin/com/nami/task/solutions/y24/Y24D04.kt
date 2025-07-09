@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y24
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
 import org.joml.Vector2i
@@ -64,7 +64,7 @@ class Y24D04 : Task<List<CharArray>>(2024, 4) {
         return count >= 2
     }
 
-    override fun getSubTaskA() = object : SubTask<List<CharArray>> {
+    override fun getPartA() = object : Part<List<CharArray>> {
         override fun solve(input: List<CharArray>): Any? {
             var count = 0
             for (y in input.indices)
@@ -84,7 +84,7 @@ class Y24D04 : Task<List<CharArray>>(2024, 4) {
         override fun bonus() = 3.0
     }
 
-    override fun getSubTaskB() = object : SubTask<List<CharArray>> {
+    override fun getPartB() = object : Part<List<CharArray>> {
         override fun solve(input: List<CharArray>): Any? {
             var count = 0
             for (y in input.indices)
@@ -100,4 +100,4 @@ class Y24D04 : Task<List<CharArray>>(2024, 4) {
 
 }
 
-fun main() = Y24D04().getResult().println()
+fun main() = Y24D04().printResult()

@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.Input
 import com.nami.task.input.InputSimplex
@@ -76,13 +76,13 @@ class Y15D14 : Task<Set<Y15D14.Racer>>(2015, 14) {
         return result
     }
 
-    override fun getSubTaskA() = object : SubTask<Set<Racer>> {
+    override fun getPartA() = object : Part<Set<Racer>> {
         override fun solve(input: Set<Racer>) = race(input, 2503).maxOf { it.value.distance }
         override fun test(input: Set<Racer>) = race(input, 1000).maxOf { it.value.distance }
         override fun bonus() = 5.0
     }
 
-    override fun getSubTaskB() = object : SubTask<Set<Racer>> {
+    override fun getPartB() = object : Part<Set<Racer>> {
         override fun solve(input: Set<Racer>) = race(input, 2503).maxOf { it.value.points }
         override fun test(input: Set<Racer>) = race(input, 1000).maxOf { it.value.points }
         override fun bonus() = 10.0
@@ -90,4 +90,4 @@ class Y15D14 : Task<Set<Y15D14.Racer>>(2015, 14) {
 
 }
 
-fun main() = Y15D14().getResult().println()
+fun main() = Y15D14().printResult()

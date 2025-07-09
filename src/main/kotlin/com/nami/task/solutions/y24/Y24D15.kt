@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y24
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
 import org.joml.Vector2i
@@ -106,14 +106,14 @@ class Y24D15 : Task<Y24D15.Input>(2024, 15) {
         return Input(world, instructions)
     }
 
-    override fun getSubTaskA() = object : SubTask<Input> {
+    override fun getPartA() = object : Part<Input> {
         override fun solve(input: Input) = null
     }
 
-    override fun getSubTaskB() = object : SubTask<Input> {
+    override fun getPartB() = object : Part<Input> {
         override fun solve(input: Input) = null
     }
 
 }
 
-fun main() = Y24D15().getResult().println()
+fun main() = Y24D15().printResult()

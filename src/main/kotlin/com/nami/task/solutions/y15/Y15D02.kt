@@ -1,28 +1,21 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
+import org.apache.commons.lang3.math.NumberUtils.min
 import org.joml.Vector3i
 
 class Y15D02 : Task<List<Vector3i>>(2015, 2) {
 
     override fun getRawInputTest() = InputSimplex("1x1x10")
 
-    override fun getProcessedInput(raw: String): List<Vector3i> {
-        val result = mutableListOf<Vector3i>()
-        raw.lines().forEach { line ->
-            val dimensions = line.split("x")
-                .map { it.toInt() }
-                .toIntArray()
-            result.add(Vector3i(dimensions))
-        }
+    override fun getProcessedInput(raw: String) = raw.lines().map { line ->
+        line.split("x").map { it.toInt() }.toIntArray()
+    }.map { Vector3i(it) }
 
-        return result
-    }
-
-    override fun getSubTaskA() = object : SubTask<List<Vector3i>> {
+    override fun getPartA() = object : Part<List<Vector3i>> {
         override fun solve(input: List<Vector3i>): Any {
             var sum = 0
 
@@ -36,15 +29,16 @@ class Y15D02 : Task<List<Vector3i>>(2015, 2) {
                 val z = height * length
 
                 sum += 2 * (x + y + z)
-                sum += setOf(x, y, z).min()
+                sum += min(x, y, z)
             }
 
             return sum
         }
+
         override fun bonus() = 5.0
     }
 
-    override fun getSubTaskB() = object : SubTask<List<Vector3i>> {
+    override fun getPartB() = object : Part<List<Vector3i>> {
         override fun solve(input: List<Vector3i>): Any {
             var sum = 0
 
@@ -63,9 +57,10 @@ class Y15D02 : Task<List<Vector3i>>(2015, 2) {
 
             return sum
         }
+
         override fun bonus() = 10.0
     }
 
 }
 
-fun main() = Y15D02().getResult().println()
+fun main() = Y15D02().printResult()

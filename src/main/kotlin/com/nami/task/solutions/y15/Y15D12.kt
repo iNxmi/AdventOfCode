@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y15
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
 import kotlinx.serialization.json.*
@@ -58,12 +58,12 @@ class Y15D12 : Task<Y15D12.Input>(2015, 12) {
         }
     }
 
-    override fun getSubTaskA() = object : SubTask<Input> {
+    override fun getPartA() = object : Part<Input> {
         override fun solve(input: Input) = sum(input.raw)
         override fun bonus() = 5.0
     }
 
-    override fun getSubTaskB() = object : SubTask<Input> {
+    override fun getPartB() = object : Part<Input> {
         override fun solve(input: Input): Any {
             val filtered = filterObject(input.json, "red")
             return sum(filtered.toString())
@@ -73,4 +73,4 @@ class Y15D12 : Task<Y15D12.Input>(2015, 12) {
 
 }
 
-fun main() = Y15D12().getResult().println()
+fun main() = Y15D12().printResult()

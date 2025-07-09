@@ -8,6 +8,7 @@ import com.nami.task.solutions.y23.Y23D02
 import com.nami.task.solutions.y23.Y23D03
 import com.nami.task.solutions.y23.Y23D04
 import com.nami.task.solutions.y24.*
+import net.steppschuh.markdowngenerator.table.Table
 
 abstract class Task<InputClass : Any>(
     val year: Int,
@@ -57,12 +58,13 @@ abstract class Task<InputClass : Any>(
         )
     }
 
+    fun getRawInput(): String = Remote.getInput(year, day)
     abstract fun getRawInputTest(): Input?
 
     abstract fun getProcessedInput(raw: String): InputClass
 
-    abstract fun getSubTaskA(): SubTask<InputClass>
-    abstract fun getSubTaskB(): SubTask<InputClass>
+    abstract fun getPartA(): Part<InputClass>
+    abstract fun getPartB(): Part<InputClass>
 
     private fun print(content: Any?) = println(content)
     protected fun info(content: Any?) = print("Info: $content")
@@ -70,49 +72,73 @@ abstract class Task<InputClass : Any>(
     protected fun error(content: Any?) = print("Error: $content")
     protected fun critical(content: Any?) = print("Critical: $content")
 
-    fun getResult(): Result {
-        val input = this.getProcessedInput(Remote.getInput(year, day))
+    fun getResults() = getResults(getRawInput())
+    fun getResults(input: String): Pair<Part.Result, Part.Result> {
+        val processed = getProcessedInput(input)
 
-        val a = getSubTaskA()
-        val b = getSubTaskB()
-
-        val resultA = a.getResult(input)
-        val resultB = b.getResult(input)
-
-        val hasTestInput = getRawInputTest() != null
-        if (hasTestInput) {
-            val inputTestA = this.getProcessedInput(this.getRawInputTest()!!.getRawTestInputA())
-            val inputTestB = this.getProcessedInput(this.getRawInputTest()!!.getRawTestInputB())
-            val resultATest = a.getResultTest(inputTestA)
-            val resultBTest = b.getResultTest(inputTestB)
-
-            return Result(
-                resultA, resultATest,
-                resultB, resultBTest
-            )
-        }
-
-        return Result(
-            resultA, SubTask.Result(0, 0.0),
-            resultB, SubTask.Result(0, 0.0)
+        return Pair(
+            getPartA().getResult(processed),
+            getPartB().getResult(processed)
         )
     }
 
-    data class Result(
-        val a: SubTask.Result,
-        val aTest: SubTask.Result,
+    fun printResult() = printResult(getRawInput())
+    fun printResult(input: String) {
+        val processed = getProcessedInput(input)
 
-        val b: SubTask.Result,
-        val bTest: SubTask.Result
-    ) {
-        override fun toString(): String {
-            return """
-                A: ${a.result} ${("%.2fs").format(a.timeS).replace(",", ".")}
-                A_TEST: ${aTest.result} ${("%.2fs").format(aTest.timeS).replace(",", ".")}
-                B: ${b.result} ${("%.2fs").format(b.timeS).replace(",", ".")}
-                B_TEST: ${bTest.result} ${("%.2fs").format(bTest.timeS).replace(",", ".")}
-            """.trimIndent()
+        val a = getPartA()
+        val b = getPartB()
+
+        val resultA = a.getResult(processed)
+        val resultB = b.getResult(processed)
+
+        val builder = Table.Builder()
+            .withAlignments(Table.ALIGN_LEFT, Table.ALIGN_RIGHT, Table.ALIGN_RIGHT)
+            .addRow("Task", "Result", "Time (s)")
+            .addRow("A", resultA.value, ("%.2fs").format(resultA.timeInSeconds))
+            .addRow("B", resultB.value, ("%.2fs").format(resultB.timeInSeconds))
+
+        val rawInputTest = getRawInputTest()
+        val hasTestInput = rawInputTest != null
+        if (hasTestInput) {
+            val inputTestA = getProcessedInput(rawInputTest.getRawTestInputA())
+            val resultATest = a.getResultTest(inputTestA)
+            builder.addRow("A_TEST", resultATest.value, ("%.2fs").format(resultATest.timeInSeconds))
+
+            val inputTestB = getProcessedInput(rawInputTest.getRawTestInputB())
+            val resultBTest = b.getResultTest(inputTestB)
+            builder.addRow("B_TEST", resultBTest.value, ("%.2fs").format(resultBTest.timeInSeconds))
         }
+
+        println(builder.build().toString())
+    }
+
+    fun getVerifications() = getVerifications(getRawInput())
+    fun getVerifications(input: String): Pair<Part.Verification, Part.Verification> {
+        val processed = getProcessedInput(input)
+        val expected = Remote.getSolutions(year, day)
+
+        return Pair(
+            getPartA().getVerification(processed, expected.first),
+            getPartB().getVerification(processed, expected.second)
+        )
+    }
+
+    fun printVerification() = printVerifications(getRawInput())
+    fun printVerifications(input: String) {
+        val verifications = getVerifications(input)
+
+        val a = verifications.first
+        val b = verifications.second
+
+        val table = Table.Builder()
+            .withAlignments(Table.ALIGN_LEFT, Table.ALIGN_LEFT, Table.ALIGN_RIGHT, Table.ALIGN_RIGHT, Table.ALIGN_RIGHT)
+            .addRow("Task", "Status", "Expected", "Actual", "Time (s)")
+            .addRow("A", a.status, a.expected, a.result.value, ("%.2fs").format(a.result.timeInSeconds))
+            .addRow("B", b.status, b.expected, b.result.value, ("%.2fs").format(b.result.timeInSeconds))
+            .build()
+
+        println(table.toString())
     }
 
 }

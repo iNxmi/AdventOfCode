@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y24
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
 
@@ -62,16 +62,16 @@ class Y24D11 : Task<Map<Long, Long>>(2024, 11) {
         return map.values.sum()
     }
 
-    override fun getSubTaskA() = object : SubTask<Map<Long, Long>> {
+    override fun getPartA() = object : Part<Map<Long, Long>> {
         override fun solve(input: Map<Long, Long>) = solve(input, 25)
         override fun bonus() = 5.0
     }
 
-    override fun getSubTaskB() = object : SubTask<Map<Long, Long>> {
+    override fun getPartB() = object : Part<Map<Long, Long>> {
         override fun solve(input: Map<Long, Long>) = solve(input, 75)
         override fun bonus() = 10.0
     }
 
 }
 
-fun main() = Y24D11().getResult().println()
+fun main() = Y24D11().printResult()

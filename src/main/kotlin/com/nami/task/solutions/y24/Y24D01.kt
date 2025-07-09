@@ -1,7 +1,7 @@
 package com.nami.task.solutions.y24
 
 import com.nami.println
-import com.nami.task.SubTask
+import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
 import kotlin.math.abs
@@ -33,7 +33,7 @@ class Y24D01 : Task<Y24D01.Input>(2024, 1) {
         return Input(left, right)
     }
 
-    override fun getSubTaskA() = object : SubTask<Input> {
+    override fun getPartA() = object : Part<Input> {
         override fun solve(input: Input): Any {
             val distances = mutableListOf<Int>()
 
@@ -46,7 +46,7 @@ class Y24D01 : Task<Y24D01.Input>(2024, 1) {
         override fun bonus() = 3.0
     }
 
-    override fun getSubTaskB() = object : SubTask<Input> {
+    override fun getPartB() = object : Part<Input> {
         override fun solve(input: Input): Any {
             var value = 0
             for (number in input.left) {
@@ -62,4 +62,4 @@ class Y24D01 : Task<Y24D01.Input>(2024, 1) {
 
 }
 
-fun main() = Y24D01().getResult().println()
+fun main() = Y24D01().printResult()
