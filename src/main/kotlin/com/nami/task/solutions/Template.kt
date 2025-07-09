@@ -26,3 +26,4 @@ class Template : Task<List<String>>(0, 0) {
 }
 
 fun main() = Template().printResult()
+//fun main() = Template().printVerification()

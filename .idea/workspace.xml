@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Solved Y16D02 {A, B}">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/Template.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y16/Y16D02.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y16/Y16D02.kt" afterDir="false" />
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Added a Template class for the Tasks">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/Template.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/Template.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,15 +303,7 @@
       <workItem from="1752009365013" duration="3588000" />
       <workItem from="1752017179504" duration="4178000" />
       <workItem from="1752024268923" duration="9631000" />
-      <workItem from="1752066738271" duration="18751000" />
-    </task>
-    <task id="LOCAL-00016" summary="Updated Y15D07 a,b">
-      <option name="closed" value="true" />
-      <created>1748412983542</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1748412983542</updated>
+      <workItem from="1752066738271" duration="18788000" />
     </task>
     <task id="LOCAL-00017" summary="Optimized Y15D07">
       <option name="closed" value="true" />
@@ -699,7 +689,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752089167804</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Added a Template class for the Tasks">
+      <option name="closed" value="true" />
+      <created>1752089581235</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1752089581235</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -721,7 +719,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated Structure" />
     <MESSAGE value="Implemented Verification" />
     <MESSAGE value="Solved Y2015D9 A,B" />
     <MESSAGE value="Optimized Y2015D9 A,B" />
@@ -746,7 +743,8 @@
     <MESSAGE value="Small QOL changes" />
     <MESSAGE value="Small overall improvements" />
     <MESSAGE value="Solved Y16D02 {A, B}" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solved Y16D02 {A, B}" />
+    <MESSAGE value="Added a Template class for the Tasks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a Template class for the Tasks" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
