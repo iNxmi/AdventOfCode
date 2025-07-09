@@ -19,10 +19,7 @@ class Y15D17 : Task<List<Int>>(2015, 17) {
     override fun getProcessedInput(raw: String): List<Int> = raw.lines().map { it.toInt() }
 
     override fun getPartA() = object : Part<List<Int>> {
-        override fun solve(input: List<Int>): Any {
-            debug(input)
-            return ""
-        }
+        override fun solve(input: List<Int>) = null
     }
 
     override fun getPartB() = object : Part<List<Int>> {
@@ -31,5 +28,5 @@ class Y15D17 : Task<List<Int>>(2015, 17) {
 
 }
 
-//fun main() = Y15D17().getResult().println()
-fun main() = Y15D17().printVerification()
+fun main() = Y15D17().printResult()
+//fun main() = Y15D17().printVerification()
