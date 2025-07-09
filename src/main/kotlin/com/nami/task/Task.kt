@@ -12,13 +12,12 @@ import net.steppschuh.markdowngenerator.table.Table
 
 abstract class Task<InputClass : Any>(
     val year: Int,
-    val day: Int,
-    val id: Int = getID(year, day)
+    val day: Int
 ) {
 
-    companion object {
-        fun getID(year: Int, day: Int): Int = year * 100 + day
+    val uid: UID = UID(year, day, UID.Part.ROOT)
 
+    companion object {
         fun getAll(): Set<Task<*>> = setOf(
             Y15D01(),
             Y15D02(),
@@ -76,8 +75,8 @@ abstract class Task<InputClass : Any>(
     fun getResults(input: String): Pair<Result, Result> {
         val processed = getProcessedInput(input)
 
-        val a = getPartA().getResult(processed)
-        val b = getPartB().getResult(processed)
+        val a = getPartA().getResult(UID(year, day, UID.Part.A), processed)
+        val b = getPartB().getResult(UID(year, day, UID.Part.B), processed)
 
         return Pair(a, b)
     }
@@ -87,8 +86,8 @@ abstract class Task<InputClass : Any>(
         val processedA = getProcessedInput(input.getRawTestInputA())
         val processedB = getProcessedInput(input.getRawTestInputB())
 
-        val aTest = getPartA().getResultTest(processedA)
-        val bTest = getPartB().getResultTest(processedB)
+        val aTest = getPartA().getResultTest(UID(year, day, UID.Part.A_TEST), processedA)
+        val bTest = getPartB().getResultTest(UID(year, day, UID.Part.B_TEST), processedB)
 
         return Pair(aTest, bTest)
     }
@@ -120,8 +119,8 @@ abstract class Task<InputClass : Any>(
         val expected = Remote.getSolutions(year, day)
 
         return Pair(
-            getPartA().getVerification(processed, expected.first),
-            getPartB().getVerification(processed, expected.second)
+            getPartA().getVerification(UID(year, day, UID.Part.A), processed, expected.first),
+            getPartB().getVerification(UID(year, day, UID.Part.B), processed, expected.second)
         )
     }
 

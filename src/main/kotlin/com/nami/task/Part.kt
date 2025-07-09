@@ -2,26 +2,26 @@ package com.nami.task
 
 interface Part<InputClass> {
 
-    fun getResult(input: InputClass): Result {
+    fun getResult(uid: UID, input: InputClass): Result {
         val timeStartNs = System.nanoTime()
         val value = solve(input)
         val timeNs = System.nanoTime() - timeStartNs
         val timeInSeconds = timeNs * 1E-9
 
-        return Result(value, timeInSeconds)
+        return Result(uid, value, timeInSeconds)
     }
 
-    fun getResultTest(input: InputClass): Result {
+    fun getResultTest(uid: UID, input: InputClass): Result {
         val timeStartNs = System.nanoTime()
         val value = test(input)
         val timeNs = System.nanoTime() - timeStartNs
         val timeInSeconds = timeNs * 1E-9
 
-        return Result(value, timeInSeconds)
+        return Result(uid, value, timeInSeconds)
     }
 
-    fun getVerification(input: InputClass, expected: String?): Verification {
-        val solution = getResult(input)
+    fun getVerification(uid: UID, input: InputClass, expected: String?): Verification {
+        val solution = getResult(uid, input)
 
         val status = if (expected == null) {
             Status.UNSOLVED
@@ -31,7 +31,7 @@ interface Part<InputClass> {
             Status.SOLVED
         }
 
-        return Verification(status, expected, solution)
+        return Verification(uid, status, expected, solution)
     }
 
     fun solve(input: InputClass): Any?

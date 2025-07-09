@@ -21,5 +21,5 @@ class Y23D03 : Task<List<String>>(2023, 3) {
 
 }
 
-//fun main() = Y23D03().getResult().println()
+//fun main() = Y23D03().printResult()
 fun main() = Y23D03().printVerification()

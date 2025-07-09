@@ -1,119 +1,55 @@
-/*package com.nami.tools
+package com.nami.tools
 
-import j2html.TagCreator.*
-import org.apache.poi.ss.usermodel.CellType
-import org.apache.poi.xssf.usermodel.XSSFSheet
-import org.apache.poi.xssf.usermodel.XSSFWorkbook
-import java.io.FileOutputStream
+import com.nami.task.Status
+import com.nami.task.Task
+import com.nami.task.Verification
+import net.steppschuh.markdowngenerator.table.Table
 import java.nio.file.Files
 import java.nio.file.Paths
 
 class Exporter {
-    companion object {
-        fun verification() {
-            val builder = StringBuilder()
-            builder.appendLine(getTableVerificationHTML("Failed", Verifier.failed))
-            builder.appendLine(getTableVerificationHTML("Unsolved", Verifier.unsolved))
-            builder.appendLine(getTableVerificationHTML("Solved", Verifier.solved))
 
-            val markdown = builder.toString()
-            Files.writeString(Paths.get("summary.md"), markdown)
-        }
+    val verifications = Task.getAll().map { it.getVerifications() }.flatMap { setOf(it.first, it.second) }
 
-        fun verificationXLSX() {
-            val workbook = XSSFWorkbook()
+    val failed = verifications.filter { it.status == Status.FAILED }.toSet()
+    val unsolved = verifications.filter { it.status == Status.UNSOLVED }.toSet()
+    val solved = verifications.filter { it.status == Status.SOLVED }.toSet()
 
-            val sheetFailed = getSheet("Failed", Verifier.failed, workbook)
-            val sheetUnsolved = getSheet("Unsolved", Verifier.unsolved, workbook)
-            val sheetSolved = getSheet("Solved", Verifier.solved, workbook)
+    fun export() {
+        val builder = StringBuilder()
+        builder.appendLine("# Failed")
+        builder.appendLine(getTableVerificationHTML(failed))
+        builder.appendLine("# Unsolved")
+        builder.appendLine(getTableVerificationHTML(unsolved))
+        builder.appendLine("# Solved")
+        builder.appendLine(getTableVerificationHTML(solved))
 
-            workbook.write(FileOutputStream("summary.xlsx"))
-        }
+        val markdown = builder.toString()
+        Files.writeString(Paths.get("summary.md"), markdown)
+    }
 
-        private fun getSheet(title: String, content: Set<Entry>, workbook: XSSFWorkbook): XSSFSheet {
-            val sheet = workbook.createSheet("$title (${content.size})")
-            content.withIndex().forEach { (index, entry) ->
-                val row = sheet.createRow(index)
-                val cellYear = row.createCell(0)
-                cellYear.setCellValue(entry.year.toDouble())
-                row.getCell(0).cellType = CellType.NUMERIC
-                row.createCell(1).setCellValue(entry.day.toDouble())
-                row.createCell(2).setCellValue(entry.part.toString())
-                row.createCell(3).setCellValue(entry.task.toString())
-                row.createCell(4).setCellValue(entry.remote.toString())
-                row.createCell(5).setCellValue(entry.timeS)
+    private fun getTableVerificationHTML(content: Set<Verification>): String {
+        val table = Table.Builder().apply {
+            withAlignment(Table.ALIGN_RIGHT)
+            addRow("Year", "Day", "Part", "Expected", "Actual", "Time (s)", "Bonus (€)")
 
-                val bonusStyle = workbook.createCellStyle()
-                val bonusDataFormat = workbook.createDataFormat()
-                bonusStyle.dataFormat = bonusDataFormat.getFormat("#,##0.00€")
-                val bonusCell = row.createCell(6)
-                bonusCell.setCellValue(entry.bonus ?: 0.0)
-                bonusCell.cellStyle = bonusStyle
-            }
-            return sheet
-        }
-
-        private fun getTableVerificationHTML(title: String, content: Set<Entry>): String {
-            val years = mutableMapOf<Int, Map<Int, List<Entry>>>()
-            content.groupBy { it.year }.forEach { (key, value) ->
-                years[key] = value.groupBy { it.day }
-            }
-
-            val html =
-                div(
-                    style("td, th, tr {text-align: center;}"),
-                    h1("$title (${content.size})"),
-                    table().with(
-                        thead().with(
-                            th("Year"),
-                            th("Day"),
-                            th("Part"),
-                            th("Task"),
-                            th("Remote"),
-                            th("Time (s)"),
-                            th("Bonus (€)")
-                        ),
-                        tbody().with(
-                            years.entries.flatMap { (year, day) ->
-                                val yearRowCount = day.values.sumOf { it.size }
-                                var yearPrinted = false
-
-                                day.entries.flatMap { (day, events) ->
-                                    val dayRowCount = events.size
-                                    var dayPrinted = false
-
-                                    events.mapIndexed { _, event ->
-                                        tr().with(
-                                            if (!yearPrinted) {
-                                                yearPrinted = true
-                                                td(year.toString()).attr("rowspan", yearRowCount.toString())
-                                            } else null,
-                                            if (!dayPrinted) {
-                                                dayPrinted = true
-                                                td(day.toString()).attr("rowspan", dayRowCount.toString())
-                                            } else null,
-                                            td(event.part.toString()),
-                                            if (event.task != null) td(event.task.toString()) else td(),
-                                            if (event.remote != null) td(event.remote.toString()) else td(),
-                                            td(("%.4fs").format(event.timeS).replace(",", ".")),
-                                            if (event.bonus != null) td(
-                                                ("%.2f€").format(event.bonus).replace(",", ".")
-                                            ) else td()
-                                        )
-                                    }
-                                }
-                            }
-                        )
-                    )
+            content.forEach {
+                addRow(
+                    it.uid.year,
+                    it.uid.day,
+                    it.uid.part,
+                    it.expected,
+                    it.result.value,
+                    it.result.timeInSeconds,
+                    "0.00€"
                 )
-
-            return html.renderFormatted()
+            }
         }
 
+        return table.build().toString()
     }
 }
 
 fun main() {
-    Exporter.verification()
-//    Exporter.verificationXLSX()
-}*/
+    Exporter().export()
+}

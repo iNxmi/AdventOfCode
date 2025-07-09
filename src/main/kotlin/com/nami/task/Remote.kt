@@ -14,30 +14,23 @@ import kotlin.io.path.exists
 
 class Remote {
 
-    enum class Type {
-        INPUT,
-        SOLUTION_A,
-        SOLUTION_B
-    }
-
     companion object {
         private val YEAR_RANGE = 2015..2024
         private val DAY_RANGE = 1..25
 
         private val TOKEN_ORIGINAL = dotenv().get("SESSION")
-        private val TOKEN_RAW = TOKEN_ORIGINAL.toByteArray()
-        private val TOKEN_HASH = MessageDigest.getInstance("SHA-256").digest(TOKEN_RAW)
+        private val TOKEN_HASH = MessageDigest.getInstance("SHA-256").digest(TOKEN_ORIGINAL.toByteArray())
         private val TOKEN_STRING = TOKEN_HASH.joinToString { ("%02x").format(it) }.replace(" ", "").replace(",", "")
 
         private val PATH = Paths.get("cache.json")
-        private val MAP: MutableMap<String, MutableMap<Type, MutableMap<Int, String>>> = load()
+        private val MAP: MutableMap<String, MutableMap<Int, String>> = load()
 
-        private fun load(): MutableMap<String, MutableMap<Type, MutableMap<Int, String>>> {
+        private fun load(): MutableMap<String, MutableMap<Int, String>> {
             if (!PATH.exists())
                 return mutableMapOf()
 
             val string = Files.readString(PATH)
-            return Json.decodeFromString<MutableMap<String, MutableMap<Type, MutableMap<Int, String>>>>(string)
+            return Json.decodeFromString<MutableMap<String, MutableMap<Int, String>>>(string)
         }
 
         private fun write() {
@@ -48,89 +41,69 @@ class Remote {
         fun getInput(year: Int, day: Int): String {
             require(YEAR_RANGE.contains(year)) { "Year must be in '$YEAR_RANGE'" }
             require(DAY_RANGE.contains(day)) { "Day must be in '$DAY_RANGE'" }
-            val id = Task.getID(year, day)
 
             if (!MAP.containsKey(TOKEN_STRING))
                 MAP[TOKEN_STRING] = mutableMapOf()
 
-            val entriesToken = MAP[TOKEN_STRING]!!
-            if (!entriesToken.containsKey(Type.INPUT))
-                entriesToken[Type.INPUT] = mutableMapOf()
+            val id = UID(year, day, UID.Part.ROOT).id
 
-            val entriesInput = entriesToken[Type.INPUT]!!
-            if (!entriesInput.containsKey(id)) {
-                entriesInput[id] = fetchInput(year, day)
+            val entries = MAP[TOKEN_STRING]!!
+            if (!entries.containsKey(id)) {
+                entries[id] = fetchInput(year, day)
                 write()
             }
 
-            return entriesInput[id]!!
+            return entries[id]!!
         }
 
-        fun getSolutions(year: Int, day: Int) = Pair(getSolutionA(year, day), getSolutionB(year, day))
-        fun getSolutionA(year: Int, day: Int): String? {
+        fun getSolutions(year: Int, day: Int): Pair<String?, String?> {
             require(YEAR_RANGE.contains(year)) { "Year must be in '$YEAR_RANGE'" }
             require(DAY_RANGE.contains(day)) { "Day must be in '$DAY_RANGE'" }
-            val id = Task.getID(year, day)
+
 
             if (!MAP.containsKey(TOKEN_STRING))
                 MAP[TOKEN_STRING] = mutableMapOf()
 
-            val entriesToken = MAP[TOKEN_STRING]!!
-            if (!entriesToken.containsKey(Type.SOLUTION_A))
-                entriesToken[Type.SOLUTION_A] = mutableMapOf()
+            val entries = MAP[TOKEN_STRING]!!
 
-            val entriesInput = entriesToken[Type.SOLUTION_A]!!
-            if (!entriesInput.containsKey(id)) {
-                val solutions = fetchSolutions(year, day)
-                if (solutions.first == null)
-                    return null
+            val idA = UID(year, day, UID.Part.A).id
+            val idB = UID(year, day, UID.Part.B).id
 
-                entriesInput[id] = solutions.first!!
-                write()
+            val solutions = if (!entries.containsKey(idA) || !entries.containsKey(idB)) {
+                fetchSolutions(year, day)
+            } else {
+                null
             }
 
-            return entriesInput[id]!!
-        }
-        fun getSolutionB(year: Int, day: Int): String? {
-            require(YEAR_RANGE.contains(year)) { "Year must be in '$YEAR_RANGE'" }
-            require(DAY_RANGE.contains(day)) { "Day must be in '$DAY_RANGE'" }
-            val id = Task.getID(year, day)
+            var write = false
 
-            if (!MAP.containsKey(TOKEN_STRING))
-                MAP[TOKEN_STRING] = mutableMapOf()
-
-            val entriesToken = MAP[TOKEN_STRING]!!
-            if (!entriesToken.containsKey(Type.SOLUTION_B))
-                entriesToken[Type.SOLUTION_B] = mutableMapOf()
-
-            val entriesInput = entriesToken[Type.SOLUTION_B]!!
-            if (!entriesInput.containsKey(id)) {
-                val solutions = fetchSolutions(year, day)
-                if (solutions.second == null)
-                    return null
-
-                entriesInput[id] = solutions.second!!
-                write()
+            if (!entries.containsKey(idA)) {
+                val solution = solutions!!.first
+                if (solution != null) {
+                    entries[idA] = solution
+                    write = true
+                }
             }
 
-            return entriesInput[id]!!
+            if (!entries.containsKey(idB)) {
+                val solution = solutions!!.second
+                if (solution != null) {
+                    entries[idB] = solution
+                    write = true
+                }
+            }
+
+            if (write)
+                write()
+
+            return Pair(entries[idA], entries[idB])
         }
 
         private fun fetchInput(year: Int, day: Int): String {
             val url = "https://adventofcode.com/$year/day/$day/input"
             println("Fetching Input ${year}_${day} -> $url")
 
-            val doc = try {
-                Jsoup.connect(url)
-                    .cookie("session", TOKEN_ORIGINAL)
-                    .get()
-            } catch (e: HttpStatusException) {
-                throw HttpStatusException(
-                    "HTTP error fetching URL (Is your SESSION invalid?)",
-                    e.statusCode,
-                    e.url
-                )
-            }
+            val doc = fetchDocument(url, TOKEN_ORIGINAL)
             val string = doc.connection().execute().body().trim()
 
             return string
@@ -140,7 +113,7 @@ class Remote {
             val url = "https://adventofcode.com/$year/day/$day"
             println("Fetching Solutions ${year}_${day} -> $url")
 
-            val doc = Jsoup.connect(url).cookie("session", TOKEN_ORIGINAL).get()
+            val doc = fetchDocument(url, TOKEN_ORIGINAL)
             val string = doc.connection().execute().body().trim()
 
             val results = ("<p>Your puzzle answer was <code>.*<\\/code>\\.<\\/p>").toRegex().findAll(string)
@@ -152,6 +125,18 @@ class Remote {
                 }.toList()
 
             return Pair(results.getOrNull(0), results.getOrNull(1))
+        }
+
+        private fun fetchDocument(url: String, token: String) = try {
+            Jsoup.connect(url)
+                .cookie("session", token)
+                .get()
+        } catch (e: HttpStatusException) {
+            throw HttpStatusException(
+                "HTTP error fetching URL -> Is your SESSION invalid?",
+                e.statusCode,
+                e.url
+            )
         }
 
     }
