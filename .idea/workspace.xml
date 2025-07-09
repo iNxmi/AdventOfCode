@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Added a Template class for the Tasks">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/Template.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/Template.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y16/Y16D03.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +100,7 @@
     "Kotlin.Y15D18Kt.executor": "Run",
     "Kotlin.Y16D01Kt.executor": "Run",
     "Kotlin.Y16D02Kt.executor": "Run",
+    "Kotlin.Y16D03Kt.executor": "Run",
     "Kotlin.Y23D01Kt.executor": "Run",
     "Kotlin.Y23D02Kt.executor": "Run",
     "Kotlin.Y23D03Kt.executor": "Run",
@@ -154,7 +156,7 @@
       <recent name="com.nami.assignments" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Y16D02Kt">
+  <component name="RunManager" selected="Kotlin.Y16D03Kt">
     <configuration name="ExporterKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nami.tools.ExporterKt" />
       <module name="AdventOfCode" />
@@ -183,8 +185,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Y23D04Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.task.solutions.y23.Y23D04Kt" />
+    <configuration name="Y16D03Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.task.solutions.y16.Y16D03Kt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -192,11 +194,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.Y16D03Kt" />
         <item itemvalue="Kotlin.Y16D02Kt" />
         <item itemvalue="Kotlin.ExporterKt" />
         <item itemvalue="Kotlin.Y15D01Kt" />
         <item itemvalue="Kotlin.Y15D17Kt" />
-        <item itemvalue="Kotlin.Y23D04Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -303,15 +305,7 @@
       <workItem from="1752009365013" duration="3588000" />
       <workItem from="1752017179504" duration="4178000" />
       <workItem from="1752024268923" duration="9631000" />
-      <workItem from="1752066738271" duration="18788000" />
-    </task>
-    <task id="LOCAL-00017" summary="Optimized Y15D07">
-      <option name="closed" value="true" />
-      <created>1748415085560</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1748415085560</updated>
+      <workItem from="1752066738271" duration="22752000" />
     </task>
     <task id="LOCAL-00018" summary="Small Cleanup">
       <option name="closed" value="true" />
@@ -697,7 +691,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752089581235</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Added a Template class for the Tasks">
+      <option name="closed" value="true" />
+      <created>1752089599834</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1752089599834</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
