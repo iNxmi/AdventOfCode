@@ -1,7 +1,6 @@
 package com.nami.task.solutions.y15
 
 import com.nami.permutations
-import com.nami.println
 import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
@@ -85,3 +84,4 @@ class Y15D09 : Task<Y15D09.Input>(2015, 9) {
 }
 
 fun main() = Y15D09().printResult()
+//fun main() = Y15D09().printVerification()

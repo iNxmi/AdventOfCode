@@ -19,5 +19,3 @@ fun <T> List<T>.permutations(level: Int = 0): Set<List<T>> {
 
     return result
 }
-
-fun Any?.println() = println(this)

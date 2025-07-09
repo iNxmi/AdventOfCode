@@ -1,6 +1,5 @@
 package com.nami.task.solutions.y15
 
-import com.nami.println
 import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.Input

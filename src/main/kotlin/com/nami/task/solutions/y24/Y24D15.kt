@@ -1,6 +1,5 @@
 package com.nami.task.solutions.y24
 
-import com.nami.println
 import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex

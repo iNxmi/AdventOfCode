@@ -44,5 +44,5 @@ class Y15D01 : Task<String>(2015, 1) {
     }
 }
 
-fun main() = Y15D01().printResult()
-//fun main() = Y15D01().printVerification()
+//fun main() = Y15D01().printResult()
+fun main() = Y15D01().printVerification()

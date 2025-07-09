@@ -73,48 +73,49 @@ abstract class Task<InputClass : Any>(
     protected fun critical(content: Any?) = print("Critical: $content")
 
     fun getResults() = getResults(getRawInput())
-    fun getResults(input: String): Pair<Part.Result, Part.Result> {
+    fun getResults(input: String): Pair<Result, Result> {
         val processed = getProcessedInput(input)
 
-        return Pair(
-            getPartA().getResult(processed),
-            getPartB().getResult(processed)
-        )
+        val a = getPartA().getResult(processed)
+        val b = getPartB().getResult(processed)
+
+        return Pair(a, b)
+    }
+
+    fun getResultsTest() = getResultsTest(getRawInputTest()!!)
+    fun getResultsTest(input: Input): Pair<Result, Result> {
+        val processedA = getProcessedInput(input.getRawTestInputA())
+        val processedB = getProcessedInput(input.getRawTestInputB())
+
+        val aTest = getPartA().getResultTest(processedA)
+        val bTest = getPartB().getResultTest(processedB)
+
+        return Pair(aTest, bTest)
     }
 
     fun printResult() = printResult(getRawInput())
     fun printResult(input: String) {
-        val processed = getProcessedInput(input)
-
-        val a = getPartA()
-        val b = getPartB()
-
-        val resultA = a.getResult(processed)
-        val resultB = b.getResult(processed)
+        val results = getResults(input)
 
         val builder = Table.Builder()
             .withAlignments(Table.ALIGN_LEFT, Table.ALIGN_RIGHT, Table.ALIGN_RIGHT)
             .addRow("Task", "Result", "Time (s)")
-            .addRow("A", resultA.value, ("%.2fs").format(resultA.timeInSeconds))
-            .addRow("B", resultB.value, ("%.2fs").format(resultB.timeInSeconds))
+            .addRow("A", results.first.value, ("%.2fs").format(results.first.timeInSeconds))
+            .addRow("B", results.second.value, ("%.2fs").format(results.second.timeInSeconds))
 
         val rawInputTest = getRawInputTest()
         val hasTestInput = rawInputTest != null
         if (hasTestInput) {
-            val inputTestA = getProcessedInput(rawInputTest.getRawTestInputA())
-            val resultATest = a.getResultTest(inputTestA)
-            builder.addRow("A_TEST", resultATest.value, ("%.2fs").format(resultATest.timeInSeconds))
-
-            val inputTestB = getProcessedInput(rawInputTest.getRawTestInputB())
-            val resultBTest = b.getResultTest(inputTestB)
-            builder.addRow("B_TEST", resultBTest.value, ("%.2fs").format(resultBTest.timeInSeconds))
+            val resultsTest = getResultsTest(rawInputTest)
+            builder.addRow("A_TEST", resultsTest.first.value, ("%.2fs").format(resultsTest.first.timeInSeconds))
+            builder.addRow("B_TEST", resultsTest.second.value, ("%.2fs").format(resultsTest.second.timeInSeconds))
         }
 
         println(builder.build().toString())
     }
 
     fun getVerifications() = getVerifications(getRawInput())
-    fun getVerifications(input: String): Pair<Part.Verification, Part.Verification> {
+    fun getVerifications(input: String): Pair<Verification, Verification> {
         val processed = getProcessedInput(input)
         val expected = Remote.getSolutions(year, day)
 
@@ -124,8 +125,8 @@ abstract class Task<InputClass : Any>(
         )
     }
 
-    fun printVerification() = printVerifications(getRawInput())
-    fun printVerifications(input: String) {
+    fun printVerification() = printVerification(getRawInput())
+    fun printVerification(input: String) {
         val verifications = getVerifications(input)
 
         val a = verifications.first

@@ -2,8 +2,6 @@ package com.nami.task
 
 interface Part<InputClass> {
 
-    data class Result(val value: Any?, val timeInSeconds: Double)
-
     fun getResult(input: InputClass): Result {
         val timeStartNs = System.nanoTime()
         val value = solve(input)
@@ -22,19 +20,15 @@ interface Part<InputClass> {
         return Result(value, timeInSeconds)
     }
 
-    data class Verification(val status: Status, val expected: String?, val result: Result) {
-        enum class Status { FAILED, UNSOLVED, SOLVED }
-    }
-
     fun getVerification(input: InputClass, expected: String?): Verification {
         val solution = getResult(input)
 
         val status = if (expected == null) {
-            Verification.Status.UNSOLVED
+            Status.UNSOLVED
         } else if (solution.value.toString() != expected) {
-            Verification.Status.FAILED
+            Status.FAILED
         } else {
-            Verification.Status.SOLVED
+            Status.SOLVED
         }
 
         return Verification(status, expected, solution)
