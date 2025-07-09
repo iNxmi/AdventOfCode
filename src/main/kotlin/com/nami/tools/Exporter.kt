@@ -17,11 +17,11 @@ class Exporter {
 
     fun export() {
         val builder = StringBuilder()
-        builder.appendLine("# Failed")
+        builder.appendLine("# Failed (${failed.size})")
         builder.appendLine(getTableVerificationHTML(failed))
-        builder.appendLine("# Unsolved")
+        builder.appendLine("# Unsolved  (${unsolved.size})")
         builder.appendLine(getTableVerificationHTML(unsolved))
-        builder.appendLine("# Solved")
+        builder.appendLine("# Solved  (${solved.size})")
         builder.appendLine(getTableVerificationHTML(solved))
 
         val markdown = builder.toString()

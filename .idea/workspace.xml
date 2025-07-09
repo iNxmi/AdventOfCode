@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Added a Template class for the Tasks">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y16/Y16D03.kt" afterDir="false" />
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Solved Y16D03 {A, B}">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/Test.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/Task.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/Task.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y16/Y16D03.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/task/solutions/y16/Y16D03.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Exporter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/tools/Exporter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/summary.md" beforeDir="false" afterPath="$PROJECT_DIR$/summary.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +161,7 @@
       <recent name="com.nami.assignments" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Y16D03Kt">
+  <component name="RunManager" selected="Kotlin.ExporterKt">
     <configuration name="ExporterKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nami.tools.ExporterKt" />
       <module name="AdventOfCode" />
@@ -164,15 +169,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Y15D01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.task.solutions.y15.Y15D01Kt" />
+    <configuration name="TestKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.TestKt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Y15D17Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.task.solutions.y15.Y15D17Kt" />
+    <configuration name="Y15D01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.task.solutions.y15.Y15D01Kt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -194,11 +199,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ExporterKt" />
+        <item itemvalue="Kotlin.TestKt" />
         <item itemvalue="Kotlin.Y16D03Kt" />
         <item itemvalue="Kotlin.Y16D02Kt" />
-        <item itemvalue="Kotlin.ExporterKt" />
         <item itemvalue="Kotlin.Y15D01Kt" />
-        <item itemvalue="Kotlin.Y15D17Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -305,15 +310,7 @@
       <workItem from="1752009365013" duration="3588000" />
       <workItem from="1752017179504" duration="4178000" />
       <workItem from="1752024268923" duration="9631000" />
-      <workItem from="1752066738271" duration="22752000" />
-    </task>
-    <task id="LOCAL-00018" summary="Small Cleanup">
-      <option name="closed" value="true" />
-      <created>1748416540098</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1748416540098</updated>
+      <workItem from="1752066738271" duration="28705000" />
     </task>
     <task id="LOCAL-00019" summary="Solved Y15D08 a,b">
       <option name="closed" value="true" />
@@ -699,7 +696,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752089599834</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Solved Y16D03 {A, B}">
+      <option name="closed" value="true" />
+      <created>1752093569457</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1752093569457</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -721,7 +726,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implemented Verification" />
     <MESSAGE value="Solved Y2015D9 A,B" />
     <MESSAGE value="Optimized Y2015D9 A,B" />
     <MESSAGE value="Solved Y15D13 A,B" />
@@ -746,7 +750,8 @@
     <MESSAGE value="Small overall improvements" />
     <MESSAGE value="Solved Y16D02 {A, B}" />
     <MESSAGE value="Added a Template class for the Tasks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a Template class for the Tasks" />
+    <MESSAGE value="Solved Y16D03 {A, B}" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solved Y16D03 {A, B}" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -23,20 +23,23 @@ class Y16D03 : Task<List<Int>>(2016, 3) {
         regex.findAll(line).map { it.groupValues[0].toInt() }.toList()
     }
 
+    fun condition(x: Int, y: Int, z: Int): Boolean {
+        val a = x + y > z
+        val b = y + z > x
+        val c = x + z > y
+
+        return a && b && c
+    }
+
     override fun getPartA() = object : Part<List<Int>> {
         override fun solve(input: List<Int>): Any {
-
             var count = 0
             for (i in 0..<(input.size / 3)) {
                 val x = input[i * 3]
                 val y = input[i * 3 + 1]
                 val z = input[i * 3 + 2]
 
-                val a = x + y > z
-                val b = y + z > x
-                val c = x + z > y
-
-                if (a && b && c)
+                if (condition(x, y, z))
                     count++
             }
 
@@ -53,11 +56,7 @@ class Y16D03 : Task<List<Int>>(2016, 3) {
                     val y = input[i + j + 3]
                     val z = input[i + j + 6]
 
-                    val a = x + y > z
-                    val b = y + z > x
-                    val c = x + z > y
-
-                    if (a && b && c)
+                    if (condition(x, y, z))
                         count++
                 }
 
@@ -67,5 +66,5 @@ class Y16D03 : Task<List<Int>>(2016, 3) {
 
 }
 
-fun main() = Y16D03().printResult()
-//fun main() = Y16D03().printVerification()
+//fun main() = Y16D03().printResult()
+fun main() = Y16D03().printVerification()

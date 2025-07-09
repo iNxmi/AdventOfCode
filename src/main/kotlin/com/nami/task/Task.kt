@@ -1,13 +1,7 @@
 package com.nami.task
 
 import com.nami.task.input.Input
-import com.nami.task.solutions.y15.*
-import com.nami.task.solutions.y16.Y16D01
-import com.nami.task.solutions.y23.Y23D01
-import com.nami.task.solutions.y23.Y23D02
-import com.nami.task.solutions.y23.Y23D03
-import com.nami.task.solutions.y23.Y23D04
-import com.nami.task.solutions.y24.*
+import io.github.classgraph.ClassGraph
 import net.steppschuh.markdowngenerator.table.Table
 
 abstract class Task<InputClass : Any>(
@@ -18,43 +12,16 @@ abstract class Task<InputClass : Any>(
     val uid: UID = UID(year, day, UID.Part.ROOT)
 
     companion object {
-        fun getAll(): Set<Task<*>> = setOf(
-            Y15D01(),
-            Y15D02(),
-            Y15D03(),
-            Y15D04(),
-            Y15D05(),
-            Y15D06(),
-            Y15D07(),
-            Y15D08(),
-            Y15D09(),
-            Y15D10(),
-            Y15D11(),
-            Y15D12(),
-            Y15D13(),
-            Y15D14(),
-            Y15D15(),
-            Y15D16(),
-            Y15D18(),
+        fun getAll(): Set<Task<*>> {
+            val classes = ClassGraph()
+                .acceptPackages("com.nami.task.solutions")
+                .scan()
+                .getSubclasses(Task::class.java.name)
+                .filter { it.packageName.startsWith("com.nami.task.solutions.y") }
 
-            Y16D01(),
-
-            Y23D01(),
-            Y23D02(),
-            Y23D03(),
-            Y23D04(),
-
-            Y24D01(),
-            Y24D02(),
-            Y24D03(),
-            Y24D04(),
-            Y24D05(),
-            Y24D06(),
-            Y24D07(),
-            Y24D08(),
-            Y24D11(),
-            Y24D15()
-        )
+            val tasks = classes.map { it.loadClass().getDeclaredConstructor().newInstance() as Task<*> }.toSet()
+            return tasks
+        }
     }
 
     fun getRawInput(): String = Remote.getInput(year, day)
@@ -98,7 +65,7 @@ abstract class Task<InputClass : Any>(
 
         val builder = Table.Builder()
             .withAlignments(Table.ALIGN_LEFT, Table.ALIGN_RIGHT, Table.ALIGN_RIGHT)
-            .addRow("Task", "Result", "Time (s)")
+            .addRow("$year/$day", "Result", "Time (s)")
             .addRow("A", results.first.value, ("%.2fs").format(results.first.timeInSeconds))
             .addRow("B", results.second.value, ("%.2fs").format(results.second.timeInSeconds))
 
@@ -133,7 +100,7 @@ abstract class Task<InputClass : Any>(
 
         val table = Table.Builder()
             .withAlignments(Table.ALIGN_LEFT, Table.ALIGN_LEFT, Table.ALIGN_RIGHT, Table.ALIGN_RIGHT, Table.ALIGN_RIGHT)
-            .addRow("Task", "Status", "Expected", "Actual", "Time (s)")
+            .addRow("$year/$day", "Status", "Expected", "Actual", "Time (s)")
             .addRow("A", a.status, a.expected, a.result.value, ("%.2fs").format(a.result.timeInSeconds))
             .addRow("B", b.status, b.expected, b.result.value, ("%.2fs").format(b.result.timeInSeconds))
             .build()
