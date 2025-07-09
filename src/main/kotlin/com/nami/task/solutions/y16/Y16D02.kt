@@ -90,7 +90,9 @@ class Y16D02 : Task<List<List<Y16D02.Direction>>>(2016, 2) {
         override fun solve(input: List<List<Direction>>): Any {
             val sb = StringBuilder()
 
+            // We start at position 5 on the keypad
             val position = Vector2i(-2, 0)
+
             for (directions in input) {
                 for (direction in directions) {
                     val temp = Vector2i(position).add(direction.vector)
