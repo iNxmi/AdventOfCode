@@ -1,11 +1,9 @@
 package com.nami
 
-fun main() {
-    val start = ('a').code
+import com.nami.task.solutions.y15.*
 
-    val base = 'v'
-    val offset = base.code - ('a').code
+val input = """
 
-    for (i in 0..100)
-        println("$i -> ${('a'.code + ((i + offset) % 26)).toChar()}")
-}
+""".trimIndent()
+
+fun main() = Y15D03().printResult(input)

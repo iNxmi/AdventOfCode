@@ -89,6 +89,7 @@ class Y15D16 : Task<Set<Y15D16.Aunt>>(2015, 16) {
 
             return aunts.first().id
         }
+
         override fun bonus() = 5.0
     }
 
@@ -112,6 +113,7 @@ class Y15D16 : Task<Set<Y15D16.Aunt>>(2015, 16) {
 
             return aunts.first().id
         }
+
         override fun bonus() = 10.0
     }
 
