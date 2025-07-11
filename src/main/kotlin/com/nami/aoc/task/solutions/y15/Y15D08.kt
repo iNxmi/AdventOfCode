@@ -64,4 +64,4 @@ class Y15D08 : Task<List<String>>(2015, 8) {
 
 }
 
-fun main() = Y15D08().printResult()
+fun main() = Y15D08().printResults()

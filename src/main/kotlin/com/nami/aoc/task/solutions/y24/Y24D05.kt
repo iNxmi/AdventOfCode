@@ -191,4 +191,4 @@ class Y24D05 : Task<Y24D05.Input>(2024, 5) {
 
 }
 
-fun main() = Y24D05().printResult()
+fun main() = Y24D05().printResults()

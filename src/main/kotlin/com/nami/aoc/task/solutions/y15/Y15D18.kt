@@ -126,4 +126,4 @@ class Y15D18 : Task<Y15D18.World>(2015, 18) {
 }
 
 //fun main() = Y15D18().printResult()
-fun main() = Y15D18().printVerification()
+fun main() = Y15D18().printVerifications()

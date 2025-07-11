@@ -18,4 +18,7 @@ data class UID(
             return UID(year, day, part)
         }
     }
+
+    override fun toString() = "${year}_${day}_$part"
+
 }

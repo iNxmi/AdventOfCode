@@ -45,6 +45,7 @@ class Y16D03 : Task<List<Int>>(2016, 3) {
 
             return count
         }
+        override fun bonus() = 5.0
     }
 
     override fun getPartB() = object : Part<List<Int>> {
@@ -62,9 +63,10 @@ class Y16D03 : Task<List<Int>>(2016, 3) {
 
             return count
         }
+        override fun bonus() = 10.0
     }
 
 }
 
 //fun main() = Y16D03().printResult()
-fun main() = Y16D03().printVerification()
+fun main() = Y16D03().printVerifications()

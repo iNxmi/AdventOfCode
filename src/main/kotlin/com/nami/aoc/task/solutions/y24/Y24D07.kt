@@ -140,4 +140,4 @@ class Y24D07 : Task<List<Y24D07.Equation>>(2024, 7) {
 
 }
 
-fun main() = Y24D07().printResult()
+fun main() = Y24D07().printResults()

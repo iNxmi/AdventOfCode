@@ -54,4 +54,4 @@ class Y15D10 : Task<String>(2015, 10) {
 
 }
 
-fun main() = Y15D10().printResult()
+fun main() = Y15D10().printResults()

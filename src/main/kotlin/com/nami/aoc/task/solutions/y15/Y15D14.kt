@@ -89,4 +89,4 @@ class Y15D14 : Task<Set<Y15D14.Racer>>(2015, 14) {
 
 }
 
-fun main() = Y15D14().printResult()
+fun main() = Y15D14().printResults()

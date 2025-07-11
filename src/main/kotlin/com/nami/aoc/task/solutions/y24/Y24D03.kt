@@ -67,4 +67,4 @@ class Y24D03 : Task<String>(2024, 3) {
 
 }
 
-fun main() = Y24D03().printResult()
+fun main() = Y24D03().printResults()

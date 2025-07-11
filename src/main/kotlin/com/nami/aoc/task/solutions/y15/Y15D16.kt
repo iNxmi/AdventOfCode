@@ -119,4 +119,4 @@ class Y15D16 : Task<Set<Y15D16.Aunt>>(2015, 16) {
 
 }
 
-fun main() = Y15D16().printResult()
+fun main() = Y15D16().printResults()

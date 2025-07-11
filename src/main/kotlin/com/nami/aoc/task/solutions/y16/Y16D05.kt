@@ -28,6 +28,7 @@ class Y16D05 : Task<String>(2016, 5) {
 
             return password.joinToString("")
         }
+        override fun bonus() = 5.0
     }
 
     @OptIn(ExperimentalStdlibApi::class)
@@ -54,9 +55,10 @@ class Y16D05 : Task<String>(2016, 5) {
 
             return password.toSortedMap().map { it.value }.joinToString("")
         }
+        override fun bonus() = 10.0
     }
 
 }
 
-fun main() = Y16D05().printResult()
+fun main() = Y16D05().printResults()
 //fun main() = Y16D05().printVerification()

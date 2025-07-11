@@ -94,4 +94,4 @@ class Y15D06 : Task<List<Y15D06.Operation>>(2015, 6) {
 
 }
 
-fun main() = Y15D06().printResult()
+fun main() = Y15D06().printResults()

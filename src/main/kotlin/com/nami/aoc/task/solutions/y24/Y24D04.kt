@@ -99,4 +99,4 @@ class Y24D04 : Task<List<CharArray>>(2024, 4) {
 
 }
 
-fun main() = Y24D04().printResult()
+fun main() = Y24D04().printResults()

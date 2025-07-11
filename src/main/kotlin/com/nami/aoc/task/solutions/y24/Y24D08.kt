@@ -130,4 +130,4 @@ class Y24D08 : Task<Y24D08.Input>(2024, 8) {
 
 }
 
-fun main() = Y24D08().printResult()
+fun main() = Y24D08().printResults()

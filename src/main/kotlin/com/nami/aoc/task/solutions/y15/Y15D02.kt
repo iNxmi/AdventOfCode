@@ -62,4 +62,4 @@ class Y15D02 : Task<List<Vector3i>>(2015, 2) {
 
 }
 
-fun main() = Y15D02().printResult()
+fun main() = Y15D02().printResults()

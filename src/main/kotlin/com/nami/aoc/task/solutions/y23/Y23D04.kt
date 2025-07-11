@@ -21,4 +21,4 @@ class Y23D04 : Task<List<String>>(2023, 4) {
 }
 
 //fun main() = Y23D04().printResult()
-fun main() = Y23D04().printVerification()
+fun main() = Y23D04().printVerifications()

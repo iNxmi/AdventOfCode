@@ -48,6 +48,7 @@ class Y16D06 : Task<List<String>>(2016, 6) {
 
             return sb.toString()
         }
+        override fun bonus() = 5.0
     }
 
     override fun getPartB() = object : Part<List<String>> {
@@ -69,9 +70,9 @@ class Y16D06 : Task<List<String>>(2016, 6) {
 
             return sb.toString()
         }
-
+        override fun bonus() = 10.0
     }
 }
 
-fun main() = Y16D06().printResult()
+fun main() = Y16D06().printResults()
 //fun main() = Y16D06().printVerification()

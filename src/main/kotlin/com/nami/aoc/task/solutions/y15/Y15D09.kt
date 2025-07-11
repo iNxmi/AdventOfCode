@@ -83,5 +83,5 @@ class Y15D09 : Task<Y15D09.Input>(2015, 9) {
 
 }
 
-fun main() = Y15D09().printResult()
+fun main() = Y15D09().printResults()
 //fun main() = Y15D09().printVerification()

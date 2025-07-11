@@ -9,7 +9,16 @@ import java.nio.file.Paths
 
 class Exporter {
 
-    val verifications = Task.Companion.getAll().map { it.getVerifications() }.flatMap { setOf(it.first, it.second) }
+    val tasks = Task.getAll()
+    val verifications = tasks.withIndex().map { indexed ->
+        val task = indexed.value
+        println("${indexed.index + 1}/${tasks.size} (${task.uid.year}_${task.uid.day})")
+
+        val verifications = task.getVerifications()
+        task.printVerifications(verifications)
+
+        verifications
+    }.flatMap { setOf(it.first, it.second) }
 
     val failed = verifications.filter { it.status == Status.FAILED }.toSet()
     val unsolved = verifications.filter { it.status == Status.UNSOLVED }.toSet()

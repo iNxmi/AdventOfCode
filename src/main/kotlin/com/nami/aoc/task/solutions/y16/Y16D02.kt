@@ -61,6 +61,8 @@ class Y16D02 : Task<List<List<Direction>>>(2016, 2) {
             return sb.toString()
         }
 
+        override fun bonus() = 5.0
+
     }
 
     override fun getPartB() = object : Part<List<List<Direction>>> {
@@ -100,9 +102,11 @@ class Y16D02 : Task<List<List<Direction>>>(2016, 2) {
             return sb.toString()
         }
 
+        override fun bonus() = 10.0
+
     }
 
 }
 
-fun main() = Y16D02().printResult()
+fun main() = Y16D02().printResults()
 //fun main() = Y16D02().printVerification()

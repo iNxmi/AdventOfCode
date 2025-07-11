@@ -106,4 +106,4 @@ class Y15D07 : Task<Map<String, String>>(2015, 7) {
 
 }
 
-fun main() = Y15D07().printResult()
+fun main() = Y15D07().printResults()

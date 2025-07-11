@@ -116,4 +116,4 @@ class Y15D13 : Task<Y15D13.Input>(2015, 13) {
 
 }
 
-fun main() = Y15D13().printResult()
+fun main() = Y15D13().printResults()

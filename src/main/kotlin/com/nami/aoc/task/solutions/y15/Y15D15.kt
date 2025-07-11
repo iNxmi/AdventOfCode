@@ -110,6 +110,7 @@ class Y15D15 : Task<Set<Y15D15.Ingredient>>(2015, 15) {
             return recipe.score()
         }
 
+        override fun bonus() = 5.0
         override fun comment() = "Needs Improvement (Stars and Bars)"
     }
 
@@ -156,9 +157,10 @@ class Y15D15 : Task<Set<Y15D15.Ingredient>>(2015, 15) {
             return recipe.score()
         }
 
+        override fun bonus() = 10.0
         override fun comment() = "Needs Improvement (Stars and Bars)"
     }
 
 }
 
-fun main() = Y15D15().printResult()
+fun main() = Y15D15().printResults()

@@ -72,4 +72,4 @@ class Y15D12 : Task<Y15D12.Input>(2015, 12) {
 
 }
 
-fun main() = Y15D12().printResult()
+fun main() = Y15D12().printResults()

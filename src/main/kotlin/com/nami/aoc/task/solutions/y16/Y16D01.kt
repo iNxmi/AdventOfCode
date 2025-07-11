@@ -66,6 +66,7 @@ class Y16D01 : Task<List<Y16D01.Move>>(2016, 1) {
             }
             return position.x.absoluteValue + position.y.absoluteValue
         }
+        override fun bonus() = 5.0
     }
 
     override fun getPartB() = object : Part<List<Move>> {
@@ -89,8 +90,9 @@ class Y16D01 : Task<List<Y16D01.Move>>(2016, 1) {
             }
             return position.x.absoluteValue + position.y.absoluteValue
         }
+        override fun bonus() = 10.0
     }
 
 }
 
-fun main() = Y16D01().printResult()
+fun main() = Y16D01().printResults()

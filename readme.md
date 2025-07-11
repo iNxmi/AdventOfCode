@@ -17,3 +17,7 @@ To Allow the program to automatically fetch input and solutions, follow these st
 # Todo
 - Solve every single Puzzle
 - Export as .xlsx first and then to html/md (Apache POI)
+
+# Bonus
+- A -> 5€
+- B -> 10€

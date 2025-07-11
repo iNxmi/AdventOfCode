@@ -60,15 +60,17 @@ class Y16D04 : Task<List<Y16D04.Room>>(2016, 4) {
         override fun solve(input: List<Room>) = input
             .filter { it.isValid() }
             .sumOf { it.id }
+        override fun bonus() = 5.0
     }
 
     override fun getPartB() = object : Part<List<Room>> {
         override fun solve(input: List<Room>) = input
             .map { it.getDecrypted() }
             .find { it.name.contains("north") }?.id
+        override fun bonus() = 10.0
     }
 
 }
 
 //fun main() = Y16D04().printResult()
-fun main() = Y16D04().printVerification()
+fun main() = Y16D04().printVerifications()

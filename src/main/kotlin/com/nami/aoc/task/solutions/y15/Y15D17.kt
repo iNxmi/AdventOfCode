@@ -28,5 +28,5 @@ class Y15D17 : Task<List<Int>>(2015, 17) {
 
 }
 
-fun main() = Y15D17().printResult()
+fun main() = Y15D17().printResults()
 //fun main() = Y15D17().printVerification()

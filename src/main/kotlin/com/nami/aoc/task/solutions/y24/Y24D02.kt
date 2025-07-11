@@ -120,4 +120,4 @@ class Y24D02 : Task<List<String>>(2024, 2) {
 
 }
 
-fun main() = Y24D02().printResult()
+fun main() = Y24D02().printResults()

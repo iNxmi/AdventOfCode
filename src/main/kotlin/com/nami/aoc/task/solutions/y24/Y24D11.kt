@@ -74,4 +74,4 @@ class Y24D11 : Task<Map<Long, Long>>(2024, 11) {
 
 }
 
-fun main() = Y24D11().printResult()
+fun main() = Y24D11().printResults()

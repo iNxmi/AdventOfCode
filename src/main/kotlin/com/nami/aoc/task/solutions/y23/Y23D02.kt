@@ -96,4 +96,4 @@ class Y23D02 : Task<Map<Int, List<Y23D02.Draw>>>(2023, 2) {
 
 }
 
-fun main() = Y23D02().printResult()
+fun main() = Y23D02().printResults()

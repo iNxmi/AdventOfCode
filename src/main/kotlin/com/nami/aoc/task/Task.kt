@@ -2,7 +2,6 @@ package com.nami.aoc.task
 
 import com.nami.aoc.task.input.Input
 import io.github.classgraph.ClassGraph
-import net.steppschuh.markdowngenerator.table.Table
 
 abstract class Task<InputClass : Any>(
     val year: Int,
@@ -48,8 +47,11 @@ abstract class Task<InputClass : Any>(
         return Pair(a, b)
     }
 
-    fun getResultsTest() = getResultsTest(getRawInputTest()!!)
-    fun getResultsTest(input: Input): Pair<Result, Result> {
+    fun getResultsTest() = getResultsTest(getRawInputTest())
+    fun getResultsTest(input: Input?): Pair<Result, Result>? {
+        if (input == null)
+            return null
+
         val processedA = getProcessedInput(input.getRawTestInputA())
         val processedB = getProcessedInput(input.getRawTestInputB())
 
@@ -57,27 +59,6 @@ abstract class Task<InputClass : Any>(
         val bTest = getPartB().getResultTest(UID(year, day, UID.Part.B_TEST), processedB)
 
         return Pair(aTest, bTest)
-    }
-
-    fun printResult() = printResult(getRawInput())
-    fun printResult(input: String) {
-        val results = getResults(input)
-
-        val builder = Table.Builder()
-            .withAlignments(Table.ALIGN_LEFT, Table.ALIGN_RIGHT, Table.ALIGN_RIGHT)
-            .addRow("$year/$day", "Result", "Time (s)")
-            .addRow("A", results.first.value, ("%.2fs").format(results.first.timeInSeconds))
-            .addRow("B", results.second.value, ("%.2fs").format(results.second.timeInSeconds))
-
-        val rawInputTest = getRawInputTest()
-        val hasTestInput = rawInputTest != null
-        if (hasTestInput) {
-            val resultsTest = getResultsTest(rawInputTest)
-            builder.addRow("A_TEST", resultsTest.first.value, ("%.2fs").format(resultsTest.first.timeInSeconds))
-            builder.addRow("B_TEST", resultsTest.second.value, ("%.2fs").format(resultsTest.second.timeInSeconds))
-        }
-
-        println(builder.build().toString())
     }
 
     fun getVerifications() = getVerifications(getRawInput())
@@ -91,21 +72,19 @@ abstract class Task<InputClass : Any>(
         )
     }
 
-    fun printVerification() = printVerification(getRawInput())
-    fun printVerification(input: String) {
-        val verifications = getVerifications(input)
+    fun printResults() = printResults(getResults())
+    fun printResults(input: String) = printResults(getResults(input))
+    fun printResults(results: Pair<Result, Result>) {
+        val tests = getResultsTest()
+        val output = Results(uid, results.first, results.second, tests?.first, tests?.second).toString()
+        println(output)
+    }
 
-        val a = verifications.first
-        val b = verifications.second
-
-        val table = Table.Builder()
-            .withAlignments(Table.ALIGN_LEFT, Table.ALIGN_LEFT, Table.ALIGN_RIGHT, Table.ALIGN_RIGHT, Table.ALIGN_RIGHT)
-            .addRow("$year/$day", "Status", "Expected", "Actual", "Time (s)")
-            .addRow("A", a.status, a.expected, a.result.value, ("%.2fs").format(a.result.timeInSeconds))
-            .addRow("B", b.status, b.expected, b.result.value, ("%.2fs").format(b.result.timeInSeconds))
-            .build()
-
-        println(table.toString())
+    fun printVerifications() = printVerifications(getVerifications())
+    fun printVerifications(input: String) = printVerifications(getVerifications(input))
+    fun printVerifications(verifications: Pair<Verification, Verification>) {
+        val output = Verifications(uid, verifications.first, verifications.second).toString()
+        println(output)
     }
 
 }

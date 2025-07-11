@@ -99,4 +99,4 @@ class Y15D05 : Task<List<String>>(2015, 5) {
 
 }
 
-fun main() = Y15D05().printResult()
+fun main() = Y15D05().printResults()

@@ -61,4 +61,4 @@ class Y15D03 : Task<List<Direction>>(2015, 3) {
 }
 
 //fun main() = Y15D03().printResult()
-fun main() = Y15D03().printVerification()
+fun main() = Y15D03().printVerifications()
