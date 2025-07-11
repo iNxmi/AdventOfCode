@@ -1,11 +1,11 @@
 # Introduction
 - Hello, this is my Kotlin project for the yearly [Advent of Code](https://adventofcode.com/) challenges.<br>
 - You can clone this repository yourself. To run the code, you have to follow the [.env](#env) tutorial.
-- Every solution can be run on its own, or you can run the [Exporter](src/main/kotlin/com/nami/tools/Exporter.kt).
+- Every solution can be run on its own, or you can run the [Exporter](src/main/kotlin/com/nami/aoc/tools/Exporter.kt).
 
 # Locations
-- Solutions ([com.nami.task.solutions](src/main/kotlin/com/nami/task/solutions))
-- Tools ([com.nami.tools](src/main/kotlin/com/nami/tools))
+- Solutions ([com.nami.task.solutions](src/main/kotlin/com/nami/aoc/task/solutions))
+- Tools ([com.nami.tools](src/main/kotlin/com/nami/aoc/tools))
 - Results / Verification ([summary.md](summary.md))
 
 # .env
