@@ -3,12 +3,11 @@ package com.nami.task.solutions.y16
 import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputDuplex
+import com.nami.task.solutions.common.Direction
 import org.joml.Vector2i
 import kotlin.math.absoluteValue
 
 class Y16D01 : Task<List<Y16D01.Move>>(2016, 1) {
-
-    enum class Direction { LEFT, RIGHT }
 
     data class Move(
         val direction: Direction,

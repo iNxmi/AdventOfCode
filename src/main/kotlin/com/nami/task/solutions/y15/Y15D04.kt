@@ -21,13 +21,11 @@ class Y15D04 : Task<String>(2015, 4) {
     private fun crack(secret: String, prefix: String): Int {
         var i = 0
         while (true) {
-            val string = "$secret$i"
+            val string = "$secret${i++}"
             val hash = md5(string)
 
             if (hash.startsWith(prefix))
                 break
-
-            i++
         }
 
         return i

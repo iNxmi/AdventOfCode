@@ -43,7 +43,6 @@ class Y16D06 : Task<List<String>>(2016, 6) {
             val sb = StringBuilder()
             count.forEach { map ->
                 val sorted = map.toList().sortedByDescending { (_, value) -> value }
-                println(sorted)
                 sb.append(sorted.first().first)
             }
 
@@ -65,7 +64,6 @@ class Y16D06 : Task<List<String>>(2016, 6) {
             val sb = StringBuilder()
             count.forEach { map ->
                 val sorted = map.toList().sortedBy { (_, value) -> value }
-                println(sorted)
                 sb.append(sorted.first().first)
             }
 

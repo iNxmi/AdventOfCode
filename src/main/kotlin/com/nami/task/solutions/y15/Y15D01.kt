@@ -23,26 +23,24 @@ class Y15D01 : Task<String>(2015, 1) {
     override fun getPartB() = object : Part<String> {
         override fun solve(input: String): Any {
             var sum = 0
-            var count = 0
-            for (c in input) {
-                count++
-
-                if (c == '(')
+            input.withIndex().forEach { (index, char) ->
+                if (char == '(')
                     sum++
 
-                if (c == ')')
+                if (char == ')')
                     sum--
 
                 if (sum < 0)
-                    break
+                    return index + 1
             }
 
-            return count
+            throw IllegalStateException("No solution found")
         }
 
         override fun bonus() = 10.0
+
     }
 }
 
-fun main() = Y15D01().printResult()
-//fun main() = Y15D01().printVerification()
+//fun main() = Y15D01().printResult()
+fun main() = Y15D01().printVerification()

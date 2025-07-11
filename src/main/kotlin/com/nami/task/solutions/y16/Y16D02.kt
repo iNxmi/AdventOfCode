@@ -3,17 +3,11 @@ package com.nami.task.solutions.y16
 import com.nami.task.Part
 import com.nami.task.Task
 import com.nami.task.input.InputSimplex
+import com.nami.task.solutions.common.Direction
 import org.joml.Vector2i
 import kotlin.math.absoluteValue
 
-class Y16D02 : Task<List<List<Y16D02.Direction>>>(2016, 2) {
-
-    enum class Direction(val vector: Vector2i) {
-        UP(Vector2i(0, 1)),
-        DOWN(Vector2i(0, -1)),
-        LEFT(Vector2i(-1, 0)),
-        RIGHT(Vector2i(1, 0))
-    }
+class Y16D02 : Task<List<List<Direction>>>(2016, 2) {
 
     override fun getRawInputTest() = InputSimplex(
         """

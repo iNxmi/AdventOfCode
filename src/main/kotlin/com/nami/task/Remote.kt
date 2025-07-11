@@ -8,7 +8,6 @@ import org.jsoup.Jsoup
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.security.MessageDigest
-import kotlin.io.path.exists
 
 //TODO THIS CLASS NEEDS CLEANUP ASAP
 
@@ -25,12 +24,11 @@ class Remote {
         private val PATH = Paths.get("cache.json")
         private val MAP: MutableMap<String, MutableMap<Int, String>> = load()
 
-        private fun load(): MutableMap<String, MutableMap<Int, String>> {
-            if (!PATH.exists())
-                return mutableMapOf()
-
+        private fun load() = try {
             val string = Files.readString(PATH)
-            return Json.decodeFromString<MutableMap<String, MutableMap<Int, String>>>(string)
+            Json.decodeFromString<MutableMap<String, MutableMap<Int, String>>>(string)
+        } catch (_: Exception) {
+            mutableMapOf()
         }
 
         private fun write() {
@@ -101,7 +99,7 @@ class Remote {
 
         private fun fetchInput(year: Int, day: Int): String {
             val url = "https://adventofcode.com/$year/day/$day/input"
-            println("Fetching Input ${year}_${day} -> $url")
+            println("Fetching ${year}_${day} Input -> $url")
 
             val doc = fetchDocument(url, TOKEN_ORIGINAL)
             val string = doc.connection().execute().body().trim()
@@ -111,13 +109,12 @@ class Remote {
 
         private fun fetchSolutions(year: Int, day: Int): Pair<String?, String?> {
             val url = "https://adventofcode.com/$year/day/$day"
-            println("Fetching Solutions ${year}_${day} -> $url")
+            println("Fetching ${year}_${day} Solutions -> $url")
 
             val doc = fetchDocument(url, TOKEN_ORIGINAL)
             val string = doc.connection().execute().body().trim()
 
-            val results = ("<p>Your puzzle answer was <code>.*<\\/code>\\.<\\/p>").toRegex().findAll(string)
-                .map {
+            val results = Regex("<p>Your puzzle answer was <code>.*<\\/code>\\.<\\/p>").findAll(string).map {
                     it.value
                         .replace("<p>Your puzzle answer was <code>", "")
                         .replace("</code>.</p>", "")
