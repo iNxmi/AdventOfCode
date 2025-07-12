@@ -80,7 +80,6 @@
     </build>
 
     <dependencies>
-
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-test-junit5</artifactId>

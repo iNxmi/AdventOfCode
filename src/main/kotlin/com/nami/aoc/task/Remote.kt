@@ -22,9 +22,7 @@ class Remote {
         private val TOKEN_STRING = TOKEN_HASH.joinToString { ("%02x").format(it) }.replace(" ", "").replace(",", "")
 
         private val PATH = Paths.get("cache.json")
-        private val MAP: MutableMap<String, MutableMap<Int, String>> = load()
-
-        private fun load() = try {
+        private val MAP: MutableMap<String, MutableMap<Int, String>> = try {
             val string = Files.readString(PATH)
             Json.decodeFromString<MutableMap<String, MutableMap<Int, String>>>(string)
         } catch (_: Exception) {
@@ -115,11 +113,11 @@ class Remote {
             val string = doc.connection().execute().body().trim()
 
             val results = Regex("<p>Your puzzle answer was <code>.*<\\/code>\\.<\\/p>").findAll(string).map {
-                    it.value
-                        .replace("<p>Your puzzle answer was <code>", "")
-                        .replace("</code>.</p>", "")
-                        .trim()
-                }.toList()
+                it.value
+                    .replace("<p>Your puzzle answer was <code>", "")
+                    .replace("</code>.</p>", "")
+                    .trim()
+            }.toList()
 
             return Pair(results.getOrNull(0), results.getOrNull(1))
         }
