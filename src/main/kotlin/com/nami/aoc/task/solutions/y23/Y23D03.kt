@@ -2,13 +2,25 @@ package com.nami.aoc.task.solutions.y23
 
 import com.nami.aoc.task.Part
 import com.nami.aoc.task.Task
+import com.nami.aoc.task.input.InputSimplex
 import com.nami.aoc.task.solutions.y23.Y23D03.Input
 import org.joml.Vector2i
 
 
 class Y23D03 : Task<Input>(2023, 3) {
 
-    override fun getRawInputTest() = null
+    override fun getRawInputTest() = InputSimplex("""
+        467..114..
+        ...*......
+        ..35..633.
+        ......#...
+        617*......
+        .....+.58.
+        ..592.....
+        ......755.
+        ...$.*....
+        .664.598..
+    """.trimIndent())
 
     data class Input(val numbers: Map<MultiPosition, Int>, val points: Set<Vector2i>)
 
@@ -19,7 +31,7 @@ class Y23D03 : Task<Input>(2023, 3) {
             val set = mutableSetOf<Vector2i>()
             for (y in -1..1)
                 for (x in -1..1)
-                    set.add(position.add(x, y))
+                    set.add(Vector2i(position).add(x, y))
             return set
         }
 
@@ -72,7 +84,9 @@ class Y23D03 : Task<Input>(2023, 3) {
                 }
             }
 
-            return map.filter { (_, list) -> list.size == 2 }.map { (_, list) -> list[0] * list[1] }.sum()
+            return map.filter { (_, list) -> list.size == 2 }
+                .map { (_, list) -> list[0] * list[1] }
+                .sum()
         }
 
         override fun bonus() = 3.0
@@ -80,5 +94,5 @@ class Y23D03 : Task<Input>(2023, 3) {
 
 }
 
-//fun main() = Y23D03().printResult()
+//fun main() = Y23D03().printResults()
 fun main() = Y23D03().printVerifications()
