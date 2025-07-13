@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Solved Y16D07.kt {A, B}">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/common/ASCIILetter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y16/Y16D08.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/alphabet.json" afterDir="false" />
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Added ASCIILetters.kt for automatic conversion from image solutions to text">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Remote.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Remote.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y23/Y23D03.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y23/Y23D03.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/summary.md" beforeDir="false" afterPath="$PROJECT_DIR$/summary.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +174,7 @@
       <recent name="com.nami.aoc" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Y16D08Kt">
+  <component name="RunManager" selected="Kotlin.Y23D03Kt">
     <configuration name="ExporterKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nami.aoc.tools.ExporterKt" />
       <module name="AdventOfCode" />
@@ -188,13 +184,6 @@
     </configuration>
     <configuration name="Y16D03Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nami.aoc.task.solutions.y16.Y16D03Kt" />
-      <module name="AdventOfCode" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Y16D04Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.aoc.task.solutions.y16.Y16D04Kt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -214,13 +203,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Y23D03Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.aoc.task.solutions.y23.Y23D03Kt" />
+      <module name="AdventOfCode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.Y16D08Kt" />
+        <item itemvalue="Kotlin.Y23D03Kt" />
         <item itemvalue="Kotlin.ExporterKt" />
+        <item itemvalue="Kotlin.Y16D08Kt" />
         <item itemvalue="Kotlin.Y16D07Kt" />
         <item itemvalue="Kotlin.Y16D03Kt" />
-        <item itemvalue="Kotlin.Y16D04Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -338,23 +334,8 @@
       <workItem from="1752273260594" duration="409000" />
       <workItem from="1752276174164" duration="2536000" />
       <workItem from="1752283978736" duration="3738000" />
-      <workItem from="1752357108506" duration="5266000" />
-    </task>
-    <task id="LOCAL-00028" summary="Solved Y15D16 A;B">
-      <option name="closed" value="true" />
-      <created>1748674116551</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1748674116551</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Updated Assignment.kt&#10;Updated every assignment accordingly">
-      <option name="closed" value="true" />
-      <created>1748676910111</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1748676910111</updated>
+      <workItem from="1752357108506" duration="6268000" />
+      <workItem from="1752366847120" duration="4657000" />
     </task>
     <task id="LOCAL-00030" summary="Updated Exporter">
       <option name="closed" value="true" />
@@ -732,7 +713,23 @@
       <option name="project" value="LOCAL" />
       <updated>1752266168369</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Improved Y16D07.kt {B} to be able to autoextract text from image solution">
+      <option name="closed" value="true" />
+      <created>1752363263538</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1752363263538</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Added ASCIILetters.kt for automatic conversion from image solutions to text">
+      <option name="closed" value="true" />
+      <created>1752363291770</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1752363291770</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -754,8 +751,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Optimized Y15D13 B -&gt; 244s to 5s" />
-    <MESSAGE value="Implemented Bonus Tracking&#10;(needs improvement)" />
     <MESSAGE value="Solved Y23D01 A,B&#10;Solved Y23D02 A,B" />
     <MESSAGE value="Backup" />
     <MESSAGE value="Converted to new class structure" />
@@ -779,7 +774,9 @@
     <MESSAGE value="Updated readme.md" />
     <MESSAGE value="Some small changes" />
     <MESSAGE value="Solved Y16D07.kt {A, B}" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solved Y16D07.kt {A, B}" />
+    <MESSAGE value="Improved Y16D07.kt {B} to be able to autoextract text from image solution" />
+    <MESSAGE value="Added ASCIILetters.kt for automatic conversion from image solutions to text" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added ASCIILetters.kt for automatic conversion from image solutions to text" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
