@@ -4,7 +4,6 @@ import com.nami.aoc.task.Part
 import com.nami.aoc.task.Task
 import com.nami.aoc.task.input.Input
 import com.nami.aoc.task.input.InputSimplex
-import kotlin.text.iterator
 
 class Y15D11 : Task<String>(2015, 11) {
 

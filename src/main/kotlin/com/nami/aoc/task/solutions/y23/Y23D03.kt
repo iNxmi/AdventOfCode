@@ -94,5 +94,5 @@ class Y23D03 : Task<Input>(2023, 3) {
 
 }
 
-//fun main() = Y23D03().printResults()
-fun main() = Y23D03().printVerifications()
+fun main() = Y23D03().printResults()
+//fun main() = Y23D03().printVerifications()

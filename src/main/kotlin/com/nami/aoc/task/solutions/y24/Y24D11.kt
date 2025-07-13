@@ -3,7 +3,6 @@ package com.nami.aoc.task.solutions.y24
 import com.nami.aoc.task.Part
 import com.nami.aoc.task.Task
 import com.nami.aoc.task.input.InputSimplex
-import kotlin.collections.iterator
 
 class Y24D11 : Task<Map<Long, Long>>(2024, 11) {
 

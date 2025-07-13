@@ -5,7 +5,6 @@ import com.nami.aoc.task.Task
 import com.nami.aoc.task.input.InputSimplex
 import com.nami.aoc.task.solutions.common.ASCIILetter
 import org.joml.Vector2i
-import java.awt.image.BufferedImage
 
 
 class Y16D08 : Task<List<Y16D08.Instruction>>(2016, 8) {
