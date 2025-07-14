@@ -4,8 +4,8 @@
 - Every solution can be run on its own, or you can run the [Exporter](src/main/kotlin/com/nami/aoc/tools/Exporter.kt).
 
 # Locations
-- Solutions ([com.nami.task.solutions](src/main/kotlin/com/nami/aoc/task/solutions))
-- Tools ([com.nami.tools](src/main/kotlin/com/nami/aoc/tools))
+- Solutions ([com.namiaoc..task.solutions](src/main/kotlin/com/nami/aoc/task/solutions))
+- Tools ([com.nami.aoc.tools](src/main/kotlin/com/nami/aoc/tools))
 - Results / Verification ([summary.md](summary.md))
 
 # .env

@@ -9,6 +9,7 @@ abstract class Task<InputClass : Any>(
 ) {
 
     val uid: UID = UID(year, day, UID.Part.ROOT)
+    val url = "https://adventofcode.com/$year/day/$day"
 
     companion object {
         fun getAll(): Set<Task<*>> {
@@ -67,8 +68,8 @@ abstract class Task<InputClass : Any>(
         val expected = Remote.getSolutions(year, day)
 
         return Pair(
-            getPartA().getVerification(UID(year, day, UID.Part.A), processed, expected.first),
-            getPartB().getVerification(UID(year, day, UID.Part.B), processed, expected.second)
+            getPartA().getVerification(this, UID(year, day, UID.Part.A), processed, expected.first),
+            getPartB().getVerification(this, UID(year, day, UID.Part.B), processed, expected.second)
         )
     }
 
@@ -76,7 +77,7 @@ abstract class Task<InputClass : Any>(
     fun printResults(input: String) = printResults(getResults(input))
     fun printResults(results: Pair<Result, Result>) {
         val tests = getResultsTest()
-        val output = Results(uid, results.first, results.second, tests?.first, tests?.second).toString()
+        val output = Results(this, results.first, results.second, tests?.first, tests?.second).toString()
         println(output)
     }
 

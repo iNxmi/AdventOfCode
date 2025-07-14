@@ -1,9 +1,10 @@
 package com.nami.aoc.task
 
+import net.steppschuh.markdowngenerator.link.Link
 import net.steppschuh.markdowngenerator.table.Table
 
 data class Results(
-    val uid: UID,
+    val task: Task<*>,
     val a: Result,
     val b: Result,
     val aTest: Result?,
@@ -13,7 +14,7 @@ data class Results(
     override fun toString(): String {
         val builder = Table.Builder()
             .withAlignments(Table.ALIGN_LEFT, Table.ALIGN_RIGHT, Table.ALIGN_RIGHT)
-            .addRow("${uid.year}/${uid.day}", "Result", "Time (s)")
+            .addRow("${task.uid.year}/${task.uid.day}", "Result", "Time (s)", "URL")
             .addRow("A", a.value, ("%.2fs").format(a.timeInSeconds))
             .addRow("B", b.value, ("%.2fs").format(b.timeInSeconds))
 

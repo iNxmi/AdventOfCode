@@ -20,7 +20,7 @@ interface Part<InputClass> {
         return Result(uid, this, value, timeInSeconds)
     }
 
-    fun getVerification(uid: UID, input: InputClass, expected: String?): Verification {
+    fun getVerification(task: Task<*>, uid: UID, input: InputClass, expected: String?): Verification {
         val solution = getResult(uid, input)
 
         val status = if (expected == null) {
@@ -31,7 +31,7 @@ interface Part<InputClass> {
             Status.SOLVED
         }
 
-        return Verification(uid, this, status, expected, solution)
+        return Verification(task, uid, this, status, expected, solution)
     }
 
     fun solve(input: InputClass): Any?

@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Resolved Y23D03.kt {A, B}">
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Optimized Imports">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y23/Y23D03.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y23/Y23D03.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Part.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Part.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Results.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Results.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Task.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Task.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Verification.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Verification.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y23/Y23D04.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y23/Y23D04.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/tools/Exporter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/tools/Exporter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/summary.md" beforeDir="false" afterPath="$PROJECT_DIR$/summary.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -174,16 +180,9 @@
       <recent name="com.nami.aoc" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Y23D03Kt">
+  <component name="RunManager" selected="Kotlin.ExporterKt">
     <configuration name="ExporterKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nami.aoc.tools.ExporterKt" />
-      <module name="AdventOfCode" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Y16D03Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.aoc.task.solutions.y16.Y16D03Kt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -210,13 +209,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Y23D04Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.aoc.task.solutions.y23.Y23D04Kt" />
+      <module name="AdventOfCode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.Y23D03Kt" />
         <item itemvalue="Kotlin.ExporterKt" />
+        <item itemvalue="Kotlin.Y23D04Kt" />
+        <item itemvalue="Kotlin.Y23D03Kt" />
         <item itemvalue="Kotlin.Y16D08Kt" />
         <item itemvalue="Kotlin.Y16D07Kt" />
-        <item itemvalue="Kotlin.Y16D03Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -335,23 +341,9 @@
       <workItem from="1752276174164" duration="2536000" />
       <workItem from="1752283978736" duration="3738000" />
       <workItem from="1752357108506" duration="6268000" />
-      <workItem from="1752366847120" duration="5227000" />
-    </task>
-    <task id="LOCAL-00031" summary="Exported Results">
-      <option name="closed" value="true" />
-      <created>1748679280289</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1748679280289</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Updated Structure">
-      <option name="closed" value="true" />
-      <created>1748680206849</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1748680206849</updated>
+      <workItem from="1752366847120" duration="7073000" />
+      <workItem from="1752426496752" duration="1596000" />
+      <workItem from="1752521889790" duration="6332000" />
     </task>
     <task id="LOCAL-00033" summary="Updated Structure">
       <option name="closed" value="true" />
@@ -729,7 +721,23 @@
       <option name="project" value="LOCAL" />
       <updated>1752371590859</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Resolved Y23D03.kt {A, B}">
+      <option name="closed" value="true" />
+      <created>1752372209788</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1752372209788</updated>
+    </task>
+    <task id="LOCAL-00081" summary="Optimized Imports">
+      <option name="closed" value="true" />
+      <created>1752372458666</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1752372458666</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -751,7 +759,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Backup" />
     <MESSAGE value="Converted to new class structure" />
     <MESSAGE value="Merge: Master &lt;- Subtask" />
     <MESSAGE value="Received bonus" />
@@ -776,7 +783,8 @@
     <MESSAGE value="Improved Y16D07.kt {B} to be able to autoextract text from image solution" />
     <MESSAGE value="Added ASCIILetters.kt for automatic conversion from image solutions to text" />
     <MESSAGE value="Resolved Y23D03.kt {A, B}" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resolved Y23D03.kt {A, B}" />
+    <MESSAGE value="Optimized Imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimized Imports" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
