@@ -1,42 +1,26 @@
 package com.nami.aoc.task
 
-interface Part<InputClass> {
+abstract class Part<InputClass>(
+    val year: Int,
+    val day: Int,
+    val type: Type,
 
-    fun getResult(uid: UID, input: InputClass): Result {
+    val bonus: Double? = null,
+    val comment: String? = null
+) {
+
+    enum class Type(val string: String) { A("a"), B("b") }
+
+    fun getResult(input: InputClass, test: Boolean = false): Result {
         val timeStartNs = System.nanoTime()
-        val value = solve(input)
-        val timeNs = System.nanoTime() - timeStartNs
-        val timeInSeconds = timeNs * 1E-9
+        val value = if (test) test(input) else solve(input)
+        val timeEndNs = System.nanoTime()
 
-        return Result(uid, this, value, timeInSeconds)
+        val time = (timeEndNs - timeStartNs) * 1e-9
+        return Result(year, day, type, test, value, time)
     }
 
-    fun getResultTest(uid: UID, input: InputClass): Result {
-        val timeStartNs = System.nanoTime()
-        val value = test(input)
-        val timeNs = System.nanoTime() - timeStartNs
-        val timeInSeconds = timeNs * 1E-9
-
-        return Result(uid, this, value, timeInSeconds)
-    }
-
-    fun getVerification(task: Task<*>, uid: UID, input: InputClass, expected: String?): Verification {
-        val solution = getResult(uid, input)
-
-        val status = if (expected == null) {
-            Status.UNSOLVED
-        } else if (solution.value.toString() != expected) {
-            Status.FAILED
-        } else {
-            Status.SOLVED
-        }
-
-        return Verification(task, uid, this, status, expected, solution)
-    }
-
-    fun solve(input: InputClass): Any?
-    fun test(input: InputClass): Any? = solve(input)
-    fun bonus(): Double? = null
-    fun comment(): String? = null
+    abstract fun solve(input: InputClass): Any?
+    open fun test(input: InputClass): Any? = solve(input)
 
 }

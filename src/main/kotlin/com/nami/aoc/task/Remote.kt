@@ -1,98 +1,68 @@
 package com.nami.aoc.task
 
 import io.github.cdimascio.dotenv.dotenv
-import kotlinx.serialization.encodeToString
-import kotlinx.serialization.json.Json
 import org.jsoup.HttpStatusException
 import org.jsoup.Jsoup
-import java.nio.file.Files
 import java.nio.file.Paths
 import java.security.MessageDigest
-
-//TODO THIS CLASS NEEDS CLEANUP ASAP
 
 class Remote {
 
     companion object {
-        private val YEAR_RANGE = 2015..2024
-        private val DAY_RANGE = 1..25
+        private val YEAR_RANGE = (2015..2024)
+        private val DAY_RANGE = (1..25)
 
         private val TOKEN_ORIGINAL = dotenv().get("SESSION")
         private val TOKEN_HASH = MessageDigest.getInstance("SHA-256").digest(TOKEN_ORIGINAL.toByteArray())
-        private val TOKEN_STRING = TOKEN_HASH.joinToString { ("%02x").format(it) }.replace(" ", "").replace(",", "")
+        private val TOKEN_STRING = TOKEN_HASH.joinToString("") { ("%02x").format(it) }
 
-        private val PATH = Paths.get("cache.json")
-        private val MAP: MutableMap<String, MutableMap<Int, String>> = try {
-            val string = Files.readString(PATH)
-            Json.decodeFromString<MutableMap<String, MutableMap<Int, String>>>(string)
-        } catch (_: Exception) {
-            mutableMapOf()
-        }
-
-        private fun write() {
-            val string = Json { prettyPrint = true }.encodeToString(MAP)
-            Files.writeString(PATH, string)
-        }
+        private val CACHE_INPUT = Cache(Paths.get("cache/$TOKEN_STRING/input.json"))
+        private val CACHE_SOLUTION_A = Cache(Paths.get("cache/$TOKEN_STRING/solutions_a.json"))
+        private val CACHE_SOLUTION_B = Cache(Paths.get("cache/$TOKEN_STRING/solutions_b.json"))
 
         fun getInput(year: Int, day: Int): String {
             require(YEAR_RANGE.contains(year)) { "Year must be in '$YEAR_RANGE'" }
             require(DAY_RANGE.contains(day)) { "Day must be in '$DAY_RANGE'" }
 
-            if (!MAP.containsKey(TOKEN_STRING))
-                MAP[TOKEN_STRING] = mutableMapOf()
-
-            val id = UID(year, day, UID.Part.ROOT).id
-
-            val entries = MAP[TOKEN_STRING]!!
-            if (!entries.containsKey(id)) {
-                entries[id] = fetchInput(year, day)
-                write()
+            val id = year * 100 + day
+            if (!CACHE_INPUT.containsKey(id)) {
+                CACHE_INPUT[id] = fetchInput(year, day)
+                CACHE_INPUT.write()
             }
 
-            return entries[id]!!
+            return CACHE_INPUT[id]!!
         }
 
-        fun getSolutions(year: Int, day: Int): Pair<String?, String?> {
+        fun getSolutions(year: Int, day: Int): Map<Part.Type, String?> {
             require(YEAR_RANGE.contains(year)) { "Year must be in '$YEAR_RANGE'" }
             require(DAY_RANGE.contains(day)) { "Day must be in '$DAY_RANGE'" }
 
+            val id = year * 100 + day
 
-            if (!MAP.containsKey(TOKEN_STRING))
-                MAP[TOKEN_STRING] = mutableMapOf()
+            if (!CACHE_SOLUTION_A.contains(id) || !CACHE_SOLUTION_B.contains(id)) {
+                val raw = fetchSolutions(year, day)
 
-            val entries = MAP[TOKEN_STRING]!!
+                if (!CACHE_SOLUTION_A.containsKey(id)) {
+                    val solution = raw.first
+                    if (solution != null) {
+                        CACHE_SOLUTION_A[id] = solution
+                        CACHE_SOLUTION_A.write()
+                    }
+                }
 
-            val idA = UID(year, day, UID.Part.A).id
-            val idB = UID(year, day, UID.Part.B).id
-
-            val solutions = if (!entries.containsKey(idA) || !entries.containsKey(idB)) {
-                fetchSolutions(year, day)
-            } else {
-                null
-            }
-
-            var write = false
-
-            if (!entries.containsKey(idA)) {
-                val solution = solutions!!.first
-                if (solution != null) {
-                    entries[idA] = solution
-                    write = true
+                if (!CACHE_SOLUTION_B.containsKey(id)) {
+                    val solution = raw.second
+                    if (solution != null) {
+                        CACHE_SOLUTION_B[id] = solution
+                        CACHE_SOLUTION_B.write()
+                    }
                 }
             }
 
-            if (!entries.containsKey(idB)) {
-                val solution = solutions!!.second
-                if (solution != null) {
-                    entries[idB] = solution
-                    write = true
-                }
+            return mutableMapOf<Part.Type, String?>().apply {
+                put(Part.Type.A, CACHE_SOLUTION_A.getOrDefault(id, null))
+                put(Part.Type.B, CACHE_SOLUTION_B.getOrDefault(id, null))
             }
-
-            if (write)
-                write()
-
-            return Pair(entries[idA], entries[idB])
         }
 
         private fun fetchInput(year: Int, day: Int): String {

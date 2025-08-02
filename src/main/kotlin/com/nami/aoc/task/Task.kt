@@ -1,23 +1,23 @@
 package com.nami.aoc.task
 
-import com.nami.aoc.task.input.Input
 import io.github.classgraph.ClassGraph
+import kotlinx.serialization.json.Json
+import java.nio.file.Files
+import java.nio.file.Paths
 
 abstract class Task<InputClass : Any>(
     val year: Int,
     val day: Int
 ) {
 
-    val uid: UID = UID(year, day, UID.Part.ROOT)
-    val url = "https://adventofcode.com/$year/day/$day"
-
     companion object {
+        const val PATH = "com.nami.aoc.task.solution"
         fun getAll(): Set<Task<*>> {
             val classes = ClassGraph()
-                .acceptPackages("com.nami.aoc.task.solutions")
+                .acceptPackages(PATH)
                 .scan()
                 .getSubclasses(Task::class.java.name)
-                .filter { it.packageName.startsWith("com.nami.aoc.task.solutions.y") }
+                .filter { it.packageName.startsWith("$PATH.y") }
 
             val tasks = classes.map { it.loadClass().getDeclaredConstructor().newInstance() as Task<*> }.toSet()
             return tasks
@@ -25,67 +25,66 @@ abstract class Task<InputClass : Any>(
     }
 
     fun getRawInput(): String = Remote.getInput(year, day)
-    abstract fun getRawInputTest(): Input?
-
+    fun getSolutions(): Map<Part.Type, String?> = Remote.getSolutions(year, day)
     abstract fun getProcessedInput(raw: String): InputClass
 
     abstract fun getPartA(): Part<InputClass>
     abstract fun getPartB(): Part<InputClass>
 
-    private fun print(content: Any?) = println(content)
-    protected fun info(content: Any?) = print("Info: $content")
-    protected fun debug(content: Any?) = print("Debug: $content")
-    protected fun error(content: Any?) = print("Error: $content")
-    protected fun critical(content: Any?) = print("Critical: $content")
+    data class Test(val input: String, val value: String)
 
-    fun getResults() = getResults(getRawInput())
-    fun getResults(input: String): Pair<Result, Result> {
+    fun getTestCases(type: Part.Type): Set<Test> {
+        val path = Paths.get("src/main/resources/tests/${year}_${("%02d").format(day)}_${type.string}.json")
+        val json: Map<String, List<String>> = try {
+            val string = Files.readString(path)
+            Json.decodeFromString<Map<String, List<String>>>(string)
+        } catch (_: Exception) {
+            return emptySet()
+        }
+
+        val result = mutableSetOf<Test>()
+        json.forEach { value, inputs ->
+            inputs.forEach { input ->
+                result.add(Test(input, value))
+            }
+        }
+        return result
+    }
+
+    fun getTestVerifications() = getTestVerifications(Part.Type.A, Part.Type.B)
+    fun getTestVerifications(vararg types: Part.Type) = types.flatMap { getTestVerification(it) }.toSet()
+    fun getTestVerification(type: Part.Type): Set<Verification> {
+        val part = when (type) {
+            Part.Type.A -> getPartA()
+            Part.Type.B -> getPartB()
+        }
+
+        val tests = getTestCases(type)
+        return tests.map { test ->
+            val processed = getProcessedInput(test.input)
+            val result = part.getResult(processed, true)
+            Verification(result, test.value)
+        }.toSet()
+    }
+
+    fun getResults(input: String = getRawInput()) = getResults(setOf(Part.Type.A, Part.Type.B), input)
+    fun getResults(types: Collection<Part.Type>, input: String = getRawInput()) =
+        types.map { getResult(it, input) }.toSet()
+
+    fun getResult(type: Part.Type, input: String = getRawInput()): Result {
+        val part = when (type) {
+            Part.Type.A -> getPartA()
+            Part.Type.B -> getPartB()
+        }
+
         val processed = getProcessedInput(input)
-
-        val a = getPartA().getResult(UID(year, day, UID.Part.A), processed)
-        val b = getPartB().getResult(UID(year, day, UID.Part.B), processed)
-
-        return Pair(a, b)
+        return part.getResult(processed)
     }
 
-    fun getResultsTest() = getResultsTest(getRawInputTest())
-    fun getResultsTest(input: Input?): Pair<Result, Result>? {
-        if (input == null)
-            return null
+    fun getVerifications(input: String = getRawInput()) = getVerifications(setOf(Part.Type.A, Part.Type.B), input)
+    fun getVerifications(types: Collection<Part.Type>, input: String = getRawInput()) =
+        types.map { getVerification(it, input)!! }.toSet()
 
-        val processedA = getProcessedInput(input.getRawTestInputA())
-        val processedB = getProcessedInput(input.getRawTestInputB())
-
-        val aTest = getPartA().getResultTest(UID(year, day, UID.Part.A_TEST), processedA)
-        val bTest = getPartB().getResultTest(UID(year, day, UID.Part.B_TEST), processedB)
-
-        return Pair(aTest, bTest)
-    }
-
-    fun getVerifications() = getVerifications(getRawInput())
-    fun getVerifications(input: String): Pair<Verification, Verification> {
-        val processed = getProcessedInput(input)
-        val expected = Remote.getSolutions(year, day)
-
-        return Pair(
-            getPartA().getVerification(this, UID(year, day, UID.Part.A), processed, expected.first),
-            getPartB().getVerification(this, UID(year, day, UID.Part.B), processed, expected.second)
-        )
-    }
-
-    fun printResults() = printResults(getResults())
-    fun printResults(input: String) = printResults(getResults(input))
-    fun printResults(results: Pair<Result, Result>) {
-        val tests = getResultsTest()
-        val output = Results(this, results.first, results.second, tests?.first, tests?.second).toString()
-        println(output)
-    }
-
-    fun printVerifications() = printVerifications(getVerifications())
-    fun printVerifications(input: String) = printVerifications(getVerifications(input))
-    fun printVerifications(verifications: Pair<Verification, Verification>) {
-        val output = Verifications(uid, verifications.first, verifications.second).toString()
-        println(output)
-    }
+    fun getVerification(type: Part.Type, input: String = getRawInput()) = getResult(type, input).getVerification()
 
 }

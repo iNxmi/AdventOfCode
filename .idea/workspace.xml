@@ -4,11 +4,109 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Resolved Y23D04 {A}&#10;Solved Y23D04 {B}">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y16/Y16D09.kt" afterDir="false" />
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Solved Y16D09.kt {A}">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/export/ExportResults.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/export/ExportTestVerifications.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/export/ExportVerifications.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Cache.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/exception/AOCException.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/exception/IllegalCharacterException.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/exception/NoSolutionFoundException.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y15/Y2015D01.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y15/Y2015D17.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y16/Y2016D10.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_01_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_01_b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_02_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_02_b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_03_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_03_b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_04_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_05_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_05_b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_06_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_06_b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_08_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_08_b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_09_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_09_b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_10_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_11_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_12_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_12_b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_13_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_14_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_14_b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_15_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_15_b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_17_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/yyyy_dd_p.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/tools/Exporter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/tools/Exporter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/summary.md" beforeDir="false" afterPath="$PROJECT_DIR$/summary.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/Extensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/Extensions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/Test.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Part.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Part.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Remote.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Remote.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Result.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Result.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Results.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Status.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Task.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Task.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/UID.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Verification.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Verification.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Verifications.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/input/Input.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/input/InputDuplex.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/input/InputSimplex.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/Template.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/Template.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/common/ASCIILetter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/common/ASCIILetter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/common/Direction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/common/Direction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y15/Y15D01.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y15/Y15D02.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y15/Y2015D02.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y15/Y15D03.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y15/Y2015D03.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y15/Y15D04.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y15/Y2015D04.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y15/Y15D05.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y15/Y2015D05.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y15/Y15D06.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y15/Y2015D06.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y15/Y15D07.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y15/Y2015D07.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y15/Y15D08.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y15/Y2015D08.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y15/Y15D09.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y15/Y2015D09.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y15/Y15D10.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y15/Y2015D10.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y15/Y15D11.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y15/Y2015D11.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y15/Y15D12.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y15/Y2015D12.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y15/Y15D13.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y15/Y2015D13.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y15/Y15D14.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y15/Y2015D14.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y15/Y15D15.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y15/Y2015D15.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y15/Y15D16.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y15/Y2015D16.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y15/Y15D17.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y15/Y15D18.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y15/Y2015D18.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y16/Y16D01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y16/Y2016D01.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y16/Y16D02.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y16/Y2016D02.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y16/Y16D03.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y16/Y2016D03.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y16/Y16D04.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y16/Y2016D04.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y16/Y16D05.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y16/Y2016D05.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y16/Y16D06.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y16/Y2016D06.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y16/Y16D07.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y16/Y2016D07.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y16/Y16D08.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y16/Y2016D08.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y16/Y16D09.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y16/Y2016D09.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y23/Y23D01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y23/Y2023D01.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y23/Y23D02.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y23/Y2023D02.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y23/Y23D03.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y23/Y2023D03.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y23/Y23D04.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y23/Y2023D04.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y24/Y24D01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y24/Y2024D01.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y24/Y24D02.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y24/Y2024D02.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y24/Y24D03.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y24/Y2024D03.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y24/Y24D04.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y24/Y2024D04.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y24/Y24D05.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y24/Y2024D05.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y24/Y24D06.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y24/Y2024D06.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y24/Y24D07.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y24/Y2024D07.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y24/Y24D08.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y24/Y2024D08.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y24/Y24D11.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y24/Y2024D11.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solutions/y24/Y24D15.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y24/Y2024D15.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/tools/Exporter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/alphabet.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ascii_alphabet.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/summary.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env.template" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +150,7 @@
     <setting file="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.9.22/kotlin-stdlib-1.9.22.jar!/kotlin/experimental/BitwiseOperationsKt.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.9.22/kotlin-stdlib-1.9.22.jar!/kotlin/text/StringsKt.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/2.0.20/kotlin-stdlib-2.0.20.jar!/kotlin/text/Regex.class" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/Part.kt" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -68,98 +167,100 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Kotlin.A2301Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.A2302Kt (1).executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.A2302Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.A2401Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.A2402Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.B2301Kt (1).executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.B2301Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.B2302Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.B2401Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.D01Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.D02Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.ExportKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.ExporterKt (1).executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.ExporterKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.PartAKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.TestKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.VerifyKt.executor&quot;: &quot;Debug&quot;,
-    &quot;Kotlin.Y15D01Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D02Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D03Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D06Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D07Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D08Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D09Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D10Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D11Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D12Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D13Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D14Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D15Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D16Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D17Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y15D18Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y16D01Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y16D02Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y16D03Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y16D04Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y16D05Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y16D06Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y16D07Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y16D08Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y16D09Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y23D01Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y23D02Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y23D03Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y23D04Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y23D1Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y24D02Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y24D05Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y24D11Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y24D15Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y24D1Kt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Y24D2Kt.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last.edited.regexp&quot;: &quot;\\x27&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/My Drive/.projects/kotlin/AdventOfCode/src/main/kotlin/com/nami/aoc/task/solutions/y16&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.50413984&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Kotlin.A2301Kt.executor": "Run",
+    "Kotlin.A2302Kt (1).executor": "Run",
+    "Kotlin.A2302Kt.executor": "Run",
+    "Kotlin.A2401Kt.executor": "Run",
+    "Kotlin.A2402Kt.executor": "Run",
+    "Kotlin.B2301Kt (1).executor": "Run",
+    "Kotlin.B2301Kt.executor": "Run",
+    "Kotlin.B2302Kt.executor": "Run",
+    "Kotlin.B2401Kt.executor": "Run",
+    "Kotlin.D01Kt.executor": "Run",
+    "Kotlin.D02Kt.executor": "Run",
+    "Kotlin.ExportKt.executor": "Run",
+    "Kotlin.ExportTestVerificationsKt.executor": "Run",
+    "Kotlin.ExportVerificationsKt.executor": "Run",
+    "Kotlin.ExporterKt (1).executor": "Run",
+    "Kotlin.ExporterKt.executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "Kotlin.PartAKt.executor": "Run",
+    "Kotlin.TestKt.executor": "Run",
+    "Kotlin.VerifyKt.executor": "Debug",
+    "Kotlin.Y15D01Kt.executor": "Run",
+    "Kotlin.Y15D02Kt.executor": "Run",
+    "Kotlin.Y15D03Kt.executor": "Run",
+    "Kotlin.Y15D06Kt.executor": "Run",
+    "Kotlin.Y15D07Kt.executor": "Run",
+    "Kotlin.Y15D08Kt.executor": "Run",
+    "Kotlin.Y15D09Kt.executor": "Run",
+    "Kotlin.Y15D10Kt.executor": "Run",
+    "Kotlin.Y15D11Kt.executor": "Run",
+    "Kotlin.Y15D12Kt.executor": "Run",
+    "Kotlin.Y15D13Kt.executor": "Run",
+    "Kotlin.Y15D14Kt.executor": "Run",
+    "Kotlin.Y15D15Kt.executor": "Run",
+    "Kotlin.Y15D16Kt.executor": "Run",
+    "Kotlin.Y15D17Kt.executor": "Run",
+    "Kotlin.Y15D18Kt.executor": "Run",
+    "Kotlin.Y16D01Kt.executor": "Run",
+    "Kotlin.Y16D02Kt.executor": "Run",
+    "Kotlin.Y16D03Kt.executor": "Run",
+    "Kotlin.Y16D04Kt.executor": "Run",
+    "Kotlin.Y16D05Kt.executor": "Run",
+    "Kotlin.Y16D06Kt.executor": "Run",
+    "Kotlin.Y16D07Kt.executor": "Run",
+    "Kotlin.Y16D08Kt.executor": "Run",
+    "Kotlin.Y16D09Kt.executor": "Run",
+    "Kotlin.Y23D01Kt.executor": "Run",
+    "Kotlin.Y23D02Kt.executor": "Run",
+    "Kotlin.Y23D03Kt.executor": "Run",
+    "Kotlin.Y23D04Kt.executor": "Run",
+    "Kotlin.Y23D1Kt.executor": "Run",
+    "Kotlin.Y24D02Kt.executor": "Run",
+    "Kotlin.Y24D05Kt.executor": "Run",
+    "Kotlin.Y24D11Kt.executor": "Run",
+    "Kotlin.Y24D15Kt.executor": "Run",
+    "Kotlin.Y24D1Kt.executor": "Run",
+    "Kotlin.Y24D2Kt.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last.edited.regexp": "\\x27",
+    "last_opened_file_path": "G:/My Drive/.projects/kotlin/AdventOfCode/src/main/resources/tests",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.50413984",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\resources\tests" />
+      <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\resources\tests\2015\04" />
       <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\kotlin\com\nami\aoc\task\solutions\y16" />
       <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\kotlin\com\nami\task\solutions\y16" />
       <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\kotlin\com\nami\task\solutions\y15" />
-      <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\kotlin\com\nami\task\solutions\y23" />
-      <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\kotlin\com\nami\assignments\y15" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\resources\tesseract" />
-      <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\kotlin\com\nami\tools" />
-      <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\kotlin\com\nami\misc" />
-      <recent name="G:\My Drive\.projects\kotlin\AdventOfCodeKotlin\src\main\kotlin\com\nami\assignments" />
-      <recent name="G:\My Drive\.projects\kotlin\AdventOfCodeKotlin\src\main\kotlin\com\nami\y2023\d02" />
+      <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\resources\tests" />
+      <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\resources\tests\2015\04" />
+      <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\resources\tests\2015\03" />
+      <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\resources\tests\2015\02" />
+      <recent name="G:\My Drive\.projects\kotlin\AdventOfCode\src\main\resources\tests\2015" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.nami.task" />
@@ -176,7 +277,21 @@
       <recent name="com.nami.aoc" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.ExporterKt">
+  <component name="RunManager" selected="Kotlin.ExportVerificationsKt">
+    <configuration name="ExportTestVerificationsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.aoc.export.ExportTestVerificationsKt" />
+      <module name="AdventOfCode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExportVerificationsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.aoc.export.ExportVerificationsKt" />
+      <module name="AdventOfCode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ExporterKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nami.aoc.tools.ExporterKt" />
       <module name="AdventOfCode" />
@@ -184,29 +299,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Y16D08Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.aoc.task.solutions.y16.Y16D08Kt" />
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.aoc.MainKt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Y16D09Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.aoc.task.solutions.y16.Y16D09Kt" />
-      <module name="AdventOfCode" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Y23D03Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.aoc.task.solutions.y23.Y23D03Kt" />
-      <module name="AdventOfCode" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Y23D04Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.aoc.task.solutions.y23.Y23D04Kt" />
+    <configuration name="Y2015D01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.aoc.task.solution.y15.Y2015D01Kt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -214,11 +315,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ExportVerificationsKt" />
+        <item itemvalue="Kotlin.ExportTestVerificationsKt" />
+        <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="Kotlin.ExporterKt" />
-        <item itemvalue="Kotlin.Y16D09Kt" />
-        <item itemvalue="Kotlin.Y23D04Kt" />
-        <item itemvalue="Kotlin.Y23D03Kt" />
-        <item itemvalue="Kotlin.Y16D08Kt" />
+        <item itemvalue="Kotlin.Y2015D01Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -342,15 +443,25 @@
       <workItem from="1752521889790" duration="9951000" />
       <workItem from="1752583262817" duration="98000" />
       <workItem from="1752617604247" duration="4981000" />
-      <workItem from="1752770671807" duration="1004000" />
-    </task>
-    <task id="LOCAL-00034" summary="Implemented Verification">
-      <option name="closed" value="true" />
-      <created>1748699731456</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1748699731456</updated>
+      <workItem from="1752770671807" duration="1174000" />
+      <workItem from="1752804306592" duration="9000" />
+      <workItem from="1753366098135" duration="359000" />
+      <workItem from="1753379863611" duration="2000" />
+      <workItem from="1753669850337" duration="71000" />
+      <workItem from="1753812698538" duration="576000" />
+      <workItem from="1753835461114" duration="41000" />
+      <workItem from="1753835513398" duration="313000" />
+      <workItem from="1753971261793" duration="10426000" />
+      <workItem from="1753990289623" duration="1000" />
+      <workItem from="1753991758039" duration="5097000" />
+      <workItem from="1754003200172" duration="4623000" />
+      <workItem from="1754009514217" duration="1550000" />
+      <workItem from="1754038386582" duration="2744000" />
+      <workItem from="1754041184905" duration="1796000" />
+      <workItem from="1754043219520" duration="1426000" />
+      <workItem from="1754143917452" duration="5701000" />
+      <workItem from="1754149878532" duration="401000" />
+      <workItem from="1754162555830" duration="7347000" />
     </task>
     <task id="LOCAL-00035" summary="Solved Y2015D9 A,B">
       <option name="closed" value="true" />
@@ -736,7 +847,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752529729022</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Solved Y16D09.kt {A}">
+      <option name="closed" value="true" />
+      <created>1752771766724</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1752771766725</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -758,7 +877,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge: Master &lt;- Subtask" />
     <MESSAGE value="Received bonus" />
     <MESSAGE value="Solved Y16D01 A,B" />
     <MESSAGE value="Solved Y15D15 {A, B}" />
@@ -783,7 +901,8 @@
     <MESSAGE value="Resolved Y23D03.kt {A, B}" />
     <MESSAGE value="Optimized Imports" />
     <MESSAGE value="Resolved Y23D04 {A}&#10;Solved Y23D04 {B}" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resolved Y23D04 {A}&#10;Solved Y23D04 {B}" />
+    <MESSAGE value="Solved Y16D09.kt {A}" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solved Y16D09.kt {A}" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
