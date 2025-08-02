@@ -4,9 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Refactoring">
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Updated README.md">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_18_b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2016_01_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2016_01_b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2016_02_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2016_02_b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2016_04_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2016_05_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2016_05_b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2016_06_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2016_06_b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2016_07_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2016_07_b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2016_08_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2016_09_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2023_01_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2023_01_b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2023_02_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2023_02_b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2023_03_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2023_03_b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2023_04_a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tests/2023_04_b.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export/testVerifications.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/export/verifications.md" beforeDir="false" afterPath="$PROJECT_DIR$/export/verifications.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/Extensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/Extensions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/Test.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/export/ExportTestVerifications.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/export/ExportTests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y15/Y2015D17.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y16/Y2016D10.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nami/aoc/task/solution/y24/Y2024D15.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tests/2015_17_a.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tests/2015_18_a.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +112,7 @@
     "Kotlin.D02Kt.executor": "Run",
     "Kotlin.ExportKt.executor": "Run",
     "Kotlin.ExportTestVerificationsKt.executor": "Run",
+    "Kotlin.ExportTestsKt.executor": "Run",
     "Kotlin.ExportVerificationsKt.executor": "Run",
     "Kotlin.ExporterKt (1).executor": "Run",
     "Kotlin.ExporterKt.executor": "Run",
@@ -177,9 +208,9 @@
       <recent name="com.nami.aoc" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.ExportVerificationsKt">
-    <configuration name="ExportTestVerificationsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.aoc.export.ExportTestVerificationsKt" />
+  <component name="RunManager" selected="Kotlin.ExportTestsKt">
+    <configuration name="ExportTestsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.aoc.export.ExportTestsKt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -206,8 +237,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Y2015D01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nami.aoc.task.solution.y15.Y2015D01Kt" />
+    <configuration name="TestKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nami.aoc.TestKt" />
       <module name="AdventOfCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -215,11 +246,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ExportTestsKt" />
         <item itemvalue="Kotlin.ExportVerificationsKt" />
-        <item itemvalue="Kotlin.ExportTestVerificationsKt" />
+        <item itemvalue="Kotlin.TestKt" />
         <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="Kotlin.ExporterKt" />
-        <item itemvalue="Kotlin.Y2015D01Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -361,15 +392,8 @@
       <workItem from="1754043219520" duration="1426000" />
       <workItem from="1754143917452" duration="5701000" />
       <workItem from="1754149878532" duration="401000" />
-      <workItem from="1754162555830" duration="7530000" />
-    </task>
-    <task id="LOCAL-00036" summary="Optimized Y2015D9 A,B">
-      <option name="closed" value="true" />
-      <created>1748816019211</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1748816019211</updated>
+      <workItem from="1754162555830" duration="8333000" />
+      <workItem from="1754171782205" duration="4188000" />
     </task>
     <task id="LOCAL-00037" summary="Optimized Y2015D9 A,B">
       <option name="closed" value="true" />
@@ -755,7 +779,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754170628610</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Updated README.md">
+      <option name="closed" value="true" />
+      <created>1754170806417</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1754170806417</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -777,7 +809,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Solved Y16D01 A,B" />
     <MESSAGE value="Solved Y15D15 {A, B}" />
     <MESSAGE value="Exported Y15D15 {A, B}" />
     <MESSAGE value="Prepared Y15D17" />
@@ -802,7 +833,8 @@
     <MESSAGE value="Resolved Y23D04 {A}&#10;Solved Y23D04 {B}" />
     <MESSAGE value="Solved Y16D09.kt {A}" />
     <MESSAGE value="Refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
+    <MESSAGE value="Updated README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated README.md" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

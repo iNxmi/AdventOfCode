@@ -85,6 +85,7 @@ private fun getTableVerification(set: Set<Verification>) = Table.Builder().apply
     withAlignments(
         Table.ALIGN_RIGHT,
         Table.ALIGN_RIGHT,
+        Table.ALIGN_RIGHT,
         Table.ALIGN_LEFT,
         Table.ALIGN_RIGHT,
         Table.ALIGN_RIGHT,
@@ -92,16 +93,18 @@ private fun getTableVerification(set: Set<Verification>) = Table.Builder().apply
         Table.ALIGN_RIGHT,
         Table.ALIGN_LEFT
     )
-    addRow("Year", "Day", "Part", "Expected", "Actual", "Time (s)", "Bonus (€)", "URL")
+    addRow("#", "Year", "Day", "Part", "Expected", "Actual", "Time (s)", "Bonus (€)", "URL")
 
-    set.forEach {
+    set.withIndex().forEach { indexed ->
+        val value = indexed.value
         addRow(
-            it.result.year,
-            it.result.day,
-            it.result.part,
-            it.expected,
-            it.result.value,
-            ("%.2fs").format(it.result.timeInSeconds),
+            indexed.index,
+            value.result.year,
+            value.result.day,
+            value.result.part,
+            value.expected,
+            value.result.value,
+            ("%.2fs").format(value.result.timeInSeconds),
 //                    if (it.part.bonus() != null) ("%.2f€").format(it.part.bonus()) else "",
 //                    Link(it.task.url)
         )

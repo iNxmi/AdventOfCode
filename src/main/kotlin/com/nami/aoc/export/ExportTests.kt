@@ -7,4 +7,4 @@ import java.nio.file.Paths
 fun main() = Task.getAll()
     .flatMap { it.getTestVerifications() }
     .toSet()
-    .export(Paths.get("export/testVerifications.md"))
+    .export(Paths.get("export/tests.md"))
