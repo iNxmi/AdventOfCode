@@ -18,7 +18,7 @@ class Y2015D03 : Task<List<Direction>>(2015, 3) {
     }
 
     override fun getPartA() = object : Part<List<Direction>>(
-        year, day, Type.A,
+        this, Type.A,
         bonus = 5.0
     ) {
         override fun solve(input: List<Direction>): Any {
@@ -37,7 +37,7 @@ class Y2015D03 : Task<List<Direction>>(2015, 3) {
     }
 
     override fun getPartB() = object : Part<List<Direction>>(
-        year, day, Type.B,
+        this, Type.B,
         bonus = 10.0
     ) {
         override fun solve(input: List<Direction>): Any {

@@ -52,21 +52,21 @@ class Y2024D11 : Task<Map<Long, Long>>(2024, 11) {
     private fun solve(input: Map<Long, Long>, n: Int): Long {
         var map = input.toMutableMap()
 
-        for (count in 0..<n)
+        for (i in 0..<n)
             map = tick(map).toMutableMap()
 
         return map.values.sum()
     }
 
     override fun getPartA() = object : Part<Map<Long, Long>>(
-        year, day, Type.A,
+        this, Type.A,
         bonus = 5.0
     ) {
         override fun solve(input: Map<Long, Long>) = solve(input, 25)
     }
 
     override fun getPartB() = object : Part<Map<Long, Long>>(
-        year, day, Type.B,
+        this, Type.B,
         bonus = 10.0
     ) {
         override fun solve(input: Map<Long, Long>) = solve(input, 75)

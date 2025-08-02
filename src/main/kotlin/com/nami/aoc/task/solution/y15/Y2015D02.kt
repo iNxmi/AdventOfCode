@@ -12,7 +12,7 @@ class Y2015D02 : Task<List<Vector3i>>(2015, 2) {
     }.map { Vector3i(it) }
 
     override fun getPartA() = object : Part<List<Vector3i>>(
-        year, day, Type.A,
+        this, Type.A,
         bonus = 5.0
     ) {
         override fun solve(input: List<Vector3i>): Any {
@@ -36,7 +36,7 @@ class Y2015D02 : Task<List<Vector3i>>(2015, 2) {
     }
 
     override fun getPartB() = object : Part<List<Vector3i>>(
-        year, day, Type.B,
+        this, Type.B,
         bonus = 10.0
     ) {
         override fun solve(input: List<Vector3i>): Any {

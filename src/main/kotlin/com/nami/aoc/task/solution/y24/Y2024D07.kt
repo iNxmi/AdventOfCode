@@ -37,7 +37,7 @@ class Y2024D07 : Task<List<Y2024D07.Equation>>(2024, 7) {
     }
 
     override fun getPartA() = object : Part<List<Equation>>(
-        year, day, Type.A,
+        this, Type.A,
         bonus = 3.0
     ) {
         override fun solve(input: List<Equation>): Any? {
@@ -80,7 +80,7 @@ class Y2024D07 : Task<List<Y2024D07.Equation>>(2024, 7) {
     }
 
     override fun getPartB() = object : Part<List<Equation>>(
-        year, day, Type.B,
+        this, Type.B,
         bonus = 7.0
     ) {
         override fun solve(input: List<Equation>): Any? {

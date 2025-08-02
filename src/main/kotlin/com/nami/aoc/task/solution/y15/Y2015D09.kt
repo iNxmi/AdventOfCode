@@ -55,7 +55,7 @@ class Y2015D09 : Task<Y2015D09.Input>(2015, 9) {
     }
 
     override fun getPartA() = object : Part<Input>(
-        year, day, Type.A,
+        this, Type.A,
         bonus = 5.0
     ) {
         override fun solve(input: Input): Any? {
@@ -66,7 +66,7 @@ class Y2015D09 : Task<Y2015D09.Input>(2015, 9) {
     }
 
     override fun getPartB() = object : Part<Input>(
-        year, day, Type.B,
+        this, Type.B,
         bonus = 10.0
     ) {
         override fun solve(input: Input): Any? {

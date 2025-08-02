@@ -45,14 +45,14 @@ class Y2015D12 : Task<Y2015D12.Input>(2015, 12) {
     }
 
     override fun getPartA() = object : Part<Input>(
-        year, day, Type.A,
+        this, Type.A,
         bonus = 5.0
     ) {
         override fun solve(input: Input) = sum(input.raw)
     }
 
     override fun getPartB() = object : Part<Input>(
-        year, day, Type.B,
+        this, Type.B,
         bonus = 10.0
     ) {
         override fun solve(input: Input): Any {

@@ -60,7 +60,7 @@ class Y2015D15 : Task<Set<Y2015D15.Ingredient>>(2015, 15) {
     }
 
     override fun getPartA() = object : Part<Set<Ingredient>>(
-        year, day, Type.A,
+        this, Type.A,
         bonus = 5.0,
         comment = "Needs Improvement (Stars and Bars)"
     ) {
@@ -108,7 +108,7 @@ class Y2015D15 : Task<Set<Y2015D15.Ingredient>>(2015, 15) {
     }
 
     override fun getPartB() = object : Part<Set<Ingredient>>(
-        year, day, Type.B,
+        this, Type.B,
         bonus = 10.0,
         comment = "Needs Improvement (Stars and Bars)"
     ) {

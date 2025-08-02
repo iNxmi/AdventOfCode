@@ -11,7 +11,7 @@ class Y2015D01 : Task<String>(2015, 1) {
     override fun getProcessedInput(raw: String) = raw
 
     override fun getPartA() = object : Part<String>(
-        year, day, Type.A,
+        this, Type.A,
         bonus = 5.0
     ) {
         override fun solve(input: String): Any {
@@ -22,7 +22,7 @@ class Y2015D01 : Task<String>(2015, 1) {
     }
 
     override fun getPartB() = object : Part<String>(
-        year, day, Type.B,
+        this, Type.B,
         bonus = 10.0
     ) {
         override fun solve(input: String): Any {

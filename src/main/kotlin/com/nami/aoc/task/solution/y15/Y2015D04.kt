@@ -31,14 +31,14 @@ class Y2015D04 : Task<String>(2015, 4) {
     }
 
     override fun getPartA() = object : Part<String>(
-        year, day, Type.A,
+        this, Type.A,
         bonus = 5.0
     ) {
         override fun solve(input: String) = crack(input, "00000")
     }
 
     override fun getPartB() = object : Part<String>(
-        year, day, Type.B,
+        this, Type.B,
         bonus = 10.0
     ) {
         override fun solve(input: String) = crack(input, "000000")

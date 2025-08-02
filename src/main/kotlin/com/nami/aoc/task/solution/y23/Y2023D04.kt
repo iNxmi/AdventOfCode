@@ -21,7 +21,7 @@ class Y2023D04 : Task<List<Y2023D04.Card>>(2023, 4) {
     }
 
     override fun getPartA() = object : Part<List<Card>>(
-        year, day, Type.A,
+        this, Type.A,
         bonus = 2.0
     ) {
         override fun solve(input: List<Card>) = input.sumOf { card ->
@@ -31,7 +31,7 @@ class Y2023D04 : Task<List<Y2023D04.Card>>(2023, 4) {
     }
 
     override fun getPartB() = object : Part<List<Card>>(
-        year, day, Type.B
+        this, Type.B
     ) {
         override fun solve(input: List<Card>): Any {
             val cards = input.associate { it.id to 1 }.toMutableMap()

@@ -9,19 +9,18 @@ class Template : Task<List<String>>(0, 0) {
     override fun getProcessedInput(raw: String) = raw.lines()
 
     override fun getPartA() = object : Part<List<String>>(
-        year, day, Type.A
+        this, Type.A
     ) {
         override fun solve(input: List<String>) = null
     }
 
     override fun getPartB() = object : Part<List<String>>(
-        year, day, Type.B
+        this, Type.B
     ) {
         override fun solve(input: List<String>) = null
     }
 
 }
-
 
 //fun main() = Template().getTestVerifications().print()
 //fun main() = Template().getResults().print()

@@ -72,14 +72,14 @@ class Y2015D07 : Task<Map<String, String>>(2015, 7) {
     }
 
     override fun getPartA() = object : Part<Map<String, String>>(
-        year, day, Type.A,
+        this, Type.A,
         bonus = 5.0
     ) {
         override fun solve(input: Map<String, String>) = evaluate(mutableMapOf(), input, "a").toInt()
     }
 
     override fun getPartB() = object : Part<Map<String, String>>(
-        year, day, Type.B,
+        this, Type.B,
         bonus = 10.0
     ) {
         override fun solve(input: Map<String, String>): Any {

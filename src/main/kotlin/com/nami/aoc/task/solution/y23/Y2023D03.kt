@@ -49,7 +49,7 @@ class Y2023D03 : Task<Input>(2023, 3) {
     }
 
     override fun getPartA() = object : Part<Input>(
-        year, day, Type.A,
+        this, Type.A,
         bonus = 2.0
     ) {
         override fun solve(input: Input) = input.numbers.filter { (position, _) ->
@@ -58,7 +58,7 @@ class Y2023D03 : Task<Input>(2023, 3) {
     }
 
     override fun getPartB() = object : Part<Input>(
-        year, day, Type.B,
+        this, Type.B,
         bonus = 3.0
     ) {
         override fun solve(input: Input): Any {

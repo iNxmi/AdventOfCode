@@ -21,7 +21,7 @@ class Y2016D02 : Task<List<List<Direction>>>(2016, 2) {
     }
 
     override fun getPartA() = object : Part<List<List<Direction>>>(
-        year, day, Type.A,
+        this, Type.A,
         bonus = 5.0
     ) {
         val keypad = mapOf(
@@ -55,7 +55,7 @@ class Y2016D02 : Task<List<List<Direction>>>(2016, 2) {
     }
 
     override fun getPartB() = object : Part<List<List<Direction>>>(
-        year, day, Type.B,
+        this, Type.B,
         bonus = 10.0
     ) {
         val keypad = mapOf(

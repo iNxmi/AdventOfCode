@@ -2,6 +2,7 @@ package com.nami.aoc
 
 import com.nami.aoc.task.Result
 import com.nami.aoc.task.Verification
+import net.steppschuh.markdowngenerator.link.Link
 import net.steppschuh.markdowngenerator.table.Table
 import java.nio.file.Files
 import java.nio.file.Path
@@ -36,7 +37,7 @@ fun Set<Verification>.print() {
         val result = verification.result
         table.addRow(
             index,
-            "${result.year}_${result.day}_${result.part}",
+            "${result.part.task.year}_${result.part.task.day}_${result.part}",
             verification.status,
             verification.expected,
             result.value,
@@ -55,7 +56,7 @@ fun Set<Result>.print() {
     this.withIndex().forEach { (index, result) ->
         table.addRow(
             index,
-            "${result.year}_${result.day}_${result.part}",
+            "${result.part.task.year}_${result.part.task.day}_${result.part}",
             result.value,
             result.timeInSeconds
         )
@@ -91,22 +92,20 @@ private fun getTableVerification(set: Set<Verification>) = Table.Builder().apply
         Table.ALIGN_RIGHT,
         Table.ALIGN_RIGHT,
         Table.ALIGN_RIGHT,
-        Table.ALIGN_LEFT
     )
-    addRow("#", "Year", "Day", "Part", "Expected", "Actual", "Time (s)", "Bonus (€)", "URL")
+    addRow("#", "Year", "Day", "Part", "Expected", "Actual", "Time (s)", "Bonus (€)")
 
     set.withIndex().forEach { indexed ->
         val value = indexed.value
         addRow(
             indexed.index,
-            value.result.year,
-            value.result.day,
-            value.result.part,
+            value.result.part.task.year,
+            value.result.part.task.day,
+            value.result.part.type,
             value.expected,
             value.result.value,
             ("%.2fs").format(value.result.timeInSeconds),
-//                    if (it.part.bonus() != null) ("%.2f€").format(it.part.bonus()) else "",
-//                    Link(it.task.url)
+                    if (value.result.part.bonus != null) ("%.2f€").format(value.result.part.bonus) else ""
         )
     }
 }.build().toString()

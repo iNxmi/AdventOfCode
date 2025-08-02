@@ -35,7 +35,7 @@ class Y2015D08 : Task<List<String>>(2015, 8) {
     }
 
     override fun getPartA() = object : Part<List<String>>(
-        year, day, Type.A,
+        this, Type.A,
         bonus = 5.0
     ) {
         override fun solve(input: List<String>): Any {
@@ -46,7 +46,7 @@ class Y2015D08 : Task<List<String>>(2015, 8) {
     }
 
     override fun getPartB() = object : Part<List<String>>(
-        year, day, Type.B,
+        this, Type.B,
         bonus = 10.0
     ) {
         override fun solve(input: List<String>): Any {

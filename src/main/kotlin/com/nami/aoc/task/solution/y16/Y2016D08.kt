@@ -65,7 +65,7 @@ class Y2016D08 : Task<List<Y2016D08.Instruction>>(2016, 8) {
     }
 
     override fun getPartA() = object : Part<List<Instruction>>(
-        year, day, Type.A
+        this, Type.A
     ) {
         override fun solve(input: List<Instruction>): Any {
             val display = mutableSetOf<Vector2i>()
@@ -75,7 +75,7 @@ class Y2016D08 : Task<List<Y2016D08.Instruction>>(2016, 8) {
     }
 
     override fun getPartB() = object : Part<List<Instruction>>(
-        year, day, Type.B
+        this, Type.B
     ) {
         override fun solve(input: List<Instruction>): Any {
             val display = mutableSetOf<Vector2i>()

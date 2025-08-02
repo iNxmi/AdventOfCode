@@ -1,9 +1,7 @@
 package com.nami.aoc.task
 
 data class Result(
-    val year: Int,
-    val day: Int,
-    val part: Part.Type,
+    val part: Part<*>,
     val test: Boolean,
     val value: Any?,
     val timeInSeconds: Double
@@ -13,8 +11,8 @@ data class Result(
         if (test)
             return null
 
-        val solutions = Remote.getSolutions(year, day)
-        val expected = solutions[part]
+        val solutions = Remote.getSolutions(part.task.year, part.task.day)
+        val expected = solutions[part.type]
         return Verification(this, expected)
     }
 
