@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Fixed Typo">
+    <list default="true" id="0a9919fb-bc8d-4218-963d-11aa774c0365" name="Changes" comment="Updated .gitignore">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -362,15 +363,7 @@
       <workItem from="1754143917452" duration="5701000" />
       <workItem from="1754149878532" duration="401000" />
       <workItem from="1754162555830" duration="8333000" />
-      <workItem from="1754171782205" duration="6020000" />
-    </task>
-    <task id="LOCAL-00040" summary="Implemented Time Measurement">
-      <option name="closed" value="true" />
-      <created>1748822387881</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1748822387881</updated>
+      <workItem from="1754171782205" duration="6363000" />
     </task>
     <task id="LOCAL-00041" summary="LaTeX in Markdown test">
       <option name="closed" value="true" />
@@ -756,7 +749,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754178946289</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="Updated .gitignore">
+      <option name="closed" value="true" />
+      <created>1754179013537</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1754179013537</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -778,7 +779,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed invalid SESSION Cookie (Status=400) error." />
     <MESSAGE value="Small QOL changes" />
     <MESSAGE value="Small overall improvements" />
     <MESSAGE value="Solved Y16D02 {A, B}" />
@@ -803,7 +803,8 @@
     <MESSAGE value="Added more test" />
     <MESSAGE value="Small refactoring" />
     <MESSAGE value="Fixed Typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Typo" />
+    <MESSAGE value="Updated .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated .gitignore" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
