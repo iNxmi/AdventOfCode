@@ -1,8 +1,9 @@
 package com.nami.aoc.task.solution.y23
 
+import com.nami.aoc.print
 import com.nami.aoc.task.Part
 import com.nami.aoc.task.Task
-import org.apache.commons.math3.util.ArithmeticUtils.pow
+import kotlin.math.pow
 
 class Y2023D04 : Task<List<Y2023D04.Card>>(2023, 4) {
 
@@ -26,8 +27,8 @@ class Y2023D04 : Task<List<Y2023D04.Card>>(2023, 4) {
     ) {
         override fun solve(input: List<Card>) = input.sumOf { card ->
             val count = card.getMatchingCount()
-            if (count > 0) pow(2, count - 1) else 0
-        }
+            if (count > 0) (2.0).pow(count - 1) else 0.0
+        }.toInt()
     }
 
     override fun getPartB() = object : Part<List<Card>>(
@@ -47,3 +48,5 @@ class Y2023D04 : Task<List<Y2023D04.Card>>(2023, 4) {
     }
 
 }
+
+fun main() = Y2023D04().getVerifications().print()

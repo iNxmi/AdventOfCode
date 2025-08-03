@@ -1,6 +1,7 @@
 package com.nami.aoc.task
 
 import io.github.classgraph.ClassGraph
+import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.serialization.json.Json
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -23,6 +24,8 @@ abstract class Task<InputClass : Any>(
             return tasks
         }
     }
+
+    protected val log = KotlinLogging.logger("${year}_$day")
 
     fun getRawInput(): String = Remote.getInput(year, day)
     fun getSolutions(): Map<Part.Type, String?> = Remote.getSolutions(year, day)

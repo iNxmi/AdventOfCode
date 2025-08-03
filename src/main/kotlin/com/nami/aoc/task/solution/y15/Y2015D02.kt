@@ -2,7 +2,6 @@ package com.nami.aoc.task.solution.y15
 
 import com.nami.aoc.task.Part
 import com.nami.aoc.task.Task
-import org.apache.commons.lang3.math.NumberUtils.min
 import org.joml.Vector3i
 
 class Y2015D02 : Task<List<Vector3i>>(2015, 2) {
@@ -28,7 +27,7 @@ class Y2015D02 : Task<List<Vector3i>>(2015, 2) {
                 val z = height * length
 
                 sum += 2 * (x + y + z)
-                sum += min(x, y, z)
+                sum += minOf(x, y, z)
             }
 
             return sum

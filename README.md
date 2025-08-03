@@ -4,9 +4,9 @@
 - Every solution can be run on its own, or you can run the exporters in [com.nami.aoc.export](src/main/kotlin/com/nami/aoc/export).
 
 # Locations
-- Solutions ([com.nami.aoc.task.solutions](src/main/kotlin/com/nami/aoc/task/solution))
-- Tools ([com.nami.aoc.tools](src/main/kotlin/com/nami/aoc/tools))
-- Results / Verification ([summary.md](summary.md))
+- Solutions ([com.nami.aoc.task.solution](src/main/kotlin/com/nami/aoc/task/solution))
+- Export ([com.nami.aoc.export](src/main/kotlin/com/nami/aoc/export))
+- Results / Verification ([export](export))
 
 # .env
 To Allow the program to automatically fetch input and solutions, follow these steps:

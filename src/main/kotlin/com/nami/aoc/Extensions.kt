@@ -2,7 +2,6 @@ package com.nami.aoc
 
 import com.nami.aoc.task.Result
 import com.nami.aoc.task.Verification
-import net.steppschuh.markdowngenerator.link.Link
 import net.steppschuh.markdowngenerator.table.Table
 import java.nio.file.Files
 import java.nio.file.Path
@@ -31,17 +30,18 @@ fun <T> List<T>.permutations(level: Int = 0): Set<List<T>> {
 @JvmName("printVerifications")
 fun Set<Verification>.print() {
     val table = Table.Builder()
+        .withAlignment(Table.ALIGN_RIGHT)
         .addRow("#", "ID", "Status", "Expected", "Actual", "Time (s)")
 
     this.withIndex().forEach { (index, verification) ->
         val result = verification.result
         table.addRow(
             index,
-            "${result.part.task.year}_${result.part.task.day}_${result.part}",
+            "${result.part.task.year}_${result.part.task.day}_${result.part.type}",
             verification.status,
             verification.expected,
             result.value,
-            result.timeInSeconds
+            result.timeInSeconds.format("%.2fs")
         )
     }
 
@@ -51,14 +51,15 @@ fun Set<Verification>.print() {
 @JvmName("printResults")
 fun Set<Result>.print() {
     val table = Table.Builder()
+        .withAlignment(Table.ALIGN_RIGHT)
         .addRow("#", "ID", "Result", "Time (s)")
 
     this.withIndex().forEach { (index, result) ->
         table.addRow(
             index,
-            "${result.part.task.year}_${result.part.task.day}_${result.part}",
+            "${result.part.task.year}_${result.part.task.day}_${result.part.type}",
             result.value,
-            result.timeInSeconds
+            result.timeInSeconds.format("%.2fs")
         )
     }
 
@@ -70,42 +71,36 @@ fun Set<Verification>.export(path: Path) {
     val unsolved = this.filter { it.status == Verification.Status.UNSOLVED }.toSet()
     val solved = this.filter { it.status == Verification.Status.SOLVED }.toSet()
 
-    val builder = StringBuilder()
-    builder.appendLine("# Failed (${failed.size} / ${this.size})")
-    builder.appendLine(getTableVerification(failed))
-    builder.appendLine("# Unsolved  (${unsolved.size} / ${this.size})")
-    builder.appendLine(getTableVerification(unsolved))
-    builder.appendLine("# Solved  (${solved.size} / ${this.size})")
-    builder.appendLine(getTableVerification(solved))
+    val size = this.size
+    val string = StringBuilder().apply {
+        appendLine("# Failed (${failed.size} / $size)")
+        appendLine(getTableVerification(failed))
+        appendLine("# Unsolved  (${unsolved.size} / $size)")
+        appendLine(getTableVerification(unsolved))
+        appendLine("# Solved  (${solved.size} / $size)")
+        appendLine(getTableVerification(solved))
+    }.toString()
 
     path.createParentDirectories()
-    Files.writeString(path, builder.toString())
+    Files.writeString(path, string)
 }
 
 private fun getTableVerification(set: Set<Verification>) = Table.Builder().apply {
-    withAlignments(
-        Table.ALIGN_RIGHT,
-        Table.ALIGN_RIGHT,
-        Table.ALIGN_RIGHT,
-        Table.ALIGN_LEFT,
-        Table.ALIGN_RIGHT,
-        Table.ALIGN_RIGHT,
-        Table.ALIGN_RIGHT,
-        Table.ALIGN_RIGHT,
-    )
+    withAlignment(Table.ALIGN_RIGHT)
     addRow("#", "Year", "Day", "Part", "Expected", "Actual", "Time (s)", "Bonus (€)")
 
-    set.withIndex().forEach { indexed ->
-        val value = indexed.value
+    set.withIndex().forEach { (index, verification) ->
         addRow(
-            indexed.index,
-            value.result.part.task.year,
-            value.result.part.task.day,
-            value.result.part.type,
-            value.expected,
-            value.result.value,
-            ("%.2fs").format(value.result.timeInSeconds),
-                    if (value.result.part.bonus != null) ("%.2f€").format(value.result.part.bonus) else ""
+            index,
+            verification.result.part.task.year,
+            verification.result.part.task.day,
+            verification.result.part.type,
+            verification.expected,
+            verification.result.value,
+            verification.result.timeInSeconds.format("%.2fs"),
+            verification.result.part.bonus?.format("%.2f€") ?: ""
         )
     }
 }.build().toString()
+
+fun Number.format(format: String) = format.format(this)

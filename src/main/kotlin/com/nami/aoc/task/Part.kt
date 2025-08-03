@@ -1,5 +1,7 @@
 package com.nami.aoc.task
 
+import io.github.oshai.kotlinlogging.KotlinLogging
+
 abstract class Part<InputClass>(
     val task: Task<*>,
     val type: Type,
@@ -7,6 +9,8 @@ abstract class Part<InputClass>(
     val bonus: Double? = null,
     val comment: String? = null
 ) {
+
+    protected val log = KotlinLogging.logger("${task.year}_${task.day}_$type")
 
     enum class Type(val string: String) { A("a"), B("b") }
 
@@ -16,7 +20,7 @@ abstract class Part<InputClass>(
         val timeEndNs = System.nanoTime()
 
         val time = (timeEndNs - timeStartNs) * 1e-9
-        return Result(this, test, value, time)
+        return Result(this,  value, time)
     }
 
     abstract fun solve(input: InputClass): Any?

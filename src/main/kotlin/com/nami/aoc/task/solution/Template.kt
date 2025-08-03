@@ -22,6 +22,6 @@ class Template : Task<List<String>>(0, 0) {
 
 }
 
-//fun main() = Template().getTestVerifications().print()
+fun main() = Template().getTestVerifications().print()
 //fun main() = Template().getResults().print()
 //fun main() = Template().getVerifications().print()

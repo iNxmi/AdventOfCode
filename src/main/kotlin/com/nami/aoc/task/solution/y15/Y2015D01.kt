@@ -17,6 +17,7 @@ class Y2015D01 : Task<String>(2015, 1) {
         override fun solve(input: String): Any {
             val opening = input.count { it == '(' }
             val closing = input.count { it == ')' }
+            log.error { opening }
             return opening - closing
         }
     }
