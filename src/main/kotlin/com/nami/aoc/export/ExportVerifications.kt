@@ -12,8 +12,7 @@ fun main() {
         .flatMap { (index, task) ->
             println("${task.year}_${task.day.format("%02d")} (${index + 1}/${tasks.size})")
             task.getVerifications()
-        }
-        .toSet()
+        }.toSet()
         .export(Paths.get("export/verifications.md"))
 }
 

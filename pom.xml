@@ -159,6 +159,13 @@
             <version>4.8.180</version>
         </dependency>
 
+        <!-- HTML Generator -->
+        <dependency>
+            <groupId>com.j2html</groupId>
+            <artifactId>j2html</artifactId>
+            <version>1.6.0</version>
+        </dependency>
+
     </dependencies>
 
 </project>
