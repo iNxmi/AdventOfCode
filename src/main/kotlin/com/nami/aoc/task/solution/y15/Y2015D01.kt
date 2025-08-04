@@ -3,43 +3,42 @@ package com.nami.aoc.task.solution.y15
 import com.nami.aoc.print
 import com.nami.aoc.task.Part
 import com.nami.aoc.task.Task
-import com.nami.aoc.task.solution.exception.IllegalCharacterException
-import com.nami.aoc.task.solution.exception.NoSolutionFoundException
+import com.nami.aoc.task.solution.exception.AOCException
+import com.nami.aoc.task.solution.exception.AOCExceptionNoSolutionFound
 
 class Y2015D01 : Task<String>(2015, 1) {
 
     override fun getProcessedInput(raw: String) = raw
 
     override fun getPartA() = object : Part<String>(
-        this, Type.A,
+        this, Suffix.A,
         bonus = 5.0
     ) {
         override fun solve(input: String): Any {
             val opening = input.count { it == '(' }
             val closing = input.count { it == ')' }
-            log.error { opening }
             return opening - closing
         }
     }
 
     override fun getPartB() = object : Part<String>(
-        this, Type.B,
+        this, Suffix.B,
         bonus = 10.0
     ) {
         override fun solve(input: String): Any {
-            var sum = 0
+            var floor = 0
             input.withIndex().forEach { (index, char) ->
-                sum += when (char) {
+                floor += when (char) {
                     '(' -> 1
                     ')' -> -1
-                    else -> throw IllegalCharacterException(year, day, type, setOf('(', ')'), char)
+                    else -> throw AOCException(log, "Invalid character '$char'")
                 }
 
-                if (sum < 0)
+                if (floor < 0)
                     return index + 1
             }
 
-            throw NoSolutionFoundException(year, day, type)
+            throw AOCExceptionNoSolutionFound(log)
         }
     }
 

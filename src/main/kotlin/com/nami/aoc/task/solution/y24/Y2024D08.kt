@@ -71,7 +71,7 @@ class Y2024D08 : Task<Y2024D08.Input>(2024, 8) {
     }
 
     override fun getPartA() = object : Part<Input>(
-        this, Type.A,
+        this, Suffix.A,
         bonus = 5.0
     ) {
         override fun solve(input: Input): Any {
@@ -99,7 +99,7 @@ class Y2024D08 : Task<Y2024D08.Input>(2024, 8) {
     }
 
     override fun getPartB() = object : Part<Input>(
-        this, Type.B
+        this, Suffix.B
     ) {
         override fun solve(input: Input): Any? {
             val antinodes = mutableSetOf<Vector2i>()

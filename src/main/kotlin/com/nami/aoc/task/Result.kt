@@ -8,7 +8,7 @@ data class Result(
 
     fun getVerification(): Verification? {
         val solutions = Remote.getSolutions(part.task.year, part.task.day)
-        val expected = solutions[part.type]
+        val expected = solutions[part.suffix]
         return Verification(this, expected)
     }
 

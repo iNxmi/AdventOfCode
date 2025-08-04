@@ -90,7 +90,7 @@ class Y2015D18 : Task<Y2015D18.World>(2015, 18) {
     }
 
     override fun getPartA() = object : Part<World>(
-        this, Type.A,
+        this, Suffix.A,
         bonus = 5.0
     ) {
         override fun solve(input: World) = simulateA(input, 100)
@@ -98,7 +98,7 @@ class Y2015D18 : Task<Y2015D18.World>(2015, 18) {
     }
 
     override fun getPartB() = object : Part<World>(
-        this, Type.B,
+        this, Suffix.B,
         bonus = 10.0
     ) {
         override fun solve(input: World) = simulateB(input, 100)

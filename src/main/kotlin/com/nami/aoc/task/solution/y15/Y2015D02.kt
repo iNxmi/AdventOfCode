@@ -1,5 +1,6 @@
 package com.nami.aoc.task.solution.y15
 
+import com.nami.aoc.print
 import com.nami.aoc.task.Part
 import com.nami.aoc.task.Task
 import org.joml.Vector3i
@@ -7,55 +8,48 @@ import org.joml.Vector3i
 class Y2015D02 : Task<List<Vector3i>>(2015, 2) {
 
     override fun getProcessedInput(raw: String) = raw.lines().map { line ->
-        line.split("x").map { it.toInt() }.toIntArray()
-    }.map { Vector3i(it) }
+        val array = line.split("x")
+            .map { it.toInt() }
+            .toIntArray()
+
+        Vector3i(array)
+    }
 
     override fun getPartA() = object : Part<List<Vector3i>>(
-        this, Type.A,
+        this, Suffix.A,
         bonus = 5.0
     ) {
-        override fun solve(input: List<Vector3i>): Any {
-            var sum = 0
+        override fun solve(input: List<Vector3i>) = input.sumOf { dimension ->
+            val length = dimension.x
+            val width = dimension.y
+            val height = dimension.z
 
-            for (dimension in input) {
-                val length = dimension.x
-                val width = dimension.y
-                val height = dimension.z
+            val x = length * width
+            val y = width * height
+            val z = height * length
 
-                val x = length * width
-                val y = width * height
-                val z = height * length
-
-                sum += 2 * (x + y + z)
-                sum += minOf(x, y, z)
-            }
-
-            return sum
+            2 * (x + y + z) + minOf(x, y, z)
         }
     }
 
     override fun getPartB() = object : Part<List<Vector3i>>(
-        this, Type.B,
+        this, Suffix.B,
         bonus = 10.0
     ) {
-        override fun solve(input: List<Vector3i>): Any {
-            var sum = 0
+        override fun solve(input: List<Vector3i>) = input.sumOf { dimension ->
+            val length = dimension.x
+            val width = dimension.y
+            val height = dimension.z
 
-            for (dimension in input) {
-                val length = dimension.x
-                val width = dimension.y
-                val height = dimension.z
+            val sorted = listOf(length, width, height).sorted()
+            val a = sorted[0]
+            val b = sorted[1]
 
-                val sorted = mutableListOf(length, width, height).sorted()
-                val a = sorted[0]
-                val b = sorted[1]
-
-                sum += 2 * (a + b)
-                sum += length * width * height
-            }
-
-            return sum
+            2 * (a + b) + length * width * height
         }
     }
 
 }
+
+//fun main() = Y2015D02().getTestVerifications().print()
+fun main() = Y2015D02().getVerifications().print()

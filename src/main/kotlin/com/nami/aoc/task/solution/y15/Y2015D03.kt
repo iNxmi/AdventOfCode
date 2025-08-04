@@ -3,6 +3,7 @@ package com.nami.aoc.task.solution.y15
 import com.nami.aoc.task.Part
 import com.nami.aoc.task.Task
 import com.nami.aoc.task.solution.common.Direction
+import com.nami.aoc.task.solution.exception.AOCException
 import org.joml.Vector2i
 
 class Y2015D03 : Task<List<Direction>>(2015, 3) {
@@ -13,12 +14,12 @@ class Y2015D03 : Task<List<Direction>>(2015, 3) {
             'v' -> Direction.DOWN
             '<' -> Direction.LEFT
             '>' -> Direction.RIGHT
-            else -> throw IllegalArgumentException("Character $char is not valid")
+            else -> throw AOCException(log, "Character '$char' is not valid")
         }
     }
 
     override fun getPartA() = object : Part<List<Direction>>(
-        this, Type.A,
+        this, Suffix.A,
         bonus = 5.0
     ) {
         override fun solve(input: List<Direction>): Any {
@@ -37,7 +38,7 @@ class Y2015D03 : Task<List<Direction>>(2015, 3) {
     }
 
     override fun getPartB() = object : Part<List<Direction>>(
-        this, Type.B,
+        this, Suffix.B,
         bonus = 10.0
     ) {
         override fun solve(input: List<Direction>): Any {

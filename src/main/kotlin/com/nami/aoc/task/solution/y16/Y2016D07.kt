@@ -50,13 +50,13 @@ class Y2016D07 : Task<List<Y2016D07.IPv7>>(2016, 7) {
     }
 
     override fun getPartA() = object : Part<List<IPv7>>(
-        this, Type.A
+        this, Suffix.A
     ) {
         override fun solve(input: List<IPv7>) = input.count { it.canTLS() }
     }
 
     override fun getPartB() = object : Part<List<IPv7>>(
-        this, Type.B
+        this, Suffix.B
     ) {
         override fun solve(input: List<IPv7>) = input.count { it.canSSL() }
     }

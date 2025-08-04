@@ -8,7 +8,7 @@ class Y2016D06 : Task<List<String>>(2016, 6) {
     override fun getProcessedInput(raw: String) = raw.lines()
 
     override fun getPartA() = object : Part<List<String>>(
-        this, Type.A,
+        this, Suffix.A,
         bonus = 5.0
     ) {
         override fun solve(input: List<String>): Any {
@@ -32,7 +32,7 @@ class Y2016D06 : Task<List<String>>(2016, 6) {
     }
 
     override fun getPartB() = object : Part<List<String>>(
-        this,Type.B,
+        this,Suffix.B,
         bonus = 10.0
     ) {
         override fun solve(input: List<String>): Any {

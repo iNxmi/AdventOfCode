@@ -50,7 +50,7 @@ class Y2016D01 : Task<List<Y2016D01.Move>>(2016, 1) {
     }
 
     override fun getPartA() = object : Part<List<Move>>(
-        this,Type.A,
+        this,Suffix.A,
         bonus = 5.0
     ) {
         override fun solve(input: List<Move>): Any? {
@@ -69,7 +69,7 @@ class Y2016D01 : Task<List<Y2016D01.Move>>(2016, 1) {
     }
 
     override fun getPartB() = object : Part<List<Move>>(
-        this,Type.B,
+        this,Suffix.B,
         bonus = 10.0
     ) {
         override fun solve(input: List<Move>): Any {

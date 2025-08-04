@@ -67,7 +67,7 @@ class Y2015D14 : Task<Set<Y2015D14.Racer>>(2015, 14) {
     }
 
     override fun getPartA() = object : Part<Set<Racer>>(
-        this, Type.A,
+        this, Suffix.A,
         bonus = 5.0
     ) {
         override fun solve(input: Set<Racer>) = race(input, 2503).maxOf { it.value.distance }
@@ -75,7 +75,7 @@ class Y2015D14 : Task<Set<Y2015D14.Racer>>(2015, 14) {
     }
 
     override fun getPartB() = object : Part<Set<Racer>>(
-        this, Type.B,
+        this, Suffix.B,
         bonus = 10.0
     ) {
         override fun solve(input: Set<Racer>) = race(input, 2503).maxOf { it.value.points }

@@ -48,7 +48,7 @@ class Y2024D04 : Task<List<CharArray>>(2024, 4) {
     }
 
     override fun getPartA() = object : Part<List<CharArray>>(
-        this, Type.A,
+        this, Suffix.A,
         bonus = 3.0
     ) {
         override fun solve(input: List<CharArray>): Any? {
@@ -69,7 +69,7 @@ class Y2024D04 : Task<List<CharArray>>(2024, 4) {
     }
 
     override fun getPartB() = object : Part<List<CharArray>>(
-        this, Type.B,
+        this, Suffix.B,
         bonus = 7.0
     ) {
         override fun solve(input: List<CharArray>): Any? {

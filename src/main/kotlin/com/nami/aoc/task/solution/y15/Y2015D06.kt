@@ -1,7 +1,9 @@
 package com.nami.aoc.task.solution.y15
 
+import com.nami.aoc.print
 import com.nami.aoc.task.Part
 import com.nami.aoc.task.Task
+import com.nami.aoc.task.solution.exception.AOCException
 import org.joml.Vector2i
 
 class Y2015D06 : Task<List<Y2015D06.Operation>>(2015, 6) {
@@ -17,13 +19,14 @@ class Y2015D06 : Task<List<Y2015D06.Operation>>(2015, 6) {
 
         val operations = mutableListOf<Operation>()
         string.lines().forEach { line ->
-            val type = if (line.contains("on"))
-                Type.ON
-            else if (line.contains("toggle"))
-                Type.TOGGLE
-            else if (line.contains("off"))
-                Type.OFF
-            else throw IllegalStateException("Unexpected line $line")
+            val type = with(line) {
+                when {
+                    line.contains("on") -> Type.ON
+                    line.contains("toggle") -> Type.TOGGLE
+                    line.contains("off") -> Type.OFF
+                    else -> throw AOCException(log, "Unexpected line $line")
+                }
+            }
 
             val split = line.split(" ")
             val strStart = split[1].trim()
@@ -41,7 +44,7 @@ class Y2015D06 : Task<List<Y2015D06.Operation>>(2015, 6) {
     private val size = 1000
 
     override fun getPartA() = object : Part<List<Operation>>(
-        this, Type.A,
+        this, Suffix.A,
         bonus = 5.0
     ) {
         override fun solve(input: List<Operation>): Any {
@@ -52,9 +55,9 @@ class Y2015D06 : Task<List<Y2015D06.Operation>>(2015, 6) {
                         val index = x + y * size
 
                         lights[index] = when (operation.type) {
-                            Y2015D06.Type.ON -> true
-                            Y2015D06.Type.TOGGLE -> !lights[index]
-                            Y2015D06.Type.OFF -> false
+                            Type.ON -> true
+                            Type.TOGGLE -> !lights[index]
+                            Type.OFF -> false
                         }
                     }
             }
@@ -63,7 +66,7 @@ class Y2015D06 : Task<List<Y2015D06.Operation>>(2015, 6) {
     }
 
     override fun getPartB() = object : Part<List<Operation>>(
-        this, Type.B,
+        this, Suffix.B,
         bonus = 10.0
     ) {
         override fun solve(input: List<Operation>): Any {
@@ -75,9 +78,9 @@ class Y2015D06 : Task<List<Y2015D06.Operation>>(2015, 6) {
                         val value = lights[index]
 
                         val result = when (operation.type) {
-                            Y2015D06.Type.ON -> value + 1
-                            Y2015D06.Type.TOGGLE -> value + 2
-                            Y2015D06.Type.OFF -> value - 1
+                            Type.ON -> value + 1
+                            Type.TOGGLE -> value + 2
+                            Type.OFF -> value - 1
                         }
 
                         lights[index] = if (result >= 0) result else 0
@@ -89,4 +92,4 @@ class Y2015D06 : Task<List<Y2015D06.Operation>>(2015, 6) {
 
 }
 
-
+fun main() = Y2015D06().getTestVerifications().print()

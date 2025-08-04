@@ -45,7 +45,7 @@ class Y2015D07 : Task<Map<String, String>>(2015, 7) {
             states,
             wires,
             split[0]
-        ) // NOT operator has no variable in position 0 so this is a workaround
+        ) // 'NOT' operator has no variable in position 0 so this is a workaround
         val b = getOrEvaluate(states, wires, split[1])
 
         states[id] = when (operator) {
@@ -72,14 +72,14 @@ class Y2015D07 : Task<Map<String, String>>(2015, 7) {
     }
 
     override fun getPartA() = object : Part<Map<String, String>>(
-        this, Type.A,
+        this, Suffix.A,
         bonus = 5.0
     ) {
         override fun solve(input: Map<String, String>) = evaluate(mutableMapOf(), input, "a").toInt()
     }
 
     override fun getPartB() = object : Part<Map<String, String>>(
-        this, Type.B,
+        this, Suffix.B,
         bonus = 10.0
     ) {
         override fun solve(input: Map<String, String>): Any {

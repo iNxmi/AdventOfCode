@@ -38,7 +38,7 @@ class Y2015D10 : Task<String>(2015, 10) {
     }
 
     override fun getPartA() = object : Part<String>(
-        this, Type.A,
+        this, Suffix.A,
         bonus = 5.0
     ) {
         override fun solve(input: String): Any = iterate(input, 40).length
@@ -46,7 +46,7 @@ class Y2015D10 : Task<String>(2015, 10) {
     }
 
     override fun getPartB() = object : Part<String>(
-        this, Type.B,
+        this, Suffix.B,
         bonus = 10.0
     ) {
         override fun solve(input: String): Any = iterate(input, 50).length

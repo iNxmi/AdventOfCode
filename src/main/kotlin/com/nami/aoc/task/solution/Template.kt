@@ -9,13 +9,13 @@ class Template : Task<List<String>>(0, 0) {
     override fun getProcessedInput(raw: String) = raw.lines()
 
     override fun getPartA() = object : Part<List<String>>(
-        this, Type.A
+        this, Suffix.A
     ) {
         override fun solve(input: List<String>) = null
     }
 
     override fun getPartB() = object : Part<List<String>>(
-        this, Type.B
+        this, Suffix.B
     ) {
         override fun solve(input: List<String>) = null
     }

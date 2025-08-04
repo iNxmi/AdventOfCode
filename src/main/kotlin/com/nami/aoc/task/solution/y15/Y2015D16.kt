@@ -68,7 +68,7 @@ class Y2015D16 : Task<Set<Y2015D16.Aunt>>(2015, 16) {
     }
 
     override fun getPartA() = object : Part<Set<Aunt>>(
-        this, Type.A,
+        this, Suffix.A,
         bonus = 5.0
     ) {
         override fun solve(input: Set<Aunt>): Any {
@@ -93,7 +93,7 @@ class Y2015D16 : Task<Set<Y2015D16.Aunt>>(2015, 16) {
     }
 
     override fun getPartB() = object : Part<Set<Aunt>>(
-        this, Type.B,
+        this, Suffix.B,
         bonus = 10.0
     ) {
         override fun solve(input: Set<Aunt>): Any {

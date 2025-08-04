@@ -5,7 +5,11 @@ import com.nami.aoc.task.Verification
 import net.steppschuh.markdowngenerator.table.Table
 import java.nio.file.Files
 import java.nio.file.Path
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import kotlin.io.path.createParentDirectories
+import kotlin.math.pow
+import kotlin.math.roundToInt
 
 fun <T> List<T>.permutations(level: Int = 0): Set<List<T>> {
     val size = this.size
@@ -27,6 +31,22 @@ fun <T> List<T>.permutations(level: Int = 0): Set<List<T>> {
     return result
 }
 
+fun <T> Collection<T>.combinations(): List<List<T>> {
+    val bits = this.size
+    val limit = (2.0).pow(bits).roundToInt()
+
+    return (0 until limit).mapNotNull { index ->
+        val binary = Integer.toBinaryString(index)
+            .padStart(bits, '0')
+            .map { it.digitToInt() }
+
+        this.withIndex()
+            .mapNotNull { (index, value) ->
+                if (binary[index] == 1) value else null
+            }
+    }
+}
+
 @JvmName("printVerifications")
 fun Set<Verification>.print() {
     val table = Table.Builder()
@@ -37,7 +57,7 @@ fun Set<Verification>.print() {
         val result = verification.result
         table.addRow(
             index,
-            "${result.part.task.year}_${result.part.task.day}_${result.part.type}",
+            "${result.part.task.year}_${result.part.task.day}_${result.part.suffix}",
             verification.status,
             verification.expected,
             result.value,
@@ -57,7 +77,7 @@ fun Set<Result>.print() {
     this.withIndex().forEach { (index, result) ->
         table.addRow(
             index,
-            "${result.part.task.year}_${result.part.task.day}_${result.part.type}",
+            "${result.part.task.year}_${result.part.task.day}_${result.part.suffix}",
             result.value,
             result.timeInSeconds.format("%.2fs")
         )
@@ -73,6 +93,10 @@ fun Set<Verification>.export(path: Path) {
 
     val size = this.size
     val string = StringBuilder().apply {
+        val format = DateTimeFormatter.ofPattern("YYYY/MM/dd - HH:mm:ss")
+        val timestamp = LocalDateTime.now().format(format)
+        appendLine("# Timestamp: $timestamp")
+
         appendLine("# Failed (${failed.size} / $size)")
         appendLine(getTableVerification(failed))
         appendLine("# Unsolved  (${unsolved.size} / $size)")
@@ -87,18 +111,19 @@ fun Set<Verification>.export(path: Path) {
 
 private fun getTableVerification(set: Set<Verification>) = Table.Builder().apply {
     withAlignment(Table.ALIGN_RIGHT)
-    addRow("#", "Year", "Day", "Part", "Expected", "Actual", "Time (s)", "Bonus (€)")
+    addRow("#", "Year", "Day", "Part", "Expected", "Actual", "Time (s)", "Bonus (€)", "Comment")
 
     set.withIndex().forEach { (index, verification) ->
         addRow(
             index,
             verification.result.part.task.year,
             verification.result.part.task.day,
-            verification.result.part.type,
+            verification.result.part.suffix,
             verification.expected,
             verification.result.value,
             verification.result.timeInSeconds.format("%.2fs"),
-            verification.result.part.bonus?.format("%.2f€") ?: ""
+            verification.result.part.bonus?.format("%.2f€") ?: "",
+            verification.result.part.comment
         )
     }
 }.build().toString()

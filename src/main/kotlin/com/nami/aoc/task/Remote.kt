@@ -14,7 +14,8 @@ class Remote {
 
         private val TOKEN_ORIGINAL = dotenv().get("SESSION")
         private val TOKEN_HASH = MessageDigest.getInstance("SHA-256").digest(TOKEN_ORIGINAL.toByteArray())
-        private val TOKEN_STRING = TOKEN_HASH.joinToString("") { ("%02x").format(it) }
+        @OptIn(ExperimentalStdlibApi::class)
+        private val TOKEN_STRING = TOKEN_HASH.toHexString()
 
         private val CACHE_INPUT = Cache(Paths.get("cache/$TOKEN_STRING/input.json"))
         private val CACHE_SOLUTION_A = Cache(Paths.get("cache/$TOKEN_STRING/solutions_a.json"))
@@ -33,7 +34,7 @@ class Remote {
             return CACHE_INPUT[id]!!
         }
 
-        fun getSolutions(year: Int, day: Int): Map<Part.Type, String?> {
+        fun getSolutions(year: Int, day: Int): Map<Part.Suffix, String?> {
             require(YEAR_RANGE.contains(year)) { "Year must be in '$YEAR_RANGE'" }
             require(DAY_RANGE.contains(day)) { "Day must be in '$DAY_RANGE'" }
 
@@ -59,9 +60,9 @@ class Remote {
                 }
             }
 
-            return mutableMapOf<Part.Type, String?>().apply {
-                put(Part.Type.A, CACHE_SOLUTION_A.getOrDefault(id, null))
-                put(Part.Type.B, CACHE_SOLUTION_B.getOrDefault(id, null))
+            return mutableMapOf<Part.Suffix, String?>().apply {
+                put(Part.Suffix.A, CACHE_SOLUTION_A.getOrDefault(id, null))
+                put(Part.Suffix.B, CACHE_SOLUTION_B.getOrDefault(id, null))
             }
         }
 

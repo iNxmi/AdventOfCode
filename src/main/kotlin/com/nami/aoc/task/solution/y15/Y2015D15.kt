@@ -12,10 +12,18 @@ class Y2015D15 : Task<Set<Y2015D15.Ingredient>>(2015, 15) {
 
     data class Recipe(val ingredients: Map<Ingredient, Int>) {
         fun score(): Int {
-            val capacity = ingredients.entries.sumOf { (key, value) -> key.capacity * value }.coerceAtLeast(0)
-            val durability = ingredients.entries.sumOf { (key, value) -> key.durability * value }.coerceAtLeast(0)
-            val flavor = ingredients.entries.sumOf { (key, value) -> key.flavor * value }.coerceAtLeast(0)
-            val texture = ingredients.entries.sumOf { (key, value) -> key.texture * value }.coerceAtLeast(0)
+            val capacity = ingredients.entries
+                .sumOf { (key, value) -> key.capacity * value }
+                .coerceAtLeast(0)
+            val durability = ingredients.entries
+                .sumOf { (key, value) -> key.durability * value }
+                .coerceAtLeast(0)
+            val flavor = ingredients.entries
+                .sumOf { (key, value) -> key.flavor * value }
+                .coerceAtLeast(0)
+            val texture = ingredients.entries
+                .sumOf { (key, value) -> key.texture * value }
+                .coerceAtLeast(0)
 
             return capacity * durability * flavor * texture
         }
@@ -33,17 +41,12 @@ class Y2015D15 : Task<Set<Y2015D15.Ingredient>>(2015, 15) {
     )
 
     override fun getProcessedInput(raw: String): Set<Ingredient> {
+        val regex = Regex("(capacity|durability|flavor|texture|calories|\\h)")
         val string = raw
             .replace(":", ",")
-            .replace("capacity", "")
-            .replace("durability", "")
-            .replace("flavor", "")
-            .replace("texture", "")
-            .replace("calories", "")
-            .replace(" ", "")
+            .replace(regex, "")
 
-        val set = mutableSetOf<Ingredient>()
-        string.lines().forEach { line ->
+        return string.lines().map { line ->
             val split = line.split(",")
 
             val name = split[0]
@@ -53,14 +56,12 @@ class Y2015D15 : Task<Set<Y2015D15.Ingredient>>(2015, 15) {
             val texture = split[4].toInt()
             val calories = split[5].toInt()
 
-            set.add(Ingredient(name, capacity, durability, flavor, texture, calories))
-        }
-
-        return set
+            Ingredient(name, capacity, durability, flavor, texture, calories)
+        }.toSet()
     }
 
     override fun getPartA() = object : Part<Set<Ingredient>>(
-        this, Type.A,
+        this, Suffix.A,
         bonus = 5.0,
         comment = "Needs Improvement (Stars and Bars)"
     ) {
@@ -108,7 +109,7 @@ class Y2015D15 : Task<Set<Y2015D15.Ingredient>>(2015, 15) {
     }
 
     override fun getPartB() = object : Part<Set<Ingredient>>(
-        this, Type.B,
+        this, Suffix.B,
         bonus = 10.0,
         comment = "Needs Improvement (Stars and Bars)"
     ) {

@@ -8,7 +8,7 @@ class Y2024D05 : Task<Y2024D05.Input>(2024, 5) {
     data class Input(val rules: Map<Int, Set<Int>>, val updates: List<List<Int>>)
 
     override fun getProcessedInput(raw: String): Input {
-        val split = raw.split(("(?m)^\\s*\$").toRegex())
+        val split = raw.split(("(?m)^\\s*$").toRegex())
 
         val rulesRaw = split[0].trim()
         val rules = mutableMapOf<Int, MutableSet<Int>>()
@@ -106,7 +106,7 @@ class Y2024D05 : Task<Y2024D05.Input>(2024, 5) {
     private fun getSolution(updates: Set<List<Int>>) = updates.sumOf { it[(it.size - 1) / 2] }
 
     override fun getPartA() = object : Part<Input>(
-        this,Type.A,
+        this,Suffix.A,
         bonus = 5.0
     ) {
         override fun solve(input: Input): Any {
@@ -116,7 +116,7 @@ class Y2024D05 : Task<Y2024D05.Input>(2024, 5) {
     }
 
     override fun getPartB() = object : Part<Input>(
-        this,Type.B
+        this,Suffix.B
     ) {
         override fun solve(input: Input): Any? {
             //        val invalidUpdates = getInvalidUpdates(input)

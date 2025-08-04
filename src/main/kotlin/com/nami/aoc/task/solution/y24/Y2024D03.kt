@@ -8,7 +8,7 @@ class Y2024D03 : Task<String>(2024, 3) {
     override fun getProcessedInput(raw: String) = raw
 
     override fun getPartA() = object : Part<String>(
-        this, Type.A,
+        this, Suffix.A,
         bonus = 3.0,
         comment = "needs cleanup"
     ) {
@@ -30,7 +30,7 @@ class Y2024D03 : Task<String>(2024, 3) {
     }
 
     override fun getPartB() = object : Part<String>(
-        this, Type.B,
+        this, Suffix.B,
         bonus = 7.0
     ) {
         override fun solve(input: String): Any {

@@ -16,29 +16,29 @@ class Y2015D04 : Task<String>(2015, 4) {
     }
 
     private fun crack(secret: String, prefix: String): Int {
-        var i = 0
+        var index = 0
         while (true) {
-            val string = "$secret$i"
+            val string = "$secret$index"
             val hash = md5(string)
 
             if (hash.startsWith(prefix))
                 break
 
-            i++
+            index++
         }
 
-        return i
+        return index
     }
 
     override fun getPartA() = object : Part<String>(
-        this, Type.A,
+        this, Suffix.A,
         bonus = 5.0
     ) {
         override fun solve(input: String) = crack(input, "00000")
     }
 
     override fun getPartB() = object : Part<String>(
-        this, Type.B,
+        this, Suffix.B,
         bonus = 10.0
     ) {
         override fun solve(input: String) = crack(input, "000000")

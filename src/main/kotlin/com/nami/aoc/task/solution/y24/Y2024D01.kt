@@ -21,7 +21,7 @@ class Y2024D01 : Task<Y2024D01.Input>(2024, 1) {
     }
 
     override fun getPartA() = object : Part<Input>(
-        this, Type.A,
+        this, Suffix.A,
         bonus = 3.0
     ) {
         override fun solve(input: Input): Any {
@@ -35,7 +35,7 @@ class Y2024D01 : Task<Y2024D01.Input>(2024, 1) {
     }
 
     override fun getPartB() = object : Part<Input>(
-        this, Type.B,
+        this, Suffix.B,
         bonus = 7.0
     ) {
         override fun solve(input: Input): Any {

@@ -65,7 +65,7 @@ class Y2016D08 : Task<List<Y2016D08.Instruction>>(2016, 8) {
     }
 
     override fun getPartA() = object : Part<List<Instruction>>(
-        this, Type.A
+        this, Suffix.A
     ) {
         override fun solve(input: List<Instruction>): Any {
             val display = mutableSetOf<Vector2i>()
@@ -75,7 +75,7 @@ class Y2016D08 : Task<List<Y2016D08.Instruction>>(2016, 8) {
     }
 
     override fun getPartB() = object : Part<List<Instruction>>(
-        this, Type.B
+        this, Suffix.B
     ) {
         override fun solve(input: List<Instruction>): Any {
             val display = mutableSetOf<Vector2i>()
@@ -95,7 +95,7 @@ class Y2016D08 : Task<List<Y2016D08.Instruction>>(2016, 8) {
                 letters.add(sb.toString().trimIndent())
             }
 
-            return letters.joinToString("") { ASCIILetter.MAP_REVERSED[it]!! }
+            return letters.joinToString("") { ASCIILetter.getCharacter(it).toString() }
         }
 
         override fun test(input: List<Instruction>) = null

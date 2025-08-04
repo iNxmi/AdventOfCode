@@ -1,10 +1,8 @@
 package com.nami.aoc.task.solution.exception
 
-import com.nami.aoc.task.Part
+import io.github.oshai.kotlinlogging.KLogger
 
 open class AOCException(
-    val year: Int,
-    val day: Int,
-    val part: Part.Type,
+    logger: KLogger,
     message: String,
-) : RuntimeException("${year}_${day}_$part -> $message")
+) : RuntimeException("${logger.name} -> $message")

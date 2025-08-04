@@ -79,14 +79,14 @@ class Y2015D11 : Task<String>(2015, 11) {
     }
 
     override fun getPartA() = object : Part<String>(
-        this, Type.A,
+        this, Suffix.A,
         bonus = 5.0
     ) {
         override fun solve(input: String) = find(input)
     }
 
     override fun getPartB() = object : Part<String>(
-        this, Type.B,
+        this, Suffix.B,
         bonus = 10.0
     ) {
         override fun solve(input: String) = find(getPartA().solve(input).toString())

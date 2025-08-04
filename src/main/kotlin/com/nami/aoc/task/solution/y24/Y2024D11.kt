@@ -59,14 +59,14 @@ class Y2024D11 : Task<Map<Long, Long>>(2024, 11) {
     }
 
     override fun getPartA() = object : Part<Map<Long, Long>>(
-        this, Type.A,
+        this, Suffix.A,
         bonus = 5.0
     ) {
         override fun solve(input: Map<Long, Long>) = solve(input, 25)
     }
 
     override fun getPartB() = object : Part<Map<Long, Long>>(
-        this, Type.B,
+        this, Suffix.B,
         bonus = 10.0
     ) {
         override fun solve(input: Map<Long, Long>) = solve(input, 75)

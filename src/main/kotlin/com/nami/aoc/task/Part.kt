@@ -4,15 +4,15 @@ import io.github.oshai.kotlinlogging.KotlinLogging
 
 abstract class Part<InputClass>(
     val task: Task<*>,
-    val type: Type,
+    val suffix: Suffix,
 
     val bonus: Double? = null,
     val comment: String? = null
 ) {
 
-    protected val log = KotlinLogging.logger("${task.year}_${task.day}_$type")
+    protected val log = KotlinLogging.logger("${task.year}_${task.day}_$suffix")
 
-    enum class Type(val string: String) { A("a"), B("b") }
+    enum class Suffix(val string: String) { A("a"), B("b") }
 
     fun getResult(input: InputClass, test: Boolean = false): Result {
         val timeStartNs = System.nanoTime()

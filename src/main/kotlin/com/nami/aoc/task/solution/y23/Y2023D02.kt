@@ -54,7 +54,7 @@ class Y2023D02 : Task<Map<Int, List<Y2023D02.Draw>>>(2023, 2) {
     }
 
     override fun getPartA() = object : Part<Map<Int, List<Draw>>>(
-        this, Type.A,
+        this, Suffix.A,
         bonus = 2.0
     ) {
         override fun solve(input: Map<Int, List<Draw>>): Any {
@@ -70,7 +70,7 @@ class Y2023D02 : Task<Map<Int, List<Y2023D02.Draw>>>(2023, 2) {
     }
 
     override fun getPartB() = object : Part<Map<Int, List<Draw>>>(
-        this, Type.B,
+        this, Suffix.B,
         bonus = 3.0
     ) {
         override fun solve(input: Map<Int, List<Draw>>): Any {
