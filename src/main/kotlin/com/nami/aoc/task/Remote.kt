@@ -1,5 +1,7 @@
 package com.nami.aoc.task
 
+import com.nami.aoc.DAY_RANGE
+import com.nami.aoc.YEAR_RANGE
 import io.github.cdimascio.dotenv.dotenv
 import org.jsoup.HttpStatusException
 import org.jsoup.Jsoup
@@ -9,9 +11,6 @@ import java.security.MessageDigest
 class Remote {
 
     companion object {
-        private val YEAR_RANGE = (2015..2024)
-        private val DAY_RANGE = (1..25)
-
         private val TOKEN_ORIGINAL = dotenv().get("SESSION")
         private val TOKEN_HASH = MessageDigest.getInstance("SHA-256").digest(TOKEN_ORIGINAL.toByteArray())
         @OptIn(ExperimentalStdlibApi::class)
