@@ -4,20 +4,28 @@ import com.nami.aoc.print
 import com.nami.aoc.task.Part
 import com.nami.aoc.task.Task
 
-class Y2015D19 : Task<List<String>>(2015, 19) {
+class Y2015D19 : Task<Y2015D19.Input>(2015, 19) {
 
-    override fun getProcessedInput(raw: String) = raw.lines()
+    data class Replacement(val base: String, val replacement: String)
+    data class Input(val replacements: Int, val molecule: String)
 
-    override fun getPartA() = object : Part<List<String>>(
-        this, Suffix.A
-    ) {
-        override fun solve(input: List<String>) = null
+    override fun getProcessedInput(raw: String): Input {
+        val split = raw.split("\n\n")
+        val replacements = split[0].lines()
+        val molecule = split[1]
+        return Input(0, "")
     }
 
-    override fun getPartB() = object : Part<List<String>>(
+    override fun getPartA() = object : Part<Input>(
+        this, Suffix.A
+    ) {
+        override fun solve(input: Input) = null
+    }
+
+    override fun getPartB() = object : Part<Input>(
         this, Suffix.B
     ) {
-        override fun solve(input: List<String>) = null
+        override fun solve(input: Input) = null
     }
 
 }

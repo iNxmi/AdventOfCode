@@ -1,2118 +1,1885 @@
-<html>
-    <head>
-        <title>
-            ExportVerificationCoverageHTML
-        </title>
-        <style>
-            html            { font-family: arial; background: rgb(56,56,56); }
-            .content        { max-width: fit-content; margin-left: auto; margin-right: auto; display: flex; gap: 30px; flex-direction: column; }
-            .year           { display: flex; gap: 5px; }
-            .year-content   { display: flex; gap: 0px; flex-direction: column; border: 1px solid black; }
-            .day            { display: flex; flex-direction: column; aspect-ratio: 1 / 1; justify-content: space-evenly; color: white; text-decoration: none; }
-            .part           { flex: 1; color: transparent; text-align: center; user-select: none; padding: 5px; text-wrap: nowrap; }
-            .part:hover     { color: white; }
-            .solved         { background: green; }
-            .solved:hover   { background: darkgreen; }
-            .unsolved       { background: rgb(40,40,40); }
-            .unsolved:hover { background: rgb(32,32,32); }
-            .failed         { background: red; }
-            .failed:hover   { background: darkred; }
-            .progress       { min-width: fit-content; background: rgb(72,72,72); border: none; }
-            .title          { min-width: fit-content; background: rgb(72,72,72); color: white; text-align: center; padding: 5px; }
-        </style>
-    </head>
-    <body>
-        <div class="content">
-            <div class="year-content">
-                <a href="https://adventofcode.com/2024" target="_blank" class="title">
-                    2024 (15 / 50)
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>ExportVerificationCoverageHTML</title>
+    <style>
+        html                    { font-family: \"Source Code Pro\", monospace; background: rgb(15, 15, 35); }
+        a                       { color: #009900; text-decoration: none; }
+        a:hover, a:focus        { color: #99ff99; }
+
+        body                    { display: flex; justify-content: space-evenly; }
+
+        .ascii-art              { white-space: pre; color: #009900; }
+        .title                  { background: #ffffff11; text-align: center; padding: 5px; user-select: none; }
+
+        .years                  { display: inline-flex; gap: 50px; flex-direction: column; }
+        .year                   { display: flex; flex-direction: column; gap: 5px; }
+
+        .days                   { display: flex; gap: 5px; }
+        .day                    { display: flex; flex-direction: column; width: 100px; height: 100px; justify-content: space-evenly; gap: 5px; }
+
+        .part                   { display: flex; flex-direction: column; justify-content: space-evenly; background: #ffffff22; flex-grow: 1; color: transparent; text-align: center; user-select: none; }
+        .part:hover             { background: #ffffff33; color: #009900; }
+
+        .solved                 { background: #0099007f; }
+        .solved:hover           { background: #0099008f; }
+        .failed                 { background: #ff00007f; }
+        .failed:hover           { background: #ff00008f; }
+
+        .progress-bar           { background: #ffffff11; border: none; }
+    </style>
+</head>
+
+<body>
+
+<div class="content">
+
+<!--    <p class="ascii-art"></p>-->
+
+    <div class="years">
+        <div class="year">
+            <a class="title" href="https://adventofcode.com/2024" target="_blank">[2024] (15/50 - 30%)</a>
+
+            <div class="days">
+                <a class="day" href="https://adventofcode.com/2024/day/1" target="_blank">
+                    <div class="part solved">
+                        <span>[1A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[1B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/2" target="_blank">
+                    <div class="part solved">
+                        <span>[2A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[2B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/3" target="_blank">
+                    <div class="part solved">
+                        <span>[3A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[3B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/4" target="_blank">
+                    <div class="part solved">
+                        <span>[4A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[4B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/5" target="_blank">
+                    <div class="part solved">
+                        <span>[5A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[5B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/6" target="_blank">
+                    <div class="part solved">
+                        <span>[6A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[6B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/7" target="_blank">
+                    <div class="part solved">
+                        <span>[7A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[7B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/8" target="_blank">
+                    <div class="part solved">
+                        <span>[8A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[8B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/9" target="_blank">
+                    <div class="part">
+                        <span>[9A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[9B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/10" target="_blank">
+                    <div class="part">
+                        <span>[10A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[10B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/11" target="_blank">
+                    <div class="part solved">
+                        <span>[11A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[11B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/12" target="_blank">
+                    <div class="part">
+                        <span>[12A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[12B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/13" target="_blank">
+                    <div class="part">
+                        <span>[13A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[13B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/14" target="_blank">
+                    <div class="part">
+                        <span>[14A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[14B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/15" target="_blank">
+                    <div class="part">
+                        <span>[15A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[15B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/16" target="_blank">
+                    <div class="part">
+                        <span>[16A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[16B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/17" target="_blank">
+                    <div class="part">
+                        <span>[17A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[17B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/18" target="_blank">
+                    <div class="part">
+                        <span>[18A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[18B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/19" target="_blank">
+                    <div class="part">
+                        <span>[19A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[19B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/20" target="_blank">
+                    <div class="part">
+                        <span>[20A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[20B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/21" target="_blank">
+                    <div class="part">
+                        <span>[21A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[21B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/22" target="_blank">
+                    <div class="part">
+                        <span>[22A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[22B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/23" target="_blank">
+                    <div class="part">
+                        <span>[23A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[23B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/24" target="_blank">
+                    <div class="part">
+                        <span>[24A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[24B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2024/day/25" target="_blank">
+                    <div class="part">
+                        <span>[25A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[25B]</span>
+                    </div>
                 </a>
-                <div class="year">
-                    <a class="day" href="https://adventofcode.com/2024/day/1" target="_blank">
-                        <div class="part solved">
-                            2024 01 A
-                        </div>
-                        <div class="part solved">
-                            2024 01 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/2" target="_blank">
-                        <div class="part solved">
-                            2024 02 A
-                        </div>
-                        <div class="part solved">
-                            2024 02 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/3" target="_blank">
-                        <div class="part solved">
-                            2024 03 A
-                        </div>
-                        <div class="part solved">
-                            2024 03 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/4" target="_blank">
-                        <div class="part solved">
-                            2024 04 A
-                        </div>
-                        <div class="part solved">
-                            2024 04 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/5" target="_blank">
-                        <div class="part solved">
-                            2024 05 A
-                        </div>
-                        <div class="part unsolved">
-                            2024 05 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/6" target="_blank">
-                        <div class="part solved">
-                            2024 06 A
-                        </div>
-                        <div class="part unsolved">
-                            2024 06 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/7" target="_blank">
-                        <div class="part solved">
-                            2024 07 A
-                        </div>
-                        <div class="part solved">
-                            2024 07 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/8" target="_blank">
-                        <div class="part solved">
-                            2024 08 A
-                        </div>
-                        <div class="part unsolved">
-                            2024 08 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/9" target="_blank">
-                        <div class="part unsolved">
-                            2024 09 A
-                        </div>
-                        <div class="part unsolved">
-                            2024 09 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/10" target="_blank">
-                        <div class="part unsolved">
-                            2024 10 A
-                        </div>
-                        <div class="part unsolved">
-                            2024 10 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/11" target="_blank">
-                        <div class="part solved">
-                            2024 11 A
-                        </div>
-                        <div class="part solved">
-                            2024 11 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/12" target="_blank">
-                        <div class="part unsolved">
-                            2024 12 A
-                        </div>
-                        <div class="part unsolved">
-                            2024 12 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/13" target="_blank">
-                        <div class="part unsolved">
-                            2024 13 A
-                        </div>
-                        <div class="part unsolved">
-                            2024 13 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/14" target="_blank">
-                        <div class="part unsolved">
-                            2024 14 A
-                        </div>
-                        <div class="part unsolved">
-                            2024 14 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/15" target="_blank">
-                        <div class="part unsolved">
-                            2024 15 A
-                        </div>
-                        <div class="part unsolved">
-                            2024 15 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/16" target="_blank">
-                        <div class="part unsolved">
-                            2024 16 A
-                        </div>
-                        <div class="part unsolved">
-                            2024 16 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/17" target="_blank">
-                        <div class="part unsolved">
-                            2024 17 A
-                        </div>
-                        <div class="part unsolved">
-                            2024 17 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/18" target="_blank">
-                        <div class="part unsolved">
-                            2024 18 A
-                        </div>
-                        <div class="part unsolved">
-                            2024 18 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/19" target="_blank">
-                        <div class="part unsolved">
-                            2024 19 A
-                        </div>
-                        <div class="part unsolved">
-                            2024 19 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/20" target="_blank">
-                        <div class="part unsolved">
-                            2024 20 A
-                        </div>
-                        <div class="part unsolved">
-                            2024 20 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/21" target="_blank">
-                        <div class="part unsolved">
-                            2024 21 A
-                        </div>
-                        <div class="part unsolved">
-                            2024 21 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/22" target="_blank">
-                        <div class="part unsolved">
-                            2024 22 A
-                        </div>
-                        <div class="part unsolved">
-                            2024 22 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/23" target="_blank">
-                        <div class="part unsolved">
-                            2024 23 A
-                        </div>
-                        <div class="part unsolved">
-                            2024 23 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/24" target="_blank">
-                        <div class="part unsolved">
-                            2024 24 A
-                        </div>
-                        <div class="part unsolved">
-                            2024 24 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2024/day/25" target="_blank">
-                        <div class="part unsolved">
-                            2024 25 A
-                        </div>
-                        <div class="part unsolved">
-                            2024 25 B
-                        </div>
-                    </a>
-                </div>
-                <progress value="15" max="50" class="progress">
-                </progress>
             </div>
-            <div class="year-content">
-                <a href="https://adventofcode.com/2023" target="_blank" class="title">
-                    2023 (8 / 50)
-                </a>
-                <div class="year">
-                    <a class="day" href="https://adventofcode.com/2023/day/1" target="_blank">
-                        <div class="part solved">
-                            2023 01 A
-                        </div>
-                        <div class="part solved">
-                            2023 01 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/2" target="_blank">
-                        <div class="part solved">
-                            2023 02 A
-                        </div>
-                        <div class="part solved">
-                            2023 02 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/3" target="_blank">
-                        <div class="part solved">
-                            2023 03 A
-                        </div>
-                        <div class="part solved">
-                            2023 03 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/4" target="_blank">
-                        <div class="part solved">
-                            2023 04 A
-                        </div>
-                        <div class="part solved">
-                            2023 04 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/5" target="_blank">
-                        <div class="part unsolved">
-                            2023 05 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 05 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/6" target="_blank">
-                        <div class="part unsolved">
-                            2023 06 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 06 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/7" target="_blank">
-                        <div class="part unsolved">
-                            2023 07 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 07 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/8" target="_blank">
-                        <div class="part unsolved">
-                            2023 08 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 08 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/9" target="_blank">
-                        <div class="part unsolved">
-                            2023 09 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 09 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/10" target="_blank">
-                        <div class="part unsolved">
-                            2023 10 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 10 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/11" target="_blank">
-                        <div class="part unsolved">
-                            2023 11 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 11 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/12" target="_blank">
-                        <div class="part unsolved">
-                            2023 12 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 12 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/13" target="_blank">
-                        <div class="part unsolved">
-                            2023 13 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 13 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/14" target="_blank">
-                        <div class="part unsolved">
-                            2023 14 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 14 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/15" target="_blank">
-                        <div class="part unsolved">
-                            2023 15 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 15 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/16" target="_blank">
-                        <div class="part unsolved">
-                            2023 16 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 16 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/17" target="_blank">
-                        <div class="part unsolved">
-                            2023 17 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 17 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/18" target="_blank">
-                        <div class="part unsolved">
-                            2023 18 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 18 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/19" target="_blank">
-                        <div class="part unsolved">
-                            2023 19 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 19 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/20" target="_blank">
-                        <div class="part unsolved">
-                            2023 20 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 20 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/21" target="_blank">
-                        <div class="part unsolved">
-                            2023 21 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 21 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/22" target="_blank">
-                        <div class="part unsolved">
-                            2023 22 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 22 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/23" target="_blank">
-                        <div class="part unsolved">
-                            2023 23 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 23 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/24" target="_blank">
-                        <div class="part unsolved">
-                            2023 24 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 24 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2023/day/25" target="_blank">
-                        <div class="part unsolved">
-                            2023 25 A
-                        </div>
-                        <div class="part unsolved">
-                            2023 25 B
-                        </div>
-                    </a>
-                </div>
-                <progress value="8" max="50" class="progress">
-                </progress>
-            </div>
-            <div class="year-content">
-                <a href="https://adventofcode.com/2022" target="_blank" class="title">
-                    2022 (0 / 50)
-                </a>
-                <div class="year">
-                    <a class="day" href="https://adventofcode.com/2022/day/1" target="_blank">
-                        <div class="part unsolved">
-                            2022 01 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 01 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/2" target="_blank">
-                        <div class="part unsolved">
-                            2022 02 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 02 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/3" target="_blank">
-                        <div class="part unsolved">
-                            2022 03 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 03 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/4" target="_blank">
-                        <div class="part unsolved">
-                            2022 04 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 04 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/5" target="_blank">
-                        <div class="part unsolved">
-                            2022 05 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 05 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/6" target="_blank">
-                        <div class="part unsolved">
-                            2022 06 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 06 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/7" target="_blank">
-                        <div class="part unsolved">
-                            2022 07 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 07 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/8" target="_blank">
-                        <div class="part unsolved">
-                            2022 08 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 08 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/9" target="_blank">
-                        <div class="part unsolved">
-                            2022 09 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 09 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/10" target="_blank">
-                        <div class="part unsolved">
-                            2022 10 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 10 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/11" target="_blank">
-                        <div class="part unsolved">
-                            2022 11 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 11 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/12" target="_blank">
-                        <div class="part unsolved">
-                            2022 12 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 12 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/13" target="_blank">
-                        <div class="part unsolved">
-                            2022 13 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 13 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/14" target="_blank">
-                        <div class="part unsolved">
-                            2022 14 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 14 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/15" target="_blank">
-                        <div class="part unsolved">
-                            2022 15 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 15 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/16" target="_blank">
-                        <div class="part unsolved">
-                            2022 16 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 16 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/17" target="_blank">
-                        <div class="part unsolved">
-                            2022 17 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 17 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/18" target="_blank">
-                        <div class="part unsolved">
-                            2022 18 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 18 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/19" target="_blank">
-                        <div class="part unsolved">
-                            2022 19 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 19 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/20" target="_blank">
-                        <div class="part unsolved">
-                            2022 20 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 20 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/21" target="_blank">
-                        <div class="part unsolved">
-                            2022 21 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 21 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/22" target="_blank">
-                        <div class="part unsolved">
-                            2022 22 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 22 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/23" target="_blank">
-                        <div class="part unsolved">
-                            2022 23 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 23 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/24" target="_blank">
-                        <div class="part unsolved">
-                            2022 24 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 24 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2022/day/25" target="_blank">
-                        <div class="part unsolved">
-                            2022 25 A
-                        </div>
-                        <div class="part unsolved">
-                            2022 25 B
-                        </div>
-                    </a>
-                </div>
-                <progress value="0" max="50" class="progress">
-                </progress>
-            </div>
-            <div class="year-content">
-                <a href="https://adventofcode.com/2021" target="_blank" class="title">
-                    2021 (0 / 50)
-                </a>
-                <div class="year">
-                    <a class="day" href="https://adventofcode.com/2021/day/1" target="_blank">
-                        <div class="part unsolved">
-                            2021 01 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 01 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/2" target="_blank">
-                        <div class="part unsolved">
-                            2021 02 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 02 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/3" target="_blank">
-                        <div class="part unsolved">
-                            2021 03 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 03 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/4" target="_blank">
-                        <div class="part unsolved">
-                            2021 04 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 04 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/5" target="_blank">
-                        <div class="part unsolved">
-                            2021 05 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 05 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/6" target="_blank">
-                        <div class="part unsolved">
-                            2021 06 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 06 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/7" target="_blank">
-                        <div class="part unsolved">
-                            2021 07 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 07 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/8" target="_blank">
-                        <div class="part unsolved">
-                            2021 08 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 08 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/9" target="_blank">
-                        <div class="part unsolved">
-                            2021 09 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 09 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/10" target="_blank">
-                        <div class="part unsolved">
-                            2021 10 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 10 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/11" target="_blank">
-                        <div class="part unsolved">
-                            2021 11 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 11 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/12" target="_blank">
-                        <div class="part unsolved">
-                            2021 12 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 12 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/13" target="_blank">
-                        <div class="part unsolved">
-                            2021 13 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 13 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/14" target="_blank">
-                        <div class="part unsolved">
-                            2021 14 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 14 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/15" target="_blank">
-                        <div class="part unsolved">
-                            2021 15 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 15 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/16" target="_blank">
-                        <div class="part unsolved">
-                            2021 16 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 16 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/17" target="_blank">
-                        <div class="part unsolved">
-                            2021 17 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 17 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/18" target="_blank">
-                        <div class="part unsolved">
-                            2021 18 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 18 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/19" target="_blank">
-                        <div class="part unsolved">
-                            2021 19 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 19 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/20" target="_blank">
-                        <div class="part unsolved">
-                            2021 20 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 20 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/21" target="_blank">
-                        <div class="part unsolved">
-                            2021 21 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 21 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/22" target="_blank">
-                        <div class="part unsolved">
-                            2021 22 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 22 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/23" target="_blank">
-                        <div class="part unsolved">
-                            2021 23 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 23 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/24" target="_blank">
-                        <div class="part unsolved">
-                            2021 24 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 24 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2021/day/25" target="_blank">
-                        <div class="part unsolved">
-                            2021 25 A
-                        </div>
-                        <div class="part unsolved">
-                            2021 25 B
-                        </div>
-                    </a>
-                </div>
-                <progress value="0" max="50" class="progress">
-                </progress>
-            </div>
-            <div class="year-content">
-                <a href="https://adventofcode.com/2020" target="_blank" class="title">
-                    2020 (0 / 50)
-                </a>
-                <div class="year">
-                    <a class="day" href="https://adventofcode.com/2020/day/1" target="_blank">
-                        <div class="part unsolved">
-                            2020 01 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 01 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/2" target="_blank">
-                        <div class="part unsolved">
-                            2020 02 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 02 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/3" target="_blank">
-                        <div class="part unsolved">
-                            2020 03 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 03 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/4" target="_blank">
-                        <div class="part unsolved">
-                            2020 04 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 04 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/5" target="_blank">
-                        <div class="part unsolved">
-                            2020 05 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 05 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/6" target="_blank">
-                        <div class="part unsolved">
-                            2020 06 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 06 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/7" target="_blank">
-                        <div class="part unsolved">
-                            2020 07 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 07 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/8" target="_blank">
-                        <div class="part unsolved">
-                            2020 08 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 08 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/9" target="_blank">
-                        <div class="part unsolved">
-                            2020 09 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 09 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/10" target="_blank">
-                        <div class="part unsolved">
-                            2020 10 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 10 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/11" target="_blank">
-                        <div class="part unsolved">
-                            2020 11 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 11 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/12" target="_blank">
-                        <div class="part unsolved">
-                            2020 12 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 12 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/13" target="_blank">
-                        <div class="part unsolved">
-                            2020 13 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 13 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/14" target="_blank">
-                        <div class="part unsolved">
-                            2020 14 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 14 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/15" target="_blank">
-                        <div class="part unsolved">
-                            2020 15 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 15 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/16" target="_blank">
-                        <div class="part unsolved">
-                            2020 16 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 16 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/17" target="_blank">
-                        <div class="part unsolved">
-                            2020 17 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 17 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/18" target="_blank">
-                        <div class="part unsolved">
-                            2020 18 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 18 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/19" target="_blank">
-                        <div class="part unsolved">
-                            2020 19 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 19 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/20" target="_blank">
-                        <div class="part unsolved">
-                            2020 20 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 20 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/21" target="_blank">
-                        <div class="part unsolved">
-                            2020 21 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 21 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/22" target="_blank">
-                        <div class="part unsolved">
-                            2020 22 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 22 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/23" target="_blank">
-                        <div class="part unsolved">
-                            2020 23 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 23 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/24" target="_blank">
-                        <div class="part unsolved">
-                            2020 24 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 24 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2020/day/25" target="_blank">
-                        <div class="part unsolved">
-                            2020 25 A
-                        </div>
-                        <div class="part unsolved">
-                            2020 25 B
-                        </div>
-                    </a>
-                </div>
-                <progress value="0" max="50" class="progress">
-                </progress>
-            </div>
-            <div class="year-content">
-                <a href="https://adventofcode.com/2019" target="_blank" class="title">
-                    2019 (0 / 50)
-                </a>
-                <div class="year">
-                    <a class="day" href="https://adventofcode.com/2019/day/1" target="_blank">
-                        <div class="part unsolved">
-                            2019 01 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 01 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/2" target="_blank">
-                        <div class="part unsolved">
-                            2019 02 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 02 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/3" target="_blank">
-                        <div class="part unsolved">
-                            2019 03 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 03 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/4" target="_blank">
-                        <div class="part unsolved">
-                            2019 04 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 04 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/5" target="_blank">
-                        <div class="part unsolved">
-                            2019 05 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 05 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/6" target="_blank">
-                        <div class="part unsolved">
-                            2019 06 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 06 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/7" target="_blank">
-                        <div class="part unsolved">
-                            2019 07 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 07 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/8" target="_blank">
-                        <div class="part unsolved">
-                            2019 08 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 08 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/9" target="_blank">
-                        <div class="part unsolved">
-                            2019 09 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 09 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/10" target="_blank">
-                        <div class="part unsolved">
-                            2019 10 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 10 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/11" target="_blank">
-                        <div class="part unsolved">
-                            2019 11 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 11 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/12" target="_blank">
-                        <div class="part unsolved">
-                            2019 12 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 12 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/13" target="_blank">
-                        <div class="part unsolved">
-                            2019 13 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 13 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/14" target="_blank">
-                        <div class="part unsolved">
-                            2019 14 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 14 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/15" target="_blank">
-                        <div class="part unsolved">
-                            2019 15 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 15 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/16" target="_blank">
-                        <div class="part unsolved">
-                            2019 16 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 16 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/17" target="_blank">
-                        <div class="part unsolved">
-                            2019 17 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 17 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/18" target="_blank">
-                        <div class="part unsolved">
-                            2019 18 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 18 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/19" target="_blank">
-                        <div class="part unsolved">
-                            2019 19 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 19 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/20" target="_blank">
-                        <div class="part unsolved">
-                            2019 20 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 20 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/21" target="_blank">
-                        <div class="part unsolved">
-                            2019 21 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 21 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/22" target="_blank">
-                        <div class="part unsolved">
-                            2019 22 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 22 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/23" target="_blank">
-                        <div class="part unsolved">
-                            2019 23 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 23 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/24" target="_blank">
-                        <div class="part unsolved">
-                            2019 24 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 24 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2019/day/25" target="_blank">
-                        <div class="part unsolved">
-                            2019 25 A
-                        </div>
-                        <div class="part unsolved">
-                            2019 25 B
-                        </div>
-                    </a>
-                </div>
-                <progress value="0" max="50" class="progress">
-                </progress>
-            </div>
-            <div class="year-content">
-                <a href="https://adventofcode.com/2018" target="_blank" class="title">
-                    2018 (0 / 50)
-                </a>
-                <div class="year">
-                    <a class="day" href="https://adventofcode.com/2018/day/1" target="_blank">
-                        <div class="part unsolved">
-                            2018 01 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 01 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/2" target="_blank">
-                        <div class="part unsolved">
-                            2018 02 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 02 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/3" target="_blank">
-                        <div class="part unsolved">
-                            2018 03 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 03 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/4" target="_blank">
-                        <div class="part unsolved">
-                            2018 04 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 04 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/5" target="_blank">
-                        <div class="part unsolved">
-                            2018 05 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 05 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/6" target="_blank">
-                        <div class="part unsolved">
-                            2018 06 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 06 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/7" target="_blank">
-                        <div class="part unsolved">
-                            2018 07 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 07 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/8" target="_blank">
-                        <div class="part unsolved">
-                            2018 08 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 08 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/9" target="_blank">
-                        <div class="part unsolved">
-                            2018 09 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 09 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/10" target="_blank">
-                        <div class="part unsolved">
-                            2018 10 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 10 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/11" target="_blank">
-                        <div class="part unsolved">
-                            2018 11 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 11 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/12" target="_blank">
-                        <div class="part unsolved">
-                            2018 12 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 12 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/13" target="_blank">
-                        <div class="part unsolved">
-                            2018 13 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 13 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/14" target="_blank">
-                        <div class="part unsolved">
-                            2018 14 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 14 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/15" target="_blank">
-                        <div class="part unsolved">
-                            2018 15 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 15 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/16" target="_blank">
-                        <div class="part unsolved">
-                            2018 16 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 16 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/17" target="_blank">
-                        <div class="part unsolved">
-                            2018 17 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 17 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/18" target="_blank">
-                        <div class="part unsolved">
-                            2018 18 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 18 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/19" target="_blank">
-                        <div class="part unsolved">
-                            2018 19 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 19 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/20" target="_blank">
-                        <div class="part unsolved">
-                            2018 20 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 20 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/21" target="_blank">
-                        <div class="part unsolved">
-                            2018 21 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 21 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/22" target="_blank">
-                        <div class="part unsolved">
-                            2018 22 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 22 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/23" target="_blank">
-                        <div class="part unsolved">
-                            2018 23 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 23 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/24" target="_blank">
-                        <div class="part unsolved">
-                            2018 24 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 24 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2018/day/25" target="_blank">
-                        <div class="part unsolved">
-                            2018 25 A
-                        </div>
-                        <div class="part unsolved">
-                            2018 25 B
-                        </div>
-                    </a>
-                </div>
-                <progress value="0" max="50" class="progress">
-                </progress>
-            </div>
-            <div class="year-content">
-                <a href="https://adventofcode.com/2017" target="_blank" class="title">
-                    2017 (0 / 50)
-                </a>
-                <div class="year">
-                    <a class="day" href="https://adventofcode.com/2017/day/1" target="_blank">
-                        <div class="part unsolved">
-                            2017 01 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 01 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/2" target="_blank">
-                        <div class="part unsolved">
-                            2017 02 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 02 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/3" target="_blank">
-                        <div class="part unsolved">
-                            2017 03 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 03 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/4" target="_blank">
-                        <div class="part unsolved">
-                            2017 04 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 04 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/5" target="_blank">
-                        <div class="part unsolved">
-                            2017 05 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 05 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/6" target="_blank">
-                        <div class="part unsolved">
-                            2017 06 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 06 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/7" target="_blank">
-                        <div class="part unsolved">
-                            2017 07 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 07 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/8" target="_blank">
-                        <div class="part unsolved">
-                            2017 08 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 08 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/9" target="_blank">
-                        <div class="part unsolved">
-                            2017 09 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 09 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/10" target="_blank">
-                        <div class="part unsolved">
-                            2017 10 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 10 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/11" target="_blank">
-                        <div class="part unsolved">
-                            2017 11 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 11 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/12" target="_blank">
-                        <div class="part unsolved">
-                            2017 12 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 12 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/13" target="_blank">
-                        <div class="part unsolved">
-                            2017 13 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 13 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/14" target="_blank">
-                        <div class="part unsolved">
-                            2017 14 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 14 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/15" target="_blank">
-                        <div class="part unsolved">
-                            2017 15 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 15 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/16" target="_blank">
-                        <div class="part unsolved">
-                            2017 16 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 16 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/17" target="_blank">
-                        <div class="part unsolved">
-                            2017 17 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 17 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/18" target="_blank">
-                        <div class="part unsolved">
-                            2017 18 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 18 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/19" target="_blank">
-                        <div class="part unsolved">
-                            2017 19 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 19 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/20" target="_blank">
-                        <div class="part unsolved">
-                            2017 20 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 20 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/21" target="_blank">
-                        <div class="part unsolved">
-                            2017 21 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 21 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/22" target="_blank">
-                        <div class="part unsolved">
-                            2017 22 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 22 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/23" target="_blank">
-                        <div class="part unsolved">
-                            2017 23 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 23 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/24" target="_blank">
-                        <div class="part unsolved">
-                            2017 24 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 24 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2017/day/25" target="_blank">
-                        <div class="part unsolved">
-                            2017 25 A
-                        </div>
-                        <div class="part unsolved">
-                            2017 25 B
-                        </div>
-                    </a>
-                </div>
-                <progress value="0" max="50" class="progress">
-                </progress>
-            </div>
-            <div class="year-content">
-                <a href="https://adventofcode.com/2016" target="_blank" class="title">
-                    2016 (17 / 50)
-                </a>
-                <div class="year">
-                    <a class="day" href="https://adventofcode.com/2016/day/1" target="_blank">
-                        <div class="part solved">
-                            2016 01 A
-                        </div>
-                        <div class="part solved">
-                            2016 01 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/2" target="_blank">
-                        <div class="part solved">
-                            2016 02 A
-                        </div>
-                        <div class="part solved">
-                            2016 02 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/3" target="_blank">
-                        <div class="part solved">
-                            2016 03 A
-                        </div>
-                        <div class="part solved">
-                            2016 03 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/4" target="_blank">
-                        <div class="part solved">
-                            2016 04 A
-                        </div>
-                        <div class="part solved">
-                            2016 04 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/5" target="_blank">
-                        <div class="part solved">
-                            2016 05 A
-                        </div>
-                        <div class="part solved">
-                            2016 05 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/6" target="_blank">
-                        <div class="part solved">
-                            2016 06 A
-                        </div>
-                        <div class="part solved">
-                            2016 06 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/7" target="_blank">
-                        <div class="part solved">
-                            2016 07 A
-                        </div>
-                        <div class="part solved">
-                            2016 07 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/8" target="_blank">
-                        <div class="part solved">
-                            2016 08 A
-                        </div>
-                        <div class="part solved">
-                            2016 08 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/9" target="_blank">
-                        <div class="part solved">
-                            2016 09 A
-                        </div>
-                        <div class="part unsolved">
-                            2016 09 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/10" target="_blank">
-                        <div class="part unsolved">
-                            2016 10 A
-                        </div>
-                        <div class="part unsolved">
-                            2016 10 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/11" target="_blank">
-                        <div class="part unsolved">
-                            2016 11 A
-                        </div>
-                        <div class="part unsolved">
-                            2016 11 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/12" target="_blank">
-                        <div class="part unsolved">
-                            2016 12 A
-                        </div>
-                        <div class="part unsolved">
-                            2016 12 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/13" target="_blank">
-                        <div class="part unsolved">
-                            2016 13 A
-                        </div>
-                        <div class="part unsolved">
-                            2016 13 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/14" target="_blank">
-                        <div class="part unsolved">
-                            2016 14 A
-                        </div>
-                        <div class="part unsolved">
-                            2016 14 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/15" target="_blank">
-                        <div class="part unsolved">
-                            2016 15 A
-                        </div>
-                        <div class="part unsolved">
-                            2016 15 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/16" target="_blank">
-                        <div class="part unsolved">
-                            2016 16 A
-                        </div>
-                        <div class="part unsolved">
-                            2016 16 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/17" target="_blank">
-                        <div class="part unsolved">
-                            2016 17 A
-                        </div>
-                        <div class="part unsolved">
-                            2016 17 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/18" target="_blank">
-                        <div class="part unsolved">
-                            2016 18 A
-                        </div>
-                        <div class="part unsolved">
-                            2016 18 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/19" target="_blank">
-                        <div class="part unsolved">
-                            2016 19 A
-                        </div>
-                        <div class="part unsolved">
-                            2016 19 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/20" target="_blank">
-                        <div class="part unsolved">
-                            2016 20 A
-                        </div>
-                        <div class="part unsolved">
-                            2016 20 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/21" target="_blank">
-                        <div class="part unsolved">
-                            2016 21 A
-                        </div>
-                        <div class="part unsolved">
-                            2016 21 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/22" target="_blank">
-                        <div class="part unsolved">
-                            2016 22 A
-                        </div>
-                        <div class="part unsolved">
-                            2016 22 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/23" target="_blank">
-                        <div class="part unsolved">
-                            2016 23 A
-                        </div>
-                        <div class="part unsolved">
-                            2016 23 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/24" target="_blank">
-                        <div class="part unsolved">
-                            2016 24 A
-                        </div>
-                        <div class="part unsolved">
-                            2016 24 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2016/day/25" target="_blank">
-                        <div class="part unsolved">
-                            2016 25 A
-                        </div>
-                        <div class="part unsolved">
-                            2016 25 B
-                        </div>
-                    </a>
-                </div>
-                <progress value="17" max="50" class="progress">
-                </progress>
-            </div>
-            <div class="year-content">
-                <a href="https://adventofcode.com/2015" target="_blank" class="title">
-                    2015 (36 / 50)
-                </a>
-                <div class="year">
-                    <a class="day" href="https://adventofcode.com/2015/day/1" target="_blank">
-                        <div class="part solved">
-                            2015 01 A
-                        </div>
-                        <div class="part solved">
-                            2015 01 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/2" target="_blank">
-                        <div class="part solved">
-                            2015 02 A
-                        </div>
-                        <div class="part solved">
-                            2015 02 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/3" target="_blank">
-                        <div class="part solved">
-                            2015 03 A
-                        </div>
-                        <div class="part solved">
-                            2015 03 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/4" target="_blank">
-                        <div class="part solved">
-                            2015 04 A
-                        </div>
-                        <div class="part solved">
-                            2015 04 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/5" target="_blank">
-                        <div class="part solved">
-                            2015 05 A
-                        </div>
-                        <div class="part solved">
-                            2015 05 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/6" target="_blank">
-                        <div class="part solved">
-                            2015 06 A
-                        </div>
-                        <div class="part solved">
-                            2015 06 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/7" target="_blank">
-                        <div class="part solved">
-                            2015 07 A
-                        </div>
-                        <div class="part solved">
-                            2015 07 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/8" target="_blank">
-                        <div class="part solved">
-                            2015 08 A
-                        </div>
-                        <div class="part solved">
-                            2015 08 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/9" target="_blank">
-                        <div class="part solved">
-                            2015 09 A
-                        </div>
-                        <div class="part solved">
-                            2015 09 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/10" target="_blank">
-                        <div class="part solved">
-                            2015 10 A
-                        </div>
-                        <div class="part solved">
-                            2015 10 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/11" target="_blank">
-                        <div class="part solved">
-                            2015 11 A
-                        </div>
-                        <div class="part solved">
-                            2015 11 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/12" target="_blank">
-                        <div class="part solved">
-                            2015 12 A
-                        </div>
-                        <div class="part solved">
-                            2015 12 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/13" target="_blank">
-                        <div class="part solved">
-                            2015 13 A
-                        </div>
-                        <div class="part solved">
-                            2015 13 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/14" target="_blank">
-                        <div class="part solved">
-                            2015 14 A
-                        </div>
-                        <div class="part solved">
-                            2015 14 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/15" target="_blank">
-                        <div class="part solved">
-                            2015 15 A
-                        </div>
-                        <div class="part solved">
-                            2015 15 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/16" target="_blank">
-                        <div class="part solved">
-                            2015 16 A
-                        </div>
-                        <div class="part solved">
-                            2015 16 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/17" target="_blank">
-                        <div class="part solved">
-                            2015 17 A
-                        </div>
-                        <div class="part solved">
-                            2015 17 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/18" target="_blank">
-                        <div class="part solved">
-                            2015 18 A
-                        </div>
-                        <div class="part solved">
-                            2015 18 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/19" target="_blank">
-                        <div class="part unsolved">
-                            2015 19 A
-                        </div>
-                        <div class="part unsolved">
-                            2015 19 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/20" target="_blank">
-                        <div class="part unsolved">
-                            2015 20 A
-                        </div>
-                        <div class="part unsolved">
-                            2015 20 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/21" target="_blank">
-                        <div class="part unsolved">
-                            2015 21 A
-                        </div>
-                        <div class="part unsolved">
-                            2015 21 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/22" target="_blank">
-                        <div class="part unsolved">
-                            2015 22 A
-                        </div>
-                        <div class="part unsolved">
-                            2015 22 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/23" target="_blank">
-                        <div class="part unsolved">
-                            2015 23 A
-                        </div>
-                        <div class="part unsolved">
-                            2015 23 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/24" target="_blank">
-                        <div class="part unsolved">
-                            2015 24 A
-                        </div>
-                        <div class="part unsolved">
-                            2015 24 B
-                        </div>
-                    </a>
-                    <a class="day" href="https://adventofcode.com/2015/day/25" target="_blank">
-                        <div class="part unsolved">
-                            2015 25 A
-                        </div>
-                        <div class="part unsolved">
-                            2015 25 B
-                        </div>
-                    </a>
-                </div>
-                <progress value="36" max="50" class="progress">
-                </progress>
-            </div>
+
+            <progress class="progress-bar" value="15" max="50"></progress>
         </div>
-    </body>
+        <div class="year">
+            <a class="title" href="https://adventofcode.com/2023" target="_blank">[2023] (8/50 - 16%)</a>
+
+            <div class="days">
+                <a class="day" href="https://adventofcode.com/2023/day/1" target="_blank">
+                    <div class="part solved">
+                        <span>[1A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[1B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/2" target="_blank">
+                    <div class="part solved">
+                        <span>[2A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[2B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/3" target="_blank">
+                    <div class="part solved">
+                        <span>[3A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[3B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/4" target="_blank">
+                    <div class="part solved">
+                        <span>[4A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[4B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/5" target="_blank">
+                    <div class="part">
+                        <span>[5A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[5B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/6" target="_blank">
+                    <div class="part">
+                        <span>[6A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[6B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/7" target="_blank">
+                    <div class="part">
+                        <span>[7A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[7B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/8" target="_blank">
+                    <div class="part">
+                        <span>[8A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[8B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/9" target="_blank">
+                    <div class="part">
+                        <span>[9A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[9B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/10" target="_blank">
+                    <div class="part">
+                        <span>[10A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[10B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/11" target="_blank">
+                    <div class="part">
+                        <span>[11A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[11B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/12" target="_blank">
+                    <div class="part">
+                        <span>[12A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[12B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/13" target="_blank">
+                    <div class="part">
+                        <span>[13A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[13B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/14" target="_blank">
+                    <div class="part">
+                        <span>[14A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[14B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/15" target="_blank">
+                    <div class="part">
+                        <span>[15A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[15B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/16" target="_blank">
+                    <div class="part">
+                        <span>[16A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[16B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/17" target="_blank">
+                    <div class="part">
+                        <span>[17A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[17B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/18" target="_blank">
+                    <div class="part">
+                        <span>[18A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[18B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/19" target="_blank">
+                    <div class="part">
+                        <span>[19A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[19B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/20" target="_blank">
+                    <div class="part">
+                        <span>[20A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[20B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/21" target="_blank">
+                    <div class="part">
+                        <span>[21A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[21B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/22" target="_blank">
+                    <div class="part">
+                        <span>[22A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[22B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/23" target="_blank">
+                    <div class="part">
+                        <span>[23A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[23B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/24" target="_blank">
+                    <div class="part">
+                        <span>[24A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[24B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2023/day/25" target="_blank">
+                    <div class="part">
+                        <span>[25A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[25B]</span>
+                    </div>
+                </a>
+            </div>
+
+            <progress class="progress-bar" value="8" max="50"></progress>
+        </div>
+        <div class="year">
+            <a class="title" href="https://adventofcode.com/2022" target="_blank">[2022] (0/50 - 0%)</a>
+
+            <div class="days">
+                <a class="day" href="https://adventofcode.com/2022/day/1" target="_blank">
+                    <div class="part">
+                        <span>[1A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[1B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/2" target="_blank">
+                    <div class="part">
+                        <span>[2A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[2B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/3" target="_blank">
+                    <div class="part">
+                        <span>[3A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[3B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/4" target="_blank">
+                    <div class="part">
+                        <span>[4A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[4B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/5" target="_blank">
+                    <div class="part">
+                        <span>[5A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[5B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/6" target="_blank">
+                    <div class="part">
+                        <span>[6A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[6B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/7" target="_blank">
+                    <div class="part">
+                        <span>[7A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[7B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/8" target="_blank">
+                    <div class="part">
+                        <span>[8A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[8B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/9" target="_blank">
+                    <div class="part">
+                        <span>[9A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[9B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/10" target="_blank">
+                    <div class="part">
+                        <span>[10A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[10B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/11" target="_blank">
+                    <div class="part">
+                        <span>[11A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[11B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/12" target="_blank">
+                    <div class="part">
+                        <span>[12A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[12B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/13" target="_blank">
+                    <div class="part">
+                        <span>[13A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[13B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/14" target="_blank">
+                    <div class="part">
+                        <span>[14A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[14B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/15" target="_blank">
+                    <div class="part">
+                        <span>[15A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[15B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/16" target="_blank">
+                    <div class="part">
+                        <span>[16A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[16B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/17" target="_blank">
+                    <div class="part">
+                        <span>[17A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[17B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/18" target="_blank">
+                    <div class="part">
+                        <span>[18A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[18B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/19" target="_blank">
+                    <div class="part">
+                        <span>[19A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[19B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/20" target="_blank">
+                    <div class="part">
+                        <span>[20A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[20B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/21" target="_blank">
+                    <div class="part">
+                        <span>[21A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[21B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/22" target="_blank">
+                    <div class="part">
+                        <span>[22A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[22B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/23" target="_blank">
+                    <div class="part">
+                        <span>[23A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[23B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/24" target="_blank">
+                    <div class="part">
+                        <span>[24A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[24B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2022/day/25" target="_blank">
+                    <div class="part">
+                        <span>[25A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[25B]</span>
+                    </div>
+                </a>
+            </div>
+
+            <progress class="progress-bar" value="0" max="50"></progress>
+        </div>
+        <div class="year">
+            <a class="title" href="https://adventofcode.com/2021" target="_blank">[2021] (0/50 - 0%)</a>
+
+            <div class="days">
+                <a class="day" href="https://adventofcode.com/2021/day/1" target="_blank">
+                    <div class="part">
+                        <span>[1A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[1B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/2" target="_blank">
+                    <div class="part">
+                        <span>[2A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[2B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/3" target="_blank">
+                    <div class="part">
+                        <span>[3A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[3B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/4" target="_blank">
+                    <div class="part">
+                        <span>[4A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[4B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/5" target="_blank">
+                    <div class="part">
+                        <span>[5A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[5B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/6" target="_blank">
+                    <div class="part">
+                        <span>[6A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[6B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/7" target="_blank">
+                    <div class="part">
+                        <span>[7A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[7B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/8" target="_blank">
+                    <div class="part">
+                        <span>[8A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[8B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/9" target="_blank">
+                    <div class="part">
+                        <span>[9A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[9B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/10" target="_blank">
+                    <div class="part">
+                        <span>[10A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[10B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/11" target="_blank">
+                    <div class="part">
+                        <span>[11A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[11B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/12" target="_blank">
+                    <div class="part">
+                        <span>[12A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[12B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/13" target="_blank">
+                    <div class="part">
+                        <span>[13A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[13B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/14" target="_blank">
+                    <div class="part">
+                        <span>[14A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[14B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/15" target="_blank">
+                    <div class="part">
+                        <span>[15A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[15B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/16" target="_blank">
+                    <div class="part">
+                        <span>[16A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[16B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/17" target="_blank">
+                    <div class="part">
+                        <span>[17A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[17B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/18" target="_blank">
+                    <div class="part">
+                        <span>[18A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[18B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/19" target="_blank">
+                    <div class="part">
+                        <span>[19A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[19B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/20" target="_blank">
+                    <div class="part">
+                        <span>[20A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[20B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/21" target="_blank">
+                    <div class="part">
+                        <span>[21A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[21B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/22" target="_blank">
+                    <div class="part">
+                        <span>[22A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[22B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/23" target="_blank">
+                    <div class="part">
+                        <span>[23A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[23B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/24" target="_blank">
+                    <div class="part">
+                        <span>[24A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[24B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2021/day/25" target="_blank">
+                    <div class="part">
+                        <span>[25A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[25B]</span>
+                    </div>
+                </a>
+            </div>
+
+            <progress class="progress-bar" value="0" max="50"></progress>
+        </div>
+        <div class="year">
+            <a class="title" href="https://adventofcode.com/2020" target="_blank">[2020] (0/50 - 0%)</a>
+
+            <div class="days">
+                <a class="day" href="https://adventofcode.com/2020/day/1" target="_blank">
+                    <div class="part">
+                        <span>[1A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[1B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/2" target="_blank">
+                    <div class="part">
+                        <span>[2A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[2B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/3" target="_blank">
+                    <div class="part">
+                        <span>[3A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[3B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/4" target="_blank">
+                    <div class="part">
+                        <span>[4A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[4B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/5" target="_blank">
+                    <div class="part">
+                        <span>[5A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[5B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/6" target="_blank">
+                    <div class="part">
+                        <span>[6A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[6B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/7" target="_blank">
+                    <div class="part">
+                        <span>[7A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[7B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/8" target="_blank">
+                    <div class="part">
+                        <span>[8A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[8B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/9" target="_blank">
+                    <div class="part">
+                        <span>[9A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[9B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/10" target="_blank">
+                    <div class="part">
+                        <span>[10A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[10B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/11" target="_blank">
+                    <div class="part">
+                        <span>[11A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[11B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/12" target="_blank">
+                    <div class="part">
+                        <span>[12A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[12B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/13" target="_blank">
+                    <div class="part">
+                        <span>[13A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[13B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/14" target="_blank">
+                    <div class="part">
+                        <span>[14A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[14B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/15" target="_blank">
+                    <div class="part">
+                        <span>[15A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[15B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/16" target="_blank">
+                    <div class="part">
+                        <span>[16A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[16B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/17" target="_blank">
+                    <div class="part">
+                        <span>[17A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[17B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/18" target="_blank">
+                    <div class="part">
+                        <span>[18A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[18B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/19" target="_blank">
+                    <div class="part">
+                        <span>[19A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[19B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/20" target="_blank">
+                    <div class="part">
+                        <span>[20A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[20B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/21" target="_blank">
+                    <div class="part">
+                        <span>[21A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[21B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/22" target="_blank">
+                    <div class="part">
+                        <span>[22A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[22B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/23" target="_blank">
+                    <div class="part">
+                        <span>[23A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[23B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/24" target="_blank">
+                    <div class="part">
+                        <span>[24A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[24B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2020/day/25" target="_blank">
+                    <div class="part">
+                        <span>[25A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[25B]</span>
+                    </div>
+                </a>
+            </div>
+
+            <progress class="progress-bar" value="0" max="50"></progress>
+        </div>
+        <div class="year">
+            <a class="title" href="https://adventofcode.com/2019" target="_blank">[2019] (0/50 - 0%)</a>
+
+            <div class="days">
+                <a class="day" href="https://adventofcode.com/2019/day/1" target="_blank">
+                    <div class="part">
+                        <span>[1A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[1B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/2" target="_blank">
+                    <div class="part">
+                        <span>[2A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[2B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/3" target="_blank">
+                    <div class="part">
+                        <span>[3A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[3B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/4" target="_blank">
+                    <div class="part">
+                        <span>[4A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[4B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/5" target="_blank">
+                    <div class="part">
+                        <span>[5A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[5B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/6" target="_blank">
+                    <div class="part">
+                        <span>[6A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[6B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/7" target="_blank">
+                    <div class="part">
+                        <span>[7A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[7B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/8" target="_blank">
+                    <div class="part">
+                        <span>[8A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[8B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/9" target="_blank">
+                    <div class="part">
+                        <span>[9A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[9B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/10" target="_blank">
+                    <div class="part">
+                        <span>[10A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[10B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/11" target="_blank">
+                    <div class="part">
+                        <span>[11A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[11B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/12" target="_blank">
+                    <div class="part">
+                        <span>[12A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[12B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/13" target="_blank">
+                    <div class="part">
+                        <span>[13A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[13B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/14" target="_blank">
+                    <div class="part">
+                        <span>[14A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[14B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/15" target="_blank">
+                    <div class="part">
+                        <span>[15A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[15B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/16" target="_blank">
+                    <div class="part">
+                        <span>[16A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[16B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/17" target="_blank">
+                    <div class="part">
+                        <span>[17A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[17B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/18" target="_blank">
+                    <div class="part">
+                        <span>[18A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[18B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/19" target="_blank">
+                    <div class="part">
+                        <span>[19A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[19B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/20" target="_blank">
+                    <div class="part">
+                        <span>[20A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[20B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/21" target="_blank">
+                    <div class="part">
+                        <span>[21A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[21B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/22" target="_blank">
+                    <div class="part">
+                        <span>[22A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[22B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/23" target="_blank">
+                    <div class="part">
+                        <span>[23A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[23B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/24" target="_blank">
+                    <div class="part">
+                        <span>[24A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[24B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2019/day/25" target="_blank">
+                    <div class="part">
+                        <span>[25A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[25B]</span>
+                    </div>
+                </a>
+            </div>
+
+            <progress class="progress-bar" value="0" max="50"></progress>
+        </div>
+        <div class="year">
+            <a class="title" href="https://adventofcode.com/2018" target="_blank">[2018] (0/50 - 0%)</a>
+
+            <div class="days">
+                <a class="day" href="https://adventofcode.com/2018/day/1" target="_blank">
+                    <div class="part">
+                        <span>[1A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[1B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/2" target="_blank">
+                    <div class="part">
+                        <span>[2A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[2B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/3" target="_blank">
+                    <div class="part">
+                        <span>[3A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[3B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/4" target="_blank">
+                    <div class="part">
+                        <span>[4A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[4B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/5" target="_blank">
+                    <div class="part">
+                        <span>[5A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[5B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/6" target="_blank">
+                    <div class="part">
+                        <span>[6A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[6B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/7" target="_blank">
+                    <div class="part">
+                        <span>[7A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[7B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/8" target="_blank">
+                    <div class="part">
+                        <span>[8A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[8B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/9" target="_blank">
+                    <div class="part">
+                        <span>[9A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[9B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/10" target="_blank">
+                    <div class="part">
+                        <span>[10A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[10B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/11" target="_blank">
+                    <div class="part">
+                        <span>[11A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[11B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/12" target="_blank">
+                    <div class="part">
+                        <span>[12A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[12B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/13" target="_blank">
+                    <div class="part">
+                        <span>[13A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[13B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/14" target="_blank">
+                    <div class="part">
+                        <span>[14A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[14B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/15" target="_blank">
+                    <div class="part">
+                        <span>[15A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[15B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/16" target="_blank">
+                    <div class="part">
+                        <span>[16A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[16B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/17" target="_blank">
+                    <div class="part">
+                        <span>[17A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[17B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/18" target="_blank">
+                    <div class="part">
+                        <span>[18A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[18B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/19" target="_blank">
+                    <div class="part">
+                        <span>[19A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[19B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/20" target="_blank">
+                    <div class="part">
+                        <span>[20A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[20B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/21" target="_blank">
+                    <div class="part">
+                        <span>[21A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[21B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/22" target="_blank">
+                    <div class="part">
+                        <span>[22A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[22B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/23" target="_blank">
+                    <div class="part">
+                        <span>[23A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[23B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/24" target="_blank">
+                    <div class="part">
+                        <span>[24A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[24B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2018/day/25" target="_blank">
+                    <div class="part">
+                        <span>[25A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[25B]</span>
+                    </div>
+                </a>
+            </div>
+
+            <progress class="progress-bar" value="0" max="50"></progress>
+        </div>
+        <div class="year">
+            <a class="title" href="https://adventofcode.com/2017" target="_blank">[2017] (0/50 - 0%)</a>
+
+            <div class="days">
+                <a class="day" href="https://adventofcode.com/2017/day/1" target="_blank">
+                    <div class="part">
+                        <span>[1A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[1B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/2" target="_blank">
+                    <div class="part">
+                        <span>[2A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[2B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/3" target="_blank">
+                    <div class="part">
+                        <span>[3A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[3B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/4" target="_blank">
+                    <div class="part">
+                        <span>[4A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[4B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/5" target="_blank">
+                    <div class="part">
+                        <span>[5A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[5B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/6" target="_blank">
+                    <div class="part">
+                        <span>[6A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[6B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/7" target="_blank">
+                    <div class="part">
+                        <span>[7A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[7B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/8" target="_blank">
+                    <div class="part">
+                        <span>[8A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[8B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/9" target="_blank">
+                    <div class="part">
+                        <span>[9A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[9B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/10" target="_blank">
+                    <div class="part">
+                        <span>[10A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[10B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/11" target="_blank">
+                    <div class="part">
+                        <span>[11A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[11B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/12" target="_blank">
+                    <div class="part">
+                        <span>[12A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[12B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/13" target="_blank">
+                    <div class="part">
+                        <span>[13A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[13B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/14" target="_blank">
+                    <div class="part">
+                        <span>[14A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[14B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/15" target="_blank">
+                    <div class="part">
+                        <span>[15A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[15B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/16" target="_blank">
+                    <div class="part">
+                        <span>[16A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[16B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/17" target="_blank">
+                    <div class="part">
+                        <span>[17A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[17B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/18" target="_blank">
+                    <div class="part">
+                        <span>[18A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[18B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/19" target="_blank">
+                    <div class="part">
+                        <span>[19A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[19B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/20" target="_blank">
+                    <div class="part">
+                        <span>[20A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[20B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/21" target="_blank">
+                    <div class="part">
+                        <span>[21A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[21B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/22" target="_blank">
+                    <div class="part">
+                        <span>[22A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[22B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/23" target="_blank">
+                    <div class="part">
+                        <span>[23A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[23B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/24" target="_blank">
+                    <div class="part">
+                        <span>[24A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[24B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2017/day/25" target="_blank">
+                    <div class="part">
+                        <span>[25A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[25B]</span>
+                    </div>
+                </a>
+            </div>
+
+            <progress class="progress-bar" value="0" max="50"></progress>
+        </div>
+        <div class="year">
+            <a class="title" href="https://adventofcode.com/2016" target="_blank">[2016] (17/50 - 34%)</a>
+
+            <div class="days">
+                <a class="day" href="https://adventofcode.com/2016/day/1" target="_blank">
+                    <div class="part solved">
+                        <span>[1A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[1B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/2" target="_blank">
+                    <div class="part solved">
+                        <span>[2A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[2B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/3" target="_blank">
+                    <div class="part solved">
+                        <span>[3A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[3B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/4" target="_blank">
+                    <div class="part solved">
+                        <span>[4A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[4B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/5" target="_blank">
+                    <div class="part solved">
+                        <span>[5A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[5B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/6" target="_blank">
+                    <div class="part solved">
+                        <span>[6A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[6B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/7" target="_blank">
+                    <div class="part solved">
+                        <span>[7A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[7B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/8" target="_blank">
+                    <div class="part solved">
+                        <span>[8A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[8B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/9" target="_blank">
+                    <div class="part solved">
+                        <span>[9A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[9B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/10" target="_blank">
+                    <div class="part">
+                        <span>[10A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[10B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/11" target="_blank">
+                    <div class="part">
+                        <span>[11A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[11B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/12" target="_blank">
+                    <div class="part">
+                        <span>[12A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[12B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/13" target="_blank">
+                    <div class="part">
+                        <span>[13A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[13B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/14" target="_blank">
+                    <div class="part">
+                        <span>[14A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[14B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/15" target="_blank">
+                    <div class="part">
+                        <span>[15A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[15B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/16" target="_blank">
+                    <div class="part">
+                        <span>[16A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[16B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/17" target="_blank">
+                    <div class="part">
+                        <span>[17A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[17B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/18" target="_blank">
+                    <div class="part">
+                        <span>[18A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[18B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/19" target="_blank">
+                    <div class="part">
+                        <span>[19A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[19B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/20" target="_blank">
+                    <div class="part">
+                        <span>[20A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[20B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/21" target="_blank">
+                    <div class="part">
+                        <span>[21A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[21B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/22" target="_blank">
+                    <div class="part">
+                        <span>[22A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[22B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/23" target="_blank">
+                    <div class="part">
+                        <span>[23A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[23B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/24" target="_blank">
+                    <div class="part">
+                        <span>[24A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[24B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2016/day/25" target="_blank">
+                    <div class="part">
+                        <span>[25A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[25B]</span>
+                    </div>
+                </a>
+            </div>
+
+            <progress class="progress-bar" value="17" max="50"></progress>
+        </div>
+        <div class="year">
+            <a class="title" href="https://adventofcode.com/2015" target="_blank">[2015] (36/50 - 72%)</a>
+
+            <div class="days">
+                <a class="day" href="https://adventofcode.com/2015/day/1" target="_blank">
+                    <div class="part solved">
+                        <span>[1A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[1B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/2" target="_blank">
+                    <div class="part solved">
+                        <span>[2A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[2B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/3" target="_blank">
+                    <div class="part solved">
+                        <span>[3A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[3B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/4" target="_blank">
+                    <div class="part solved">
+                        <span>[4A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[4B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/5" target="_blank">
+                    <div class="part solved">
+                        <span>[5A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[5B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/6" target="_blank">
+                    <div class="part solved">
+                        <span>[6A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[6B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/7" target="_blank">
+                    <div class="part solved">
+                        <span>[7A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[7B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/8" target="_blank">
+                    <div class="part solved">
+                        <span>[8A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[8B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/9" target="_blank">
+                    <div class="part solved">
+                        <span>[9A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[9B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/10" target="_blank">
+                    <div class="part solved">
+                        <span>[10A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[10B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/11" target="_blank">
+                    <div class="part solved">
+                        <span>[11A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[11B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/12" target="_blank">
+                    <div class="part solved">
+                        <span>[12A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[12B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/13" target="_blank">
+                    <div class="part solved">
+                        <span>[13A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[13B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/14" target="_blank">
+                    <div class="part solved">
+                        <span>[14A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[14B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/15" target="_blank">
+                    <div class="part solved">
+                        <span>[15A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[15B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/16" target="_blank">
+                    <div class="part solved">
+                        <span>[16A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[16B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/17" target="_blank">
+                    <div class="part solved">
+                        <span>[17A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[17B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/18" target="_blank">
+                    <div class="part solved">
+                        <span>[18A]</span>
+                    </div>
+                    <div class="part solved">
+                        <span>[18B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/19" target="_blank">
+                    <div class="part">
+                        <span>[19A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[19B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/20" target="_blank">
+                    <div class="part">
+                        <span>[20A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[20B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/21" target="_blank">
+                    <div class="part">
+                        <span>[21A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[21B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/22" target="_blank">
+                    <div class="part">
+                        <span>[22A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[22B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/23" target="_blank">
+                    <div class="part">
+                        <span>[23A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[23B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/24" target="_blank">
+                    <div class="part">
+                        <span>[24A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[24B]</span>
+                    </div>
+                </a><a class="day" href="https://adventofcode.com/2015/day/25" target="_blank">
+                    <div class="part">
+                        <span>[25A]</span>
+                    </div>
+                    <div class="part">
+                        <span>[25B]</span>
+                    </div>
+                </a>
+            </div>
+
+            <progress class="progress-bar" value="36" max="50"></progress>
+        </div>
+    </div>
+</div>
+
+</body>
+
 </html>

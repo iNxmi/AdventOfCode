@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>ExportVerificationCoverageHTML</title>
+    <style>
+        html                    { font-family: \"Source Code Pro\", monospace; background: rgb(15, 15, 35); }
+        a                       { color: #009900; text-decoration: none; }
+        a:hover, a:focus        { color: #99ff99; }
+
+        body                    { display: flex; justify-content: space-evenly; }
+        .ascii-art              { white-space: pre; color: #009900; }
+        .title                  { background: #ffffff11; text-align: center; padding: 5px; user-select: none; }
+
+        .years                  { display: inline-flex; gap: 50px; flex-direction: column; }
+        .year                   { display: flex; flex-direction: column; gap: 5px; }
+        .days                   { display: flex; gap: 5px; }
+        .day                    { display: flex; flex-direction: column; width: 100px; height: 100px; justify-content: space-evenly; gap: 5px; }
+        .part                   { display: flex; flex-direction: column; justify-content: space-evenly; background: #ffffff22; flex-grow: 1; color: transparent; text-align: center; user-select: none; }
+        .part:hover             { background: #ffffff33; color: #009900; }
+        .solved                 { background: #0099007f; }
+        .solved:hover           { background: #0099008f; }
+        .failed                 { background: #ff00007f; }
+        .failed:hover           { background: #ff00008f; }
+
+        .progress-bar           { background: #ffffff11; border: none; }
+    </style>
+</head>
+
+<body>
+
+<div class="content">
+
+<!--    <p class="ascii-art"></p>-->
+
+    <div class="years">
+        <div class="year" th:each="year : ${years}" th:with="star=${stars.getOrDefault(year, 0)}">
+            <a class="title" th:text="'[' + ${year} + '] (' + ${star} + '/50 - ' + ${star * 2} + '%)'" th:href="'https://adventofcode.com/' + ${year}" target="_blank">[Year] (25/50 - 50%)</a>
+
+            <div class="days">
+                <a th:each="day : ${days}" class="day" th:href="'https://adventofcode.com/' + ${year} + '/day/' + ${day}" target="_blank">
+                    <div class="part" th:classappend="${status.getOrDefault(year * 1000 + day * 10, '')}">
+                        <span th:text="'[' + ${day} + 'A]'">[Day A]</span>
+                    </div>
+                    <div class="part" th:classappend="${status.getOrDefault(year * 1000 + day * 10 + 1, '')}">
+                        <span th:text="'[' + ${day} + 'B]'">[Day B]</span>
+                    </div>
+                </a>
+            </div>
+
+            <progress class="progress-bar" th:value="${star}" value="25" max="50"></progress>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
