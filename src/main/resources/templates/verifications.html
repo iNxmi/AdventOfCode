@@ -7,9 +7,9 @@
         a                       { color: #009900; text-decoration: none; }
         a:hover, a:focus        { color: #99ff99; }
 
-        body                    { display: flex; justify-content: space-evenly; margin: 0; }
+        body                    { margin: 0; }
 
-        .content                { padding: 5px; }
+        .content                { display: flex; justify-content: space-evenly; padding: 5px; }
         .ascii-art              { white-space: pre; color: #009900; }
 
         .title                  { background: #ffffff11; text-align: center; padding: 5px; user-select: none; }
@@ -27,6 +27,8 @@
         .red:hover              { background: #ff00008f; }
 
         .progress-bar           { background: #ffffff11; border: none; }
+
+        .footer                 { color: #009900; text-align: center; }
     </style>
 </head>
 
@@ -53,7 +55,10 @@
 
             <progress class="progress-bar" th:value="${star}" value="25" max="50"></progress>
         </div>
+
+        <p class="footer" th:text="'[Memphis Herghelegiu] [' + ${date} + '] [' + ${time} + 's]'">[Memphis Herghelegiu] [2025/08/06] [302.32s]</p>
     </div>
+
 </div>
 
 </body>

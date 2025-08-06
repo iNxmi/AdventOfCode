@@ -41,10 +41,9 @@ fun <T> Collection<T>.combinations(): List<List<T>> {
             .padStart(bits, '0')
             .map { it.digitToInt() }
 
-        this.withIndex()
-            .mapNotNull { (index, value) ->
-                if (binary[index] == 1) value else null
-            }
+        this.withIndex().mapNotNull { (index, value) ->
+            if (binary[index] == 1) value else null
+        }
     }
 }
 

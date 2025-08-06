@@ -12,8 +12,13 @@ import org.thymeleaf.templatemode.TemplateMode
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
 import java.nio.file.Files
 import java.nio.file.Paths
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import kotlin.math.round
 
 fun main() {
+    val timeStart = System.nanoTime()
+
     val tasks = Task.getAll()
     val verifications = tasks.withIndex()
         .flatMap { (index, task) ->
@@ -45,6 +50,9 @@ fun main() {
             stars[year] = stars.getOrDefault(year, 0) + 1
     }
 
+    val formatter = DateTimeFormatter.ofPattern("YYYY/MM/dd")
+    val date = LocalDate.now().format(formatter)
+
     val years = YEAR_RANGE.map { it }.reversed().toSet()
     val days = DAY_RANGE.map { it }.toSet()
 
@@ -62,6 +70,8 @@ fun main() {
     context.setVariable("days", days)
     context.setVariable("stars", stars)
     context.setVariable("status", status)
+    context.setVariable("date", date)
+    context.setVariable("time", round((System.nanoTime() - timeStart) * 1E-9 * 100.0) / 100.0)
 
     val result = engine.process("verifications", context)
     Files.writeString(Paths.get("export/verifications.html"), result)

@@ -7,9 +7,9 @@
         a                       { color: #009900; text-decoration: none; }
         a:hover, a:focus        { color: #99ff99; }
 
-        body                    { display: flex; justify-content: space-evenly; margin: 0; }
+        body                    { margin: 0; }
 
-        .content                { padding: 5px; }
+        .content                { display: flex; justify-content: space-evenly; padding: 5px; }
         .ascii-art              { white-space: pre; color: #009900; }
 
         .title                  { background: #ffffff11; text-align: center; padding: 5px; user-select: none; }
@@ -27,6 +27,8 @@
         .red:hover              { background: #ff00008f; }
 
         .progress-bar           { background: #ffffff11; border: none; }
+
+        .footer                 { color: #009900; text-align: center; }
     </style>
 </head>
 
@@ -1694,7 +1696,7 @@
             <progress class="progress-bar" value="17" max="50"></progress>
         </div>
         <div class="year">
-            <a class="title" href="https://adventofcode.com/2015" target="_blank">[2015] (39/50 - 78%)</a>
+            <a class="title" href="https://adventofcode.com/2015" target="_blank">[2015] (41/50 - 82%)</a>
 
             <div class="days">
                 <a class="day" href="https://adventofcode.com/2015/day/1" target="_blank">
@@ -1838,10 +1840,10 @@
                         <span>[20B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/21" target="_blank">
-                    <div class="part">
+                    <div class="part yellow">
                         <span>[21A]</span>
                     </div>
-                    <div class="part">
+                    <div class="part yellow">
                         <span>[21B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/22" target="_blank">
@@ -1875,9 +1877,12 @@
                 </a>
             </div>
 
-            <progress class="progress-bar" value="39" max="50"></progress>
+            <progress class="progress-bar" value="41" max="50"></progress>
         </div>
+
+        <p class="footer">[Memphis Herghelegiu] [2025/08/07] [37.13s]</p>
     </div>
+
 </div>
 
 </body>
