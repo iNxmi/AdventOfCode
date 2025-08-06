@@ -10,6 +10,7 @@ import java.time.format.DateTimeFormatter
 import kotlin.io.path.createParentDirectories
 import kotlin.math.pow
 import kotlin.math.roundToInt
+import kotlin.math.sqrt
 
 fun <T> List<T>.permutations(level: Int = 0): Set<List<T>> {
     val size = this.size
@@ -129,3 +130,19 @@ private fun getTableVerification(set: Set<Verification>) = Table.Builder().apply
 }.build().toString()
 
 fun Number.format(format: String) = format.format(this)
+
+fun Int.divisors() = this.toLong().divisors().map { it.toInt() }
+fun Long.divisors(): Set<Long> {
+    val sqrt = sqrt(this.toDouble()).toLong()
+    val divisors = mutableSetOf<Long>()
+    (1L..sqrt).forEach { i ->
+        if (this % i == 0L) {
+            divisors.add(i)
+
+            val counterpart = this / i
+            if (i != counterpart)
+                divisors.add(counterpart)
+        }
+    }
+    return divisors.toSet()
+}

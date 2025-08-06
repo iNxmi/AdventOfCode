@@ -64,5 +64,3 @@ fun main() {
     val result = engine.process("verifications", context)
     Files.writeString(Paths.get("export/verifications.html"), result)
 }
-
-
