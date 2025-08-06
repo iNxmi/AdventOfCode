@@ -27,11 +27,13 @@ fun main() {
         val year = verification.result.part.task.year
         val suffix = if (verification.result.part.suffix == Part.Suffix.A) 0 else 1
 
-        val string = when (verification.status) {
-            Verification.Status.SOLVED -> "solved"
-            Verification.Status.FAILED -> "failed"
-            else -> continue
-        }
+        val string = if (verification.status == Verification.Status.FAILED) {
+            "red"
+        } else if (verification.status == Verification.Status.SOLVED && verification.result.part.bonus == null) {
+            "yellow"
+        } else if (verification.status == Verification.Status.SOLVED) {
+            "green"
+        } else continue
 
         status[year * 1000 + day * 10 + suffix] = string
     }

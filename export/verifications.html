@@ -3,24 +3,28 @@
 <head>
     <title>ExportVerificationCoverageHTML</title>
     <style>
-        html                    { font-family: \"Source Code Pro\", monospace; background: rgb(15, 15, 35); }
+        html                    { font-family: \"Source Code Pro\", monospace; background: rgb(15, 15, 35); font-size: 24px; }
         a                       { color: #009900; text-decoration: none; }
         a:hover, a:focus        { color: #99ff99; }
 
-        body                    { display: flex; justify-content: space-evenly; }
-        .ascii-art              { white-space: pre; color: #009900; }
-        .title                  { background: #ffffff11; text-align: center; padding: 5px; user-select: none; }
+        body                    { display: flex; justify-content: space-evenly; margin: 0; }
 
+        .content                { padding: 5px; }
+        .ascii-art              { white-space: pre; color: #009900; }
+
+        .title                  { background: #ffffff11; text-align: center; padding: 5px; user-select: none; }
         .years                  { display: inline-flex; gap: 50px; flex-direction: column; }
         .year                   { display: flex; flex-direction: column; gap: 5px; }
         .days                   { display: flex; gap: 5px; }
         .day                    { display: flex; flex-direction: column; width: 100px; height: 100px; justify-content: space-evenly; gap: 5px; }
         .part                   { display: flex; flex-direction: column; justify-content: space-evenly; background: #ffffff22; flex-grow: 1; color: transparent; text-align: center; user-select: none; }
-        .part:hover             { background: #ffffff33; color: #009900; }
-        .solved                 { background: #0099007f; }
-        .solved:hover           { background: #0099008f; }
-        .failed                 { background: #ff00007f; }
-        .failed:hover           { background: #ff00008f; }
+        .part:hover             { background: #ffffff33; color: #009900; text-shadow: black 0 0 5px;  }
+        .green                  { background: #0099007f; }
+        .green:hover            { background: #0099008f; }
+        .yellow                 { background: #F2DF447f; }
+        .yellow:hover           { background: #F2DF448f; }
+        .red                    { background: #ff00007f; }
+        .red:hover              { background: #ff00008f; }
 
         .progress-bar           { background: #ffffff11; border: none; }
     </style>
@@ -38,56 +42,56 @@
 
             <div class="days">
                 <a class="day" href="https://adventofcode.com/2024/day/1" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[1A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[1B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2024/day/2" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[2A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[2B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2024/day/3" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[3A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[3B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2024/day/4" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[4A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[4B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2024/day/5" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[5A]</span>
                     </div>
                     <div class="part">
                         <span>[5B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2024/day/6" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[6A]</span>
                     </div>
                     <div class="part">
                         <span>[6B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2024/day/7" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[7A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[7B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2024/day/8" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[8A]</span>
                     </div>
                     <div class="part">
@@ -108,10 +112,10 @@
                         <span>[10B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2024/day/11" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[11A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[11B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2024/day/12" target="_blank">
@@ -222,31 +226,31 @@
 
             <div class="days">
                 <a class="day" href="https://adventofcode.com/2023/day/1" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[1A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[1B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2023/day/2" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[2A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[2B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2023/day/3" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[3A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[3B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2023/day/4" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[4A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part yellow">
                         <span>[4B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2023/day/5" target="_blank">
@@ -1510,63 +1514,63 @@
 
             <div class="days">
                 <a class="day" href="https://adventofcode.com/2016/day/1" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[1A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[1B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2016/day/2" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[2A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[2B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2016/day/3" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[3A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[3B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2016/day/4" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[4A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[4B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2016/day/5" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[5A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[5B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2016/day/6" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[6A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[6B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2016/day/7" target="_blank">
-                    <div class="part solved">
+                    <div class="part yellow">
                         <span>[7A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part yellow">
                         <span>[7B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2016/day/8" target="_blank">
-                    <div class="part solved">
+                    <div class="part yellow">
                         <span>[8A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part yellow">
                         <span>[8B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2016/day/9" target="_blank">
-                    <div class="part solved">
+                    <div class="part yellow">
                         <span>[9A]</span>
                     </div>
                     <div class="part">
@@ -1694,143 +1698,143 @@
 
             <div class="days">
                 <a class="day" href="https://adventofcode.com/2015/day/1" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[1A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[1B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/2" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[2A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[2B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/3" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[3A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[3B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/4" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[4A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[4B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/5" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[5A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[5B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/6" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[6A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[6B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/7" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[7A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[7B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/8" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[8A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[8B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/9" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[9A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[9B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/10" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[10A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[10B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/11" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[11A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[11B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/12" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[12A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[12B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/13" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[13A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[13B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/14" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[14A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[14B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/15" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[15A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[15B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/16" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[16A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[16B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/17" target="_blank">
-                    <div class="part solved">
+                    <div class="part yellow">
                         <span>[17A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part yellow">
                         <span>[17B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/18" target="_blank">
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[18A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part green">
                         <span>[18B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/19" target="_blank">
-                    <div class="part solved">
+                    <div class="part yellow">
                         <span>[19A]</span>
                     </div>
                     <div class="part">
                         <span>[19B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/20" target="_blank">
-                    <div class="part solved">
+                    <div class="part yellow">
                         <span>[20A]</span>
                     </div>
-                    <div class="part solved">
+                    <div class="part yellow">
                         <span>[20B]</span>
                     </div>
                 </a><a class="day" href="https://adventofcode.com/2015/day/21" target="_blank">
