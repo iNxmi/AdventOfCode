@@ -1,5 +1,7 @@
 <configuration>
 
+    <logger name="org.thymeleaf" level="OFF"/>
+
     <statusListener class="ch.qos.logback.core.status.NopStatusListener"/>
     <conversionRule conversionWord="highlight" converterClass="com.nami.logback.HighlightCompositeConverter"/>
 

@@ -50,6 +50,8 @@ fun main() {
             stars[year] = stars.getOrDefault(year, 0) + 1
     }
 
+    val starsSum = stars.values.sum()
+
     val formatter = DateTimeFormatter.ofPattern("YYYY/MM/dd")
     val date = LocalDate.now().format(formatter)
 
@@ -69,6 +71,7 @@ fun main() {
     context.setVariable("years", years)
     context.setVariable("days", days)
     context.setVariable("stars", stars)
+    context.setVariable("starsSum", starsSum)
     context.setVariable("status", status)
     context.setVariable("date", date)
     context.setVariable("time", round((System.nanoTime() - timeStart) * 1E-9 * 100.0) / 100.0)
