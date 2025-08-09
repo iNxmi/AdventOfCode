@@ -30,7 +30,7 @@
 
 <body>
     <div class="content">
-        <div class="ascii-art">
+        <a class="ascii-art" href="https://adventofcode.com/" target="_blank">
             <span>  /$$$$$$        /$$                                 /$$                      /$$$$$$         /$$$$$$                  /$$          </span>
             <span> /$$__  $$      | $$                                | $$                     /$$__  $$       /$$__  $$                | $$          </span>
             <span>| $$  \ $$  /$$$$$$$ /$$    /$$ /$$$$$$  /$$$$$$$  /$$$$$$          /$$$$$$ | $$  \__/      | $$  \__/  /$$$$$$   /$$$$$$$  /$$$$$$ </span>
@@ -39,22 +39,45 @@
             <span>| $$  | $$| $$  | $$  \  $$$/ | $$_____/| $$  | $$  | $$ /$$      | $$  | $$| $$            | $$    $$| $$  | $$| $$  | $$| $$_____/</span>
             <span>| $$  | $$|  $$$$$$$   \  $/  |  $$$$$$$| $$  | $$  |  $$$$/      |  $$$$$$/| $$            |  $$$$$$/|  $$$$$$/|  $$$$$$$|  $$$$$$$</span>
             <span>|__/  |__/ \_______/    \_/    \_______/|__/  |__/   \___/         \______/ |__/             \______/  \______/  \_______/ \_______/</span>
-        </div>
+        </a>
 
-        <div class="year" th:each="year : ${years}" th:with="star=${stars.getOrDefault(year, 0)}">
-            <a class="title" th:text="'[' + ${year} + '] (' + ${star} + '/50 - ' + ${star * 2} + '%)'" th:href="'https://adventofcode.com/' + ${year}" target="_blank">[Year] (25/50 - 50%)</a>
+        <div class="year"
+             th:each="year : ${years}"
+             th:with="star=${stars.getOrDefault(year, 0)}">
+
+            <a class="title"
+               th:text="'[' + ${year} + '] (' + ${star} + '/50 - ' + ${star * 2} + '%)'"
+               th:href="'https://adventofcode.com/' + ${year}"
+               target="_blank">
+                [Year] (25/50 - 50%)
+            </a>
 
             <div class="days">
                 <div class="day" th:each="day : ${days}">
-                    <a class="part" th:classappend="${status.getOrDefault(year * 1000 + day * 10, '')}" th:href="'https://adventofcode.com/' + ${year} + '/day/' + ${day}" target="_blank" th:text="'[' + ${day} + 'A]'">[Day A]</a>
-                    <a class="part" th:classappend="${status.getOrDefault(year * 1000 + day * 10 + 1, '')}" th:href="'https://adventofcode.com/' + ${year} + '/day/' + ${day}" target="_blank" th:text="'[' + ${day} + 'B]'">[Day B]</a>
+                    <a class="part"
+                       th:classappend="${status.getOrDefault(year * 1000 + day * 10, '')}"
+                       th:href="'https://adventofcode.com/' + ${year} + '/day/' + ${day}"
+                       target="_blank"
+                       th:text="'[' + ${day} + 'A]'">
+                        [Day A]
+                    </a>
+
+                    <a class="part"
+                       th:classappend="${status.getOrDefault(year * 1000 + day * 10 + 1, '')}"
+                       th:href="'https://adventofcode.com/' + ${year} + '/day/' + ${day} + '#part2'"
+                       target="_blank"
+                       th:text="'[' + ${day} + 'B]'">
+                        [Day B]
+                    </a>
                 </div>
             </div>
 
             <progress class="progress-bar" th:value="${star}" value="25" max="50"></progress>
         </div>
 
-        <span class="footer" th:text="'[Memphis Herghelegiu] [' + ${date} + '] [' + ${time} + 's] [' + ${starsSum} + '*]'">[Memphis Herghelegiu] [2025/08/06] [302.32s] [69*]</span>
+        <span class="footer" th:text="'[Memphis Herghelegiu] [' + ${date} + '] [' + ${time} + 's] [' + ${starsSum} + '*]'">
+            [Memphis Herghelegiu] [2025/08/06] [420.0s] [69*]
+        </span>
     </div>
 </body>
 

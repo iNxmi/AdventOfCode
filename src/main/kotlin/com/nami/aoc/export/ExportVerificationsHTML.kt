@@ -10,6 +10,7 @@ import org.thymeleaf.TemplateEngine
 import org.thymeleaf.context.Context
 import org.thymeleaf.templatemode.TemplateMode
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+import java.awt.Desktop
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.time.LocalDate
@@ -77,5 +78,8 @@ fun main() {
     context.setVariable("time", round((System.nanoTime() - timeStart) * 1E-9 * 100.0) / 100.0)
 
     val result = engine.process("verifications", context)
-    Files.writeString(Paths.get("export/verifications.html"), result)
+    val path = Paths.get("export/verifications.html")
+    Files.writeString(path, result)
+
+    Desktop.getDesktop().open(path.toFile())
 }
