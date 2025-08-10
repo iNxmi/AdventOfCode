@@ -68,7 +68,8 @@ class Y2015D19 : Task<Y2015D19.Input>(2015, 19) {
 //    }
 
     override fun getPartA() = object : Part<Input>(
-        this, Suffix.A
+        this, Suffix.A,
+        comment="tag system? https://en.wikipedia.org/wiki/Tag_system; string rewriting??"
     ) {
         override fun solve(input: Input) = getPossibleMolecules(input.molecule, input.replacements).size
     }

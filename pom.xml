@@ -131,20 +131,6 @@
             <version>1.17.2</version>
         </dependency>
 
-        <!--
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-            <version>5.4.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>5.4.1</version>
-        </dependency>
-        -->
-
         <!-- Markdown Generator -->
         <dependency>
             <groupId>com.github.Steppschuh</groupId>
@@ -161,15 +147,9 @@
 
         <!-- HTML Generator -->
         <dependency>
-            <groupId>com.j2html</groupId>
-            <artifactId>j2html</artifactId>
-            <version>1.6.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.thymeleaf</groupId>
-            <artifactId>thymeleaf</artifactId>
-            <version>3.1.2.RELEASE</version>
+            <groupId>org.jetbrains.kotlinx</groupId>
+            <artifactId>kotlinx-html-jvm</artifactId>
+            <version>0.12.0</version>
         </dependency>
 
     </dependencies>
