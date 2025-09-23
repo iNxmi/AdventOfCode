@@ -7,6 +7,8 @@ import java.nio.file.Files
 import java.nio.file.Path
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import java.util.*
+import java.util.concurrent.ConcurrentLinkedDeque
 import kotlin.io.path.createParentDirectories
 import kotlin.math.pow
 import kotlin.math.roundToInt
@@ -144,4 +146,66 @@ fun Long.divisors(): Set<Long> {
         }
     }
     return divisors.toSet()
+}
+
+fun <T, R> Iterable<T>.mapMultithreaded(maxThreads: Int, timeoutMs: Long = 100, transform: (T) -> R): List<R> {
+    val queue = this.mapTo(LinkedList()) { it }
+
+    val concurrentDeque = ConcurrentLinkedDeque<R>()
+
+    val threads = mutableSetOf<Thread>()
+    while (queue.isNotEmpty()) {
+        Thread.sleep(timeoutMs)
+
+        val iterator = threads.iterator()
+        while (iterator.hasNext()) {
+            val thread = iterator.next()
+            if (thread.state == Thread.State.TERMINATED)
+                iterator.remove()
+        }
+
+        if (threads.size >= maxThreads)
+            continue
+
+        val item = queue.pop()
+        val thread = Thread { concurrentDeque.addLast(transform(item)) }
+        threads.add(thread)
+        thread.start()
+    }
+
+    for (thread in threads)
+        thread.join()
+
+    return concurrentDeque.map { it }
+}
+
+fun <T, R> Iterable<T>.flatMapMultithreaded(maxThreads: Int, timeoutMs: Long = 100, transform: (T) -> Iterable<R>): List<R> {
+    val queue = this.mapTo(LinkedList()) { it }
+
+    val concurrentDeque = ConcurrentLinkedDeque<R>()
+
+    val threads = mutableSetOf<Thread>()
+    while (queue.isNotEmpty()) {
+        Thread.sleep(timeoutMs)
+
+        val iterator = threads.iterator()
+        while (iterator.hasNext()) {
+            val thread = iterator.next()
+            if (thread.state == Thread.State.TERMINATED)
+                iterator.remove()
+        }
+
+        if (threads.size >= maxThreads)
+            continue
+
+        val item = queue.pop()
+        val thread = Thread { concurrentDeque.addAll(transform(item)) }
+        threads.add(thread)
+        thread.start()
+    }
+
+    for (thread in threads)
+        thread.join()
+
+    return concurrentDeque.map { it }
 }

@@ -80,7 +80,8 @@ class Y2015D21 : Task<Y2015D21.Entity>(2015, 21) {
     }
 
     override fun getPartA() = object : Part<Entity>(
-        this, Suffix.A
+        this, Suffix.A,
+        bonus = 5.0
     ) {
         override fun solve(input: Entity): Any? {
             val combinations = getCombinations()
@@ -100,7 +101,8 @@ class Y2015D21 : Task<Y2015D21.Entity>(2015, 21) {
     }
 
     override fun getPartB() = object : Part<Entity>(
-        this, Suffix.B
+        this, Suffix.B,
+        bonus = 10.0
     ) {
         override fun solve(input: Entity): Any? {
             val combinations = getCombinations()

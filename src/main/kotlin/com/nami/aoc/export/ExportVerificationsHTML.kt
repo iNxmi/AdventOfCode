@@ -2,6 +2,7 @@ package com.nami.aoc.export
 
 import com.nami.aoc.DAY_RANGE
 import com.nami.aoc.YEAR_RANGE
+import com.nami.aoc.flatMapMultithreaded
 import com.nami.aoc.task.Part
 import com.nami.aoc.task.Task
 import com.nami.aoc.task.Verification
@@ -12,51 +13,15 @@ import java.nio.file.Files
 import java.nio.file.Paths
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import java.util.*
-import java.util.concurrent.ConcurrentHashMap
 import kotlin.math.round
 
 private fun getVerifications(maxThreads: Int = 4, timeoutMs: Long = 25L): Set<Verification> {
     val tasks = Task.getAll()
-    val queue = LinkedList<Task<*>>()
-    tasks.mapTo(queue) { it }
+    val verifications = tasks.flatMapMultithreaded(maxThreads, timeoutMs) { task ->
+        task.getVerifications()
+    }.toSet()
 
-    val concurrentHashMap = ConcurrentHashMap<Int, Verification>()
-
-    val threads = mutableSetOf<Thread>()
-    while (queue.isNotEmpty()) {
-        Thread.sleep(timeoutMs)
-
-        val iterator = threads.iterator()
-        while (iterator.hasNext()) {
-            val thread = iterator.next()
-            if (thread.state == Thread.State.TERMINATED)
-                iterator.remove()
-        }
-
-        if (threads.size >= maxThreads)
-            continue
-
-        val task = queue.pop()
-        val thread = Thread {
-            val map = task.getVerifications().associateBy { v ->
-                v.result.part.task.year * 1000 +
-                        v.result.part.task.day * 10 +
-                        if (v.result.part.suffix == Part.Suffix.A) 0 else 1
-            }
-            concurrentHashMap.putAll(map)
-            println("${task.year}_${task.day}")
-        }
-        thread.name = "${task.year}_${task.day}"
-        threads.add(thread)
-        thread.start()
-    }
-
-    for (thread in threads)
-        thread.join()
-
-    val result = concurrentHashMap.map { (_, value) -> value }.toSet()
-    return result
+    return verifications
 }
 
 private const val css = """

@@ -32,7 +32,8 @@ class Y2023D04 : Task<List<Y2023D04.Card>>(2023, 4) {
     }
 
     override fun getPartB() = object : Part<List<Card>>(
-        this, Suffix.B
+        this, Suffix.B,
+        bonus = 10.0
     ) {
         override fun solve(input: List<Card>): Any {
             val cards = input.associate { it.id to 1 }.toMutableMap()

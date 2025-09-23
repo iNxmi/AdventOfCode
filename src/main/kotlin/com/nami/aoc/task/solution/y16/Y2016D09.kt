@@ -8,7 +8,8 @@ class Y2016D09 : Task<String>(2016, 9) {
     override fun getProcessedInput(raw: String) = raw.replace(Regex("\\s"), "")
 
     override fun getPartA() = object : Part<String>(
-        this, Suffix.A
+        this, Suffix.A,
+        bonus = 5.0
     ) {
         override fun solve(input: String): Any {
             var result = input

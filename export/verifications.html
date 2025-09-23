@@ -1,28 +1,30 @@
 <html>
   <head>
-    <style>html                            { font-family: \"Source Code Pro\", monospace; background: rgb(15, 15, 35); font-size: 24px; }
-a                               { color: #009900; text-decoration: none; }
-a:hover, a:focus                { color: #99ff99; }
-body                            { margin: 0; display: flex; justify-content: space-evenly; }
-        
-.title                          { background: #ffffff11; text-align: center; padding: 5px; user-select: none; }
-.content                        { display: inline-flex; flex-direction: column; gap: 50px; justify-content: space-evenly; padding: 50px; }
-.ascii-art                      { display: flex; flex-direction: column; white-space: preserve-spaces;  color: #009900; text-align: center; user-select: none; }
-.year                           { display: flex; flex-direction: column; gap: 5px; }
-.days                           { display: flex; gap: 5px; }
-.day                            { display: flex; flex-direction: column; width: 100px; height: 100px; justify-content: space-evenly; gap: 5px; }
-.part                           { display: flex; flex-direction: column; justify-content: space-evenly; background: #ffffff22; flex-grow: 1; color: transparent; text-align: center; user-select: none; }
-.part:hover, .part:focus        { background: #ffffff33; color: #009900; text-shadow: black 0 0 5px;  }
-.green                          { background: #0099007f; }
-.green:hover, .green:focus      { background: #0099008f; }
-.yellow                         { background: #F2DF447f; }
-.yellow:hover, .yellow:focus    { background: #F2DF448f; }
-.red                            { background: #ff00007f; }
-.red:hover, .red:focus          { background: #ff00008f; }
-        
-.progress-bar                   { background: #ffffff11; border: none; }
-        
-.footer                         { display: flex; color: #009900; justify-content: center; gap: 15px; }</style>
+    <style>
+    html                            { font-family: \"Source Code Pro\", monospace; background: rgb(15, 15, 35); font-size: 24px; }
+    a                               { color: #009900; text-decoration: none; }
+    a:hover, a:focus                { color: #99ff99; }
+    body                            { margin: 0; display: flex; justify-content: space-evenly; }
+            
+    .title                          { background: #ffffff11; text-align: center; padding: 5px; user-select: none; }
+    .content                        { display: inline-flex; flex-direction: column; gap: 50px; justify-content: space-evenly; padding: 50px; }
+    .ascii-art                      { display: flex; flex-direction: column; white-space: preserve-spaces;  color: #009900; text-align: center; user-select: none; }
+    .year                           { display: flex; flex-direction: column; gap: 5px; }
+    .days                           { display: flex; gap: 5px; }
+    .day                            { display: flex; flex-direction: column; width: 100px; height: 100px; justify-content: space-evenly; gap: 5px; }
+    .part                           { display: flex; flex-direction: column; justify-content: space-evenly; background: #ffffff22; flex-grow: 1; color: transparent; text-align: center; user-select: none; }
+    .part:hover, .part:focus        { background: #ffffff33; color: #009900; text-shadow: black 0 0 5px;  }
+    .green                          { background: #0099007f; }
+    .green:hover, .green:focus      { background: #0099008f; }
+    .yellow                         { background: #F2DF447f; }
+    .yellow:hover, .yellow:focus    { background: #F2DF448f; }
+    .red                            { background: #ff00007f; }
+    .red:hover, .red:focus          { background: #ff00008f; }
+            
+    .progress-bar                   { background: #ffffff11; border: none; }
+            
+    .footer                         { display: flex; color: #009900; justify-content: center; gap: 1em; }
+</style>
   </head>
   <body>
     <div class="content"><a href="https://adventofcode.com/" target="_blank" class="ascii-art"><span>  /$$$$$$         /$$                                     /$$                        /$$$$$$          /$$$$$$                    /$$           </span><span> /$$__  $$       | $$                                    | $$                       /$$__  $$        /$$__  $$                  | $$           </span><span>| $$  \ $$   /$$$$$$$  /$$    /$$  /$$$$$$   /$$$$$$$   /$$$$$$           /$$$$$$  | $$  \__/       | $$  \__/   /$$$$$$    /$$$$$$$   /$$$$$$ </span><span>| $$$$$$$$  /$$__  $$ |  $$  /$$/ /$$__  $$ | $$__  $$ |_  $$_/          /$$__  $$ | $$$$           | $$        /$$__  $$  /$$__  $$  /$$__  $$</span><span>| $$__  $$ | $$  | $$  \  $$/$$/ | $$$$$$$$ | $$  \ $$   | $$           | $$  \ $$ | $$_/           | $$       | $$  \ $$ | $$  | $$ | $$$$$$$$</span><span>| $$  | $$ | $$  | $$   \  $$$/  | $$_____/ | $$  | $$   | $$ /$$       | $$  | $$ | $$             | $$    $$ | $$  | $$ | $$  | $$ | $$_____/</span><span>| $$  | $$ |  $$$$$$$    \  $/   |  $$$$$$$ | $$  | $$   |  $$$$/       |  $$$$$$/ | $$             |  $$$$$$/ |  $$$$$$/ |  $$$$$$$ |  $$$$$$$</span><span>|__/  |__/  \_______/     \_/     \_______/ |__/  |__/    \___/          \______/  |__/              \______/   \______/   \_______/  \_______/</span></a>
@@ -60,7 +62,7 @@ body                            { margin: 0; display: flex; justify-content: spa
           <div class="day"><a href="https://adventofcode.com/2023/day/1" target="_blank" class="part green">[1A]</a><a href="https://adventofcode.com/2023/day/1#part2" target="_blank" class="part green">[1B]</a></div>
           <div class="day"><a href="https://adventofcode.com/2023/day/2" target="_blank" class="part green">[2A]</a><a href="https://adventofcode.com/2023/day/2#part2" target="_blank" class="part green">[2B]</a></div>
           <div class="day"><a href="https://adventofcode.com/2023/day/3" target="_blank" class="part green">[3A]</a><a href="https://adventofcode.com/2023/day/3#part2" target="_blank" class="part green">[3B]</a></div>
-          <div class="day"><a href="https://adventofcode.com/2023/day/4" target="_blank" class="part green">[4A]</a><a href="https://adventofcode.com/2023/day/4#part2" target="_blank" class="part yellow">[4B]</a></div>
+          <div class="day"><a href="https://adventofcode.com/2023/day/4" target="_blank" class="part green">[4A]</a><a href="https://adventofcode.com/2023/day/4#part2" target="_blank" class="part green">[4B]</a></div>
           <div class="day"><a href="https://adventofcode.com/2023/day/5" target="_blank" class="part ">[5A]</a><a href="https://adventofcode.com/2023/day/5#part2" target="_blank" class="part ">[5B]</a></div>
           <div class="day"><a href="https://adventofcode.com/2023/day/6" target="_blank" class="part ">[6A]</a><a href="https://adventofcode.com/2023/day/6#part2" target="_blank" class="part ">[6B]</a></div>
           <div class="day"><a href="https://adventofcode.com/2023/day/7" target="_blank" class="part ">[7A]</a><a href="https://adventofcode.com/2023/day/7#part2" target="_blank" class="part ">[7B]</a></div>
@@ -266,9 +268,9 @@ body                            { margin: 0; display: flex; justify-content: spa
           <div class="day"><a href="https://adventofcode.com/2016/day/4" target="_blank" class="part green">[4A]</a><a href="https://adventofcode.com/2016/day/4#part2" target="_blank" class="part green">[4B]</a></div>
           <div class="day"><a href="https://adventofcode.com/2016/day/5" target="_blank" class="part green">[5A]</a><a href="https://adventofcode.com/2016/day/5#part2" target="_blank" class="part green">[5B]</a></div>
           <div class="day"><a href="https://adventofcode.com/2016/day/6" target="_blank" class="part green">[6A]</a><a href="https://adventofcode.com/2016/day/6#part2" target="_blank" class="part green">[6B]</a></div>
-          <div class="day"><a href="https://adventofcode.com/2016/day/7" target="_blank" class="part yellow">[7A]</a><a href="https://adventofcode.com/2016/day/7#part2" target="_blank" class="part yellow">[7B]</a></div>
-          <div class="day"><a href="https://adventofcode.com/2016/day/8" target="_blank" class="part yellow">[8A]</a><a href="https://adventofcode.com/2016/day/8#part2" target="_blank" class="part yellow">[8B]</a></div>
-          <div class="day"><a href="https://adventofcode.com/2016/day/9" target="_blank" class="part yellow">[9A]</a><a href="https://adventofcode.com/2016/day/9#part2" target="_blank" class="part ">[9B]</a></div>
+          <div class="day"><a href="https://adventofcode.com/2016/day/7" target="_blank" class="part green">[7A]</a><a href="https://adventofcode.com/2016/day/7#part2" target="_blank" class="part green">[7B]</a></div>
+          <div class="day"><a href="https://adventofcode.com/2016/day/8" target="_blank" class="part green">[8A]</a><a href="https://adventofcode.com/2016/day/8#part2" target="_blank" class="part green">[8B]</a></div>
+          <div class="day"><a href="https://adventofcode.com/2016/day/9" target="_blank" class="part green">[9A]</a><a href="https://adventofcode.com/2016/day/9#part2" target="_blank" class="part ">[9B]</a></div>
           <div class="day"><a href="https://adventofcode.com/2016/day/10" target="_blank" class="part ">[10A]</a><a href="https://adventofcode.com/2016/day/10#part2" target="_blank" class="part ">[10B]</a></div>
           <div class="day"><a href="https://adventofcode.com/2016/day/11" target="_blank" class="part ">[11A]</a><a href="https://adventofcode.com/2016/day/11#part2" target="_blank" class="part ">[11B]</a></div>
           <div class="day"><a href="https://adventofcode.com/2016/day/12" target="_blank" class="part ">[12A]</a><a href="https://adventofcode.com/2016/day/12#part2" target="_blank" class="part ">[12B]</a></div>
@@ -305,18 +307,18 @@ body                            { margin: 0; display: flex; justify-content: spa
           <div class="day"><a href="https://adventofcode.com/2015/day/14" target="_blank" class="part green">[14A]</a><a href="https://adventofcode.com/2015/day/14#part2" target="_blank" class="part green">[14B]</a></div>
           <div class="day"><a href="https://adventofcode.com/2015/day/15" target="_blank" class="part green">[15A]</a><a href="https://adventofcode.com/2015/day/15#part2" target="_blank" class="part green">[15B]</a></div>
           <div class="day"><a href="https://adventofcode.com/2015/day/16" target="_blank" class="part green">[16A]</a><a href="https://adventofcode.com/2015/day/16#part2" target="_blank" class="part green">[16B]</a></div>
-          <div class="day"><a href="https://adventofcode.com/2015/day/17" target="_blank" class="part yellow">[17A]</a><a href="https://adventofcode.com/2015/day/17#part2" target="_blank" class="part yellow">[17B]</a></div>
+          <div class="day"><a href="https://adventofcode.com/2015/day/17" target="_blank" class="part green">[17A]</a><a href="https://adventofcode.com/2015/day/17#part2" target="_blank" class="part green">[17B]</a></div>
           <div class="day"><a href="https://adventofcode.com/2015/day/18" target="_blank" class="part green">[18A]</a><a href="https://adventofcode.com/2015/day/18#part2" target="_blank" class="part green">[18B]</a></div>
-          <div class="day"><a href="https://adventofcode.com/2015/day/19" target="_blank" class="part yellow">[19A]</a><a href="https://adventofcode.com/2015/day/19#part2" target="_blank" class="part ">[19B]</a></div>
-          <div class="day"><a href="https://adventofcode.com/2015/day/20" target="_blank" class="part yellow">[20A]</a><a href="https://adventofcode.com/2015/day/20#part2" target="_blank" class="part yellow">[20B]</a></div>
-          <div class="day"><a href="https://adventofcode.com/2015/day/21" target="_blank" class="part yellow">[21A]</a><a href="https://adventofcode.com/2015/day/21#part2" target="_blank" class="part yellow">[21B]</a></div>
+          <div class="day"><a href="https://adventofcode.com/2015/day/19" target="_blank" class="part green">[19A]</a><a href="https://adventofcode.com/2015/day/19#part2" target="_blank" class="part ">[19B]</a></div>
+          <div class="day"><a href="https://adventofcode.com/2015/day/20" target="_blank" class="part green">[20A]</a><a href="https://adventofcode.com/2015/day/20#part2" target="_blank" class="part green">[20B]</a></div>
+          <div class="day"><a href="https://adventofcode.com/2015/day/21" target="_blank" class="part green">[21A]</a><a href="https://adventofcode.com/2015/day/21#part2" target="_blank" class="part green">[21B]</a></div>
           <div class="day"><a href="https://adventofcode.com/2015/day/22" target="_blank" class="part ">[22A]</a><a href="https://adventofcode.com/2015/day/22#part2" target="_blank" class="part ">[22B]</a></div>
-          <div class="day"><a href="https://adventofcode.com/2015/day/23" target="_blank" class="part yellow">[23A]</a><a href="https://adventofcode.com/2015/day/23#part2" target="_blank" class="part yellow">[23B]</a></div>
+          <div class="day"><a href="https://adventofcode.com/2015/day/23" target="_blank" class="part green">[23A]</a><a href="https://adventofcode.com/2015/day/23#part2" target="_blank" class="part green">[23B]</a></div>
           <div class="day"><a href="https://adventofcode.com/2015/day/24" target="_blank" class="part ">[24A]</a><a href="https://adventofcode.com/2015/day/24#part2" target="_blank" class="part ">[24B]</a></div>
           <div class="day"><a href="https://adventofcode.com/2015/day/25" target="_blank" class="part ">[25A]</a><a href="https://adventofcode.com/2015/day/25#part2" target="_blank" class="part ">[25B]</a></div>
         </div>
 <progress class="progress-bar" value="43" max="50"></progress></div>
-      <div class="footer"><span>[Memphis Herghelegiu]</span><span>[2025/08/10]</span><span>[19.73s - 4 Threads]</span><span>[83/500 - 16.6%]</span></div>
+      <div class="footer"><span>[Memphis Herghelegiu]</span><span>[2025/08/14]</span><span>[29.89s - 4 Threads]</span><span>[83/500 - 16.6%]</span></div>
     </div>
   </body>
 </html>

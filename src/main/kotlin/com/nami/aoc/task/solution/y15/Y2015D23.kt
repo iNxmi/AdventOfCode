@@ -10,11 +10,11 @@ class Y2015D23 : Task<List<String>>(2015, 23) {
     override fun getProcessedInput(raw: String) = raw.lines()
 
     private fun simulate(registers: MutableMap<String, UInt>, instructions: List<String>) {
-        if(!registers.containsKey("a"))
+        if (!registers.containsKey("a"))
             registers["a"] = 0u
-        if(!registers.containsKey("b"))
+        if (!registers.containsKey("b"))
             registers["b"] = 0u
-        if(!registers.containsKey("pc"))
+        if (!registers.containsKey("pc"))
             registers["pc"] = 0u
 
         while (registers["pc"]!! < instructions.size.toUInt()) {
@@ -82,7 +82,8 @@ class Y2015D23 : Task<List<String>>(2015, 23) {
     }
 
     override fun getPartA() = object : Part<List<String>>(
-        this, Suffix.A
+        this, Suffix.A,
+        bonus = 5.0
     ) {
         override fun solve(input: List<String>): Any {
             val registers = mutableMapOf<String, UInt>()
@@ -98,7 +99,8 @@ class Y2015D23 : Task<List<String>>(2015, 23) {
     }
 
     override fun getPartB() = object : Part<List<String>>(
-        this, Suffix.B
+        this, Suffix.B,
+        bonus = 10.0
     ) {
         override fun solve(input: List<String>): Any {
             val registers = mutableMapOf<String, UInt>()

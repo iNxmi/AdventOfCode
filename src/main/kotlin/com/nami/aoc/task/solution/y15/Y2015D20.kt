@@ -11,7 +11,8 @@ class Y2015D20 : Task<Int>(2015, 20) {
     override fun getProcessedInput(raw: String) = raw.toInt()
 
     override fun getPartA() = object : Part<Int>(
-        this, Suffix.A
+        this, Suffix.A,
+        bonus = 5.0
     ) {
         override fun solve(input: Int): Any {
             for (house in 1..input) {
@@ -25,7 +26,8 @@ class Y2015D20 : Task<Int>(2015, 20) {
     }
 
     override fun getPartB() = object : Part<Int>(
-        this, Suffix.B
+        this, Suffix.B,
+        bonus = 10.0
     ) {
         override fun solve(input: Int): Any {
             for (house in 1..input) {

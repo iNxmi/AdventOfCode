@@ -12,14 +12,16 @@ class Y2015D17 : Task<List<Int>>(2015, 17) {
     private fun getCombinations(values: List<Int>, target: Int) = values.combinations().filter { it.sum() == target }
 
     override fun getPartA() = object : Part<List<Int>>(
-        this, Suffix.A
+        this, Suffix.A,
+        bonus = 5.0
     ) {
         override fun solve(input: List<Int>) = getCombinations(input, 150).size
         override fun test(input: List<Int>) = getCombinations(input, 25).size
     }
 
     override fun getPartB() = object : Part<List<Int>>(
-        this, Suffix.B
+        this, Suffix.B,
+        bonus = 10.0
     ) {
         fun getMinimalCombinations(values: List<Int>, target: Int): List<List<Int>> {
             val combinations = getCombinations(values, target)
