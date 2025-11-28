@@ -140,7 +140,8 @@ private fun getHTML(threads: Int): String {
                     val sum = stars.values.sum()
                     val limit = DAY_RANGE.map { it.value.length() }.sum() * 2
                     val percent = sum.toDouble() / limit.toDouble() * 100.0
-                    span { +"[$sum/$limit - $percent%]" }
+                    val percentFormatted = ("%.2f").format(percent).replace(",", ".")
+                    span { +"[$sum/$limit - $percentFormatted%]" }
                 }
             }
         }

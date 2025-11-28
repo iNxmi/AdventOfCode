@@ -7,12 +7,18 @@ import org.jsoup.HttpStatusException
 import org.jsoup.Jsoup
 import java.nio.file.Paths
 import java.security.MessageDigest
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.Month
+import java.time.OffsetDateTime
+import java.time.ZoneOffset
 
 class Remote {
 
     companion object {
         private val TOKEN_ORIGINAL = dotenv().get("SESSION")
         private val TOKEN_HASH = MessageDigest.getInstance("SHA-256").digest(TOKEN_ORIGINAL.toByteArray())
+
         @OptIn(ExperimentalStdlibApi::class)
         private val TOKEN_STRING = TOKEN_HASH.toHexString()
 
@@ -20,11 +26,22 @@ class Remote {
         private val CACHE_SOLUTION_A = Cache(Paths.get("cache/$TOKEN_STRING/solutions_a.json"))
         private val CACHE_SOLUTION_B = Cache(Paths.get("cache/$TOKEN_STRING/solutions_b.json"))
 
-        fun getInput(year: Int, day: Int): String {
+        //UTC-5
+        private val AOC_TIME_ZONE = ZoneOffset.ofHours(-5)
+
+        fun verify(year: Int, day: Int) {
             require(YEAR_RANGE.contains(year)) { "Year must be in '$YEAR_RANGE'" }
 
             val dayRange = DAY_RANGE[year]!!
             require(dayRange.contains(day)) { "Day must be in '$dayRange'" }
+
+            val request = LocalDateTime.of(year, Month.DECEMBER, day, 0, 0).atOffset(AOC_TIME_ZONE)
+            val current = LocalDateTime.now().atOffset(AOC_TIME_ZONE)
+            require(request.isBefore(current)) { "Cannot request the future. request=$request current=$current" }
+        }
+
+        fun getInput(year: Int, day: Int): String {
+            verify(year, day)
 
             val id = year * 100 + day
             if (!CACHE_INPUT.containsKey(id)) {
@@ -36,10 +53,7 @@ class Remote {
         }
 
         fun getSolutions(year: Int, day: Int): Map<Part.Suffix, String?> {
-            require(YEAR_RANGE.contains(year)) { "Year must be in '$YEAR_RANGE'" }
-
-            val dayRange = DAY_RANGE[year]!!
-            require(dayRange.contains(day)) { "Day must be in '$dayRange'" }
+            verify(year, day)
 
             val id = year * 100 + day
 
