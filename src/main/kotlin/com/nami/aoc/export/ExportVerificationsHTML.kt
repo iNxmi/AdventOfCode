@@ -3,13 +3,13 @@ package com.nami.aoc.export
 import com.nami.aoc.DAY_RANGE
 import com.nami.aoc.YEAR_RANGE
 import com.nami.aoc.flatMapMultithreaded
+import com.nami.aoc.length
 import com.nami.aoc.task.Part
 import com.nami.aoc.task.Task
 import com.nami.aoc.task.Verification
 import kotlinx.html.*
 import kotlinx.html.stream.createHTML
 import java.awt.Desktop
-import java.awt.image.BufferedImage
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.time.LocalDate
@@ -36,7 +36,7 @@ private const val css = """
     .ascii-art                      { display: flex; flex-direction: column; white-space: preserve-spaces;  color: #009900; text-align: center; user-select: none; }
     .year                           { display: flex; flex-direction: column; gap: 5px; }
     .days                           { display: flex; gap: 5px; }
-    .day                            { display: flex; flex-direction: column; width: 100px; height: 100px; justify-content: space-evenly; gap: 5px; }
+    .day                            { flex-grow: 1; display: flex; flex-direction: column; width: 100px; height: 100px; justify-content: space-evenly; gap: 5px; }
     .part                           { display: flex; flex-direction: column; justify-content: space-evenly; background: #ffffff22; flex-grow: 1; color: transparent; text-align: center; user-select: none; }
     .part:hover, .part:focus        { background: #ffffff33; color: #009900; text-shadow: black 0 0 5px;  }
     .green                          { background: #0099007f; }
@@ -96,11 +96,14 @@ private fun getHTML(threads: Int): String {
                 }
 
                 val years = YEAR_RANGE.map { it }.reversed().toSet()
-                val days = DAY_RANGE.map { it }.toSet()
                 for (year in years) div(classes = "year") {
-                    val star = stars.getOrDefault(year, 0)
+                    val dayRange = DAY_RANGE[year]!!
+                    val days = dayRange.map { it }.toSet()
+
+                    val currentStars = stars.getOrDefault(year, 0)
+                    val maxStars = dayRange.length() * 2
                     a(classes = "title", href = "https://adventofcode.com/$year", target = "_blank") {
-                        +"[$year] ($star/50 - ${star * 2}%)"
+                        +"[$year] ($currentStars/$maxStars - ${currentStars * 2}%)"
                     }
 
                     div(classes = "days") {
@@ -119,8 +122,8 @@ private fun getHTML(threads: Int): String {
                     }
 
                     progress(classes = "progress-bar") {
-                        value = "$star"
-                        max = "50"
+                        value = "$currentStars"
+                        max = "$maxStars"
                     }
                 }
 
@@ -135,7 +138,7 @@ private fun getHTML(threads: Int): String {
                     span { +"[${time}s - $threads Threads]" }
 
                     val sum = stars.values.sum()
-                    val limit = years.size * 25 * 2
+                    val limit = DAY_RANGE.map { it.value.length() }.sum() * 2
                     val percent = sum.toDouble() / limit.toDouble() * 100.0
                     span { +"[$sum/$limit - $percent%]" }
                 }

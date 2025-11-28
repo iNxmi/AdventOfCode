@@ -22,7 +22,9 @@ class Remote {
 
         fun getInput(year: Int, day: Int): String {
             require(YEAR_RANGE.contains(year)) { "Year must be in '$YEAR_RANGE'" }
-            require(DAY_RANGE.contains(day)) { "Day must be in '$DAY_RANGE'" }
+
+            val dayRange = DAY_RANGE[year]!!
+            require(dayRange.contains(day)) { "Day must be in '$dayRange'" }
 
             val id = year * 100 + day
             if (!CACHE_INPUT.containsKey(id)) {
@@ -35,7 +37,9 @@ class Remote {
 
         fun getSolutions(year: Int, day: Int): Map<Part.Suffix, String?> {
             require(YEAR_RANGE.contains(year)) { "Year must be in '$YEAR_RANGE'" }
-            require(DAY_RANGE.contains(day)) { "Day must be in '$DAY_RANGE'" }
+
+            val dayRange = DAY_RANGE[year]!!
+            require(dayRange.contains(day)) { "Day must be in '$dayRange'" }
 
             val id = year * 100 + day
 

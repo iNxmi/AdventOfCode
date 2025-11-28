@@ -209,3 +209,5 @@ fun <T, R> Iterable<T>.flatMapMultithreaded(maxThreads: Int, timeoutMs: Long = 1
 
     return concurrentDeque.map { it }
 }
+
+fun IntRange.length() = this.last - this.first + 1
