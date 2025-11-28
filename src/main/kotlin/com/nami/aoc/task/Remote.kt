@@ -36,7 +36,7 @@ class Remote {
             require(dayRange.contains(day)) { "Day must be in '$dayRange'" }
 
             val request = LocalDateTime.of(year, Month.DECEMBER, day, 0, 0).atOffset(AOC_TIME_ZONE)
-            val current = LocalDateTime.now().atOffset(AOC_TIME_ZONE)
+            val current = OffsetDateTime.now(AOC_TIME_ZONE)
             require(request.isBefore(current)) { "Cannot request the future. request=$request current=$current" }
         }
 
