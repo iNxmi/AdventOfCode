@@ -9,6 +9,7 @@ import com.nami.aoc.task.Verification
 import kotlinx.html.*
 import kotlinx.html.stream.createHTML
 import java.awt.Desktop
+import java.awt.image.BufferedImage
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.time.LocalDate
@@ -124,7 +125,7 @@ private fun getHTML(threads: Int): String {
                 }
 
                 div(classes = "footer") {
-                    span { +"[Memphis Herghelegiu]" }
+                    span { a(href = "https://github.com/iNxmi/AdventOfCode") { +"[Memphis Herghelegiu]" } }
 
                     val formatter = DateTimeFormatter.ofPattern("YYYY/MM/dd")
                     val date = LocalDate.now().format(formatter)
