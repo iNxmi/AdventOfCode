@@ -33,7 +33,7 @@ class Y2025D01 : Task<List<Y2025D01.Rotation>>(2025, 1) {
         Rotation(direction, amount)
     }
 
-    override fun getPartA() = object : Part<List<Rotation>>(this, Suffix.A) {
+    override fun getPartA() = object : Part.A<List<Rotation>>(this) {
         override fun solve(input: List<Rotation>): Int {
             var position = DIAL_START
             val result = input.count {
@@ -44,14 +44,12 @@ class Y2025D01 : Task<List<Y2025D01.Rotation>>(2025, 1) {
         }
     }
 
-    override fun getPartB() = object : Part<List<Rotation>>(this, Suffix.B) {
+    override fun getPartB() = object : Part.B<List<Rotation>>(this) {
         override fun solve(input: List<Rotation>): Int {
             var position = DIAL_START
             val result = input.sumOf { rotation ->
                 (0..<rotation.amount).count { _ ->
-                    position += rotation.direction.sign
-                    position = position.mod(DIAL_SIZE)
-
+                    position = (position + rotation.direction.sign).mod(DIAL_SIZE)
                     position == 0
                 }
             }

@@ -20,10 +20,13 @@ abstract class Part<InputClass>(
         val timeEndNs = System.nanoTime()
 
         val time = (timeEndNs - timeStartNs) * 1e-9
-        return Result(this,  value, time)
+        return Result(this, value, time)
     }
 
     abstract fun solve(input: InputClass): Any?
     open fun test(input: InputClass): Any? = solve(input)
+
+    abstract class A<InputClass>(task: Task<*>, bonus: Double? = null, comment: String? = null) : Part<InputClass>(task, Suffix.A, bonus, comment)
+    abstract class B<InputClass>(task: Task<*>, bonus: Double? = null, comment: String? = null) : Part<InputClass>(task, Suffix.B, bonus, comment)
 
 }
