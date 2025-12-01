@@ -7,24 +7,20 @@ import com.nami.aoc.task.Task
 class Y2025D01 : Task<List<Y2025D01.Rotation>>(2025, 1) {
 
     companion object {
-        private val DIAL_START = 50
-        private val DIAL_SIZE = 100
+        private const val DIAL_START = 50
+        private const val DIAL_SIZE = 100
     }
 
-    enum class Direction {
-        LEFT, RIGHT
+    enum class Direction(val sign: Int) {
+        LEFT(-1),
+        RIGHT(+1)
     }
 
     data class Rotation(
         val direction: Direction,
         val amount: Int
     ) {
-
-        fun calculate(position: Int) = when (direction) {
-            Direction.LEFT -> position - amount
-            Direction.RIGHT -> position + amount
-        } % DIAL_SIZE
-
+        val numeric = amount * direction.sign
     }
 
     override fun getProcessedInput(raw: String) = raw.lines().map { line ->
@@ -33,54 +29,27 @@ class Y2025D01 : Task<List<Y2025D01.Rotation>>(2025, 1) {
         Rotation(direction, amount)
     }
 
-    override fun getPartA() = object : Part<List<Rotation>>(
-        this, Suffix.A
-    ) {
+    override fun getPartA() = object : Part<List<Rotation>>(this, Suffix.A) {
         override fun solve(input: List<Rotation>): Int {
-            var count = 0
-            var position = 50
-            for (rotation in input) {
-                position = rotation.calculate(position)
-
-                if(position == 0)
-                    count++
+            var position = DIAL_START
+            return input.count {
+                position = (position + it.numeric).mod(DIAL_SIZE)
+                position == 0
             }
-
-            return count
         }
     }
 
-    override fun getPartB() = object : Part<List<Rotation>>(
-        this, Suffix.B
-    ) {
+    override fun getPartB() = object : Part<List<Rotation>>(this, Suffix.B) {
         override fun solve(input: List<Rotation>): Int {
-            var count = 0
-            var position = 50
-            for (rotation in input) {
-                if(rotation.direction == Direction.RIGHT) {
-                    for(i in 0..<rotation.amount) {
-                        position += 1
-                        position = position.mod(DIAL_SIZE)
+            var position = DIAL_START
+            return input.sumOf { rotation ->
+                (0..<rotation.amount).count { _ ->
+                    position += rotation.direction.sign
+                    position = position.mod(DIAL_SIZE)
 
-                        if (position == 0)
-                            count++
-
-                        println(position)
-                    }
-                } else {
-                    for(i in 0..<rotation.amount) {
-                        position -= 1
-                        position = position.mod(DIAL_SIZE)
-
-                        if (position == 0)
-                            count++
-
-                        println(position)
-                    }
+                    position == 0
                 }
             }
-
-            return count
         }
     }
 
