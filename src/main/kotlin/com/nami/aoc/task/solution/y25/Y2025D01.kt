@@ -24,7 +24,11 @@ class Y2025D01 : Task<List<Y2025D01.Rotation>>(2025, 1) {
     }
 
     override fun getProcessedInput(raw: String) = raw.lines().map { line ->
-        val direction = if (line[0] == 'R') Direction.RIGHT else Direction.LEFT
+        val direction = when(val char = line[0]) {
+            'R' -> Direction.RIGHT
+            'L' -> Direction.LEFT
+            else -> throw IllegalArgumentException("Unexpected direction '$char'.")
+        }
         val amount = line.substring(1).toInt()
         Rotation(direction, amount)
     }
@@ -32,17 +36,18 @@ class Y2025D01 : Task<List<Y2025D01.Rotation>>(2025, 1) {
     override fun getPartA() = object : Part<List<Rotation>>(this, Suffix.A) {
         override fun solve(input: List<Rotation>): Int {
             var position = DIAL_START
-            return input.count {
+            val result = input.count {
                 position = (position + it.numeric).mod(DIAL_SIZE)
                 position == 0
             }
+            return result
         }
     }
 
     override fun getPartB() = object : Part<List<Rotation>>(this, Suffix.B) {
         override fun solve(input: List<Rotation>): Int {
             var position = DIAL_START
-            return input.sumOf { rotation ->
+            val result = input.sumOf { rotation ->
                 (0..<rotation.amount).count { _ ->
                     position += rotation.direction.sign
                     position = position.mod(DIAL_SIZE)
@@ -50,6 +55,7 @@ class Y2025D01 : Task<List<Y2025D01.Rotation>>(2025, 1) {
                     position == 0
                 }
             }
+            return result
         }
     }
 
