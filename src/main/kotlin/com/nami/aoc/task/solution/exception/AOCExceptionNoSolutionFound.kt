@@ -4,4 +4,4 @@ import io.github.oshai.kotlinlogging.KLogger
 
 class AOCExceptionNoSolutionFound(
     logger: KLogger
-) : AOCException(logger, "No solution found")
+) : AOCException(logger, "No solution found.")
