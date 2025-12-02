@@ -11,16 +11,15 @@ class Y2025D02 : Task<Set<LongRange>>(2025, 2) {
         LongRange(split[0].toLong(), split[1].toLong())
     }.toSet()
 
+    private fun solve(ranges: Set<LongRange>, regex: Regex) =
+        ranges.flatMap { it.toSet() }.filter { it.toString().matches(regex) }.sum()
+
     override fun getPartA() = object : Part.A<Set<LongRange>>(this) {
-        private val REGEX = Regex("(.+)\\1")
-        override fun solve(input: Set<LongRange>) =
-            input.flatMap { it.toSet() }.filter { it.toString().matches(REGEX) }.sum()
+        override fun solve(input: Set<LongRange>) = solve(input, Regex("(.+)\\1"))
     }
 
     override fun getPartB() = object : Part.B<Set<LongRange>>(this) {
-        private val REGEX = Regex("(.+)\\1+")
-        override fun solve(input: Set<LongRange>) =
-            input.flatMap { it.toSet() }.filter { it.toString().matches(REGEX) }.sum()
+        override fun solve(input: Set<LongRange>) = solve(input, Regex("(.+)\\1+"))
     }
 
 }
