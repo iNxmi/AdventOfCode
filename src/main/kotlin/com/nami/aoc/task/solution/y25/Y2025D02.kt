@@ -8,7 +8,9 @@ class Y2025D02 : Task<Set<LongRange>>(2025, 2) {
 
     override fun getProcessedInput(raw: String) = raw.split(",").map { range ->
         val split = range.split("-")
-        LongRange(split[0].toLong(), split[1].toLong())
+        val first = split.first().toLong()
+        val last = split.last().toLong()
+        LongRange(first, last)
     }.toSet()
 
     private fun solve(ranges: Set<LongRange>, regex: Regex) =
