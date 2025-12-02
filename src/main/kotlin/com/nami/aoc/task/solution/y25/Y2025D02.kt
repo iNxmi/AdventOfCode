@@ -12,44 +12,19 @@ class Y2025D02 : Task<Set<LongRange>>(2025, 2) {
     }.toSet()
 
     override fun getPartA() = object : Part.A<Set<LongRange>>(this) {
-
         private val REGEX = Regex("(.+)\\1")
-
-        override fun solve(input: Set<LongRange>): Long {
-            var count = 0L
-            for (range in input) {
-                for (i in range) {
-                    val string = i.toString()
-                    if(REGEX.matches(string))
-                        count += i
-                }
-            }
-
-            return count
-        }
-
+        override fun solve(input: Set<LongRange>) =
+            input.flatMap { it.toSet() }.filter { it.toString().matches(REGEX) }.sum()
     }
 
     override fun getPartB() = object : Part.B<Set<LongRange>>(this) {
         private val REGEX = Regex("(.+)\\1+")
-
-        override fun solve(input: Set<LongRange>): Long {
-            var count = 0L
-            for (range in input) {
-                for (i in range) {
-                    val string = i.toString()
-                    if(REGEX.matches(string))
-                        count += i
-                }
-            }
-
-            return count
-        }
-
+        override fun solve(input: Set<LongRange>)=
+            input.flatMap { it.toSet() }.filter { it.toString().matches(REGEX) }.sum()
     }
 
 }
 
 //fun main() = Y2025D02().getTestVerifications().print()
-fun main() = Y2025D02().getResults().print()
-//fun main() = Y2025D02().getVerifications().print()
+//fun main() = Y2025D02().getResults().print()
+fun main() = Y2025D02().getVerifications().print()
