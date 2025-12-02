@@ -1,8 +1,8 @@
 package com.nami.aoc
 
-import com.nami.aoc.task.solution.y24.Y2024D01
+import com.nami.aoc.task.solution.y25.Y2025D02
 
 fun main() {
     val input = ("").trimIndent()
-    Y2024D01().getResults(input).print()
+    Y2025D02().getResults(input).print()
 }

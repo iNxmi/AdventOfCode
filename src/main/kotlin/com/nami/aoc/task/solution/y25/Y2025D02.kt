@@ -19,7 +19,7 @@ class Y2025D02 : Task<Set<LongRange>>(2025, 2) {
 
     override fun getPartB() = object : Part.B<Set<LongRange>>(this) {
         private val REGEX = Regex("(.+)\\1+")
-        override fun solve(input: Set<LongRange>)=
+        override fun solve(input: Set<LongRange>) =
             input.flatMap { it.toSet() }.filter { it.toString().matches(REGEX) }.sum()
     }
 
