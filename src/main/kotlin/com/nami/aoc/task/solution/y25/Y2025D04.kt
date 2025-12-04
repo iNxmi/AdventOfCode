@@ -5,15 +5,13 @@ import com.nami.aoc.task.Part
 import com.nami.aoc.task.Task
 import org.joml.Vector2i
 
-class Y2025D04 : Task<Y2025D04.Grid>(2025, 4) {
+class Y2025D04 : Task<Set<Vector2i>>(2025, 4) {
 
-    data class Grid(
-        val width: Int,
-        val height: Int,
-        val grid: Set<Vector2i>
-    )
+    companion object {
+        const val MAX_ADJACENT_ROLLS = 4
+    }
 
-    override fun getProcessedInput(raw: String): Grid {
+    override fun getProcessedInput(raw: String): Set<Vector2i> {
         val result = mutableSetOf<Vector2i>()
 
         val lines = raw.lines()
@@ -24,67 +22,59 @@ class Y2025D04 : Task<Y2025D04.Grid>(2025, 4) {
                     result.add(Vector2i(x, y))
         }
 
-        val width = lines[0].length
-        val height = lines.size
-
-        return Grid(width, height, result)
+        return  result
     }
 
-    fun remove(roles: Set<Vector2i>) = roles.filter { position ->
-        var count = 0
-        for (yOffset in -1..1)
-            for (xOffset in -1..1) {
-                if (xOffset == 0 && yOffset == 0)
+    private val offsets = getOffsets()
+    private fun getOffsets(): Set<Vector2i> {
+        val result = mutableSetOf<Vector2i>()
+
+        for (y in -1..1)
+            for (x in -1..1) {
+                if (x == 0 && y == 0)
                     continue
 
-                val offset = Vector2i(xOffset, yOffset)
-                val offsetPosition = Vector2i(position).add(offset)
-                if (roles.contains(offsetPosition))
-                    count++
+                result.add(Vector2i(x, y))
             }
 
-        count >= 4
-    }.toSet()
-
-    fun getRemovable(roles: Set<Vector2i>) = roles.filter { position ->
-        var count = 0
-        for (yOffset in -1..1)
-            for (xOffset in -1..1) {
-                if (xOffset == 0 && yOffset == 0)
-                    continue
-
-                val offset = Vector2i(xOffset, yOffset)
-                val offsetPosition = Vector2i(position).add(offset)
-                if (roles.contains(offsetPosition))
-                    count++
-            }
-
-        count < 4
-    }.toSet()
-
-    override fun getPartA() = object : Part.A<Grid>(this) {
-        override fun solve(input: Grid) = input.grid.size - remove(input.grid).size
+        return result
     }
 
-    override fun getPartB() = object : Part.B<Grid>(this) {
-        override fun solve(input: Grid) : Int {
-            val grid = input.grid.toMutableSet()
+    private fun getRemovable(grid: Set<Vector2i>) = grid.filter { position ->
+        var adjacent = 0
+        for (offset in offsets) {
+            val offsetPosition = Vector2i(position).add(offset)
+            if (grid.contains(offsetPosition))
+                adjacent++
+        }
 
-            while(true) {
+        adjacent < MAX_ADJACENT_ROLLS
+    }.toSet()
+
+    override fun getPartA() = object : Part.A<Set<Vector2i>>(this) {
+        override fun solve(input: Set<Vector2i>) = getRemovable(input).size
+    }
+
+    override fun getPartB() = object : Part.B<Set<Vector2i>>(this) {
+        override fun solve(input: Set<Vector2i>): Int {
+            val grid = input.toMutableSet()
+
+            while (true) {
                 val previous = grid.toSet()
 
-                grid.removeAll(getRemovable(grid))
+                val removable = getRemovable(grid)
+                grid.removeAll(removable)
 
-                if(previous == grid)
+                if (previous == grid)
                     break
             }
 
-            return input.grid.size - grid.size
+            return input.size - grid.size
         }
     }
 
 }
 
 //fun main() = Y2025D04().getTestVerifications().print()
-fun main() = Y2025D04().getResults().print()
-//fun main() = Y2025D04().getVerifications().print()
+//fun main() = Y2025D04().getResults().print()
+fun main() = Y2025D04().getVerifications().print()
