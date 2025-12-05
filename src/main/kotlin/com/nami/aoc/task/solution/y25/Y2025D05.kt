@@ -57,5 +57,5 @@ class Y2025D05 : Task<Y2025D05.Database>(2025, 5) {
 }
 
 //fun main() = Y2025D05().getTestVerifications().print()
-fun main() = Y2025D05().getResults().print()
-//fun main() = Y2025D05().getVerifications().print()
+//fun main() = Y2025D05().getResults().print()
+fun main() = Y2025D05().getVerifications().print()
