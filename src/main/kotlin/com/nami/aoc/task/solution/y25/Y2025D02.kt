@@ -16,11 +16,11 @@ class Y2025D02 : Task<Set<LongRange>>(2025, 2) {
     private fun solve(ranges: Set<LongRange>, regex: Regex) =
         ranges.flatMap { it.toSet() }.filter { it.toString().matches(regex) }.sum()
 
-    override fun getPartA() = object : Part.A<Set<LongRange>>(this) {
+    override fun getPartA() = object : Part.A<Set<LongRange>>(task = this, bonus = 5.0) {
         override fun solve(input: Set<LongRange>) = solve(input, Regex("(.+)\\1"))
     }
 
-    override fun getPartB() = object : Part.B<Set<LongRange>>(this) {
+    override fun getPartB() = object : Part.B<Set<LongRange>>(task = this, bonus = 10.0) {
         override fun solve(input: Set<LongRange>) = solve(input, Regex("(.+)\\1+"))
     }
 

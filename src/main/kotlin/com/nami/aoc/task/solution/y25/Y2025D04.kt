@@ -51,11 +51,11 @@ class Y2025D04 : Task<Set<Vector2i>>(2025, 4) {
         adjacent < MAX_ADJACENT_ROLLS
     }.toSet()
 
-    override fun getPartA() = object : Part.A<Set<Vector2i>>(this) {
+    override fun getPartA() = object : Part.A<Set<Vector2i>>(task = this, bonus = 5.0) {
         override fun solve(input: Set<Vector2i>) = getRemovable(input).size
     }
 
-    override fun getPartB() = object : Part.B<Set<Vector2i>>(this) {
+    override fun getPartB() = object : Part.B<Set<Vector2i>>(task = this, bonus = 10.0) {
         override fun solve(input: Set<Vector2i>): Int {
             val grid = input.toMutableSet()
 

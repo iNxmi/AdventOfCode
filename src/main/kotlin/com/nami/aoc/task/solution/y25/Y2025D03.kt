@@ -49,11 +49,11 @@ class Y2025D03 : Task<Y2025D03.BankArray>(2025, 3) {
         return sum
     }
 
-    override fun getPartA() = object : Part.A<BankArray>(this) {
+    override fun getPartA() = object : Part.A<BankArray>(task = this, bonus = 5.0) {
         override fun solve(input: BankArray) = getJoltage(input, 2)
     }
 
-    override fun getPartB() = object : Part.B<BankArray>(this) {
+    override fun getPartB() = object : Part.B<BankArray>(task = this, bonus = 10.0) {
         override fun solve(input: BankArray) = getJoltage(input, 12)
     }
 

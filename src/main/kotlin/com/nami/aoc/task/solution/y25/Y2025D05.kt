@@ -46,11 +46,11 @@ class Y2025D05 : Task<Y2025D05.Database>(2025, 5) {
         return merged.toSet()
     }
 
-    override fun getPartA() = object : Part.A<Database>(this) {
+    override fun getPartA() = object : Part.A<Database>(task = this, bonus = 5.0) {
         override fun solve(input: Database) = input.ids.count { id -> input.ranges.any { range -> range.contains(id) } }
     }
 
-    override fun getPartB() = object : Part.B<Database>(this) {
+    override fun getPartB() = object : Part.B<Database>(task = this, bonus = 10.0) {
         override fun solve(input: Database) = merge(input.ranges).sumOf { it.last - it.first + 1 }
     }
 
